@@ -104,6 +104,10 @@ callbackOverlay.addEventListener('click', (e) => {
 
 document.getElementById('callbackForm').addEventListener('submit', function(e) {
   e.preventDefault();
+  const name = this.cb_name.value.trim();
+  const phone = this.cb_phone.value.trim();
+  const message = `🔔 *New Callback Request*%0A%0A👤 *Name:* ${encodeURIComponent(name)}%0A📞 *Phone:* ${encodeURIComponent(phone)}%0A%0APlease call them back.`;
+  window.open(`https://wa.me/917228999995?text=${message}`, '_blank');
   const success = document.getElementById('callbackSuccess');
   success.classList.add('show');
   this.reset();
