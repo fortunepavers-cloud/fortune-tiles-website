@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Oswald:wght@400;600;700&family=Raleway:wght@300;400;800;900&family=Cinzel:wght@700;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
 
@@ -472,20 +473,20 @@
           <div class="form-row">
             <div class="form-group">
               <label>Your Name *</label>
-              <input type="text" placeholder="Full Name" required />
+              <input type="text" name="from_name" placeholder="Full Name" required />
             </div>
             <div class="form-group">
               <label>Phone Number *</label>
-              <input type="tel" placeholder="Mobile / Landline" required />
+              <input type="tel" name="phone" placeholder="Mobile / Landline" required />
             </div>
           </div>
           <div class="form-group">
             <label>Email Address</label>
-            <input type="email" placeholder="your@email.com" />
+            <input type="email" name="from_email" placeholder="your@email.com" />
           </div>
           <div class="form-group">
             <label>Product of Interest</label>
-            <select>
+            <select name="product">
               <option value="">Select a product...</option>
               <option>Behaton Paver</option>
               <option>Brick Paver</option>
@@ -505,7 +506,7 @@
           </div>
           <div class="form-group">
             <label>Your Message *</label>
-            <textarea rows="5" placeholder="Tell us about your project requirements, quantity needed, delivery location..." required></textarea>
+            <textarea rows="5" name="message" placeholder="Tell us about your project requirements, quantity needed, delivery location..." required></textarea>
           </div>
           <button type="submit" class="btn btn-primary btn-full">
             <i class="fa-solid fa-paper-plane"></i> Send Inquiry
@@ -528,6 +529,11 @@
           </a>
           <p class="footer-tagline">"Experience a touch of royalty..."</p>
           <p>Vadodara's trusted manufacturer of premium paving solutions for residential, commercial and industrial projects.</p>
+          <div class="social-icons">
+            <a href="#" class="social-icon" aria-label="Instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-icon" aria-label="Facebook" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="social-icon" aria-label="LinkedIn" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
         </div>
         <div class="footer-links">
           <h4>Quick Links</h4>
