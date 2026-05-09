@@ -1,18 +1,24 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 115" width="440" height="115">
+  <defs>
+    <clipPath id="blueClip">
+      <polygon points="49,17 86,62 49,109 12,62"/>
+    </clipPath>
+  </defs>
 
-  <!-- ===== ICON SQUARE ===== -->
-  <rect x="4" y="4" width="108" height="108" rx="9" fill="#2d2d2d"/>
+  <!-- ===== ICON ===== -->
+  <!-- Dark background square -->
+  <rect x="4" y="4" width="108" height="108" rx="4" fill="#2d2d2d"/>
 
-  <!-- Blue rhombus (left, drawn first) -->
-  <polygon points="56,10 90,58 56,106 22,58" fill="#2ba7df"/>
+  <!-- Blue diamond — lower-left -->
+  <polygon points="49,17 86,62 49,109 12,62" fill="#2ba7df"/>
 
-  <!-- White rhombus (right, larger — overlaps blue) -->
-  <polygon points="70,6 108,58 70,110 32,58" fill="#ffffff"/>
+  <!-- White diamond — upper-right, overlapping blue -->
+  <polygon points="71,8 108,54 71,101 34,54" fill="#ffffff"/>
 
-  <!-- Small white square inside the blue crescent area -->
-  <rect x="24" y="50" width="15" height="15" fill="#ffffff" rx="1"/>
+  <!-- Small pale blue square inside blue crescent -->
+  <rect x="14" y="69" width="17" height="17" fill="#b8cdd8" clip-path="url(#blueClip)"/>
 
-  <!-- ===== FORTUNE TEXT (white for dark bg) ===== -->
+  <!-- ===== FORTUNE TEXT ===== -->
   <text
     x="132" y="80"
     font-family="'Arial Black', 'Impact', sans-serif"

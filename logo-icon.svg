@@ -1,19 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
   <defs>
     <clipPath id="blueClip">
-      <polygon points="38,5 72,50 38,95 4,50"/>
+      <polygon points="42,12 76,54 42,97 8,54"/>
     </clipPath>
   </defs>
 
-  <!-- Dark square background (part of the logo) -->
-  <rect width="100" height="100" fill="#333333"/>
+  <!-- Dark background -->
+  <rect width="100" height="100" fill="#2d2d2d"/>
 
-  <!-- Blue diamond -->
-  <polygon points="38,5 72,50 38,95 4,50" fill="#1da8dc"/>
+  <!-- Blue diamond — lower-left -->
+  <polygon points="42,12 76,54 42,97 8,54" fill="#2ba7df"/>
 
-  <!-- White/light diamond overlapping from upper-right -->
-  <polygon points="62,8 96,50 62,92 28,50" fill="#e8e8e8"/>
+  <!-- White diamond — upper-right, overlapping blue -->
+  <polygon points="62,4 96,46 62,90 28,46" fill="#ffffff"/>
 
-  <!-- Small light blue square in visible blue crescent -->
-  <rect x="8" y="58" width="16" height="16" fill="#88ceea" clip-path="url(#blueClip)"/>
+  <!-- Small pale blue square inside the blue crescent -->
+  <rect x="9" y="60" width="16" height="16" fill="#b8cdd8" clip-path="url(#blueClip)"/>
 </svg>
