@@ -1,22 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
   <defs>
-    <clipPath id="squareMask">
-      <rect width="200" height="200" rx="14"/>
+    <clipPath id="blueDiamondClip">
+      <polygon points="34,3 66,50 34,97 2,50"/>
     </clipPath>
   </defs>
 
-  <!-- Dark background square -->
-  <rect width="200" height="200" rx="14" fill="#333333"/>
+  <!-- Blue diamond (back-left) -->
+  <polygon points="34,3 66,50 34,97 2,50" fill="#1da8dc"/>
 
-  <g clip-path="url(#squareMask)">
-    <!-- Blue diamond — back layer, center-left -->
-    <polygon points="90,21 152,103 90,185 28,103" fill="#2ba7df"/>
+  <!-- White diamond (front-right, overlapping blue) -->
+  <polygon points="66,3 98,50 66,97 34,50" fill="#ffffff"/>
 
-    <!-- White diamond — front layer, offset upper-right, overlaps blue -->
-    <polygon points="134,6 196,88 134,170 72,88" fill="#ffffff"/>
-
-    <!-- Light blue small square — inside visible blue crescent -->
-    <rect x="40" y="92" width="24" height="24" fill="#a8d8ec" rx="2"/>
-  </g>
-
+  <!-- Small light blue square in visible blue crescent, clipped to diamond -->
+  <rect x="4" y="54" width="20" height="20" fill="#88ceea" clip-path="url(#blueDiamondClip)"/>
 </svg>
