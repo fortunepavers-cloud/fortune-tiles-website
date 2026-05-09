@@ -47,13 +47,31 @@ tabBtns.forEach(btn => {
   });
 });
 
+// ===== EMAILJS INIT =====
+emailjs.init('YOUR_PUBLIC_KEY');
+
 // ===== CONTACT FORM =====
 document.getElementById('contactForm').addEventListener('submit', function (e) {
   e.preventDefault();
+  const btn = this.querySelector('button[type="submit"]');
   const success = document.getElementById('formSuccess');
-  success.classList.add('show');
-  this.reset();
-  setTimeout(() => success.classList.remove('show'), 5000);
+
+  btn.disabled = true;
+  btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+
+  emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+    .then(() => {
+      success.classList.add('show');
+      this.reset();
+      btn.disabled = false;
+      btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send Inquiry';
+      setTimeout(() => success.classList.remove('show'), 5000);
+    })
+    .catch(() => {
+      btn.disabled = false;
+      btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send Inquiry';
+      alert('Failed to send. Please call us directly at +91 72289 99995.');
+    });
 });
 
 // ===== SCROLL REVEAL =====
@@ -71,6 +89,28 @@ document.querySelectorAll('.product-card, .info-card, .app-card, .person-card').
   el.style.transform = 'translateY(24px)';
   el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
   observer.observe(el);
+});
+
+// ===== REQUEST CALLBACK MODAL =====
+const callbackBtn = document.getElementById('callbackBtn');
+const callbackOverlay = document.getElementById('callbackOverlay');
+const callbackClose = document.getElementById('callbackClose');
+
+callbackBtn.addEventListener('click', () => callbackOverlay.classList.add('open'));
+callbackClose.addEventListener('click', () => callbackOverlay.classList.remove('open'));
+callbackOverlay.addEventListener('click', (e) => {
+  if (e.target === callbackOverlay) callbackOverlay.classList.remove('open');
+});
+
+document.getElementById('callbackForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const success = document.getElementById('callbackSuccess');
+  success.classList.add('show');
+  this.reset();
+  setTimeout(() => {
+    success.classList.remove('show');
+    callbackOverlay.classList.remove('open');
+  }, 3000);
 });
 
 // ===== ACTIVE NAV LINK ON SCROLL =====

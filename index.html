@@ -580,6 +580,38 @@
     <i class="fa-solid fa-chevron-up"></i>
   </button>
 
+  <!-- Request Callback Floating Button -->
+  <button class="callback-float" id="callbackBtn" aria-label="Request a Callback">
+    <i class="fa-solid fa-phone-volume"></i>
+    <span class="callback-tooltip">Request a Callback</span>
+  </button>
+
+  <!-- Callback Modal -->
+  <div class="callback-overlay" id="callbackOverlay">
+    <div class="callback-modal">
+      <button class="callback-close" id="callbackClose"><i class="fa-solid fa-xmark"></i></button>
+      <div class="callback-icon"><i class="fa-solid fa-phone-volume"></i></div>
+      <h3>Request a Callback</h3>
+      <p>Leave your details and we'll call you back shortly.</p>
+      <form id="callbackForm">
+        <div class="form-group">
+          <label>Your Name *</label>
+          <input type="text" name="cb_name" placeholder="Full Name" required />
+        </div>
+        <div class="form-group">
+          <label>Phone Number *</label>
+          <input type="tel" name="cb_phone" placeholder="+91 XXXXX XXXXX" required />
+        </div>
+        <button type="submit" class="btn btn-primary btn-full">
+          <i class="fa-solid fa-phone"></i> Call Me Back
+        </button>
+        <div class="callback-success" id="callbackSuccess">
+          <i class="fa-solid fa-circle-check"></i> Thank you! We'll call you shortly.
+        </div>
+      </form>
+    </div>
+  </div>
+
   <!-- WhatsApp Floating Button -->
   <a href="https://wa.me/917228999995?text=Hello%2C%20I%20am%20interested%20in%20Fortune%20Tiles%20%26%20Pavers%20products.%20Can%20you%20help%20me%3F" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
     <i class="fa-brands fa-whatsapp"></i>
