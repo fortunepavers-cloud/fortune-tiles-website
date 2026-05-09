@@ -91,32 +91,6 @@ document.querySelectorAll('.product-card, .info-card, .app-card, .person-card').
   observer.observe(el);
 });
 
-// ===== REQUEST CALLBACK MODAL =====
-const callbackBtn = document.getElementById('callbackBtn');
-const callbackOverlay = document.getElementById('callbackOverlay');
-const callbackClose = document.getElementById('callbackClose');
-
-callbackBtn.addEventListener('click', () => callbackOverlay.classList.add('open'));
-callbackClose.addEventListener('click', () => callbackOverlay.classList.remove('open'));
-callbackOverlay.addEventListener('click', (e) => {
-  if (e.target === callbackOverlay) callbackOverlay.classList.remove('open');
-});
-
-document.getElementById('callbackForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const name = this.cb_name.value.trim();
-  const phone = this.cb_phone.value.trim();
-  const message = `🔔 *New Callback Request*%0A%0A👤 *Name:* ${encodeURIComponent(name)}%0A📞 *Phone:* ${encodeURIComponent(phone)}%0A%0APlease call them back.`;
-  window.open(`https://wa.me/917228999995?text=${message}`, '_blank');
-  const success = document.getElementById('callbackSuccess');
-  success.classList.add('show');
-  this.reset();
-  setTimeout(() => {
-    success.classList.remove('show');
-    callbackOverlay.classList.remove('open');
-  }, 3000);
-});
-
 // ===== ACTIVE NAV LINK ON SCROLL =====
 const sections = document.querySelectorAll('section[id]');
 window.addEventListener('scroll', () => {
