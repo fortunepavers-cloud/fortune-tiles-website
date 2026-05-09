@@ -169,6 +169,13 @@ img { max-width: 100%; display: block; }
   flex-shrink: 0;
 }
 
+.logo-full-img {
+  height: 52px;
+  width: auto;
+  display: block;
+  flex-shrink: 0;
+}
+
 .logo-text {
   display: flex;
   flex-direction: column;
@@ -195,8 +202,8 @@ img { max-width: 100%; display: block; }
   margin-top: 5px;
 }
 
-.footer-brand .logo-icon-img {
-  height: 54px;
+.footer-brand .logo-full-img {
+  height: 52px;
 }
 
 .nav-links {
