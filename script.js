@@ -91,6 +91,11 @@ document.querySelectorAll('.product-card, .info-card, .app-card, .person-card').
   observer.observe(el);
 });
 
+// ===== PRODUCT QUOTE BUTTONS =====
+document.querySelectorAll('.product-card').forEach(card => {
+  card.insertAdjacentHTML('beforeend', '<a href="#contact" class="product-quote-btn">Get a Quote <i class="fa-solid fa-arrow-right"></i></a>');
+});
+
 // ===== ACTIVE NAV LINK ON SCROLL =====
 const sections = document.querySelectorAll('section[id]');
 window.addEventListener('scroll', () => {
