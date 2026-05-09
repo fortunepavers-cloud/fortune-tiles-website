@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fortune Tiles & Pavers | Experience a Touch of Royalty</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Oswald:wght@400;600;700&family=Raleway:wght@300;400;800;900&family=Cinzel:wght@700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">
+        <img src="logo-icon.svg" alt="Fortune" class="logo-icon-img" />
+        <div class="logo-text">
+          <span class="logo-fortune">FORTUNE</span>
+          <span class="logo-sub">TILES AND PAVERS</span>
+        </div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#why-us">Why Us</a></li>
+        <li><a href="#applications">Applications</a></li>
+        <li><a href="#contact" class="nav-cta">Contact Us</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-tagline">Experience a touch of royalty...</p>
+      <h1 class="hero-title">Premium Paving <br /><span>Solutions for Every Space</span></h1>
+      <p class="hero-desc">Vadodara's leading manufacturer of high-strength pavers, chequered tiles, hollow blocks and more — powered by Apollo Zenith German technology.</p>
+      <div class="hero-btns">
+        <a href="#products" class="btn btn-primary">Explore Products</a>
+        <a href="#contact" class="btn btn-outline">Get a Quote</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num">9+</span><span class="stat-label">Years Experience</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">60K+</span><span class="stat-label">Sq.Ft Factory</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Quality Assured</span></div>
+      </div>
+    </div>
+    <div class="hero-scroll-indicator">
+      <span>Scroll Down</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Who We Are</span>
+        <h2 class="section-title">About Fortune Tiles & Pavers</h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p class="about-lead">FORTUNE TILES AND PAVERS is a VADODARA-based market-leading company, successfully offering flooring solutions for exteriors for over 9 years.</p>
+          <p>We manufacture a wide and exclusive range of cement-based flooring products using state-of-the-art <strong>Apollo Zenith</strong> German technology machinery — ensuring best quality and range of materials available in volumes as required.</p>
+          <p>We have established an excellent track record in Quality and Services, consistently meeting customer satisfaction while offering great products at competitive prices — never compromising on quality.</p>
+          <ul class="about-list">
+            <li><i class="fa-solid fa-check-circle"></i> Value system committed to giving the best to customers</li>
+            <li><i class="fa-solid fa-check-circle"></i> Quality (Conformance and performance) assured products</li>
+            <li><i class="fa-solid fa-check-circle"></i> Finest infrastructure to cater to bulk requirements in short times</li>
+            <li><i class="fa-solid fa-check-circle"></i> Widest range of products, colours, textures, etc.</li>
+          </ul>
+        </div>
+        <div class="about-cards">
+          <div class="info-card">
+            <i class="fa-solid fa-industry"></i>
+            <h3>Infrastructure</h3>
+            <p>Land over 60,000 sq.ft with built-up space exceeding 5,000 sq.ft. Fully automatic block-making plants with automated material handling.</p>
+          </div>
+          <div class="info-card">
+            <i class="fa-solid fa-truck"></i>
+            <h3>Own Fleet</h3>
+            <p>Company-owned transportation vehicles ensuring reliable delivery and product integrity to your site — handling delivery emergencies with ease.</p>
+          </div>
+          <div class="info-card">
+            <i class="fa-solid fa-award"></i>
+            <h3>Quality Standards</h3>
+            <p>Stage-wise inspection & testing per IS standards. Top-grade raw materials with vendor approval and periodic vendor rating & review.</p>
+          </div>
+          <div class="info-card">
+            <i class="fa-solid fa-gear"></i>
+            <h3>German Technology</h3>
+            <p>Apollo Zenith machinery from Germany — hydraulic press, vibrator machines and varied manufacturing lines for the widest product range.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRODUCTS ===== -->
+  <section class="products section" id="products">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">What We Offer</span>
+        <h2 class="section-title">Our Product Range</h2>
+        <div class="section-divider"></div>
+        <p class="section-desc">From high-strength pavers to designer tiles — we have the right solution for every project requirement.</p>
+      </div>
+
+      <!-- Tab Filter -->
+      <div class="product-tabs">
+        <button class="tab-btn active" data-tab="all">All Products</button>
+        <button class="tab-btn" data-tab="high-strength">High Strength Pavers</button>
+        <button class="tab-btn" data-tab="wet-cast">Wet Cast Pavers</button>
+        <button class="tab-btn" data-tab="tiles">Chequered Tiles</button>
+        <button class="tab-btn" data-tab="blocks">Blocks & Kerbs</button>
+      </div>
+
+      <div class="products-grid" id="productsGrid">
+
+        <!-- High Strength Pavers -->
+        <div class="product-card" data-category="high-strength">
+          <div class="product-icon-wrap" style="background: linear-gradient(135deg,#1a6fc4,#0d4a8a)">
+            <i class="fa-solid fa-border-all"></i>
+          </div>
+          <h3>Behaton</h3>
+          <p>Classic interlocking paver block, ideal for roads, driveways and heavy-duty applications.</p>
+          <span class="product-tag">High Strength</span>
+        </div>
+
+        <div class="product-card" data-category="high-strength">
+          <div class="product-icon-wrap" style="background: linear-gradient(135deg,#c0392b,#922b21)">
+            <i class="fa-solid fa-th-large"></i>
+          </div>
+          <h3>Brick Paver</h3>
+          <p>Traditional brick-shaped paver with superior strength, perfect for walkways and industrial zones.</p>
+          <span class="product-tag">High Strength</span>
+        </div>
+
+        <div class="product-card" data-category="high-strength">
+          <div class="product-icon-wrap" style="background: linear-gradient(135deg,#27ae60,#1e8449)">
+            <i class="fa-solid fa-puzzle-piece"></i>
+          </div>
+          <h3>Unipaver</h3>
+          <p>Versatile interlocking unipaver suitable for pedestrian paths and vehicular areas alike.</p>
+          <span class="product-tag">High Strength</span>
+        </div>
+
+        <div class="product-card" data-category="high-strength">
+          <div class="product-icon-wrap" style="background: linear-gradient(135deg,#d35400,#a04000)">
+            <i class="fa-solid fa-hexagon"></i>
+          </div>
+          <h3>Hexa Paver</h3>
+          <p>Hexagonal design paver adding a decorative touch while providing excellent structural strength.</p>
+          <span class="product-tag">High Strength</span>
+        </div>
+
+        <div class="product-card" data-category="high-strength">
+          <div class="product-icon-wrap" style="background: linear-gradient(135deg,#8e44ad,#6c3483)">
+            <i class="fa-solid fa-square"></i>
+          </div>
+          <h3>Quadrastein Plain</h3>
+          <p>Square-format cobblestone-style paver, great for plazas, courtyards and public spaces.</p>
+          <span class="product-tag">High Strength</span>
+        </div>
+
+        <!-- Wet Cast Pavers -->
+        <div class="product-card" data-category="wet-cast">
+          <div class="product-icon-wrap" style="background: linear-gradient(135deg,#1abc9c,#148f77)">
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <h3>Cosmic Paver</h3>
+          <p>Unique cosmic-shaped wet cast paver that creates stunning visual patterns for landscape areas.</p>
+          <span class="product-tag">Wet Cast</span>
+        </div>
+
+        <div class="product-card" data-category="wet-cast">
+          <div class="product-icon-wrap" style="background: linear-gradient(135deg,#2980b9,#1f618d)">
+            <i class="fa-solid fa-cube"></i>
+          </div>
+          <h3>Cube Paver</h3>
+          <p>3D cube-effect wet cast paver that delivers a distinctive chequered dimensional appearance.</p>
+          <span class="product-tag">Wet Cast</span>
+        </div>
+
+        <div class="product-card" data-category="wet-cast">
+          <div class="product-icon-wrap" style="background: linear-gradient(135deg,#f39c12,#d68910)">
+            <i class="fa-solid fa-wind"></i>
+          </div>
+          <h3>Europa Paver</h3>
+          <p>Wave-shaped Europa paver with an organic flowing design — popular for gardens and parks.</p>
+          <span class="product-tag">Wet Cast</span>
+        </div>
+
+        <div class="product-card" data-category="wet-cast">
+          <div class="product-icon-wrap" style="background: linear-gradient(135deg,#e74c3c,#cb4335)">
+            <i class="fa-solid fa-clover"></i>
+          </div>
+          <h3>Colorado Paver</h3>
+          <p>Cross-shaped Colorado wet cast paver providing excellent interlocking and visual appeal.</p>
+          <span class="product-tag">Wet Cast</span>
+        </div>
+
+        <!-- Chequered Tiles -->
+        <div class="product-card" data-category="tiles">
+          <div class="product-icon-wrap" style="background: linear-gradient(135deg,#f1c40f,#d4ac0d)">
+            <i class="fa-solid fa-grip"></i>
+          </div>
+          <h3>Chequered Tiles</h3>
+          <p>Designer chequered tiles (FTC-001 to FTC-006) for footpaths, commercial floors and public areas.</p>
+          <span class="product-tag">Tiles</span>
+        </div>
+
+        <!-- Blocks & Kerbs -->
+        <div class="product-card" data-category="blocks">
+          <div class="product-icon-wrap" style="background: linear-gradient(135deg,#7f8c8d,#616a6b)">
+            <i class="fa-solid fa-building"></i>
+          </div>
+          <h3>Hollow Block</h3>
+          <p>Lightweight hollow blocks used for construction walls, boundary fences and compound structures.</p>
+          <span class="product-tag">Blocks</span>
+        </div>
+
+        <div class="product-card" data-category="blocks">
+          <div class="product-icon-wrap" style="background: linear-gradient(135deg,#566573,#2e4057)">
+            <i class="fa-solid fa-cube"></i>
+          </div>
+          <h3>Solid Block</h3>
+          <p>Heavy-duty solid cement blocks for load-bearing walls and industrial-grade construction needs.</p>
+          <span class="product-tag">Blocks</span>
+        </div>
+
+        <div class="product-card" data-category="blocks">
+          <div class="product-icon-wrap" style="background: linear-gradient(135deg,#95a5a6,#717d7e)">
+            <i class="fa-solid fa-road"></i>
+          </div>
+          <h3>Kerbstone</h3>
+          <p>Concrete finish kerbs for road edging, garden borders and driveway demarcation.</p>
+          <span class="product-tag">Kerbs</span>
+        </div>
+
+        <div class="product-card" data-category="blocks">
+          <div class="product-icon-wrap" style="background: linear-gradient(135deg,#2ecc71,#1a9c50)">
+            <i class="fa-solid fa-leaf"></i>
+          </div>
+          <h3>Grass Pavers</h3>
+          <p>Grid Paver and Turf style grass pavers — eco-friendly solution for green parking and landscaping.</p>
+          <span class="product-tag">Green</span>
+        </div>
+
+        <div class="product-card" data-category="blocks">
+          <div class="product-icon-wrap" style="background: linear-gradient(135deg,#e67e22,#ca6f1e)">
+            <i class="fa-solid fa-fire-flame-curved"></i>
+          </div>
+          <h3>Fly Ash Bricks</h3>
+          <p>Eco-friendly fly ash bricks offering high strength, thermal insulation and cost-effectiveness.</p>
+          <span class="product-tag">Eco</span>
+        </div>
+
+        <div class="product-card" data-category="blocks">
+          <div class="product-icon-wrap" style="background: linear-gradient(135deg,#16a085,#0e6655)">
+            <i class="fa-solid fa-circle-notch"></i>
+          </div>
+          <h3>Man Hole Covers</h3>
+          <p>Durable cement-based manhole covers for municipal, industrial and infrastructure applications.</p>
+          <span class="product-tag">Infrastructure</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHY US ===== -->
+  <section class="why-us section" id="why-us">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Our Advantage</span>
+        <h2 class="section-title">Why Choose Fortune?</h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="comparison-table-wrap">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Criteria</th>
+              <th class="highlight-col"><div class="logo-small">FORTUNE</div></th>
+              <th>Top Competitors</th>
+              <th>Regular Competitors</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Product Quality</td>
+              <td class="highlight-col"><i class="fa-solid fa-circle-check"></i> Stringent standards, best value for money</td>
+              <td>Sometimes possible</td>
+              <td>Usually not possible</td>
+            </tr>
+            <tr>
+              <td>Conformance to Specs</td>
+              <td class="highlight-col"><i class="fa-solid fa-circle-check"></i> 100% conforming material supplied</td>
+              <td>Most of the time</td>
+              <td>Cannot meet stringent requirements</td>
+            </tr>
+            <tr>
+              <td>Service & Information</td>
+              <td class="highlight-col"><i class="fa-solid fa-circle-check"></i> Personalized guidance & specifications</td>
+              <td>Provided sometimes</td>
+              <td>Not available</td>
+            </tr>
+            <tr>
+              <td>Product Range</td>
+              <td class="highlight-col"><i class="fa-solid fa-circle-check"></i> Widest range across all finishes</td>
+              <td>Range or quality lacking</td>
+              <td>Very limited range</td>
+            </tr>
+            <tr>
+              <td>Infrastructure</td>
+              <td class="highlight-col"><i class="fa-solid fa-circle-check"></i> Top-of-line, handles huge projects</td>
+              <td>Top-of-line</td>
+              <td>Poor, delayed projects</td>
+            </tr>
+            <tr>
+              <td>Supplier Relationships</td>
+              <td class="highlight-col"><i class="fa-solid fa-circle-check"></i> Strong, ensures consistent materials</td>
+              <td>Also strong</td>
+              <td>Unknown</td>
+            </tr>
+            <tr>
+              <td>Employee Base</td>
+              <td class="highlight-col"><i class="fa-solid fa-circle-check"></i> Well-qualified, continuous training</td>
+              <td>Uncertain</td>
+              <td>Uncertain</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== APPLICATIONS ===== -->
+  <section class="applications section" id="applications">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Where We're Used</span>
+        <h2 class="section-title">Applications</h2>
+        <div class="section-divider"></div>
+        <p class="section-desc">Fortune Pavers provides an attractive surface suitable for a wide variety of environments.</p>
+      </div>
+      <div class="applications-grid">
+        <div class="app-card">
+          <i class="fa-solid fa-person-walking"></i>
+          <h4>Pedestrian Footways</h4>
+          <p>Footways and precincts</p>
+        </div>
+        <div class="app-card">
+          <i class="fa-solid fa-building-columns"></i>
+          <h4>Public Buildings</h4>
+          <p>Forecourts and entrances</p>
+        </div>
+        <div class="app-card">
+          <i class="fa-solid fa-house"></i>
+          <h4>Residential Areas</h4>
+          <p>Approaches and surrounds to homes</p>
+        </div>
+        <div class="app-card">
+          <i class="fa-solid fa-industry"></i>
+          <h4>Industrial Buildings</h4>
+          <p>Heavy-duty industrial surrounds</p>
+        </div>
+        <div class="app-card">
+          <i class="fa-solid fa-shop"></i>
+          <h4>Shops & Offices</h4>
+          <p>Areas surrounding commercial spaces</p>
+        </div>
+        <div class="app-card">
+          <i class="fa-solid fa-school"></i>
+          <h4>School Playgrounds</h4>
+          <p>Safe and durable playground surfaces</p>
+        </div>
+        <div class="app-card">
+          <i class="fa-solid fa-seedling"></i>
+          <h4>Gardens</h4>
+          <p>Public and private garden pathways</p>
+        </div>
+        <div class="app-card">
+          <i class="fa-solid fa-water-ladder"></i>
+          <h4>Swimming Pools</h4>
+          <p>Non-slip pool surrounds</p>
+        </div>
+        <div class="app-card">
+          <i class="fa-solid fa-car"></i>
+          <h4>Vehicular Areas</h4>
+          <p>Footways with vehicular overrun</p>
+        </div>
+        <div class="app-card">
+          <i class="fa-solid fa-city"></i>
+          <h4>Urban Regeneration</h4>
+          <p>Home zones and urban development</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Get In Touch</span>
+        <h2 class="section-title">Contact Us</h2>
+        <div class="section-divider"></div>
+        <p class="section-desc">Reach out for inquiries, quotations or to know more about our products.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>Fortune Tiles & Pavers</h3>
+          <div class="contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <div>
+              <strong>Factory Address</strong>
+              <p>Om Maa Party Plot, Nr. G.S.F.C. Township,<br />Dashrath - 391 740, VADODARA (Guj.) INDIA</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <div>
+              <strong>Phone</strong>
+              <p>0265-2241224<br />+91 82389 64164<br />+91 98250 77602</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <div>
+              <strong>Email</strong>
+              <p>fortunepavers@gmail.com</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fa-solid fa-globe"></i>
+            <div>
+              <strong>Website</strong>
+              <p>www.fortunepavers.com</p>
+            </div>
+          </div>
+          <div class="contact-persons">
+            <h4>Our Representatives</h4>
+            <div class="person-card">
+              <div class="person-avatar"><i class="fa-solid fa-user"></i></div>
+              <div>
+                <strong>Deep Patel</strong>
+                <p><i class="fa-solid fa-mobile"></i> 7228999995</p>
+              </div>
+            </div>
+            <div class="person-card">
+              <div class="person-avatar"><i class="fa-solid fa-user"></i></div>
+              <div>
+                <strong>Kishor Patel</strong>
+                <p><i class="fa-solid fa-mobile"></i> 9909217315</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+          <h3>Send an Inquiry</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Your Name *</label>
+              <input type="text" placeholder="Full Name" required />
+            </div>
+            <div class="form-group">
+              <label>Phone Number *</label>
+              <input type="tel" placeholder="Mobile / Landline" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" placeholder="your@email.com" />
+          </div>
+          <div class="form-group">
+            <label>Product of Interest</label>
+            <select>
+              <option value="">Select a product...</option>
+              <option>Behaton Paver</option>
+              <option>Brick Paver</option>
+              <option>Unipaver</option>
+              <option>Hexa Paver</option>
+              <option>Quadrastein Plain</option>
+              <option>Wet Cast Pavers</option>
+              <option>Chequered Tiles</option>
+              <option>Hollow Block</option>
+              <option>Solid Block</option>
+              <option>Kerbstone</option>
+              <option>Grass Pavers</option>
+              <option>Fly Ash Bricks</option>
+              <option>Man Hole Covers</option>
+              <option>Other / Multiple Products</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Your Message *</label>
+            <textarea rows="5" placeholder="Tell us about your project requirements, quantity needed, delivery location..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">
+            <i class="fa-solid fa-paper-plane"></i> Send Inquiry
+          </button>
+          <div class="form-success" id="formSuccess">
+            <i class="fa-solid fa-circle-check"></i> Thank you! We'll get back to you shortly.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a href="#home" class="nav-logo">
+            <img src="logo-icon.svg" alt="Fortune" class="logo-icon-img" />
+            <div class="logo-text">
+              <span class="logo-fortune">FORTUNE</span>
+              <span class="logo-sub">TILES AND PAVERS</span>
+            </div>
+          </a>
+          <p class="footer-tagline">"Experience a touch of royalty..."</p>
+          <p>Vadodara's trusted manufacturer of premium paving solutions for residential, commercial and industrial projects.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#why-us">Why Fortune</a></li>
+            <li><a href="#applications">Applications</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-products">
+          <h4>Our Products</h4>
+          <ul>
+            <li>Paver Blocks</li>
+            <li>Chequered Tiles</li>
+            <li>Vibro Pavers</li>
+            <li>Hollow &amp; Solid Blocks</li>
+            <li>Fly Ash Bricks</li>
+            <li>Man Hole Covers</li>
+            <li>Kerbstone</li>
+            <li>Grass Pavers</li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <p><i class="fa-solid fa-phone"></i> 0265-2241224</p>
+          <p><i class="fa-solid fa-phone"></i> +91 82389 64164</p>
+          <p><i class="fa-solid fa-envelope"></i> fortunepavers@gmail.com</p>
+          <p><i class="fa-solid fa-globe"></i> www.fortunepavers.com</p>
+          <p><i class="fa-solid fa-location-dot"></i> Dashrath, Vadodara, Gujarat</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2024 Fortune Tiles & Pavers. All rights reserved. | Dashrath, Vadodara, Gujarat, India</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
