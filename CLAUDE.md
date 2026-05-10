@@ -39,7 +39,7 @@ Single page with six anchor-linked sections in `index.html`:
 
 ## Adding Products
 
-Each product card in `#products` needs `data-category` set to one of: `high-strength`, `wet-cast`, `tiles`, `blocks`. The tab buttons filter by matching this attribute. No JS changes needed when adding cards — the existing `tabBtns` listener handles all categories.
+Each product card in `#products` needs `data-category` set to one of: `vibro`, `rubber`, `tiles`, `blocks`. The tab buttons filter by matching this attribute. No JS changes needed when adding cards — the existing `tabBtns` listener handles all categories.
 
 ## External Dependencies (CDN only)
 
