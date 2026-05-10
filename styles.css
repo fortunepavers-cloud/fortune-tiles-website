@@ -623,6 +623,28 @@ img { max-width: 100%; display: block; }
   letter-spacing: 0.5px;
 }
 
+/* ===== PRODUCT SPECS LIST ===== */
+.product-specs {
+  list-style: none;
+  margin: 12px 0 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.product-specs li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+.product-specs li i {
+  color: var(--primary);
+  font-size: 0.75rem;
+  width: 14px;
+  flex-shrink: 0;
+}
+
 /* ===== PRODUCT QUOTE BUTTON ===== */
 .product-quote-btn {
   display: inline-flex;
