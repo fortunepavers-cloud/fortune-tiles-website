@@ -293,19 +293,52 @@ img { max-width: 100%; display: block; }
   transform: rotate(45deg);
   position: relative;
   z-index: 1;
+  transition: transform 0.5s ease;
 }
+.paver-grid-visual:hover { transform: rotate(45deg) scale(1.04); }
 
 .pv {
   border-radius: 6px;
   background: rgba(30, 58, 138, 0.32);
   border: 1px solid rgba(30, 58, 138, 0.15);
-  transition: 0.4s ease;
+  transition: filter 0.4s ease;
+  opacity: 0;
+  animation: paverFadeIn 0.45s ease both;
 }
+
+/* Staggered tile load */
+.pv:nth-child(1)  { animation-delay: 1.30s; }
+.pv:nth-child(2)  { animation-delay: 1.38s; }
+.pv:nth-child(3)  { animation-delay: 1.46s; }
+.pv:nth-child(4)  { animation-delay: 1.54s; }
+.pv:nth-child(5)  { animation-delay: 1.62s; }
+.pv:nth-child(6)  { animation-delay: 1.70s; }
+.pv:nth-child(7)  { animation-delay: 1.78s; }
+.pv:nth-child(8)  { animation-delay: 1.86s; }
+.pv:nth-child(9)  { animation-delay: 1.94s; }
+.pv:nth-child(10) { animation-delay: 2.02s; }
+.pv:nth-child(11) { animation-delay: 2.10s; }
+.pv:nth-child(12) { animation-delay: 2.18s; }
+.pv:nth-child(13) { animation-delay: 2.26s; }
+.pv:nth-child(14) { animation-delay: 2.34s; }
+.pv:nth-child(15) { animation-delay: 2.42s; }
+.pv:nth-child(16) { animation-delay: 2.50s; }
+
+/* Tile color variants */
 .pv:nth-child(2n)  { background: rgba(22, 45, 107, 0.55); }
 .pv:nth-child(3n)  { background: rgba(30, 58, 138, 0.45); }
 .pv:nth-child(5n)  { background: rgba(230, 126, 34, 0.45); border-color: rgba(230,126,34,0.3); }
 .pv:nth-child(7n)  { background: rgba(255,255,255,0.07); }
 .pv:nth-child(11n) { background: rgba(30, 58, 138, 0.2); }
+
+/* Orange accent tiles pulse after load */
+.pv:nth-child(5)  { animation: paverFadeIn 0.45s 1.62s ease both, paverPulse 2.8s 3.3s ease-in-out infinite; }
+.pv:nth-child(10) { animation: paverFadeIn 0.45s 2.02s ease both, paverPulse 2.8s 3.9s ease-in-out infinite; }
+.pv:nth-child(15) { animation: paverFadeIn 0.45s 2.42s ease both, paverPulse 2.8s 4.5s ease-in-out infinite; }
+
+/* Hover: all tiles brighten */
+.paver-grid-visual:hover .pv { filter: brightness(1.25); }
+.paver-grid-visual:hover .pv:nth-child(5n) { filter: brightness(1.5) drop-shadow(0 0 8px rgba(230,126,34,0.55)); }
 
 .paver-glow {
   position: absolute;
@@ -454,6 +487,16 @@ img { max-width: 100%; display: block; }
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes paverFadeIn {
+  from { opacity: 0; transform: scale(0.5); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes paverPulse {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.8) drop-shadow(0 0 10px rgba(230,126,34,0.65)); }
 }
 
 /* ===== ABOUT ===== */
