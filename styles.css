@@ -1697,7 +1697,7 @@ img { max-width: 100%; display: block; }
   font-size: 0.88rem;
   transition: var(--transition);
 }
-.footer-links ul li a:hover { color: var(--primary); }
+.footer-links ul li a:hover { color: var(--accent); }
 
 .footer-products ul li {
   color: var(--text-muted);
