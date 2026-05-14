@@ -474,6 +474,59 @@
         y += fLines.length * 5.5 + 2;
       });
 
+      // ── Where It's Used ─────────────────────────────────────
+      if (p.applications && p.applications.length) {
+        y += 6;
+        if (y + 36 > pageH - 30) { doc.addPage(); y = 20; }
+
+        doc.setFont('helvetica', 'bold');
+        doc.setFontSize(10);
+        doc.setTextColor(...C_PRI);
+        doc.text('WHERE IT\'S USED', ml, y);
+        y += 6;
+
+        const n     = p.applications.length;
+        const cellW = cW / n;
+        const cellH = 22;
+
+        // Outer border
+        doc.setDrawColor(210, 215, 225);
+        doc.setLineWidth(0.3);
+        doc.roundedRect(ml, y, cW, cellH, 2, 2, 'S');
+
+        p.applications.forEach((a, i) => {
+          const cx = ml + i * cellW;
+
+          // Vertical divider (skip last)
+          if (i < n - 1) {
+            doc.setDrawColor(210, 215, 225);
+            doc.setLineWidth(0.3);
+            doc.line(cx + cellW, y, cx + cellW, y + cellH);
+          }
+
+          // Number
+          doc.setFont('helvetica', 'bold');
+          doc.setFontSize(6.5);
+          doc.setTextColor(...C_MUTED);
+          doc.text(`0${i + 1}`, cx + 5, y + 6);
+
+          // Label
+          doc.setFont('helvetica', 'bold');
+          doc.setFontSize(8.5);
+          doc.setTextColor(...C_DARK);
+          doc.text(a.label, cx + 5, y + 13);
+
+          // Description (alternating primary / accent)
+          doc.setFont('helvetica', 'normal');
+          doc.setFontSize(7);
+          doc.setTextColor(...(i % 2 === 0 ? C_PRI : C_ACC));
+          const dLines = doc.splitTextToSize(a.desc, cellW - 8);
+          doc.text(dLines, cx + 5, y + 19);
+        });
+
+        y += cellH + 4;
+      }
+
       // ── Footer ──────────────────────────────────────────────
       const fy = pageH - 16;
       doc.setFillColor(...C_LIGHT);
