@@ -178,7 +178,7 @@ img { max-width: 100%; display: block; }
 }
 
 .logo-full-img {
-  height: 120px;
+  height: 52px;
   width: auto;
   display: block;
   flex-shrink: 0;
@@ -1953,7 +1953,7 @@ img { max-width: 100%; display: block; }
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1.3fr;
+  grid-template-columns: 2fr 1fr 1fr;
   gap: 48px;
 }
 
