@@ -26,26 +26,6 @@ document.getElementById('backToTop').addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-// ===== PRODUCT TABS =====
-const tabBtns = document.querySelectorAll('.tab-btn');
-const productCards = document.querySelectorAll('.product-card');
-
-tabBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    tabBtns.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-
-    const tab = btn.dataset.tab;
-    productCards.forEach(card => {
-      if (tab === 'all' || card.dataset.category === tab) {
-        card.classList.remove('hidden');
-        card.style.animation = 'fadeIn 0.4s ease forwards';
-      } else {
-        card.classList.add('hidden');
-      }
-    });
-  });
-});
 
 // ===== EMAILJS INIT =====
 emailjs.init('YOUR_PUBLIC_KEY');
@@ -91,18 +71,6 @@ document.querySelectorAll('.product-card, .info-card, .app-card, .person-card').
   observer.observe(el);
 });
 
-// ===== PRODUCT QUOTE BUTTONS =====
-document.querySelectorAll('.product-card').forEach(card => {
-  const btn = document.createElement('a');
-  btn.className = 'product-quote-btn';
-  btn.innerHTML = 'View Details <i class="fa-solid fa-arrow-right"></i>';
-  btn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    const href = card.getAttribute('onclick').match(/'([^']+)'/)[1];
-    location.href = href;
-  });
-  card.appendChild(btn);
-});
 
 // ===== PRODUCT SLIDER =====
 const slides = document.querySelectorAll('.slide');
