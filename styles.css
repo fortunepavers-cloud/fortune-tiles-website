@@ -178,7 +178,7 @@ img { max-width: 100%; display: block; }
 }
 
 .logo-full-img {
-  height: 48px;
+  height: 60px;
   width: auto;
   display: block;
   flex-shrink: 0;
