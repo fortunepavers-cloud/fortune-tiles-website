@@ -109,13 +109,13 @@ function gotoSlide(idx) {
   sDots[activeSlide].classList.add('active');
 }
 
-let sliderTimer = setInterval(() => gotoSlide(activeSlide + 1), 3000);
+let sliderTimer = setInterval(() => gotoSlide(activeSlide + 1), 2000);
 
 sDots.forEach((dot, i) => {
   dot.addEventListener('click', () => {
     clearInterval(sliderTimer);
     gotoSlide(i);
-    sliderTimer = setInterval(() => gotoSlide(activeSlide + 1), 3000);
+    sliderTimer = setInterval(() => gotoSlide(activeSlide + 1), 2000);
   });
 });
 
