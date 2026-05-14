@@ -234,11 +234,11 @@ img { max-width: 100%; display: block; }
 }
 
 .navbar.scrolled .nav-links li a:hover {
-  color: var(--white);
+  color: var(--accent);
   background: rgba(255,255,255,0.12);
 }
 
-.nav-links li a:hover { color: var(--white); }
+.nav-links li a:hover { color: var(--accent); }
 
 .nav-links li a.nav-cta {
   background: var(--primary);
