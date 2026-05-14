@@ -121,7 +121,7 @@ const PRODUCTS = {
   'rubbermould-square-200': {
     name: 'Rubbermould Square 200×200',
     category: 'Rubbermould',
-    image: 'images/Rubbermould Square 200 x 200 x 60MM.png',
+    image: 'images/Rubbermould Square 200x200.png',
     shortDesc: 'Large-format 200×200mm rubbermould square paver with a smooth finish — ideal for driveways, plazas and open areas.',
     description: 'The Rubbermould Square 200×200 paver offers a larger format with the same smooth rubber mould finish. Its greater surface area delivers a bold visual impact, making it ideal for driveways, open plazas and commercial decorative flooring.',
     specs: [
