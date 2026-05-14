@@ -114,16 +114,16 @@ const orbitProducts = [
   { src: 'images/Grass Pavers.png',                   alt: 'Grass Pavers' },
 ];
 
-const orbitContainer = document.getElementById('productOrbit');
+const orbitItemsWrap = document.getElementById('orbitItemsWrap');
 const orbitCenterImg = document.getElementById('orbitCenterImg');
-const ORBIT_RADIUS = 165;
-const ORBIT_SIZE   = 420;
+const ORBIT_RADIUS = 170;
+const ORBIT_SIZE   = 440;
 let activeOrbit = 0;
 
 const orbitItemEls = orbitProducts.map((p, i) => {
   const item = document.createElement('div');
   item.className = 'orbit-item';
-  item.innerHTML = `<img src="${p.src}" alt="${p.alt}">`;
+  item.innerHTML = `<div class="orbit-item-glow"></div><img src="${p.src}" alt="${p.alt}">`;
   const angle = (i / orbitProducts.length) * 2 * Math.PI - Math.PI / 2;
   item.style.left = (ORBIT_SIZE / 2 + ORBIT_RADIUS * Math.cos(angle)) + 'px';
   item.style.top  = (ORBIT_SIZE / 2 + ORBIT_RADIUS * Math.sin(angle)) + 'px';
@@ -132,7 +132,7 @@ const orbitItemEls = orbitProducts.map((p, i) => {
     setOrbitActive(i);
     orbitTimer = setInterval(orbitNext, 2000);
   });
-  orbitContainer.appendChild(item);
+  orbitItemsWrap.appendChild(item);
   return item;
 });
 
