@@ -3,6 +3,7 @@ const PRODUCTS = {
     name: 'Vibro Brick Paver',
     category: 'Vibro Compaction',
     image: 'images/Vibro Brick Paver.png',
+    colors: ['Grey', 'Red', 'Yellow', 'Black'],
     shortDesc: 'Traditional brick-shaped vibro compaction paver with superior strength, perfect for walkways and industrial zones.',
     description: 'The Vibro Brick Paver is a classic brick-shaped paver manufactured using state-of-the-art Apollo Zenith German technology. Produced through vibro compaction, these pavers deliver superior strength and durability — suitable for residential walkways, commercial driveways and heavy-duty industrial zones.',
     specs: [
@@ -27,6 +28,7 @@ const PRODUCTS = {
     name: 'Vibro Unipaver',
     category: 'Vibro Compaction',
     image: 'images/Vibro Unipaver.png',
+    colors: ['Grey', 'Red', 'Yellow', 'Black'],
     shortDesc: 'Versatile interlocking vibro unipaver suitable for pedestrian paths and vehicular areas alike.',
     description: 'The Vibro Unipaver is a versatile interlocking paver designed for both pedestrian and vehicular use. Its unique shape provides excellent interlock between pavers, offering a stable and attractive surface for a wide range of applications.',
     specs: [
@@ -51,6 +53,7 @@ const PRODUCTS = {
     name: 'Vibro Square Paver 150×150',
     category: 'Vibro Compaction',
     image: 'images/Vibro Square 150 x 150 x 60MM.png',
+    colors: ['Grey', 'Red', 'Yellow', 'Black'],
     shortDesc: 'Compact 150×150mm square vibro compaction paver, great for walkways, courtyards and decorative areas.',
     description: 'The Vibro Square 150×150 paver offers a clean, modern square format ideal for walkways, courtyards and decorative flooring. Its compact size makes it perfect for detailed patterns and smaller spaces while retaining the full strength of vibro compaction technology.',
     specs: [
@@ -75,6 +78,7 @@ const PRODUCTS = {
     name: 'Vibro Square Paver 200×200',
     category: 'Vibro Compaction',
     image: 'images/Vibro Square 200 x 200 x 60MM.png',
+    colors: ['Grey', 'Red', 'Yellow', 'Black'],
     shortDesc: 'Large-format 200×200mm square vibro compaction paver for driveways, plazas and heavy-duty public spaces.',
     description: 'The Vibro Square 200×200 paver is a large-format paver engineered for high-traffic areas including driveways, public plazas and industrial spaces. Its greater surface area provides a bold visual impact while delivering outstanding structural performance.',
     specs: [
@@ -99,6 +103,7 @@ const PRODUCTS = {
     name: 'Rubbermould Square 150×150',
     category: 'Rubbermould',
     image: 'images/Rubbermould Square.png',
+    colors: ['Grey', 'Red', 'Yellow', 'Charcoal', 'Ivory'],
     shortDesc: 'Compact 150×150mm rubbermould square paver with a smooth finish — ideal for garden paths, courtyards and decorative flooring.',
     description: 'The Rubbermould Square 150×150 paver is cast using rubber moulds to produce a smooth, refined finish. Its compact size makes it ideal for detailed pattern laying in gardens, courtyards and residential pathways.',
     specs: [
@@ -122,6 +127,7 @@ const PRODUCTS = {
     name: 'Rubbermould Square 200×200',
     category: 'Rubbermould',
     image: 'images/Rubbermould Square 200x200.png',
+    colors: ['Grey', 'Red', 'Yellow', 'Charcoal', 'Ivory'],
     shortDesc: 'Large-format 200×200mm rubbermould square paver with a smooth finish — ideal for driveways, plazas and open areas.',
     description: 'The Rubbermould Square 200×200 paver offers a larger format with the same smooth rubber mould finish. Its greater surface area delivers a bold visual impact, making it ideal for driveways, open plazas and commercial decorative flooring.',
     specs: [
@@ -145,6 +151,7 @@ const PRODUCTS = {
     name: 'Rubbermould Unipaver',
     category: 'Rubbermould',
     image: 'images/Rubbermould Unipaver.png',
+    colors: ['Grey', 'Red', 'Yellow', 'Charcoal'],
     shortDesc: 'Interlocking unipaver in rubbermould finish — combines interlocking strength with a refined aesthetic.',
     description: 'The Rubbermould Unipaver combines the classic interlocking unipaver shape with the smooth, attractive finish of rubber mould casting. It offers both structural performance and visual elegance for walkways, garden landscapes and decorative pavements.',
     specs: [
@@ -169,6 +176,7 @@ const PRODUCTS = {
     image: null,
     icon: 'fa-grip',
     iconBg: 'linear-gradient(135deg,#f1c40f,#d4ac0d)',
+    colors: ['Grey', 'Red', 'Yellow', 'Black', 'Ivory'],
     shortDesc: 'Classic anti-skid chequered pattern tiles for footpaths, commercial floors and public spaces.',
     description: 'Fortune Chequered Tiles feature a classic anti-skid chequered pattern ideal for footpaths, commercial floors and public areas. Available in a wide range of sizes and vibrant colours, these tiles are designed to enhance safety without compromising on aesthetics.',
     specs: [

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Product | Fortune Tiles & Pavers</title>
   <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Oswald:wght@400;600;700&family=Raleway:wght@300;400;800;900&family=Cinzel:wght@700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;800&family=Oswald:wght@400;600;700&family=Raleway:wght@300;400;800;900&family=Cinzel:wght@700;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
@@ -30,65 +30,76 @@
     </div>
   </nav>
 
-  <!-- ===== PRODUCT HERO ===== -->
-  <section class="pd-hero">
-    <div class="pd-hero-overlay"></div>
+  <!-- ===== BREADCRUMB BAR ===== -->
+  <div class="pd-bar">
     <div class="container">
       <nav class="pd-breadcrumb">
-        <a href="index.html">Home</a>
+        <a href="index.html"><i class="fa-solid fa-house" style="font-size:0.7rem"></i> Home</a>
         <i class="fa-solid fa-chevron-right"></i>
         <a href="index.html#products">Products</a>
         <i class="fa-solid fa-chevron-right"></i>
         <span id="breadcrumbName">Product</span>
       </nav>
-      <h1 class="pd-hero-title" id="pdTitle">Loading...</h1>
-      <span class="pd-hero-tag" id="pdCategory"></span>
     </div>
-  </section>
+  </div>
 
-  <!-- ===== PRODUCT DETAIL ===== -->
-  <section class="pd-section">
+  <!-- ===== PRODUCT PAGE ===== -->
+  <div class="pd-page">
     <div class="container pd-grid">
 
-      <!-- Image -->
+      <!-- Left: Image Stage + Swatches -->
       <div class="pd-image-col">
-        <div class="pd-image-wrap" id="pdImageWrap">
-          <!-- filled by JS -->
+        <div class="pd-stage" id="pdStage">
+          <div id="pdImageWrap"><!-- filled by JS --></div>
         </div>
-        <a href="index.html#contact" class="btn btn-primary pd-quote-btn">
-          <i class="fa-solid fa-file-lines"></i> Get a Free Quote
-        </a>
-        <a href="index.html#products" class="pd-back-link">
+
+        <div class="pd-swatches" id="pdSwatches"></div>
+
+        <a href="index.html#products" class="pd-back">
           <i class="fa-solid fa-arrow-left"></i> Back to Products
         </a>
       </div>
 
-      <!-- Details -->
+      <!-- Right: Details -->
       <div class="pd-info-col">
-        <p class="pd-description" id="pdDescription"></p>
 
-        <div class="pd-block">
-          <h3 class="pd-block-title"><i class="fa-solid fa-table-list"></i> Specifications</h3>
-          <table class="pd-spec-table" id="pdSpecTable"></table>
+        <div>
+          <span class="pd-cat-badge" id="pdCategory"></span>
+          <h1 class="pd-name" id="pdTitle" style="margin-top:12px">Loading...</h1>
+          <p class="pd-desc" id="pdDescription" style="margin-top:14px"></p>
         </div>
 
-        <div class="pd-block">
-          <h3 class="pd-block-title"><i class="fa-solid fa-star"></i> Key Features</h3>
-          <ul class="pd-features" id="pdFeatures"></ul>
+        <hr class="pd-divider">
+
+        <div>
+          <p class="pd-section-label"><i class="fa-solid fa-table-list" style="margin-right:6px;opacity:0.6"></i>Specifications</p>
+          <div class="pd-specs" id="pdSpecs"></div>
         </div>
 
-        <div class="pd-cta-row">
+        <hr class="pd-divider">
+
+        <div>
+          <p class="pd-section-label"><i class="fa-solid fa-star" style="margin-right:6px;opacity:0.6"></i>Key Features</p>
+          <ul class="pd-feats" id="pdFeats"></ul>
+        </div>
+
+        <hr class="pd-divider">
+
+        <div class="pd-cta">
           <a href="https://wa.me/917228999995?text=Hello%2C%20I%20am%20interested%20in%20" id="pdWhatsapp" target="_blank" class="btn btn-primary">
             <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
           </a>
           <a href="tel:+917228999995" class="btn btn-outline-dark">
             <i class="fa-solid fa-phone"></i> Call Now
           </a>
+          <a href="index.html#contact" class="btn btn-outline-dark" style="border-color:var(--accent);color:var(--accent)">
+            <i class="fa-solid fa-file-lines"></i> Get Quote
+          </a>
         </div>
-      </div>
 
+      </div>
     </div>
-  </section>
+  </div>
 
   <!-- ===== FOOTER ===== -->
   <footer class="footer">
@@ -149,7 +160,15 @@
 
   <script src="products-data.js"></script>
   <script>
-    // Load product from URL param
+    const COLOR_HEX = {
+      'Grey':     '#8e9aa6',
+      'Red':      '#c0392b',
+      'Yellow':   '#d4a017',
+      'Black':    '#1e1e1e',
+      'Charcoal': '#4a4a4a',
+      'Ivory':    '#f0ead6',
+    };
+
     const params = new URLSearchParams(window.location.search);
     const id = params.get('id');
     const p = PRODUCTS[id];
@@ -158,45 +177,63 @@
       document.getElementById('pdTitle').textContent = 'Product Not Found';
     } else {
       document.title = p.name + ' | Fortune Tiles & Pavers';
-      document.getElementById('pdTitle').textContent = p.name;
-      document.getElementById('pdCategory').textContent = p.category;
+      document.getElementById('pdTitle').textContent       = p.name;
+      document.getElementById('pdCategory').textContent    = p.category;
       document.getElementById('breadcrumbName').textContent = p.name;
       document.getElementById('pdDescription').textContent = p.description;
 
       // Image or icon
       const wrap = document.getElementById('pdImageWrap');
       if (p.image) {
-        wrap.innerHTML = `<img src="${p.image}" alt="${p.name}">`;
+        wrap.innerHTML = `<img src="${p.image}" alt="${p.name}" id="pdMainImg">`;
       } else {
-        wrap.innerHTML = `<div class="pd-icon-wrap" style="background:${p.iconBg}"><i class="fa-solid ${p.icon}"></i></div>`;
+        wrap.innerHTML = `<div class="pd-icon-wrap" style="background:${p.iconBg}"><i class="fa-solid ${p.icon}" style="font-size:3.5rem"></i></div>`;
       }
 
-      // Specs table
-      const table = document.getElementById('pdSpecTable');
-      table.innerHTML = p.specs.map(([k, v]) =>
-        `<tr><td>${k}</td><td>${v}</td></tr>`
+      // Color swatches
+      const swatchWrap = document.getElementById('pdSwatches');
+      if (p.colors && p.colors.length) {
+        p.colors.forEach((color, i) => {
+          const btn = document.createElement('button');
+          btn.className = 'pd-swatch' + (i === 0 ? ' active' : '');
+          btn.innerHTML = `<span class="pd-swatch-dot" style="background:${COLOR_HEX[color] || '#ccc'}"></span>${color}`;
+          btn.addEventListener('click', () => {
+            swatchWrap.querySelectorAll('.pd-swatch').forEach(s => s.classList.remove('active'));
+            btn.classList.add('active');
+            // If variant images exist, swap here
+            if (p.colorImages && p.colorImages[color]) {
+              const img = document.getElementById('pdMainImg');
+              if (img) img.src = p.colorImages[color];
+            }
+          });
+          swatchWrap.appendChild(btn);
+        });
+      }
+
+      // Specs
+      const specsEl = document.getElementById('pdSpecs');
+      specsEl.innerHTML = p.specs.map(([k, v]) =>
+        `<div class="pd-spec-row"><span class="pd-spec-key">${k}</span><span class="pd-spec-val">${v}</span></div>`
       ).join('');
 
       // Features
-      const ul = document.getElementById('pdFeatures');
-      ul.innerHTML = p.features.map(f => `<li>${f}</li>`).join('');
+      const featsEl = document.getElementById('pdFeats');
+      featsEl.innerHTML = p.features.map(f => `<li>${f}</li>`).join('');
 
-      // WhatsApp link with product name
+      // WhatsApp link
       document.getElementById('pdWhatsapp').href =
         `https://wa.me/917228999995?text=Hello%2C%20I%20am%20interested%20in%20${encodeURIComponent(p.name)}.%20Please%20share%20details.`;
     }
 
-    // Navbar scroll
+    // Scroll + nav
     window.addEventListener('scroll', () => {
       document.getElementById('backToTop').classList.toggle('visible', window.scrollY > 400);
     });
     document.getElementById('backToTop').addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
-
-    // Hamburger
     const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('navLinks');
+    const navLinks  = document.getElementById('navLinks');
     hamburger.addEventListener('click', () => {
       hamburger.classList.toggle('open');
       navLinks.classList.toggle('open');
