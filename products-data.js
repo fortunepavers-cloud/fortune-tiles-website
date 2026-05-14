@@ -25,7 +25,12 @@ const PRODUCTS = {
       'Available in multiple colours',
       'Interlocking design for long-term stability',
       'Low maintenance — individual pavers replaceable',
-    ]
+    ],
+    applications: [
+      { label: 'Driveways',        desc: 'Residential and commercial vehicle entries.' },
+      { label: 'Walkways',         desc: 'Pedestrian paths and public pavements.' },
+      { label: 'Industrial Zones', desc: 'Factory floors and heavy-load aprons.' },
+    ],
   },
   'vibro-unipaver': {
     name: 'Vibro Unipaver',
@@ -53,7 +58,12 @@ const PRODUCTS = {
       'Available in multiple colours',
       'Easy to lay and replace',
       'Apollo Zenith German technology',
-    ]
+    ],
+    applications: [
+      { label: 'Pedestrian Paths', desc: 'Footpaths, corridors and garden walkways.' },
+      { label: 'Parking Areas',   desc: 'Open lots and covered parking decks.' },
+      { label: 'Plazas',          desc: 'Commercial and civic open spaces.' },
+    ],
   },
   'vibro-square-150': {
     name: 'Vibro Square Paver 150×150',
@@ -81,7 +91,12 @@ const PRODUCTS = {
       'Available in multiple colours',
       'Ideal for residential and commercial use',
       'Low maintenance surface',
-    ]
+    ],
+    applications: [
+      { label: 'Walkways',         desc: 'Garden paths and pedestrian corridors.' },
+      { label: 'Courtyards',       desc: 'Residential and hospitality courtyards.' },
+      { label: 'Decorative Areas', desc: 'Patios, pool surrounds and feature paving.' },
+    ],
   },
   'vibro-square-200': {
     name: 'Vibro Square Paver 200×200',
@@ -109,7 +124,12 @@ const PRODUCTS = {
       'Available in multiple colours',
       'Ideal for driveways and public spaces',
       'Apollo Zenith German technology',
-    ]
+    ],
+    applications: [
+      { label: 'Driveways',     desc: 'Residential and commercial vehicle entries.' },
+      { label: 'Plazas',        desc: 'Large public and commercial open spaces.' },
+      { label: 'Public Spaces', desc: 'Parks, civic areas and institutional grounds.' },
+    ],
   },
   'rubbermould-square': {
     name: 'Rubbermould Square 150×150',
@@ -138,7 +158,12 @@ const PRODUCTS = {
       'Non-slip surface',
       'Lightweight and easy to handle',
       'Ideal for residential and commercial decorative use',
-    ]
+    ],
+    applications: [
+      { label: 'Gardens',          desc: 'Ornamental garden paths and borders.' },
+      { label: 'Courtyards',       desc: 'Residential and hospitality courtyards.' },
+      { label: 'Pedestrian Areas', desc: 'Footpaths and light-use walkways.' },
+    ],
   },
   'rubbermould-square-200': {
     name: 'Rubbermould Square 200×200',
@@ -167,7 +192,12 @@ const PRODUCTS = {
       'Non-slip surface',
       'Suitable for driveways and open commercial areas',
       'Ideal for residential and commercial decorative use',
-    ]
+    ],
+    applications: [
+      { label: 'Driveways',        desc: 'Residential and commercial vehicle entries.' },
+      { label: 'Plazas',           desc: 'Large public and commercial open spaces.' },
+      { label: 'Commercial Areas', desc: 'Retail, hospitality and office forecourts.' },
+    ],
   },
   'rubbermould-unipaver': {
     name: 'Rubbermould Unipaver',
@@ -195,7 +225,12 @@ const PRODUCTS = {
       'Suitable for pedestrian walkways and landscapes',
       'Non-slip surface for safety',
       'Low maintenance',
-    ]
+    ],
+    applications: [
+      { label: 'Walkways',          desc: 'Garden and pedestrian pathways.' },
+      { label: 'Landscapes',        desc: 'Parks, gardens and green spaces.' },
+      { label: 'Decorative Paving', desc: 'Feature flooring and pool surrounds.' },
+    ],
   },
   'chequered-tiles': {
     name: 'Chequered Tiles',
@@ -225,7 +260,12 @@ const PRODUCTS = {
       'Suitable for heavy foot traffic',
       'Weather and UV resistant',
       'Easy to clean and maintain',
-    ]
+    ],
+    applications: [
+      { label: 'Footpaths',         desc: 'Public and private pedestrian paths.' },
+      { label: 'Commercial Floors', desc: 'Retail, office and factory entrances.' },
+      { label: 'Public Areas',      desc: 'Bus stands, stations and civic spaces.' },
+    ],
   },
   'hollow-block': {
     name: 'Hollow Block',
@@ -252,7 +292,12 @@ const PRODUCTS = {
       'Fast and easy to lay',
       'Available in standard sizes',
       'Cost-effective construction solution',
-    ]
+    ],
+    applications: [
+      { label: 'Boundary Walls', desc: 'Property perimeters and compound fencing.' },
+      { label: 'Partitions',     desc: 'Internal non-load-bearing room dividers.' },
+      { label: 'Compound Walls', desc: 'Industrial and residential compounds.' },
+    ],
   },
   'solid-block': {
     name: 'Solid Block',
@@ -279,7 +324,11 @@ const PRODUCTS = {
       'Dimensionally accurate',
       'Durable and long-lasting',
       'Ideal for industrial and commercial projects',
-    ]
+    ],
+    applications: [
+      { label: 'Load-bearing Walls',      desc: 'Structural walls for multi-storey buildings.' },
+      { label: 'Industrial Construction', desc: 'Factories, warehouses and commercial structures.' },
+    ],
   },
   'kerbstone': {
     name: 'Kerbstone',
@@ -306,7 +355,12 @@ const PRODUCTS = {
       'Weather and abrasion resistant',
       'Easy to install',
       'Suitable for roads, driveways and landscapes',
-    ]
+    ],
+    applications: [
+      { label: 'Roads',          desc: 'Highway and road edge demarcation.' },
+      { label: 'Driveways',      desc: 'Residential and commercial entry borders.' },
+      { label: 'Garden Borders', desc: 'Landscape edge definition and planting beds.' },
+    ],
   },
   'grass-pavers': {
     name: 'Grass Pavers',
@@ -333,7 +387,12 @@ const PRODUCTS = {
       'High load-bearing capacity',
       'Natural aesthetic for green spaces',
       'Suitable for parking areas and garden paths',
-    ]
+    ],
+    applications: [
+      { label: 'Green Parking', desc: 'Eco-friendly vehicle parking areas.' },
+      { label: 'Gardens',       desc: 'Ornamental and functional garden surfaces.' },
+      { label: 'Landscapes',    desc: 'Parks, open spaces and green corridors.' },
+    ],
   },
   'flyash-bricks': {
     name: 'Fly Ash Bricks',
@@ -360,6 +419,11 @@ const PRODUCTS = {
       'Better thermal insulation',
       'Reduces construction dead load',
       'Eco-friendly and sustainable choice',
-    ]
+    ],
+    applications: [
+      { label: 'Walls',                desc: 'External and internal building walls.' },
+      { label: 'Partitions',           desc: 'Internal room dividers and partitions.' },
+      { label: 'General Construction', desc: 'Residential and commercial buildings.' },
+    ],
   },
 };
