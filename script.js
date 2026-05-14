@@ -98,6 +98,28 @@ document.querySelectorAll('.product-card').forEach(card => {
   card.appendChild(btn);
 });
 
+// ===== PRODUCT SLIDER =====
+const slides = document.querySelectorAll('.slide');
+const sDots = document.querySelectorAll('.s-dot');
+let activeSlide = 0;
+
+function gotoSlide(idx) {
+  slides[activeSlide].classList.remove('active');
+  sDots[activeSlide].classList.remove('active');
+  activeSlide = (idx + slides.length) % slides.length;
+  slides[activeSlide].classList.add('active');
+  sDots[activeSlide].classList.add('active');
+}
+
+let sliderTimer = setInterval(() => gotoSlide(activeSlide + 1), 2000);
+
+sDots.forEach((dot, i) => {
+  dot.addEventListener('click', () => {
+    clearInterval(sliderTimer);
+    gotoSlide(i);
+    sliderTimer = setInterval(() => gotoSlide(activeSlide + 1), 2000);
+  });
+});
 
 // ===== ACTIVE NAV LINK ON SCROLL =====
 const sections = document.querySelectorAll('section[id]');
