@@ -349,99 +349,145 @@ img { max-width: 100%; display: block; }
   pointer-events: none;
 }
 
-/* ===== 3D PRODUCT CAROUSEL ===== */
+/* ===== PRODUCT ORBIT ===== */
 .product-orbit {
   position: relative;
   width: 440px;
-  height: 320px;
+  height: 440px;
   flex-shrink: 0;
 }
 
-.carousel-scene {
+.orbit-glow-backdrop {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 280px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  perspective: 900px;
-  overflow: hidden;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(26,111,196,0.3) 0%, transparent 68%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 0;
+  animation: backdropPulse 3.5s ease-in-out infinite;
 }
 
-.carousel-track {
-  position: relative;
-  width: 160px;
-  height: 160px;
-  transform-style: preserve-3d;
-  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+@keyframes backdropPulse {
+  0%, 100% { opacity: 0.7; transform: translate(-50%, -50%) scale(1); }
+  50%       { opacity: 1;   transform: translate(-50%, -50%) scale(1.2); }
 }
 
-.carousel-card {
+.orbit-ring {
+  position: absolute;
+  width: 352px;
+  height: 352px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.14);
+  box-shadow: 0 0 30px rgba(26,111,196,0.2), inset 0 0 30px rgba(26,111,196,0.08);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.orbit-items-wrap {
   position: absolute;
   inset: 0;
-  border-radius: 18px;
+  animation: orbitSpin 25s linear infinite;
+  z-index: 2;
+}
+
+@keyframes orbitSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.orbit-item {
+  position: absolute;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
   background: rgba(255,255,255,0.07);
-  border: 1.5px solid rgba(255,255,255,0.15);
+  border: 1.5px solid rgba(255,255,255,0.18);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  opacity: 0.5;
-  backface-visibility: hidden;
-  transition: opacity 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease;
+  transition: border-color 0.35s ease, background 0.35s ease, box-shadow 0.35s ease;
+  animation: counterSpin 25s linear infinite;
 }
 
-.carousel-card-inner {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+@keyframes counterSpin {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(-360deg); }
 }
 
-.carousel-card img {
-  width: 72%;
-  height: 72%;
-  object-fit: contain;
-  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4));
+.orbit-item-glow {
+  position: absolute;
+  inset: -5px;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.4s ease;
   pointer-events: none;
 }
 
-.carousel-card.active {
+.orbit-item img {
+  width: 66%;
+  height: 66%;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4));
+  pointer-events: none;
+  position: relative;
+  z-index: 1;
+}
+
+.orbit-item.active {
+  border-color: var(--accent);
+  background: rgba(230,126,34,0.2);
+  box-shadow: 0 0 24px rgba(230,126,34,0.7), 0 0 48px rgba(230,126,34,0.25);
+}
+
+.orbit-item.active .orbit-item-glow {
   opacity: 1;
-  border-color: rgba(255,255,255,0.38);
-  box-shadow: 0 24px 60px rgba(0,0,0,0.5), 0 0 44px rgba(26,111,196,0.35);
+  animation: orbitGlowPulse 2s ease-in-out infinite;
 }
 
-.carousel-card.active .carousel-card-inner {
-  animation: cardFloat 3.2s ease-in-out infinite;
+@keyframes orbitGlowPulse {
+  0%, 100% { box-shadow: 0 0 8px 2px rgba(230,126,34,0.3); }
+  50%       { box-shadow: 0 0 20px 7px rgba(230,126,34,0.6); }
 }
 
-@keyframes cardFloat {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(-10px); }
+.orbit-item:hover:not(.active) {
+  border-color: rgba(255,255,255,0.5);
+  background: rgba(255,255,255,0.13);
+  box-shadow: 0 0 14px rgba(255,255,255,0.18);
 }
 
-.carousel-card:hover:not(.active) {
-  opacity: 0.8;
-}
-
-.carousel-label {
+.orbit-center {
   position: absolute;
-  bottom: 0;
+  width: 158px;
+  height: 158px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.09);
+  border: 2px solid rgba(255,255,255,0.32);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0 10px rgba(26,111,196,0.1), 0 0 60px rgba(26,111,196,0.5), inset 0 1px 0 rgba(255,255,255,0.25);
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
-  margin: 0;
-  color: rgba(255,255,255,0.88);
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  white-space: nowrap;
-  transition: opacity 0.3s ease;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+#orbitCenterImg {
+  width: 76%;
+  height: 76%;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 14px rgba(0,0,0,0.55));
+  transition: opacity 0.35s ease;
 }
 
 /* ===== HERO ===== */
