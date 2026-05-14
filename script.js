@@ -98,62 +98,28 @@ document.querySelectorAll('.product-card').forEach(card => {
   card.appendChild(btn);
 });
 
-// ===== PRODUCT ORBIT =====
-const orbitProducts = [
-  { src: 'images/Vibro Unipaver.png',                 alt: 'Vibro Unipaver' },
-  { src: 'images/Vibro Brick Paver.png',              alt: 'Vibro Brick Paver' },
-  { src: 'images/Vibro Square 150 x 150 x 60MM.png',  alt: 'Vibro Square 150mm' },
-  { src: 'images/Vibro Square 200 x 200 x 60MM.png',  alt: 'Vibro Square 200mm' },
-  { src: 'images/Rubbermould Square.png',             alt: 'Rubbermould Square 150×150' },
-  { src: 'images/Rubbermould Unipaver.png',           alt: 'Rubbermould Unipaver' },
-  { src: 'images/Rubbermould Square 200x200.png',     alt: 'Rubbermould Square 200×200' },
-  { src: 'images/Hollow Blocks.png',                  alt: 'Hollow Block' },
-  { src: 'images/Solid Block.png',                    alt: 'Solid Block' },
-  { src: 'images/Flyash Bricks.png',                  alt: 'Fly Ash Bricks' },
-  { src: 'images/Curb Stone.png',                     alt: 'Kerbstone' },
-  { src: 'images/Grass Pavers.png',                   alt: 'Grass Pavers' },
-];
+// ===== PRODUCT SLIDER =====
+const slides = document.querySelectorAll('.slide');
+const sDots = document.querySelectorAll('.s-dot');
+let activeSlide = 0;
 
-const orbitContainer = document.getElementById('productOrbit');
-const orbitCenterImg = document.getElementById('orbitCenterImg');
-const ORBIT_RADIUS = 165;
-const ORBIT_SIZE   = 420;
-let activeOrbit = 0;
+function gotoSlide(idx) {
+  slides[activeSlide].classList.remove('active');
+  sDots[activeSlide].classList.remove('active');
+  activeSlide = (idx + slides.length) % slides.length;
+  slides[activeSlide].classList.add('active');
+  sDots[activeSlide].classList.add('active');
+}
 
-const orbitItemEls = orbitProducts.map((p, i) => {
-  const item = document.createElement('div');
-  item.className = 'orbit-item';
-  item.innerHTML = `<img src="${p.src}" alt="${p.alt}">`;
-  const angle = (i / orbitProducts.length) * 2 * Math.PI - Math.PI / 2;
-  item.style.left = (ORBIT_SIZE / 2 + ORBIT_RADIUS * Math.cos(angle)) + 'px';
-  item.style.top  = (ORBIT_SIZE / 2 + ORBIT_RADIUS * Math.sin(angle)) + 'px';
-  item.addEventListener('click', () => {
-    clearInterval(orbitTimer);
-    setOrbitActive(i);
-    orbitTimer = setInterval(orbitNext, 2000);
+let sliderTimer = setInterval(() => gotoSlide(activeSlide + 1), 2000);
+
+sDots.forEach((dot, i) => {
+  dot.addEventListener('click', () => {
+    clearInterval(sliderTimer);
+    gotoSlide(i);
+    sliderTimer = setInterval(() => gotoSlide(activeSlide + 1), 2000);
   });
-  orbitContainer.appendChild(item);
-  return item;
 });
-
-function setOrbitActive(idx) {
-  orbitItemEls[activeOrbit].classList.remove('active');
-  activeOrbit = idx;
-  orbitItemEls[activeOrbit].classList.add('active');
-  orbitCenterImg.style.opacity = '0';
-  setTimeout(() => {
-    orbitCenterImg.src = orbitProducts[activeOrbit].src;
-    orbitCenterImg.alt = orbitProducts[activeOrbit].alt;
-    orbitCenterImg.style.opacity = '1';
-  }, 180);
-}
-
-function orbitNext() {
-  setOrbitActive((activeOrbit + 1) % orbitProducts.length);
-}
-
-setOrbitActive(0);
-let orbitTimer = setInterval(orbitNext, 2000);
 
 // ===== ACTIVE NAV LINK ON SCROLL =====
 const sections = document.querySelectorAll('section[id]');
