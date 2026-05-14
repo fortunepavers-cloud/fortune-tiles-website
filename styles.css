@@ -1864,16 +1864,7 @@ img { max-width: 100%; display: block; }
   color: var(--text-muted);
   margin-bottom: 2px;
 }
-.pd-side-name {
-  display: block;
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: var(--text);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 140px;
-}
+.pd-side-name { display: none; }
 .pd-side-label--right { text-align: right; }
 @media (max-width: 768px) {
   .pd-side-btn { padding: 12px; max-width: unset; }
