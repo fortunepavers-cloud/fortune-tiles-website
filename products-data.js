@@ -7,7 +7,6 @@ const PRODUCTS = {
     colors: ['Grey', 'Red', 'Yellow', 'Black', 'Brown'],
     highlights: [
       { label: 'Thickness', value: '60 / 80', unit: 'mm' },
-      { label: 'Coverage',  value: '50',      unit: 'pcs/m²' },
       { label: 'Colours',   value: '5',        unit: 'options' },
     ],
     shortDesc: 'Traditional brick-shaped vibro compaction paver with superior strength, perfect for walkways and industrial zones.',
@@ -36,7 +35,6 @@ const PRODUCTS = {
     colors: ['Grey', 'Red', 'Yellow', 'Black', 'Brown'],
     highlights: [
       { label: 'Thickness', value: '60 / 80', unit: 'mm' },
-      { label: 'Coverage',  value: '40',      unit: 'pcs/m²' },
       { label: 'Colours',   value: '5',        unit: 'options' },
     ],
     shortDesc: 'Versatile interlocking vibro unipaver suitable for pedestrian paths and vehicular areas alike.',
@@ -65,7 +63,6 @@ const PRODUCTS = {
     colors: ['Grey', 'Red', 'Yellow', 'Black', 'Brown'],
     highlights: [
       { label: 'Thickness', value: '60',  unit: 'mm' },
-      { label: 'Coverage',  value: '44', unit: 'pcs/m²' },
       { label: 'Colours',   value: '5',   unit: 'options' },
     ],
     shortDesc: 'Compact 150×150mm square vibro compaction paver, great for walkways, courtyards and decorative areas.',
@@ -94,7 +91,6 @@ const PRODUCTS = {
     colors: ['Grey', 'Red', 'Yellow', 'Black', 'Brown'],
     highlights: [
       { label: 'Thickness', value: '60 / 80', unit: 'mm' },
-      { label: 'Coverage',  value: '25',      unit: 'pcs/m²' },
       { label: 'Colours',   value: '5',        unit: 'options' },
     ],
     shortDesc: 'Large-format 200×200mm square vibro compaction paver for driveways, plazas and heavy-duty public spaces.',
@@ -123,7 +119,6 @@ const PRODUCTS = {
     colors: ['Grey', 'Red', 'Yellow', 'Charcoal', 'Ivory', 'Brown'],
     highlights: [
       { label: 'Thickness', value: '35 / 40', unit: 'mm' },
-      { label: 'Coverage',  value: '44',      unit: 'pcs/m²' },
       { label: 'Colours',   value: '6',        unit: 'options' },
     ],
     shortDesc: 'Compact 150×150mm rubbermould square paver with a smooth finish — ideal for garden paths, courtyards and decorative flooring.',
@@ -153,7 +148,6 @@ const PRODUCTS = {
     colors: ['Grey', 'Red', 'Yellow', 'Charcoal', 'Ivory', 'Brown'],
     highlights: [
       { label: 'Thickness', value: '40 / 60', unit: 'mm' },
-      { label: 'Coverage',  value: '25',      unit: 'pcs/m²' },
       { label: 'Colours',   value: '6',        unit: 'options' },
     ],
     shortDesc: 'Large-format 200×200mm rubbermould square paver with a smooth finish — ideal for driveways, plazas and open areas.',
@@ -183,7 +177,6 @@ const PRODUCTS = {
     colors: ['Grey', 'Red', 'Yellow', 'Charcoal', 'Brown'],
     highlights: [
       { label: 'Thickness', value: '60', unit: 'mm' },
-      { label: 'Coverage',  value: '40', unit: 'pcs/m²' },
       { label: 'Colours',   value: '5',  unit: 'options' },
     ],
     shortDesc: 'Interlocking unipaver in rubbermould finish — combines interlocking strength with a refined aesthetic.',
@@ -214,7 +207,6 @@ const PRODUCTS = {
     colors: ['Grey', 'Red', 'Yellow', 'Black', 'Ivory', 'Brown'],
     highlights: [
       { label: 'Thickness', value: '35 / 40', unit: 'mm' },
-      { label: 'Coverage',  value: '11',      unit: 'pcs/m²' },
       { label: 'Colours',   value: '6',        unit: 'options' },
     ],
     shortDesc: 'Classic anti-skid chequered pattern tiles for footpaths, commercial floors and public spaces.',
@@ -323,7 +315,6 @@ const PRODUCTS = {
     image: 'images/Grass Pavers.png',
     highlights: [
       { label: 'Thickness',  value: '80', unit: 'mm' },
-      { label: 'Coverage',   value: '6',  unit: 'pcs/m²' },
       { label: 'Open Area',  value: '30', unit: '%' },
     ],
     shortDesc: 'Open-cell grass pavers allowing vegetation to grow through — eco-friendly solution for green parking.',
