@@ -99,79 +99,85 @@ document.querySelectorAll('.product-card').forEach(card => {
 });
 
 
-// ===== SHOWCASE CARD =====
-const showcaseData = [
-  { src: 'images/Vibro Unipaver.png',                name: 'Vibro Unipaver',             cat: 'Vibro Compaction' },
-  { src: 'images/Vibro Brick Paver.png',             name: 'Vibro Brick Paver',           cat: 'Vibro Compaction' },
-  { src: 'images/Vibro Square 150 x 150 x 60MM.png', name: 'Vibro Square 150×150',        cat: 'Vibro Compaction' },
-  { src: 'images/Vibro Square 200 x 200 x 60MM.png', name: 'Vibro Square 200×200',        cat: 'Vibro Compaction' },
-  { src: 'images/Rubbermould Square.png',            name: 'Rubbermould Square 150×150',  cat: 'Rubbermould' },
-  { src: 'images/Rubbermould Unipaver.png',          name: 'Rubbermould Unipaver',         cat: 'Rubbermould' },
-  { src: 'images/Rubbermould Square 200x200.png',    name: 'Rubbermould Square 200×200',  cat: 'Rubbermould' },
-  { src: 'images/Hollow Blocks.png',                 name: 'Hollow Block',                cat: 'Blocks' },
-  { src: 'images/Solid Block.png',                   name: 'Solid Block',                 cat: 'Blocks' },
-  { src: 'images/Flyash Bricks.png',                 name: 'Fly Ash Bricks',              cat: 'Eco Bricks' },
-  { src: 'images/Curb Stone.png',                    name: 'Kerbstone',                   cat: 'Kerbs' },
-  { src: 'images/Grass Pavers.png',                  name: 'Grass Pavers',                cat: 'Specialty' },
+// ===== CARD DECK =====
+const deckProducts = [
+  { src: 'images/Vibro Unipaver.png',                name: 'Vibro Unipaver',            cat: 'Vibro Compaction' },
+  { src: 'images/Vibro Brick Paver.png',             name: 'Vibro Brick Paver',          cat: 'Vibro Compaction' },
+  { src: 'images/Vibro Square 150 x 150 x 60MM.png', name: 'Vibro Square 150×150',       cat: 'Vibro Compaction' },
+  { src: 'images/Vibro Square 200 x 200 x 60MM.png', name: 'Vibro Square 200×200',       cat: 'Vibro Compaction' },
+  { src: 'images/Rubbermould Square.png',            name: 'Rubbermould Square 150×150', cat: 'Rubbermould' },
+  { src: 'images/Rubbermould Unipaver.png',          name: 'Rubbermould Unipaver',        cat: 'Rubbermould' },
+  { src: 'images/Rubbermould Square 200x200.png',    name: 'Rubbermould Square 200×200', cat: 'Rubbermould' },
+  { src: 'images/Hollow Blocks.png',                 name: 'Hollow Block',               cat: 'Blocks' },
+  { src: 'images/Solid Block.png',                   name: 'Solid Block',                cat: 'Blocks' },
+  { src: 'images/Flyash Bricks.png',                 name: 'Fly Ash Bricks',             cat: 'Eco Bricks' },
+  { src: 'images/Curb Stone.png',                    name: 'Kerbstone',                  cat: 'Kerbs' },
+  { src: 'images/Grass Pavers.png',                  name: 'Grass Pavers',               cat: 'Specialty' },
 ];
 
-const showcaseWrap  = document.getElementById('showcaseWrap');
-const showcaseCard  = document.getElementById('showcaseCardInner');
-const showcaseImg   = document.getElementById('showcaseImg');
-const showcaseName  = document.getElementById('showcaseName');
-const showcaseCat   = document.getElementById('showcaseCat');
-const showcaseShine = document.getElementById('showcaseShine');
-const dotsContainer = document.getElementById('showcaseDots');
-let activeShowcase  = 0;
+const deckEl = document.getElementById('cardDeck');
+let deckHead = 0;
+let deckBusy = false;
 
-const scDots = showcaseData.map((_, i) => {
-  const dot = document.createElement('button');
-  dot.className = 'sc-dot';
-  dot.addEventListener('click', () => {
-    clearInterval(showcaseTimer);
-    setShowcase(i);
-    showcaseTimer = setInterval(showcaseNext, 3000);
-  });
-  dotsContainer.appendChild(dot);
-  return dot;
+// Build 3 card elements; each tracks its current slot
+const deckCards = [0, 1, 2].map(slot => {
+  const el = document.createElement('div');
+  el.className = 'deck-card';
+  el.dataset.slot = String(slot);
+  el.innerHTML = `<img src="" alt=""><div class="card-footer"><div class="card-name"></div><div class="card-cat"></div></div>`;
+  deckEl.appendChild(el);
+  return { el, slot };
 });
 
-showcaseWrap.addEventListener('mousemove', (e) => {
-  const rect = showcaseCard.getBoundingClientRect();
-  const dx = (e.clientX - rect.left - rect.width / 2)  / (rect.width / 2);
-  const dy = (e.clientY - rect.top  - rect.height / 2) / (rect.height / 2);
-  showcaseCard.style.transform = `rotateY(${dx * 14}deg) rotateX(${-dy * 12}deg)`;
-  const px = ((e.clientX - rect.left) / rect.width) * 100;
-  const py = ((e.clientY - rect.top)  / rect.height) * 100;
-  showcaseShine.style.background = `radial-gradient(circle at ${px}% ${py}%, rgba(255,255,255,0.2) 0%, transparent 55%)`;
-});
-
-showcaseWrap.addEventListener('mouseleave', () => {
-  showcaseCard.style.transform = 'rotateY(0deg) rotateX(0deg)';
-  showcaseShine.style.background = 'radial-gradient(circle at 50% -20%, rgba(255,255,255,0.18) 0%, transparent 55%)';
-});
-
-function setShowcase(idx) {
-  scDots[activeShowcase].classList.remove('active');
-  activeShowcase = ((idx % showcaseData.length) + showcaseData.length) % showcaseData.length;
-  scDots[activeShowcase].classList.add('active');
-  const p = showcaseData[activeShowcase];
-  showcaseImg.style.opacity = '0';
-  showcaseImg.style.transform = 'translateY(10px) scale(0.95)';
-  setTimeout(() => {
-    showcaseImg.src = p.src;
-    showcaseImg.alt = p.name;
-    showcaseName.textContent = p.name;
-    showcaseCat.textContent = p.cat;
-    showcaseImg.style.opacity = '1';
-    showcaseImg.style.transform = 'translateY(0) scale(1)';
-  }, 200);
+function fillCard(c) {
+  const p = deckProducts[(deckHead + c.slot) % deckProducts.length];
+  c.el.querySelector('img').src = p.src;
+  c.el.querySelector('img').alt = p.name;
+  c.el.querySelector('.card-name').textContent = p.name;
+  c.el.querySelector('.card-cat').textContent = p.cat;
 }
 
-function showcaseNext() { setShowcase(activeShowcase + 1); }
+deckCards.forEach(fillCard);
 
-setShowcase(0);
-let showcaseTimer = setInterval(showcaseNext, 3000);
+function advanceDeck() {
+  if (deckBusy) return;
+  deckBusy = true;
+
+  const top = deckCards.find(c => c.slot === 0);
+
+  // Fly out the front card; immediately shift the others forward
+  top.el.classList.add('fly-out');
+  deckCards.forEach(c => {
+    if (c.slot > 0) { c.slot--; c.el.dataset.slot = String(c.slot); }
+  });
+
+  setTimeout(() => {
+    // Instantly reposition the flew-out card to the back (slot 2)
+    top.el.style.transition = 'none';
+    top.el.classList.remove('fly-out');
+    top.slot = 2;
+    top.el.dataset.slot = '2';
+
+    // Advance product head and load new product onto back card
+    deckHead = (deckHead + 1) % deckProducts.length;
+    fillCard(top);
+
+    // Re-enable transitions after paint
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      top.el.style.transition = '';
+      deckBusy = false;
+    }));
+  }, 560);
+}
+
+// Click front card to advance
+deckEl.addEventListener('click', () => {
+  clearInterval(deckTimer);
+  advanceDeck();
+  deckTimer = setInterval(advanceDeck, 3000);
+});
+
+let deckTimer = setInterval(advanceDeck, 3000);
 
 // ===== ACTIVE NAV LINK ON SCROLL =====
 const sections = document.querySelectorAll('section[id]');
