@@ -47,13 +47,25 @@
   <div class="pd-page">
     <div class="container pd-grid">
 
-      <!-- Left: Image Stage + Swatches -->
+      <!-- Left: Image Stage -->
       <div class="pd-image-col">
         <div class="pd-stage" id="pdStage">
-          <div id="pdImageWrap"><!-- filled by JS --></div>
+          <!-- Status badge -->
+          <div class="pd-status-badge">
+            <span class="pd-status-dot"></span>
+            In Production &nbsp;·&nbsp; Ships Pan-India
+          </div>
+          <!-- Product image -->
+          <div id="pdImageWrap" style="position:relative;z-index:1;width:100%;height:100%;display:flex;align-items:center;justify-content:center;"></div>
+          <!-- Bottom label -->
+          <div class="pd-stage-footer">
+            <span class="pd-stage-label" id="pdStageLabel">—</span>
+            <div class="pd-scale">
+              <div class="pd-scale-bar"></div>
+              <span class="pd-scale-text">200 mm</span>
+            </div>
+          </div>
         </div>
-
-        <div class="pd-swatches" id="pdSwatches"></div>
 
         <a href="index.html#products" class="pd-back">
           <i class="fa-solid fa-arrow-left"></i> Back to Products
@@ -63,14 +75,29 @@
       <!-- Right: Details -->
       <div class="pd-info-col">
 
+        <!-- Model ID + Category + Title + Description -->
         <div>
+          <p class="pd-model-id" id="pdModelId"></p>
           <span class="pd-cat-badge" id="pdCategory"></span>
-          <h1 class="pd-name" id="pdTitle" style="margin-top:12px">Loading...</h1>
-          <p class="pd-desc" id="pdDescription" style="margin-top:14px"></p>
+          <h1 class="pd-name" id="pdTitle" style="margin-top:10px">Loading...</h1>
+          <p class="pd-desc" id="pdDescription" style="margin-top:12px"></p>
         </div>
+
+        <!-- Colour Swatches -->
+        <div class="pd-swatches-wrap" id="pdSwatchesWrap" style="display:none">
+          <div class="pd-swatches-header">
+            <span class="pd-swatches-label">Top Layer Finish</span>
+            <span class="pd-selected-color" id="pdSelectedColor"></span>
+          </div>
+          <div class="pd-swatches" id="pdSwatches"></div>
+        </div>
+
+        <!-- Highlights stats row -->
+        <div class="pd-highlights" id="pdHighlights"></div>
 
         <hr class="pd-divider">
 
+        <!-- Specs -->
         <div>
           <p class="pd-section-label"><i class="fa-solid fa-table-list" style="margin-right:6px;opacity:0.6"></i>Specifications</p>
           <div class="pd-specs" id="pdSpecs"></div>
@@ -78,6 +105,7 @@
 
         <hr class="pd-divider">
 
+        <!-- Features -->
         <div>
           <p class="pd-section-label"><i class="fa-solid fa-star" style="margin-right:6px;opacity:0.6"></i>Key Features</p>
           <ul class="pd-feats" id="pdFeats"></ul>
@@ -85,11 +113,16 @@
 
         <hr class="pd-divider">
 
+        <!-- CTAs -->
         <div class="pd-cta">
-          <a href="https://wa.me/917228999995?text=Hello%2C%20I%20am%20interested%20in%20" id="pdWhatsapp" target="_blank" class="btn btn-primary">
-            <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
+          <a href="#" id="pdWhatsapp" target="_blank"
+             style="display:inline-flex;align-items:center;gap:9px;padding:13px 28px;background:#111;color:#fff;border-radius:8px;font-weight:700;font-size:0.88rem;transition:opacity 0.2s;"
+             onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
+            <i class="fa-brands fa-whatsapp" style="font-size:1rem"></i> Add to Quote
           </a>
-          <a href="index.html#contact" class="btn btn-outline-dark" style="border-color:var(--accent);color:var(--accent)">
+          <a href="index.html#contact"
+             style="display:inline-flex;align-items:center;gap:9px;padding:13px 28px;background:transparent;color:var(--text);border:1.5px solid rgba(0,0,0,0.2);border-radius:8px;font-weight:600;font-size:0.88rem;transition:border-color 0.2s;"
+             onmouseover="this.style.borderColor='var(--primary)'" onmouseout="this.style.borderColor='rgba(0,0,0,0.2)'">
             <i class="fa-solid fa-file-lines"></i> Get Quote
           </a>
         </div>
@@ -168,62 +201,92 @@
     };
 
     const params = new URLSearchParams(window.location.search);
-    const id = params.get('id');
-    const p = PRODUCTS[id];
+    const id     = params.get('id');
+    const p      = PRODUCTS[id];
 
     if (!p) {
       document.getElementById('pdTitle').textContent = 'Product Not Found';
     } else {
       document.title = p.name + ' | Fortune Tiles & Pavers';
-      document.getElementById('pdTitle').textContent       = p.name;
-      document.getElementById('pdCategory').textContent    = p.category;
+
+      // Basic fields
+      document.getElementById('pdTitle').textContent        = p.name;
+      document.getElementById('pdCategory').textContent     = p.category;
       document.getElementById('breadcrumbName').textContent = p.name;
-      document.getElementById('pdDescription').textContent = p.description;
+      document.getElementById('pdDescription').textContent  = p.description;
+
+      // Model ID
+      if (p.modelId) {
+        document.getElementById('pdModelId').textContent = 'MODEL  ' + p.modelId;
+      }
+
+      // Stage footer label
+      const stageLabel = [p.modelId, p.category].filter(Boolean).join(' · ');
+      document.getElementById('pdStageLabel').textContent = stageLabel;
 
       // Image or icon
       const wrap = document.getElementById('pdImageWrap');
       if (p.image) {
-        wrap.innerHTML = `<img src="${p.image}" alt="${p.name}" id="pdMainImg">`;
+        wrap.innerHTML = `<img src="${p.image}" alt="${p.name}" id="pdMainImg"
+          style="width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 14px 36px rgba(0,0,0,0.13));transition:transform 0.45s cubic-bezier(0.25,0.46,0.45,0.94);"
+          onmouseover="this.style.transform='scale(1.04)'"
+          onmouseout="this.style.transform='scale(1)'">`;
       } else {
         wrap.innerHTML = `<div class="pd-icon-wrap" style="background:${p.iconBg}"><i class="fa-solid ${p.icon}" style="font-size:3.5rem"></i></div>`;
       }
 
-      // Color swatches
-      const swatchWrap = document.getElementById('pdSwatches');
+      // Colour swatches
+      const swatchesWrap = document.getElementById('pdSwatchesWrap');
+      const swatchRow    = document.getElementById('pdSwatches');
+      const colorLabel   = document.getElementById('pdSelectedColor');
       if (p.colors && p.colors.length) {
+        swatchesWrap.style.display = 'flex';
         p.colors.forEach((color, i) => {
           const btn = document.createElement('button');
           btn.className = 'pd-swatch' + (i === 0 ? ' active' : '');
-          btn.innerHTML = `<span class="pd-swatch-dot" style="background:${COLOR_HEX[color] || '#ccc'}"></span>${color}`;
+          btn.style.setProperty('--sw-color', COLOR_HEX[color] || '#ccc');
+          btn.title = color;
           btn.addEventListener('click', () => {
-            swatchWrap.querySelectorAll('.pd-swatch').forEach(s => s.classList.remove('active'));
+            swatchRow.querySelectorAll('.pd-swatch').forEach(s => s.classList.remove('active'));
             btn.classList.add('active');
-            // If variant images exist, swap here
+            colorLabel.textContent = color;
             if (p.colorImages && p.colorImages[color]) {
               const img = document.getElementById('pdMainImg');
               if (img) img.src = p.colorImages[color];
             }
           });
-          swatchWrap.appendChild(btn);
+          swatchRow.appendChild(btn);
         });
+        colorLabel.textContent = p.colors[0];
+      }
+
+      // Highlights stats row
+      const hlEl = document.getElementById('pdHighlights');
+      if (p.highlights && p.highlights.length) {
+        hlEl.innerHTML = p.highlights.map(h =>
+          `<div class="pd-highlight">
+            <div class="pd-highlight-label">${h.label}</div>
+            <div class="pd-highlight-value">${h.value}<span class="pd-highlight-unit">${h.unit}</span></div>
+          </div>`
+        ).join('');
+      } else {
+        hlEl.style.display = 'none';
       }
 
       // Specs
-      const specsEl = document.getElementById('pdSpecs');
-      specsEl.innerHTML = p.specs.map(([k, v]) =>
+      document.getElementById('pdSpecs').innerHTML = p.specs.map(([k, v]) =>
         `<div class="pd-spec-row"><span class="pd-spec-key">${k}</span><span class="pd-spec-val">${v}</span></div>`
       ).join('');
 
       // Features
-      const featsEl = document.getElementById('pdFeats');
-      featsEl.innerHTML = p.features.map(f => `<li>${f}</li>`).join('');
+      document.getElementById('pdFeats').innerHTML = p.features.map(f => `<li>${f}</li>`).join('');
 
-      // WhatsApp link
+      // WhatsApp CTA
       document.getElementById('pdWhatsapp').href =
         `https://wa.me/917228999995?text=Hello%2C%20I%20am%20interested%20in%20${encodeURIComponent(p.name)}.%20Please%20share%20details.`;
     }
 
-    // Scroll + nav
+    // Scroll + nav utilities
     window.addEventListener('scroll', () => {
       document.getElementById('backToTop').classList.toggle('visible', window.scrollY > 400);
     });
