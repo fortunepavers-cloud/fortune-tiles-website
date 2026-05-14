@@ -1906,19 +1906,13 @@ img { max-width: 100%; display: block; }
 }
 .pd-where-item:last-child { border-right: none; }
 .pd-where-icon {
-  width: 34px;
-  height: 34px;
-  border-radius: 8px;
-  background: rgba(30,58,138,0.08);
   display: flex;
   align-items: center;
-  justify-content: center;
   margin-bottom: 10px;
-  font-size: 0.88rem;
+  font-size: 1rem;
   color: var(--primary);
 }
 .pd-where-item:nth-child(even) .pd-where-icon {
-  background: rgba(230,126,34,0.08);
   color: var(--accent);
 }
 .pd-where-num {
