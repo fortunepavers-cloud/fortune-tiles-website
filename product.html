@@ -131,6 +131,25 @@
           </button>
         </div>
 
+        <!-- Prev / Next navigation -->
+        <div class="pd-nav-row">
+          <a href="#" id="pdPrev" class="pd-nav-btn" style="display:none">
+            <i class="fa-solid fa-arrow-left"></i>
+            <div>
+              <span class="pd-nav-dir">Previous</span>
+              <span class="pd-nav-name" id="pdPrevName"></span>
+            </div>
+          </a>
+          <div style="flex:1"></div>
+          <a href="#" id="pdNext" class="pd-nav-btn pd-nav-btn--right" style="display:none">
+            <div>
+              <span class="pd-nav-dir">Next</span>
+              <span class="pd-nav-name" id="pdNextName"></span>
+            </div>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
       </div>
     </div>
   </div>
@@ -297,6 +316,24 @@
       // WhatsApp CTA
       document.getElementById('pdWhatsapp').href =
         `https://wa.me/917228999995?text=Hello%2C%20I%20am%20interested%20in%20${encodeURIComponent(p.name)}.%20Please%20share%20details.`;
+
+      // Prev / Next navigation
+      const productKeys = Object.keys(PRODUCTS);
+      const idx = productKeys.indexOf(id);
+      if (idx > 0) {
+        const prevId = productKeys[idx - 1];
+        const prevEl = document.getElementById('pdPrev');
+        prevEl.href = `product.html?id=${prevId}`;
+        document.getElementById('pdPrevName').textContent = PRODUCTS[prevId].name;
+        prevEl.style.display = 'flex';
+      }
+      if (idx < productKeys.length - 1) {
+        const nextId = productKeys[idx + 1];
+        const nextEl = document.getElementById('pdNext');
+        nextEl.href = `product.html?id=${nextId}`;
+        document.getElementById('pdNextName').textContent = PRODUCTS[nextId].name;
+        nextEl.style.display = 'flex';
+      }
     }
 
     // ===== PDF DOWNLOAD =====

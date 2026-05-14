@@ -1829,6 +1829,53 @@ img { max-width: 100%; display: block; }
 }
 .btn-outline-dark:hover { background: var(--primary); color: #fff; }
 
+/* Prev / Next navigation */
+.pd-nav-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+.pd-nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--text);
+  text-decoration: none;
+  transition: border-color 0.2s, background 0.2s;
+  min-width: 0;
+}
+.pd-nav-btn:hover {
+  border-color: var(--primary);
+  background: rgba(30,58,138,0.04);
+}
+.pd-nav-btn i { flex-shrink: 0; font-size: 0.8rem; color: var(--text-muted); }
+.pd-nav-dir {
+  display: block;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 2px;
+}
+.pd-nav-name {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 180px;
+}
+.pd-nav-btn--right { text-align: right; }
+.pd-nav-btn--right > div { text-align: right; }
+
 /* Where It's Used */
 .pd-where-header {
   display: flex;
