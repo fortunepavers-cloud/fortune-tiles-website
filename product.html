@@ -335,10 +335,8 @@
       const infoX = ml + imgW + 10;
       const infoW = cW - imgW - 10;
 
-      doc.setFillColor(248, 250, 252);
-      doc.roundedRect(ml, y, imgW, imgH, 3, 3, 'F');
       if (imgData) {
-        doc.addImage(imgData, 'JPEG', ml + 3, y + 3, imgW - 6, imgH - 6, '', 'FAST');
+        doc.addImage(imgData, 'JPEG', ml, y, imgW, imgH, '', 'FAST');
       }
 
       let iy = y + 2;
