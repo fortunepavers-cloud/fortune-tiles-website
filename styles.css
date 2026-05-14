@@ -182,9 +182,6 @@ img { max-width: 100%; display: block; }
   width: auto;
   display: block;
   flex-shrink: 0;
-  background: #fff;
-  padding: 4px 10px;
-  border-radius: 6px;
 }
 
 .logo-text {
