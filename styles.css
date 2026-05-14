@@ -182,7 +182,6 @@ img { max-width: 100%; display: block; }
   width: auto;
   display: block;
   flex-shrink: 0;
-  mix-blend-mode: multiply;
 }
 
 .logo-text {
