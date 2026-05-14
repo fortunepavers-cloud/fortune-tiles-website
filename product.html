@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;800&family=Oswald:wght@400;600;700&family=Raleway:wght@300;400;800;900&family=Cinzel:wght@700;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body>
 
@@ -124,6 +125,11 @@
              onmouseover="this.style.borderColor='var(--primary)'" onmouseout="this.style.borderColor='rgba(0,0,0,0.2)'">
             <i class="fa-solid fa-file-lines"></i> Get Quote
           </a>
+          <button id="pdDownloadBtn" onclick="downloadSpecPDF()"
+             style="display:inline-flex;align-items:center;gap:9px;padding:13px 28px;background:transparent;color:var(--text);border:1.5px solid rgba(0,0,0,0.2);border-radius:8px;font-weight:600;font-size:0.88rem;cursor:pointer;font-family:inherit;transition:border-color 0.2s;"
+             onmouseover="this.style.borderColor='var(--accent)';this.style.color='var(--accent)'" onmouseout="this.style.borderColor='rgba(0,0,0,0.2)';this.style.color='var(--text)'">
+            <i class="fa-solid fa-file-arrow-down"></i> Download Spec Sheet
+          </button>
         </div>
 
       </div>
@@ -278,6 +284,160 @@
       // WhatsApp CTA
       document.getElementById('pdWhatsapp').href =
         `https://wa.me/917228999995?text=Hello%2C%20I%20am%20interested%20in%20${encodeURIComponent(p.name)}.%20Please%20share%20details.`;
+    }
+
+    // ===== PDF DOWNLOAD =====
+    function downloadSpecPDF() {
+      if (!p) return;
+      const { jsPDF } = window.jspdf;
+      const doc   = new jsPDF();
+      const pageW = doc.internal.pageSize.getWidth();
+      const pageH = doc.internal.pageSize.getHeight();
+      const ml    = 20, mr = 20;
+      const cW    = pageW - ml - mr;
+      let y = 0;
+
+      const COL_PRIMARY = [30, 58, 138];
+      const COL_ACCENT  = [230, 126, 34];
+      const COL_DARK    = [30, 41, 59];
+      const COL_MUTED   = [100, 116, 139];
+      const COL_LIGHT   = [237, 242, 251];
+
+      // ── Header bar ──────────────────────────────────────────
+      doc.setFillColor(...COL_PRIMARY);
+      doc.rect(0, 0, pageW, 30, 'F');
+
+      doc.setTextColor(255, 255, 255);
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(13);
+      doc.text('FORTUNE TILES & PAVERS', ml, 14);
+
+      doc.setFont('helvetica', 'normal');
+      doc.setFontSize(8);
+      doc.text('www.fortunepavers.com  ·  fortunepavers@gmail.com', pageW - mr, 14, { align: 'right' });
+      doc.text('PRODUCT SPECIFICATION SHEET', ml, 24);
+
+      y = 44;
+
+      // ── Category + Name ────────────────────────────────────
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(8);
+      doc.setTextColor(...COL_ACCENT);
+      doc.text(p.category.toUpperCase(), ml, y);
+      y += 7;
+
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(20);
+      doc.setTextColor(...COL_DARK);
+      const nameLines = doc.splitTextToSize(p.name, cW);
+      doc.text(nameLines, ml, y);
+      y += nameLines.length * 8 + 5;
+
+      // ── Description ─────────────────────────────────────────
+      doc.setFont('helvetica', 'normal');
+      doc.setFontSize(9.5);
+      doc.setTextColor(...COL_MUTED);
+      const descLines = doc.splitTextToSize(p.description, cW);
+      doc.text(descLines, ml, y);
+      y += descLines.length * 5.5 + 8;
+
+      // ── Divider ─────────────────────────────────────────────
+      doc.setDrawColor(...COL_PRIMARY);
+      doc.setLineWidth(0.4);
+      doc.line(ml, y, pageW - mr, y);
+      y += 10;
+
+      // ── Highlights ──────────────────────────────────────────
+      if (p.highlights && p.highlights.length) {
+        const cellW = cW / p.highlights.length;
+        p.highlights.forEach((h, i) => {
+          const x = ml + i * cellW;
+          doc.setFont('helvetica', 'bold');
+          doc.setFontSize(7);
+          doc.setTextColor(...COL_MUTED);
+          doc.text(h.label.toUpperCase(), x, y);
+
+          doc.setFont('helvetica', 'bold');
+          doc.setFontSize(17);
+          doc.setTextColor(...COL_DARK);
+          doc.text(String(h.value), x, y + 9);
+
+          const valW = doc.getTextWidth(String(h.value));
+          doc.setFont('helvetica', 'normal');
+          doc.setFontSize(8);
+          doc.setTextColor(...COL_MUTED);
+          doc.text(h.unit, x + valW + 1.5, y + 9);
+        });
+        y += 22;
+        doc.setDrawColor(210, 215, 225);
+        doc.setLineWidth(0.25);
+        doc.line(ml, y, pageW - mr, y);
+        y += 10;
+      }
+
+      // ── Specifications ──────────────────────────────────────
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(10);
+      doc.setTextColor(...COL_PRIMARY);
+      doc.text('SPECIFICATIONS', ml, y);
+      y += 6;
+
+      p.specs.forEach(([k, v], i) => {
+        if (i % 2 === 0) {
+          doc.setFillColor(...COL_LIGHT);
+          doc.rect(ml, y - 4, cW, 8, 'F');
+        }
+        doc.setFont('helvetica', 'bold');
+        doc.setFontSize(8.5);
+        doc.setTextColor(...COL_MUTED);
+        doc.text(k, ml + 2, y);
+
+        doc.setFont('helvetica', 'normal');
+        doc.setTextColor(...COL_DARK);
+        const vLines = doc.splitTextToSize(v, cW - 62);
+        doc.text(vLines, ml + 60, y);
+        y += Math.max(8, vLines.length * 5.5 + 2);
+      });
+
+      y += 6;
+
+      // ── Key Features ────────────────────────────────────────
+      if (y + 40 > pageH - 30) { doc.addPage(); y = 20; }
+
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(10);
+      doc.setTextColor(...COL_PRIMARY);
+      doc.text('KEY FEATURES', ml, y);
+      y += 6;
+
+      p.features.forEach(f => {
+        doc.setFillColor(...COL_ACCENT);
+        doc.circle(ml + 2, y - 1.5, 1.2, 'F');
+        doc.setFont('helvetica', 'normal');
+        doc.setFontSize(9);
+        doc.setTextColor(...COL_DARK);
+        const fLines = doc.splitTextToSize(f, cW - 8);
+        doc.text(fLines, ml + 6, y);
+        y += fLines.length * 5.5 + 2;
+      });
+
+      // ── Footer ──────────────────────────────────────────────
+      const fy = pageH - 16;
+      doc.setFillColor(...COL_LIGHT);
+      doc.rect(0, fy - 5, pageW, 21, 'F');
+      doc.setDrawColor(...COL_PRIMARY);
+      doc.setLineWidth(0.3);
+      doc.line(0, fy - 5, pageW, fy - 5);
+      doc.setFont('helvetica', 'normal');
+      doc.setFontSize(7.5);
+      doc.setTextColor(...COL_MUTED);
+      doc.text(
+        'Fortune Tiles & Pavers  ·  Om Maa Party Plot, Nr. G.S.F.C. Township, Dashrath – 391 740, Vadodara  ·  +91 84535 45454',
+        pageW / 2, fy + 2, { align: 'center' }
+      );
+
+      const filename = p.name.replace(/[^a-z0-9]/gi, '-').replace(/-+/g, '-') + '-spec-sheet.pdf';
+      doc.save(filename);
     }
 
     // Scroll + nav utilities
