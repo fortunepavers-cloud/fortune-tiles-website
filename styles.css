@@ -904,6 +904,12 @@ img { max-width: 100%; display: block; }
   width: 14px;
   flex-shrink: 0;
 }
+.product-specs li a {
+  color: var(--primary);
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.product-specs li a:hover { color: var(--accent); }
 
 /* ===== PRODUCT SPEC TABLE ===== */
 .product-spec-table {
