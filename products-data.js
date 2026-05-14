@@ -136,7 +136,7 @@ const PRODUCTS = {
     category: 'Rubbermould',
     modelId: 'RMV-001',
     image: 'images/Rubbermould Square.png',
-    colors: ['Grey', 'Red', 'Yellow', 'Charcoal', 'Ivory', 'Brown'],
+    colors: ['Grey', 'Red', 'Yellow', 'Black', 'Ivory', 'Brown'],
     highlights: [
       { label: 'Thickness', value: '35 / 40', unit: 'mm' },
       { label: 'Colours',   value: '6',        unit: 'options' },
@@ -148,7 +148,7 @@ const PRODUCTS = {
       ['Thickness',   '35MM / 40MM'],
       ['Type',        'Rubbermould Cast'],
       ['Finish',      'Smooth'],
-      ['Colours',     'Grey, Red, Yellow, Charcoal, Ivory, Brown'],
+      ['Colours',     'Grey, Red, Yellow, Black, Ivory, Brown'],
       ['Application', 'Gardens, Courtyards, Pedestrian Areas'],
     ],
     features: [
@@ -170,7 +170,7 @@ const PRODUCTS = {
     category: 'Rubbermould',
     modelId: 'RMV-002',
     image: 'images/Rubbermould Square 200x200.png',
-    colors: ['Grey', 'Red', 'Yellow', 'Charcoal', 'Ivory', 'Brown'],
+    colors: ['Grey', 'Red', 'Yellow', 'Black', 'Ivory', 'Brown'],
     highlights: [
       { label: 'Thickness', value: '40 / 60', unit: 'mm' },
       { label: 'Colours',   value: '6',        unit: 'options' },
@@ -182,7 +182,7 @@ const PRODUCTS = {
       ['Thickness',   '40MM / 60MM'],
       ['Type',        'Rubbermould Cast'],
       ['Finish',      'Smooth'],
-      ['Colours',     'Grey, Red, Yellow, Charcoal, Ivory, Brown'],
+      ['Colours',     'Grey, Red, Yellow, Black, Ivory, Brown'],
       ['Application', 'Driveways, Plazas, Commercial Areas'],
     ],
     features: [
@@ -204,7 +204,7 @@ const PRODUCTS = {
     category: 'Rubbermould',
     modelId: 'RMV-003',
     image: 'images/Rubbermould Unipaver.png',
-    colors: ['Grey', 'Red', 'Yellow', 'Charcoal', 'Brown'],
+    colors: ['Grey', 'Red', 'Yellow', 'Black', 'Brown'],
     highlights: [
       { label: 'Thickness', value: '60', unit: 'mm' },
       { label: 'Colours',   value: '5',  unit: 'options' },
@@ -215,7 +215,7 @@ const PRODUCTS = {
       ['Type',        'Interlocking Rubbermould'],
       ['Thickness',   '60MM'],
       ['Finish',      'Smooth'],
-      ['Colours',     'Grey, Red, Yellow, Charcoal, Brown'],
+      ['Colours',     'Grey, Red, Yellow, Black, Brown'],
       ['Application', 'Walkways, Landscapes, Decorative'],
     ],
     features: [
