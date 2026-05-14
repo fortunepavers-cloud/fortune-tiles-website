@@ -12,7 +12,7 @@ function removeWhiteBg(img) {
     const sat = max === 0 ? 0 : (max - Math.min(r, g, b)) / max;
     if (r > 220 && g > 220 && b > 220) {
       d.data[i+3] = 0;                                        // white → transparent
-    } else if (max < 80 && sat < 0.2) {
+    } else if (max < 160 && sat < 0.2) {
       d.data[i] = d.data[i+1] = d.data[i+2] = 255;          // black/dark → white
     }
   }
