@@ -47,31 +47,25 @@ tabBtns.forEach(btn => {
   });
 });
 
-// ===== EMAILJS INIT =====
-emailjs.init('YOUR_PUBLIC_KEY');
-
-// ===== CONTACT FORM =====
+// ===== CONTACT FORM — WHATSAPP =====
 document.getElementById('contactForm').addEventListener('submit', function (e) {
   e.preventDefault();
-  const btn = this.querySelector('button[type="submit"]');
-  const success = document.getElementById('formSuccess');
 
-  btn.disabled = true;
-  btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+  const name    = this.querySelector('[name="from_name"]').value.trim();
+  const phone   = this.querySelector('[name="phone"]').value.trim();
+  const email   = this.querySelector('[name="from_email"]').value.trim();
+  const product = this.querySelector('[name="product"]').value.trim();
+  const message = this.querySelector('[name="message"]').value.trim();
 
-  emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
-    .then(() => {
-      success.classList.add('show');
-      this.reset();
-      btn.disabled = false;
-      btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send Inquiry';
-      setTimeout(() => success.classList.remove('show'), 5000);
-    })
-    .catch(() => {
-      btn.disabled = false;
-      btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send Inquiry';
-      alert('Failed to send. Please call us directly at +91 72289 99995.');
-    });
+  let text = `Hello, I am interested in Fortune Tiles & Pavers products.\n\n`;
+  text += `*Name:* ${name}\n`;
+  text += `*Phone:* ${phone}\n`;
+  if (email) text += `*Email:* ${email}\n`;
+  if (product) text += `*Product:* ${product}\n`;
+  text += `*Message:* ${message}`;
+
+  window.open(`https://wa.me/917228999995?text=${encodeURIComponent(text)}`, '_blank');
+  this.reset();
 });
 
 // ===== SCROLL REVEAL =====
