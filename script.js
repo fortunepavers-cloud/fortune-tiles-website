@@ -7,7 +7,15 @@ function removeWhiteBg(img) {
   ctx.drawImage(img, 0, 0);
   const d = ctx.getImageData(0, 0, canvas.width, canvas.height);
   for (let i = 0; i < d.data.length; i += 4) {
-    if (d.data[i] > 230 && d.data[i+1] > 230 && d.data[i+2] > 230) d.data[i+3] = 0;
+    const r = d.data[i], g = d.data[i+1], b = d.data[i+2];
+    if (r > 230 && g > 230 && b > 230) {
+      d.data[i+3] = 0;
+    } else {
+      const sat = Math.max(r,g,b) === 0 ? 0 : (Math.max(r,g,b) - Math.min(r,g,b)) / Math.max(r,g,b);
+      if (Math.max(r,g,b) < 110 && sat < 0.3) {
+        d.data[i] = d.data[i+1] = d.data[i+2] = 255;
+      }
+    }
   }
   ctx.putImageData(d, 0, 0);
   img.src = canvas.toDataURL();
