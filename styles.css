@@ -182,8 +182,9 @@ img { max-width: 100%; display: block; }
   width: auto;
   display: block;
   flex-shrink: 0;
-  mix-blend-mode: screen;
-  filter: invert(1);
+  background: #000;
+  padding: 4px 10px;
+  border-radius: 6px;
 }
 
 .logo-text {
