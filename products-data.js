@@ -96,14 +96,14 @@ const PRODUCTS = {
     ]
   },
   'rubbermould-square': {
-    name: 'Rubbermould Square',
+    name: 'Rubbermould Square 150×150',
     category: 'Rubbermould',
     image: 'images/Rubbermould Square.png',
-    shortDesc: 'Rubbermould square paver with a smooth finish — ideal for garden paths, courtyards and decorative flooring.',
-    description: 'The Rubbermould Square paver is cast using rubber moulds to produce a smooth, refined finish. Available in a variety of sizes and colours, it is the preferred choice for decorative flooring in gardens, courtyards and residential pathways.',
+    shortDesc: 'Compact 150×150mm rubbermould square paver with a smooth finish — ideal for garden paths, courtyards and decorative flooring.',
+    description: 'The Rubbermould Square 150×150 paver is cast using rubber moulds to produce a smooth, refined finish. Its compact size makes it ideal for detailed pattern laying in gardens, courtyards and residential pathways.',
     specs: [
-      ['Size', '150×150 mm / 200×200 mm'],
-      ['Thickness', '35MM / 40MM / 60MM'],
+      ['Size', '150 × 150 mm'],
+      ['Thickness', '35MM / 40MM'],
       ['Type', 'Rubbermould Cast'],
       ['Finish', 'Smooth'],
       ['Colours', 'Grey, Red, Yellow, Charcoal, Ivory'],
@@ -111,10 +111,33 @@ const PRODUCTS = {
     ],
     features: [
       'Smooth refined finish using rubber mould casting',
-      'Available in multiple sizes and colours',
+      'Compact size for detailed pattern laying',
       'Attractive appearance for decorative use',
       'Non-slip surface',
       'Lightweight and easy to handle',
+      'Ideal for residential and commercial decorative use',
+    ]
+  },
+  'rubbermould-square-200': {
+    name: 'Rubbermould Square 200×200',
+    category: 'Rubbermould',
+    image: 'images/Rubbermould Square 200 x 200 x 60MM.png',
+    shortDesc: 'Large-format 200×200mm rubbermould square paver with a smooth finish — ideal for driveways, plazas and open areas.',
+    description: 'The Rubbermould Square 200×200 paver offers a larger format with the same smooth rubber mould finish. Its greater surface area delivers a bold visual impact, making it ideal for driveways, open plazas and commercial decorative flooring.',
+    specs: [
+      ['Size', '200 × 200 mm'],
+      ['Thickness', '40MM / 60MM'],
+      ['Type', 'Rubbermould Cast'],
+      ['Finish', 'Smooth'],
+      ['Colours', 'Grey, Red, Yellow, Charcoal, Ivory'],
+      ['Application', 'Driveways, Plazas, Commercial Areas'],
+    ],
+    features: [
+      'Large format for bold visual impact',
+      'Smooth refined finish using rubber mould casting',
+      'Available in multiple colours',
+      'Non-slip surface',
+      'Suitable for driveways and open commercial areas',
       'Ideal for residential and commercial decorative use',
     ]
   },
