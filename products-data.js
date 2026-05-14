@@ -300,28 +300,4 @@ const PRODUCTS = {
       'Eco-friendly and sustainable choice',
     ]
   },
-  'manhole-covers': {
-    name: 'Man Hole Covers',
-    category: 'Infrastructure',
-    image: null,
-    icon: 'fa-circle-notch',
-    iconBg: 'linear-gradient(135deg,#16a085,#0e6655)',
-    shortDesc: 'Heavy-duty precast cement manhole covers for municipal and infrastructure applications.',
-    description: 'Fortune Man Hole Covers are heavy-duty precast cement covers designed for municipal drains, road infrastructure and industrial applications. Built to withstand heavy vehicular loads, they offer a durable, cost-effective alternative to cast iron covers.',
-    specs: [
-      ['Type', 'Precast Cement'],
-      ['Load Rating', 'Medium Duty / Heavy Duty'],
-      ['Finish', 'Smooth / Textured'],
-      ['Compressive Strength', '≥ 35 N/mm²'],
-      ['Application', 'Roads, Drains, Industrial Areas'],
-    ],
-    features: [
-      'Heavy-duty load rating for vehicular traffic',
-      'Precast cement for consistent quality',
-      'Cost-effective alternative to cast iron',
-      'Corrosion-free and long-lasting',
-      'Available in medium and heavy duty ratings',
-      'Suitable for municipal and industrial use',
-    ]
-  },
 };
