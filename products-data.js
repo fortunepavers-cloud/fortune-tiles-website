@@ -139,7 +139,7 @@ const PRODUCTS = {
     colors: ['Grey', 'Red', 'Yellow', 'Black', 'Brown'],
     highlights: [
       { label: 'Thickness', value: '35', unit: 'mm' },
-      { label: 'Colours',   value: '6',        unit: 'options' },
+      { label: 'Colours',   value: '5',        unit: 'options' },
     ],
     shortDesc: 'Compact 150×150mm rubbermould square paver with a smooth finish — ideal for garden paths, courtyards and decorative flooring.',
     description: 'The Rubbermould Square 150×150 paver is cast using rubber moulds to produce a smooth, refined finish. Its compact size makes it ideal for detailed pattern laying in gardens, courtyards and residential pathways.',
@@ -173,7 +173,7 @@ const PRODUCTS = {
     colors: ['Grey', 'Red', 'Yellow', 'Black', 'Brown'],
     highlights: [
       { label: 'Thickness', value: '60', unit: 'mm' },
-      { label: 'Colours',   value: '6',        unit: 'options' },
+      { label: 'Colours',   value: '5',        unit: 'options' },
     ],
     shortDesc: 'Large-format 200×200mm rubbermould square paver with a smooth finish — ideal for driveways, plazas and open areas.',
     description: 'The Rubbermould Square 200×200 paver offers a larger format with the same smooth rubber mould finish. Its greater surface area delivers a bold visual impact, making it ideal for driveways, open plazas and commercial decorative flooring.',
@@ -242,7 +242,7 @@ const PRODUCTS = {
     colors: ['Grey', 'Red', 'Yellow', 'Black', 'Brown'],
     highlights: [
       { label: 'Thickness', value: '25', unit: 'mm' },
-      { label: 'Colours',   value: '6',        unit: 'options' },
+      { label: 'Colours',   value: '5',        unit: 'options' },
     ],
     shortDesc: 'Classic anti-skid chequered pattern tiles for footpaths, commercial floors and public spaces.',
     description: 'Fortune Chequered Tiles feature a classic anti-skid chequered pattern ideal for footpaths, commercial floors and public areas. Available in a wide range of sizes and vibrant colours, these tiles are designed to enhance safety without compromising on aesthetics.',
