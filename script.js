@@ -8,7 +8,13 @@ function removeWhiteBg(img) {
   const d = ctx.getImageData(0, 0, canvas.width, canvas.height);
   for (let i = 0; i < d.data.length; i += 4) {
     const r = d.data[i], g = d.data[i+1], b = d.data[i+2];
-    if (r > 220 && g > 220 && b > 220) d.data[i+3] = 0;
+    const max = Math.max(r, g, b);
+    const sat = max === 0 ? 0 : (max - Math.min(r, g, b)) / max;
+    if (r > 220 && g > 220 && b > 220) {
+      d.data[i+3] = 0;                                        // white → transparent
+    } else if (max < 80 && sat < 0.2) {
+      d.data[i] = d.data[i+1] = d.data[i+2] = 255;          // black/dark → white
+    }
   }
   ctx.putImageData(d, 0, 0);
   img.src = canvas.toDataURL();
