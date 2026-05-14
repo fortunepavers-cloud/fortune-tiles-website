@@ -1,3 +1,22 @@
+// ===== LOGO WHITE BACKGROUND REMOVAL =====
+function removeWhiteBg(img) {
+  const canvas = document.createElement('canvas');
+  canvas.width = img.naturalWidth;
+  canvas.height = img.naturalHeight;
+  const ctx = canvas.getContext('2d');
+  ctx.drawImage(img, 0, 0);
+  const d = ctx.getImageData(0, 0, canvas.width, canvas.height);
+  for (let i = 0; i < d.data.length; i += 4) {
+    const r = d.data[i], g = d.data[i+1], b = d.data[i+2];
+    if (r > 220 && g > 220 && b > 220) d.data[i+3] = 0;
+  }
+  ctx.putImageData(d, 0, 0);
+  img.src = canvas.toDataURL();
+}
+document.querySelectorAll('.logo-full-img').forEach(img => {
+  img.complete ? removeWhiteBg(img) : img.addEventListener('load', () => removeWhiteBg(img));
+});
+
 // ===== NAVBAR SCROLL =====
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
