@@ -355,7 +355,7 @@
         doc.setFont('helvetica', 'bold');
         doc.setFontSize(36);
         doc.setTextColor(...C_PRI);
-        doc.text('FORTUNE TILES & PAVERS', pageW / 2, pageH / 2, { align: 'center', angle: 45 });
+        doc.text('FORTUNE TILES & PAVERS', pageW / 2, pageH / 2, { align: 'center', baseline: 'middle', angle: 45 });
         doc.setGState(new doc.GState({ opacity: 1 }));
       };
       drawWatermark();
