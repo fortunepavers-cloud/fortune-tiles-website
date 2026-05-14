@@ -301,6 +301,7 @@
         grid.style.gridTemplateColumns = `repeat(${p.applications.length}, 1fr)`;
         grid.innerHTML = p.applications.map((a, i) =>
           `<div class="pd-where-item">
+            <div class="pd-where-icon"><i class="fa-solid ${a.icon}"></i></div>
             <div class="pd-where-num">0${i + 1}</div>
             <div class="pd-where-label">${a.label}</div>
             <div class="pd-where-desc">${a.desc}</div>

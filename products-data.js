@@ -27,9 +27,9 @@ const PRODUCTS = {
       'Low maintenance — individual pavers replaceable',
     ],
     applications: [
-      { label: 'Driveways',        desc: 'Residential and commercial vehicle entries.' },
-      { label: 'Walkways',         desc: 'Pedestrian paths and public pavements.' },
-      { label: 'Industrial Zones', desc: 'Factory floors and heavy-load aprons.' },
+      { icon: 'fa-car',           label: 'Driveways',        desc: 'Residential and commercial vehicle entries.' },
+      { icon: 'fa-person-walking', label: 'Walkways',         desc: 'Pedestrian paths and public pavements.' },
+      { icon: 'fa-industry',      label: 'Industrial Zones', desc: 'Factory floors and heavy-load aprons.' },
     ],
   },
   'vibro-unipaver': {
@@ -60,9 +60,9 @@ const PRODUCTS = {
       'Apollo Zenith German technology',
     ],
     applications: [
-      { label: 'Pedestrian Paths', desc: 'Footpaths, corridors and garden walkways.' },
-      { label: 'Parking Areas',   desc: 'Open lots and covered parking decks.' },
-      { label: 'Plazas',          desc: 'Commercial and civic open spaces.' },
+      { icon: 'fa-person-walking',    label: 'Pedestrian Paths', desc: 'Footpaths, corridors and garden walkways.' },
+      { icon: 'fa-square-parking',    label: 'Parking Areas',    desc: 'Open lots and covered parking decks.' },
+      { icon: 'fa-building-columns',  label: 'Plazas',           desc: 'Commercial and civic open spaces.' },
     ],
   },
   'vibro-square-150': {
@@ -93,9 +93,9 @@ const PRODUCTS = {
       'Low maintenance surface',
     ],
     applications: [
-      { label: 'Walkways',         desc: 'Garden paths and pedestrian corridors.' },
-      { label: 'Courtyards',       desc: 'Residential and hospitality courtyards.' },
-      { label: 'Decorative Areas', desc: 'Patios, pool surrounds and feature paving.' },
+      { icon: 'fa-person-walking', label: 'Walkways',         desc: 'Garden paths and pedestrian corridors.' },
+      { icon: 'fa-archway',        label: 'Courtyards',       desc: 'Residential and hospitality courtyards.' },
+      { icon: 'fa-palette',        label: 'Decorative Areas', desc: 'Patios, pool surrounds and feature paving.' },
     ],
   },
   'vibro-square-200': {
@@ -126,9 +126,9 @@ const PRODUCTS = {
       'Apollo Zenith German technology',
     ],
     applications: [
-      { label: 'Driveways',     desc: 'Residential and commercial vehicle entries.' },
-      { label: 'Plazas',        desc: 'Large public and commercial open spaces.' },
-      { label: 'Public Spaces', desc: 'Parks, civic areas and institutional grounds.' },
+      { icon: 'fa-car',              label: 'Driveways',     desc: 'Residential and commercial vehicle entries.' },
+      { icon: 'fa-building-columns', label: 'Plazas',        desc: 'Large public and commercial open spaces.' },
+      { icon: 'fa-landmark',         label: 'Public Spaces', desc: 'Parks, civic areas and institutional grounds.' },
     ],
   },
   'rubbermould-square': {
@@ -160,9 +160,9 @@ const PRODUCTS = {
       'Ideal for residential and commercial decorative use',
     ],
     applications: [
-      { label: 'Gardens',          desc: 'Ornamental garden paths and borders.' },
-      { label: 'Courtyards',       desc: 'Residential and hospitality courtyards.' },
-      { label: 'Pedestrian Areas', desc: 'Footpaths and light-use walkways.' },
+      { icon: 'fa-seedling',       label: 'Gardens',          desc: 'Ornamental garden paths and borders.' },
+      { icon: 'fa-archway',        label: 'Courtyards',       desc: 'Residential and hospitality courtyards.' },
+      { icon: 'fa-person-walking', label: 'Pedestrian Areas', desc: 'Footpaths and light-use walkways.' },
     ],
   },
   'rubbermould-square-200': {
@@ -194,9 +194,9 @@ const PRODUCTS = {
       'Ideal for residential and commercial decorative use',
     ],
     applications: [
-      { label: 'Driveways',        desc: 'Residential and commercial vehicle entries.' },
-      { label: 'Plazas',           desc: 'Large public and commercial open spaces.' },
-      { label: 'Commercial Areas', desc: 'Retail, hospitality and office forecourts.' },
+      { icon: 'fa-car',              label: 'Driveways',        desc: 'Residential and commercial vehicle entries.' },
+      { icon: 'fa-building-columns', label: 'Plazas',           desc: 'Large public and commercial open spaces.' },
+      { icon: 'fa-store',            label: 'Commercial Areas', desc: 'Retail, hospitality and office forecourts.' },
     ],
   },
   'rubbermould-unipaver': {
@@ -227,9 +227,9 @@ const PRODUCTS = {
       'Low maintenance',
     ],
     applications: [
-      { label: 'Walkways',          desc: 'Garden and pedestrian pathways.' },
-      { label: 'Landscapes',        desc: 'Parks, gardens and green spaces.' },
-      { label: 'Decorative Paving', desc: 'Feature flooring and pool surrounds.' },
+      { icon: 'fa-person-walking', label: 'Walkways',          desc: 'Garden and pedestrian pathways.' },
+      { icon: 'fa-tree',           label: 'Landscapes',        desc: 'Parks, gardens and green spaces.' },
+      { icon: 'fa-palette',        label: 'Decorative Paving', desc: 'Feature flooring and pool surrounds.' },
     ],
   },
   'chequered-tiles': {
@@ -262,9 +262,9 @@ const PRODUCTS = {
       'Easy to clean and maintain',
     ],
     applications: [
-      { label: 'Footpaths',         desc: 'Public and private pedestrian paths.' },
-      { label: 'Commercial Floors', desc: 'Retail, office and factory entrances.' },
-      { label: 'Public Areas',      desc: 'Bus stands, stations and civic spaces.' },
+      { icon: 'fa-person-walking', label: 'Footpaths',         desc: 'Public and private pedestrian paths.' },
+      { icon: 'fa-building',       label: 'Commercial Floors', desc: 'Retail, office and factory entrances.' },
+      { icon: 'fa-users',          label: 'Public Areas',      desc: 'Bus stands, stations and civic spaces.' },
     ],
   },
   'hollow-block': {
@@ -294,9 +294,9 @@ const PRODUCTS = {
       'Cost-effective construction solution',
     ],
     applications: [
-      { label: 'Boundary Walls', desc: 'Property perimeters and compound fencing.' },
-      { label: 'Partitions',     desc: 'Internal non-load-bearing room dividers.' },
-      { label: 'Compound Walls', desc: 'Industrial and residential compounds.' },
+      { icon: 'fa-border-all',     label: 'Boundary Walls', desc: 'Property perimeters and compound fencing.' },
+      { icon: 'fa-table-columns',  label: 'Partitions',     desc: 'Internal non-load-bearing room dividers.' },
+      { icon: 'fa-shield-halved',  label: 'Compound Walls', desc: 'Industrial and residential compounds.' },
     ],
   },
   'solid-block': {
@@ -326,8 +326,8 @@ const PRODUCTS = {
       'Ideal for industrial and commercial projects',
     ],
     applications: [
-      { label: 'Load-bearing Walls',      desc: 'Structural walls for multi-storey buildings.' },
-      { label: 'Industrial Construction', desc: 'Factories, warehouses and commercial structures.' },
+      { icon: 'fa-building',  label: 'Load-bearing Walls',      desc: 'Structural walls for multi-storey buildings.' },
+      { icon: 'fa-industry',  label: 'Industrial Construction', desc: 'Factories, warehouses and commercial structures.' },
     ],
   },
   'kerbstone': {
@@ -359,9 +359,9 @@ const PRODUCTS = {
       'Suitable for roads, driveways and landscapes',
     ],
     applications: [
-      { label: 'Roads',          desc: 'Highway and road edge demarcation.' },
-      { label: 'Driveways',      desc: 'Residential and commercial entry borders.' },
-      { label: 'Garden Borders', desc: 'Landscape edge definition and planting beds.' },
+      { icon: 'fa-road',         label: 'Roads',          desc: 'Highway and road edge demarcation.' },
+      { icon: 'fa-car',          label: 'Driveways',      desc: 'Residential and commercial entry borders.' },
+      { icon: 'fa-leaf',         label: 'Garden Borders', desc: 'Landscape edge definition and planting beds.' },
     ],
   },
   'grass-pavers': {
@@ -391,9 +391,9 @@ const PRODUCTS = {
       'Suitable for parking areas and garden paths',
     ],
     applications: [
-      { label: 'Green Parking', desc: 'Eco-friendly vehicle parking areas.' },
-      { label: 'Gardens',       desc: 'Ornamental and functional garden surfaces.' },
-      { label: 'Landscapes',    desc: 'Parks, open spaces and green corridors.' },
+      { icon: 'fa-leaf',     label: 'Green Parking', desc: 'Eco-friendly vehicle parking areas.' },
+      { icon: 'fa-seedling', label: 'Gardens',       desc: 'Ornamental and functional garden surfaces.' },
+      { icon: 'fa-tree',     label: 'Landscapes',    desc: 'Parks, open spaces and green corridors.' },
     ],
   },
   'flyash-bricks': {
@@ -423,9 +423,9 @@ const PRODUCTS = {
       'Eco-friendly and sustainable choice',
     ],
     applications: [
-      { label: 'Walls',                desc: 'External and internal building walls.' },
-      { label: 'Partitions',           desc: 'Internal room dividers and partitions.' },
-      { label: 'General Construction', desc: 'Residential and commercial buildings.' },
+      { icon: 'fa-building',      label: 'Walls',                desc: 'External and internal building walls.' },
+      { icon: 'fa-table-columns', label: 'Partitions',           desc: 'Internal room dividers and partitions.' },
+      { icon: 'fa-hammer',        label: 'General Construction', desc: 'Residential and commercial buildings.' },
     ],
   },
 };
