@@ -1829,52 +1829,58 @@ img { max-width: 100%; display: block; }
 }
 .btn-outline-dark:hover { background: var(--primary); color: #fff; }
 
-/* Prev / Next navigation */
-.pd-nav-row {
+/* Prev / Next side navigation */
+.pd-side-btn {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 200;
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding-top: 16px;
-  border-top: 1px solid var(--border);
-}
-.pd-nav-btn {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 10px 16px;
+  gap: 10px;
+  padding: 14px 16px;
+  background: #fff;
   border: 1px solid var(--border);
-  border-radius: 10px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
   color: var(--text);
   text-decoration: none;
-  transition: border-color 0.2s, background 0.2s;
-  min-width: 0;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  max-width: 190px;
 }
-.pd-nav-btn:hover {
+.pd-side-btn--prev { left: 16px; }
+.pd-side-btn--next { right: 16px; }
+.pd-side-btn:hover {
   border-color: var(--primary);
-  background: rgba(30,58,138,0.04);
+  box-shadow: 0 4px 24px rgba(30,58,138,0.15);
 }
-.pd-nav-btn i { flex-shrink: 0; font-size: 0.8rem; color: var(--text-muted); }
-.pd-nav-dir {
+.pd-side-btn i { font-size: 0.9rem; color: var(--text-muted); flex-shrink: 0; }
+.pd-side-dir {
   display: block;
-  font-size: 0.62rem;
+  font-size: 0.6rem;
   font-weight: 600;
   letter-spacing: 1px;
   text-transform: uppercase;
   color: var(--text-muted);
   margin-bottom: 2px;
 }
-.pd-nav-name {
+.pd-side-name {
   display: block;
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   font-weight: 600;
   color: var(--text);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 180px;
+  max-width: 140px;
 }
-.pd-nav-btn--right { text-align: right; }
-.pd-nav-btn--right > div { text-align: right; }
+.pd-side-label--right { text-align: right; }
+@media (max-width: 768px) {
+  .pd-side-btn { padding: 12px; max-width: unset; }
+  .pd-side-label { display: none; }
+  .pd-side-btn--prev { left: 8px; }
+  .pd-side-btn--next { right: 8px; }
+}
 
 /* Where It's Used */
 .pd-where-header {
