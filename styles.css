@@ -1242,10 +1242,12 @@ img { max-width: 100%; display: block; }
 .contact .container { position: relative; z-index: 1; }
 
 .contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.3fr;
-  gap: 60px;
-  align-items: start;
+  display: flex;
+  justify-content: center;
+}
+.contact-grid .contact-form {
+  width: 100%;
+  max-width: 680px;
 }
 
 .contact-info h3 {
@@ -1886,7 +1888,6 @@ img { max-width: 100%; display: block; }
 @media (max-width: 1024px) {
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .about-grid { grid-template-columns: 1fr; gap: 40px; }
-  .contact-grid { grid-template-columns: 1fr; }
   .hero-content { gap: 40px; }
   .paver-grid-visual { width: 260px; height: 260px; }
 }
