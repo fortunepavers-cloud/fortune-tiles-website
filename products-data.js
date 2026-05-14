@@ -136,7 +136,7 @@ const PRODUCTS = {
     category: 'Rubbermould',
     modelId: 'RMV-001',
     image: 'images/Rubbermould Square.png',
-    colors: ['Grey', 'Red', 'Yellow', 'Black', 'Ivory', 'Brown'],
+    colors: ['Grey', 'Red', 'Yellow', 'Black', 'Brown'],
     highlights: [
       { label: 'Thickness', value: '35 / 40', unit: 'mm' },
       { label: 'Colours',   value: '6',        unit: 'options' },
@@ -148,7 +148,7 @@ const PRODUCTS = {
       ['Thickness',   '35MM / 40MM'],
       ['Type',        'Rubbermould Cast'],
       ['Finish',      'Smooth'],
-      ['Colours',     'Grey, Red, Yellow, Black, Ivory, Brown'],
+      ['Colours',     'Grey, Red, Yellow, Black, Brown'],
       ['Application', 'Gardens, Courtyards, Pedestrian Areas'],
     ],
     features: [
@@ -170,7 +170,7 @@ const PRODUCTS = {
     category: 'Rubbermould',
     modelId: 'RMV-002',
     image: 'images/Rubbermould Square 200x200.png',
-    colors: ['Grey', 'Red', 'Yellow', 'Black', 'Ivory', 'Brown'],
+    colors: ['Grey', 'Red', 'Yellow', 'Black', 'Brown'],
     highlights: [
       { label: 'Thickness', value: '40 / 60', unit: 'mm' },
       { label: 'Colours',   value: '6',        unit: 'options' },
@@ -182,7 +182,7 @@ const PRODUCTS = {
       ['Thickness',   '40MM / 60MM'],
       ['Type',        'Rubbermould Cast'],
       ['Finish',      'Smooth'],
-      ['Colours',     'Grey, Red, Yellow, Black, Ivory, Brown'],
+      ['Colours',     'Grey, Red, Yellow, Black, Brown'],
       ['Application', 'Driveways, Plazas, Commercial Areas'],
     ],
     features: [
@@ -239,7 +239,7 @@ const PRODUCTS = {
     image: null,
     icon: 'fa-grip',
     iconBg: 'linear-gradient(135deg,#f1c40f,#d4ac0d)',
-    colors: ['Grey', 'Red', 'Yellow', 'Black', 'Ivory', 'Brown'],
+    colors: ['Grey', 'Red', 'Yellow', 'Black', 'Brown'],
     highlights: [
       { label: 'Thickness', value: '35 / 40', unit: 'mm' },
       { label: 'Colours',   value: '6',        unit: 'options' },
@@ -250,7 +250,7 @@ const PRODUCTS = {
       ['Size',        '300×300 mm / 400×400 mm'],
       ['Thickness',   '35MM / 40MM'],
       ['Pattern',     'Chequered Anti-Skid'],
-      ['Colours',     'Grey, Red, Yellow, Black, Ivory, Brown'],
+      ['Colours',     'Grey, Red, Yellow, Black, Brown'],
       ['Application', 'Footpaths, Commercial Floors, Public Areas'],
     ],
     features: [
