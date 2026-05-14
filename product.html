@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product | Fortune Tiles & Pavers</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Oswald:wght@400;600;700&family=Raleway:wght@300;400;800;900&family=Cinzel:wght@700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-container">
+      <a href="index.html#home" class="nav-logo">
+        <img src="logo-white.svg" alt="Fortune Tiles and Pavers" class="logo-full-img" />
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#products">Products</a></li>
+        <li><a href="index.html#why-us">Why Us</a></li>
+        <li><a href="index.html#applications">Applications</a></li>
+        <li><a href="index.html#contact" class="nav-cta">Contact Us</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== PRODUCT HERO ===== -->
+  <section class="pd-hero">
+    <div class="pd-hero-overlay"></div>
+    <div class="container">
+      <nav class="pd-breadcrumb">
+        <a href="index.html">Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <a href="index.html#products">Products</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span id="breadcrumbName">Product</span>
+      </nav>
+      <h1 class="pd-hero-title" id="pdTitle">Loading...</h1>
+      <span class="pd-hero-tag" id="pdCategory"></span>
+    </div>
+  </section>
+
+  <!-- ===== PRODUCT DETAIL ===== -->
+  <section class="pd-section">
+    <div class="container pd-grid">
+
+      <!-- Image -->
+      <div class="pd-image-col">
+        <div class="pd-image-wrap" id="pdImageWrap">
+          <!-- filled by JS -->
+        </div>
+        <a href="index.html#contact" class="btn btn-primary pd-quote-btn">
+          <i class="fa-solid fa-file-lines"></i> Get a Free Quote
+        </a>
+        <a href="index.html#products" class="pd-back-link">
+          <i class="fa-solid fa-arrow-left"></i> Back to Products
+        </a>
+      </div>
+
+      <!-- Details -->
+      <div class="pd-info-col">
+        <p class="pd-description" id="pdDescription"></p>
+
+        <div class="pd-block">
+          <h3 class="pd-block-title"><i class="fa-solid fa-table-list"></i> Specifications</h3>
+          <table class="pd-spec-table" id="pdSpecTable"></table>
+        </div>
+
+        <div class="pd-block">
+          <h3 class="pd-block-title"><i class="fa-solid fa-star"></i> Key Features</h3>
+          <ul class="pd-features" id="pdFeatures"></ul>
+        </div>
+
+        <div class="pd-cta-row">
+          <a href="https://wa.me/917228999995?text=Hello%2C%20I%20am%20interested%20in%20" id="pdWhatsapp" target="_blank" class="btn btn-primary">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
+          </a>
+          <a href="tel:+917228999995" class="btn btn-outline-dark">
+            <i class="fa-solid fa-phone"></i> Call Now
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a href="index.html#home" class="nav-logo">
+            <img src="logo-white.svg" alt="Fortune Tiles and Pavers" class="logo-full-img" />
+          </a>
+          <p class="footer-tagline">"Experience a touch of royalty..."</p>
+          <p>Vadodara's trusted manufacturer of premium paving solutions for residential, commercial and industrial projects.</p>
+          <div class="social-icons">
+            <a href="#" class="social-icon" aria-label="Instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-icon" aria-label="Facebook" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="social-icon" aria-label="LinkedIn" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="index.html#products">Products</a></li>
+            <li><a href="index.html#why-us">Why Fortune</a></li>
+            <li><a href="index.html#applications">Applications</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-products">
+          <h4>Our Products</h4>
+          <ul>
+            <li>Paver Blocks</li>
+            <li>Chequered Tiles</li>
+            <li>Vibro Pavers</li>
+            <li>Hollow &amp; Solid Blocks</li>
+            <li>Fly Ash Bricks</li>
+            <li>Man Hole Covers</li>
+            <li>Kerbstone</li>
+            <li>Grass Pavers</li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <p><i class="fa-solid fa-phone"></i> +91 82389 64164</p>
+          <p><i class="fa-solid fa-envelope"></i> fortunepavers@gmail.com</p>
+          <p><i class="fa-solid fa-globe"></i> www.fortunepavers.com</p>
+          <p><i class="fa-solid fa-location-dot"></i> Dashrath, Vadodara, Gujarat</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2025 Fortune Tiles & Pavers. All rights reserved. | Dashrath, Vadodara, Gujarat, India</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+
+  <a href="https://wa.me/917228999995?text=Hello%2C%20I%20am%20interested%20in%20Fortune%20Tiles%20%26%20Pavers%20products." target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span class="whatsapp-tooltip">Chat with us!</span>
+  </a>
+
+  <script src="products-data.js"></script>
+  <script>
+    // Load product from URL param
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+    const p = PRODUCTS[id];
+
+    if (!p) {
+      document.getElementById('pdTitle').textContent = 'Product Not Found';
+    } else {
+      document.title = p.name + ' | Fortune Tiles & Pavers';
+      document.getElementById('pdTitle').textContent = p.name;
+      document.getElementById('pdCategory').textContent = p.category;
+      document.getElementById('breadcrumbName').textContent = p.name;
+      document.getElementById('pdDescription').textContent = p.description;
+
+      // Image or icon
+      const wrap = document.getElementById('pdImageWrap');
+      if (p.image) {
+        wrap.innerHTML = `<img src="${p.image}" alt="${p.name}">`;
+      } else {
+        wrap.innerHTML = `<div class="pd-icon-wrap" style="background:${p.iconBg}"><i class="fa-solid ${p.icon}"></i></div>`;
+      }
+
+      // Specs table
+      const table = document.getElementById('pdSpecTable');
+      table.innerHTML = p.specs.map(([k, v]) =>
+        `<tr><td>${k}</td><td>${v}</td></tr>`
+      ).join('');
+
+      // Features
+      const ul = document.getElementById('pdFeatures');
+      ul.innerHTML = p.features.map(f => `<li>${f}</li>`).join('');
+
+      // WhatsApp link with product name
+      document.getElementById('pdWhatsapp').href =
+        `https://wa.me/917228999995?text=Hello%2C%20I%20am%20interested%20in%20${encodeURIComponent(p.name)}.%20Please%20share%20details.`;
+    }
+
+    // Navbar scroll
+    window.addEventListener('scroll', () => {
+      document.getElementById('backToTop').classList.toggle('visible', window.scrollY > 400);
+    });
+    document.getElementById('backToTop').addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Hamburger
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      navLinks.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

@@ -93,7 +93,15 @@ document.querySelectorAll('.product-card, .info-card, .app-card, .person-card').
 
 // ===== PRODUCT QUOTE BUTTONS =====
 document.querySelectorAll('.product-card').forEach(card => {
-  card.insertAdjacentHTML('beforeend', '<a href="#contact" class="product-quote-btn">Get a Quote <i class="fa-solid fa-arrow-right"></i></a>');
+  const btn = document.createElement('a');
+  btn.className = 'product-quote-btn';
+  btn.innerHTML = 'View Details <i class="fa-solid fa-arrow-right"></i>';
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const href = card.getAttribute('onclick').match(/'([^']+)'/)[1];
+    location.href = href;
+  });
+  card.appendChild(btn);
 });
 
 // ===== PRODUCT SLIDER =====
