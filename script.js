@@ -98,8 +98,8 @@ document.querySelectorAll('.product-card').forEach(card => {
   card.appendChild(btn);
 });
 
-// ===== PRODUCT ORBIT =====
-const orbitProducts = [
+// ===== 3D PRODUCT CAROUSEL =====
+const carouselProducts = [
   { src: 'images/Vibro Unipaver.png',                alt: 'Vibro Unipaver' },
   { src: 'images/Vibro Brick Paver.png',             alt: 'Vibro Brick Paver' },
   { src: 'images/Vibro Square 150 x 150 x 60MM.png', alt: 'Vibro Square 150mm' },
@@ -114,46 +114,50 @@ const orbitProducts = [
   { src: 'images/Grass Pavers.png',                  alt: 'Grass Pavers' },
 ];
 
-const orbitContainer = document.getElementById('productOrbit');
-const orbitCenterImg = document.getElementById('orbitCenterImg');
-const ORBIT_RADIUS   = 158;
-const ORBIT_SIZE     = 400;
-let activeOrbit = 0;
+const carouselTrack  = document.getElementById('carouselTrack');
+const carouselLabel  = document.getElementById('carouselLabel');
+const CAROUSEL_TOTAL  = carouselProducts.length;
+const CAROUSEL_STEP   = 360 / CAROUSEL_TOTAL;
+const CAROUSEL_RADIUS = 220;
+let activeCarousel = 0;
+let carouselAngle  = 0;
 
-const orbitItemEls = orbitProducts.map((p, i) => {
-  const item = document.createElement('div');
-  item.className = 'orbit-item';
-  item.innerHTML = `<img src="${p.src}" alt="${p.alt}">`;
-  const angle = (i / orbitProducts.length) * 2 * Math.PI - Math.PI / 2;
-  item.style.left = (ORBIT_SIZE / 2 + ORBIT_RADIUS * Math.cos(angle)) + 'px';
-  item.style.top  = (ORBIT_SIZE / 2 + ORBIT_RADIUS * Math.sin(angle)) + 'px';
-  item.addEventListener('click', () => {
-    clearInterval(orbitTimer);
-    setOrbitActive(i);
-    orbitTimer = setInterval(orbitNext, 2000);
+const carouselCards = carouselProducts.map((p, i) => {
+  const card = document.createElement('div');
+  card.className = 'carousel-card';
+  card.innerHTML = `<div class="carousel-card-inner"><img src="${p.src}" alt="${p.alt}"></div>`;
+  card.style.transform = `rotateY(${i * CAROUSEL_STEP}deg) translateZ(${CAROUSEL_RADIUS}px)`;
+  card.addEventListener('click', () => {
+    clearInterval(carouselTimer);
+    setCarouselActive(i);
+    carouselTimer = setInterval(carouselNext, 2000);
   });
-  orbitContainer.appendChild(item);
-  return item;
+  carouselTrack.appendChild(card);
+  return card;
 });
 
-function setOrbitActive(idx) {
-  orbitItemEls[activeOrbit].classList.remove('active');
-  activeOrbit = idx;
-  orbitItemEls[activeOrbit].classList.add('active');
-  orbitCenterImg.style.opacity = '0';
+function setCarouselActive(idx) {
+  carouselCards[activeCarousel].classList.remove('active');
+  activeCarousel = ((idx % CAROUSEL_TOTAL) + CAROUSEL_TOTAL) % CAROUSEL_TOTAL;
+  carouselCards[activeCarousel].classList.add('active');
+  const targetAngle = -activeCarousel * CAROUSEL_STEP;
+  let diff = ((targetAngle - carouselAngle) % 360 + 360) % 360;
+  if (diff > 180) diff -= 360;
+  carouselAngle += diff;
+  carouselTrack.style.transform = `rotateY(${carouselAngle}deg)`;
+  carouselLabel.style.opacity = '0';
   setTimeout(() => {
-    orbitCenterImg.src = orbitProducts[activeOrbit].src;
-    orbitCenterImg.alt = orbitProducts[activeOrbit].alt;
-    orbitCenterImg.style.opacity = '1';
-  }, 180);
+    carouselLabel.textContent = carouselProducts[activeCarousel].alt;
+    carouselLabel.style.opacity = '1';
+  }, 220);
 }
 
-function orbitNext() {
-  setOrbitActive((activeOrbit + 1) % orbitProducts.length);
+function carouselNext() {
+  setCarouselActive(activeCarousel + 1);
 }
 
-setOrbitActive(0);
-let orbitTimer = setInterval(orbitNext, 2000);
+setCarouselActive(0);
+let carouselTimer = setInterval(carouselNext, 2000);
 
 // ===== ACTIVE NAV LINK ON SCROLL =====
 const sections = document.querySelectorAll('section[id]');
