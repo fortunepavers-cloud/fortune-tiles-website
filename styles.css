@@ -1044,7 +1044,7 @@ img { max-width: 100%; display: block; }
 .btn-outline-white:hover { background: rgba(255,255,255,0.12); border-color: #fff; transform: translateY(-2px); }
 
 /* ===== HOW WE MAKE IT ===== */
-.how-we-make { background: var(--dark); }
+.how-we-make { background: #f4f7fc; }
 
 .hwm-main-grid {
   display: grid;
@@ -1057,13 +1057,14 @@ img { max-width: 100%; display: block; }
 .hwm-card {
   border-radius: 20px;
   overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.07);
+  border: 1px solid rgba(0,0,0,0.08);
   display: flex;
   flex-direction: column;
-  background: var(--dark-2);
+  background: #ffffff;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.06);
 }
 
-/* Coloured header */
+/* Coloured header — white text here is fine (dark bg) */
 .hwm-card-header {
   padding: 30px 30px 24px;
   display: flex;
@@ -1076,21 +1077,21 @@ img { max-width: 100%; display: block; }
 .hwm-header-top { display: flex; align-items: flex-start; gap: 16px; }
 .hwm-header-icon {
   width: 52px; height: 52px; border-radius: 13px;
-  background: rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.15);
   display: flex; align-items: center; justify-content: center;
   font-size: 1.4rem; color: #fff; flex-shrink: 0;
 }
 .hwm-card-tag {
   display: inline-block;
   font-size: 0.65rem; font-weight: 700; letter-spacing: 2px;
-  text-transform: uppercase; color: rgba(255,255,255,0.55);
+  text-transform: uppercase; color: rgba(255,255,255,0.6);
   margin-bottom: 5px;
 }
 .hwm-card-header h3 {
   font-family: 'Oswald', sans-serif; font-size: 1.45rem; font-weight: 700;
   color: #fff; letter-spacing: 0.5px; margin: 0 0 4px;
 }
-.hwm-tagline { font-size: 0.82rem; color: rgba(255,255,255,0.6); margin: 0; font-style: italic; }
+.hwm-tagline { font-size: 0.82rem; color: rgba(255,255,255,0.65); margin: 0; font-style: italic; }
 
 /* Stats strip inside header */
 .hwm-stats {
@@ -1103,20 +1104,18 @@ img { max-width: 100%; display: block; }
   font-family: 'Oswald', sans-serif; font-size: 1.1rem; font-weight: 700;
   color: #fff; line-height: 1;
 }
-.hwm-stat-label { font-size: 0.68rem; color: rgba(255,255,255,0.5); text-align: center; letter-spacing: 0.3px; }
-.hwm-stat-div { width: 1px; height: 32px; background: rgba(255,255,255,0.15); margin: 0 8px; }
+.hwm-stat-label { font-size: 0.68rem; color: rgba(255,255,255,0.55); text-align: center; letter-spacing: 0.3px; }
+.hwm-stat-div { width: 1px; height: 32px; background: rgba(255,255,255,0.18); margin: 0 8px; }
 
-/* Card body */
+/* Card body — light background, dark text */
 .hwm-card-body { padding: 28px 30px 32px; display: flex; flex-direction: column; gap: 22px; flex: 1; }
-.hwm-desc {
-  font-size: 0.9rem; color: var(--text-muted); line-height: 1.75; margin: 0;
-}
-.hwm-desc strong { color: rgba(255,255,255,0.85); font-weight: 600; }
+.hwm-desc { font-size: 0.9rem; color: #475569; line-height: 1.75; margin: 0; }
+.hwm-desc strong { color: #1e293b; font-weight: 600; }
 
 /* Section labels inside card */
 .hwm-section-label {
-  font-size: 0.72rem; font-weight: 700; letter-spacing: 2px;
-  text-transform: uppercase; color: rgba(255,255,255,0.35);
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 2px;
+  text-transform: uppercase; color: #94a3b8;
   display: flex; align-items: center; gap: 7px; margin: 0;
 }
 .hwm-section-label i { font-size: 0.65rem; }
@@ -1126,20 +1125,19 @@ img { max-width: 100%; display: block; }
 .hwm-steps li {
   display: flex; align-items: flex-start; gap: 14px;
   padding: 13px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
 }
 .hwm-steps li:last-child { border-bottom: none; }
 .hwm-step-num {
   min-width: 32px; height: 32px; border-radius: 8px;
-  background: rgba(255,255,255,0.06);
+  background: #f1f5f9;
   display: flex; align-items: center; justify-content: center;
   font-family: 'Oswald', sans-serif; font-size: 0.75rem; font-weight: 700;
-  color: rgba(255,255,255,0.4); flex-shrink: 0; margin-top: 1px;
-  letter-spacing: 0.5px;
+  color: #94a3b8; flex-shrink: 0; margin-top: 1px; letter-spacing: 0.5px;
 }
 .hwm-step-text { display: flex; flex-direction: column; gap: 3px; }
-.hwm-step-title { font-size: 0.88rem; font-weight: 600; color: rgba(255,255,255,0.85); line-height: 1.3; }
-.hwm-step-desc  { font-size: 0.8rem; color: rgba(255,255,255,0.45); line-height: 1.55; }
+.hwm-step-title { font-size: 0.88rem; font-weight: 600; color: #1e293b; line-height: 1.3; }
+.hwm-step-desc  { font-size: 0.8rem; color: #64748b; line-height: 1.55; }
 
 /* App chips */
 .hwm-apps { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -1147,48 +1145,47 @@ img { max-width: 100%; display: block; }
   padding: 5px 13px; border-radius: 20px;
   font-size: 0.75rem; font-weight: 600; letter-spacing: 0.3px;
 }
-.hwm-apps-blue span   { background: rgba(26,111,196,0.18); color: #7bbfff; border: 1px solid rgba(77,163,255,0.2); }
-.hwm-apps-orange span { background: rgba(196,116,32,0.18); color: #f5b46a; border: 1px solid rgba(240,160,90,0.2); }
+.hwm-apps-blue span   { background: #dbeafe; color: #1d4ed8; border: 1px solid #bfdbfe; }
+.hwm-apps-orange span { background: #ffedd5; color: #c2410c; border: 1px solid #fed7aa; }
 
 /* Quick Comparison table */
 .hwm-compare {
   margin-top: 52px;
-  background: var(--dark-2);
+  background: #ffffff;
   border-radius: 20px;
-  border: 1px solid rgba(255,255,255,0.07);
+  border: 1px solid rgba(0,0,0,0.08);
   overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.06);
 }
 .hwm-compare-title {
   padding: 22px 30px;
   font-family: 'Oswald', sans-serif; font-size: 1rem; font-weight: 600;
-  color: rgba(255,255,255,0.7); letter-spacing: 1px; text-transform: uppercase;
-  border-bottom: 1px solid rgba(255,255,255,0.07);
+  color: #334155; letter-spacing: 1px; text-transform: uppercase;
+  border-bottom: 1px solid rgba(0,0,0,0.07);
   display: flex; align-items: center; gap: 10px;
-  background: rgba(255,255,255,0.02); margin: 0;
+  background: #f8fafc; margin: 0;
 }
-.hwm-compare-title i { font-size: 0.85rem; opacity: 0.6; }
+.hwm-compare-title i { font-size: 0.85rem; color: #94a3b8; }
 .hwm-compare-table { display: flex; flex-direction: column; }
 .hwm-compare-head,
-.hwm-compare-row {
-  display: grid; grid-template-columns: 1.4fr 1fr 1fr;
-}
+.hwm-compare-row { display: grid; grid-template-columns: 1.4fr 1fr 1fr; }
 .hwm-compare-head {
-  background: rgba(255,255,255,0.03);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  background: #f8fafc;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
 }
 .hwm-compare-head > div {
   padding: 14px 20px;
   font-size: 0.78rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
 }
-.hwm-cmp-vibro  { color: #7bbfff; display: flex; align-items: center; gap: 7px; }
-.hwm-cmp-rubber { color: #f5b46a; display: flex; align-items: center; gap: 7px; border-left: 1px solid rgba(255,255,255,0.06); }
-.hwm-compare-row { border-bottom: 1px solid rgba(255,255,255,0.04); transition: background 0.2s; }
+.hwm-cmp-vibro  { color: #1d4ed8; display: flex; align-items: center; gap: 7px; }
+.hwm-cmp-rubber { color: #c2410c; display: flex; align-items: center; gap: 7px; border-left: 1px solid rgba(0,0,0,0.06); }
+.hwm-compare-row { border-bottom: 1px solid rgba(0,0,0,0.05); transition: background 0.2s; }
 .hwm-compare-row:last-child { border-bottom: none; }
-.hwm-compare-row:hover { background: rgba(255,255,255,0.02); }
-.hwm-compare-row > div { padding: 13px 20px; font-size: 0.83rem; line-height: 1.4; }
-.hwm-cmp-feature { color: rgba(255,255,255,0.55); font-weight: 600; font-size: 0.8rem; }
-.hwm-compare-row .hwm-cmp-vibro  { color: rgba(255,255,255,0.7); font-size: 0.83rem; display: block; }
-.hwm-compare-row .hwm-cmp-rubber { color: rgba(255,255,255,0.7); font-size: 0.83rem; display: block; }
+.hwm-compare-row:hover { background: #f8fafc; }
+.hwm-compare-row > div { padding: 13px 20px; font-size: 0.83rem; line-height: 1.4; color: #475569; }
+.hwm-cmp-feature { color: #334155; font-weight: 600; font-size: 0.8rem; }
+.hwm-compare-row .hwm-cmp-vibro  { color: #475569; font-size: 0.83rem; display: block; }
+.hwm-compare-row .hwm-cmp-rubber { color: #475569; font-size: 0.83rem; display: block; }
 
 @media (max-width: 1024px) {
   .hwm-main-grid { grid-template-columns: 1fr; gap: 24px; }
