@@ -1,3 +1,59 @@
+// ===== LOGO PROCESSING =====
+function removeWhiteBg(img) {
+  const canvas = document.createElement('canvas');
+  canvas.width = img.naturalWidth;
+  canvas.height = img.naturalHeight;
+  const ctx = canvas.getContext('2d');
+  ctx.drawImage(img, 0, 0);
+  const id = ctx.getImageData(0, 0, canvas.width, canvas.height);
+  const d = id.data;
+  const w = canvas.width, h = canvas.height;
+
+  // Flood-fill from edges to mark background white pixels → transparent
+  const visited = new Uint8Array(w * h);
+  const stack = [];
+  for (let x = 0; x < w; x++) {
+    for (const y of [0, h - 1]) {
+      const p = y * w + x;
+      if (!visited[p] && d[p*4] > 220 && d[p*4+1] > 220 && d[p*4+2] > 220) { visited[p] = 1; stack.push(p); }
+    }
+  }
+  for (let y = 0; y < h; y++) {
+    for (const x of [0, w - 1]) {
+      const p = y * w + x;
+      if (!visited[p] && d[p*4] > 220 && d[p*4+1] > 220 && d[p*4+2] > 220) { visited[p] = 1; stack.push(p); }
+    }
+  }
+  while (stack.length) {
+    const p = stack.pop();
+    d[p*4+3] = 0;
+    const x = p % w, y = Math.floor(p / w);
+    for (const [nx, ny] of [[x-1,y],[x+1,y],[x,y-1],[x,y+1]]) {
+      if (nx >= 0 && nx < w && ny >= 0 && ny < h) {
+        const np = ny * w + nx;
+        if (!visited[np] && d[np*4] > 220 && d[np*4+1] > 220 && d[np*4+2] > 220) { visited[np] = 1; stack.push(np); }
+      }
+    }
+  }
+
+  // In text area (right 72% of image): convert dark pixels to white
+  for (let y = 0; y < h; y++) {
+    for (let x = Math.floor(w * 0.28); x < w; x++) {
+      const i = (y * w + x) * 4;
+      if (d[i+3] === 0) continue;
+      const max = Math.max(d[i], d[i+1], d[i+2]);
+      const sat = max === 0 ? 0 : (max - Math.min(d[i], d[i+1], d[i+2])) / max;
+      if (max < 160 && sat < 0.2) d[i] = d[i+1] = d[i+2] = 255;
+    }
+  }
+
+  ctx.putImageData(id, 0, 0);
+  img.src = canvas.toDataURL();
+}
+document.querySelectorAll('.logo-full-img').forEach(img => {
+  img.complete ? removeWhiteBg(img) : img.addEventListener('load', () => removeWhiteBg(img));
+});
+
 // ===== NAVBAR SCROLL =====
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
