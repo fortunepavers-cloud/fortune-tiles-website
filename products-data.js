@@ -11,7 +11,7 @@ const PRODUCTS = {
       { label: 'Colours',   value: '5',        unit: 'options' },
     ],
     shortDesc: 'Traditional brick-shaped vibro compaction paver with superior strength, perfect for walkways and industrial zones.',
-    description: 'The Vibro Brick Paver is a classic brick-shaped paver manufactured using state-of-the-art Apollo Zenith German technology. Produced through vibro compaction, these pavers deliver superior strength and durability — suitable for residential walkways, commercial driveways and heavy-duty industrial zones.',
+    description: 'The Vibro Brick Paver is a classic brick-shaped paver manufactured using state-of-the-art Apollo Zenith German designed machinery. Produced through vibro compaction, these pavers deliver superior strength and durability — suitable for residential walkways, commercial driveways and heavy-duty industrial zones.',
     specs: [
       ['Size',        '200 × 100 mm'],
       ['Thickness',   '60MM / 80MM'],
@@ -20,7 +20,7 @@ const PRODUCTS = {
       ['Application', 'Walkways, Driveways, Industrial Zones'],
     ],
     features: [
-      'Manufactured with Apollo Zenith German technology',
+      'Manufactured with Apollo Zenith German designed machinery',
       'High compressive strength (≥ 35 N/mm²)',
       'Weather, frost and UV resistant',
       'Available in multiple colours',
@@ -58,7 +58,7 @@ const PRODUCTS = {
       'High load-bearing capacity',
       'Available in multiple colours',
       'Easy to lay and replace',
-      'Apollo Zenith German technology',
+      'Apollo Zenith German designed machinery',
     ],
     applications: [
       { icon: 'fa-person-walking',    label: 'Pedestrian Paths', desc: 'Footpaths, corridors and garden walkways.' },
@@ -124,7 +124,7 @@ const PRODUCTS = {
       'High compressive strength',
       'Available in multiple colours',
       'Ideal for driveways and public spaces',
-      'Apollo Zenith German technology',
+      'Apollo Zenith German designed machinery',
     ],
     applications: [
       { icon: 'fa-car',              label: 'Driveways',     desc: 'Residential and commercial vehicle entries.' },
