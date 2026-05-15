@@ -20,7 +20,7 @@ const PRODUCTS = {
       ['Application', 'Walkways, Driveways, Industrial Zones'],
     ],
     features: [
-      'Manufactured with Apollo Zenith German designed machinery',
+      'Manufactured using Apollo Zenith German designed machinery',
       'High compressive strength (≥ 35 N/mm²)',
       'Weather, frost and UV resistant',
       'Available in multiple colours',
@@ -58,7 +58,7 @@ const PRODUCTS = {
       'High load-bearing capacity',
       'Available in multiple colours',
       'Easy to lay and replace',
-      'Apollo Zenith German designed machinery',
+      'Produced using Apollo Zenith German designed machinery',
     ],
     applications: [
       { icon: 'fa-person-walking',    label: 'Pedestrian Paths', desc: 'Footpaths, corridors and garden walkways.' },
@@ -124,7 +124,7 @@ const PRODUCTS = {
       'High compressive strength',
       'Available in multiple colours',
       'Ideal for driveways and public spaces',
-      'Apollo Zenith German designed machinery',
+      'Produced using Apollo Zenith German designed machinery',
     ],
     applications: [
       { icon: 'fa-car',              label: 'Driveways',     desc: 'Residential and commercial vehicle entries.' },
