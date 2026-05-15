@@ -177,11 +177,89 @@ img { max-width: 100%; display: block; }
   flex-shrink: 0;
 }
 
-.logo-full-img {
-  height: 52px;
-  width: auto;
-  display: block;
+/* ===== CSS LOGO BADGE ===== */
+.logo-badge {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+.logo-badge-icon {
+  width: 46px;
+  height: 46px;
+  background: #111827;
+  border-radius: 7px;
+  position: relative;
   flex-shrink: 0;
+  overflow: hidden;
+}
+.logo-badge-icon::before {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: #1a6fc4;
+  transform: rotate(45deg);
+  top: -6px;
+  left: -6px;
+}
+.logo-badge-icon::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background: #ffffff;
+  transform: rotate(45deg);
+  bottom: -5px;
+  right: -5px;
+}
+.logo-badge-center {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: #add8e6;
+  transform: rotate(45deg);
+  top: 50%;
+  left: 50%;
+  margin: -7px 0 0 -7px;
+  z-index: 2;
+}
+.logo-badge-words {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.logo-badge-name {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  line-height: 1;
+}
+.logo-o {
+  position: relative;
+  display: inline-block;
+}
+.logo-o::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 5px;
+  height: 5px;
+  background: #1a6fc4;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.logo-badge-sub {
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.44rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.55);
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
 }
 
 .logo-text {
@@ -210,9 +288,8 @@ img { max-width: 100%; display: block; }
   margin-top: 5px;
 }
 
-.footer-brand .logo-full-img {
-  height: 48px;
-}
+.footer-brand .logo-badge-name { font-size: 1.1rem; }
+.footer-brand .logo-badge-sub { font-size: 0.4rem; }
 
 .nav-links {
   display: flex;
