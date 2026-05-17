@@ -1625,7 +1625,8 @@ img { max-width: 100%; display: block; }
 .pd-swatches-label { font-size: 0.63rem; font-weight: 700; letter-spacing: 1.8px; text-transform: uppercase; color: #1e3a8a; }
 .pd-swatches { display: flex; gap: 16px; flex-wrap: wrap; }
 .pd-swatch-item { display: flex; flex-direction: column; align-items: center; gap: 6px; }
-.pd-swatch-name { font-size: 0.68rem; font-weight: 600; color: #1e3a8a; text-align: center; white-space: nowrap; }
+.pd-swatch-name { font-size: 0.68rem; font-weight: 600; color: #1e3a8a; text-align: center; white-space: nowrap; opacity: 0; transition: opacity 0.15s; }
+.pd-swatch-item:hover .pd-swatch-name { opacity: 1; }
 .pd-swatch {
   width: 40px; height: 40px; border-radius: 8px;
   cursor: pointer; border: none;
