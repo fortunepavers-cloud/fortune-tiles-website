@@ -164,7 +164,7 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
   if (product) text += `*Product:* ${product}\n`;
   text += `*Message:* ${message}`;
 
-  window.open(`https://wa.me/917228999995?text=${encodeURIComponent(text)}`, '_blank');
+  window.open(`https://wa.me/918238964164?text=${encodeURIComponent(text)}`, '_blank');
   this.reset();
 });
 
