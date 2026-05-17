@@ -1620,10 +1620,10 @@ img { max-width: 100%; display: block; }
   font-weight: 700; color: #0f172a; line-height: 1.15; letter-spacing: -1px;
 }
 .pd-desc { font-size: 1rem; color: #64748b; line-height: 1.85; }
-.pd-swatches-wrap { display: flex; flex-direction: column; gap: 12px; }
+.pd-swatches-wrap { display: flex; flex-direction: column; gap: 12px; margin-top: 20px; width: 100%; max-width: 420px; }
 .pd-swatches-header { display: flex; justify-content: space-between; align-items: center; }
-.pd-swatches-label { font-size: 0.63rem; font-weight: 700; letter-spacing: 1.8px; text-transform: uppercase; color: #94a3b8; }
-.pd-selected-color { font-size: 0.85rem; font-weight: 600; color: #0f172a; }
+.pd-swatches-label { font-size: 0.63rem; font-weight: 700; letter-spacing: 1.8px; text-transform: uppercase; color: #1e3a8a; }
+.pd-selected-color { font-size: 0.85rem; font-weight: 600; color: #1e3a8a; }
 .pd-swatches { display: flex; gap: 9px; flex-wrap: wrap; }
 .pd-swatch {
   width: 40px; height: 40px; border-radius: 8px;
