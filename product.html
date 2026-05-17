@@ -341,11 +341,13 @@
 
       // Specs
       document.getElementById('pdSpecs').innerHTML = p.specs.map(([k, v]) =>
-        `<div class="pd-spec-row"><span class="pd-spec-key">${k}</span><span class="pd-spec-val">${v}</span></div>`
+        `<div class="pd-spec-badge"><span class="pd-spec-badge-label">${k}</span><span class="pd-spec-badge-value">${v}</span></div>`
       ).join('');
 
       // Features
-      document.getElementById('pdFeats').innerHTML = p.features.map(f => `<li>${f}</li>`).join('');
+      document.getElementById('pdFeats').innerHTML = p.features.map(f =>
+        `<li><i class="fa-solid fa-diamond pd-feat-icon"></i><span>${f}</span></li>`
+      ).join('');
 
       // Where It's Used
       if (p.applications && p.applications.length) {
