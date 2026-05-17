@@ -50,16 +50,31 @@
     </div>
   </nav>
 
-  <!-- ===== BREADCRUMB BAR ===== -->
-  <div class="pd-bar">
-    <div class="container">
+  <!-- ===== PRODUCT HERO ===== -->
+  <div class="pd-hero">
+    <div class="pd-hero-orb pd-hero-orb--1"></div>
+    <div class="pd-hero-orb pd-hero-orb--2"></div>
+    <div class="container pd-hero-inner">
       <nav class="pd-breadcrumb">
-        <a href="index.html"><i class="fa-solid fa-house" style="font-size:0.7rem"></i> Home</a>
+        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
         <i class="fa-solid fa-chevron-right"></i>
         <a href="index.html#products">Products</a>
         <i class="fa-solid fa-chevron-right"></i>
         <span id="breadcrumbName">Product</span>
       </nav>
+      <span class="pd-hero-badge" id="pdHeroBadge"></span>
+      <h1 class="pd-hero-title" id="pdHeroTitle">Loading...</h1>
+      <p class="pd-hero-tagline" id="pdHeroTagline"></p>
+      <div class="pd-hero-trust">
+        <span><i class="fa-solid fa-industry"></i> Apollo Zenith German Machinery</span>
+        <span><i class="fa-solid fa-shield-halved"></i> High Compressive Strength</span>
+        <span><i class="fa-solid fa-medal"></i> 12+ Years of Excellence</span>
+      </div>
+    </div>
+    <div class="pd-hero-wave">
+      <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,40 C360,0 1080,60 1440,20 L1440,60 L0,60 Z" fill="#edf2fb"/>
+      </svg>
     </div>
   </div>
 
@@ -91,12 +106,8 @@
       <!-- Right: Details -->
       <div class="pd-info-col">
 
-        <!-- Model ID + Category + Title + Description -->
-        <div>
-          <span class="pd-cat-badge" id="pdCategory"></span>
-          <h1 class="pd-name" id="pdTitle" style="margin-top:10px">Loading...</h1>
-          <p class="pd-desc" id="pdDescription" style="margin-top:12px"></p>
-        </div>
+        <!-- Description -->
+        <p class="pd-desc" id="pdDescription"></p>
 
         <!-- Colour Swatches -->
         <div class="pd-swatches-wrap" id="pdSwatchesWrap" style="display:none">
@@ -138,19 +149,13 @@
 
         <!-- CTAs -->
         <div class="pd-cta">
-          <a href="#" id="pdWhatsapp" target="_blank"
-             style="display:inline-flex;align-items:center;gap:9px;padding:13px 28px;background:#111;color:#fff;border-radius:8px;font-weight:700;font-size:0.88rem;transition:opacity 0.2s;"
-             onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
-            <i class="fa-brands fa-whatsapp" style="font-size:1rem"></i> Add to Quote
+          <a href="#" id="pdWhatsapp" target="_blank" class="pd-btn-whatsapp">
+            <i class="fa-brands fa-whatsapp"></i> Enquire on WhatsApp
           </a>
-          <a href="index.html#contact"
-             style="display:inline-flex;align-items:center;gap:9px;padding:13px 28px;background:transparent;color:var(--text);border:1.5px solid rgba(0,0,0,0.2);border-radius:8px;font-weight:600;font-size:0.88rem;transition:border-color 0.2s;"
-             onmouseover="this.style.borderColor='var(--primary)'" onmouseout="this.style.borderColor='rgba(0,0,0,0.2)'">
-            <i class="fa-solid fa-file-lines"></i> Get Quote
+          <a href="index.html#contact" class="pd-btn-quote">
+            <i class="fa-solid fa-phone"></i> Get a Quote
           </a>
-          <button id="pdDownloadBtn" onclick="downloadSpecPDF()"
-             style="display:inline-flex;align-items:center;gap:9px;padding:13px 28px;background:transparent;color:var(--text);border:1.5px solid rgba(0,0,0,0.2);border-radius:8px;font-weight:600;font-size:0.88rem;cursor:pointer;font-family:inherit;transition:border-color 0.2s;"
-             onmouseover="this.style.borderColor='var(--accent)';this.style.color='var(--accent)'" onmouseout="this.style.borderColor='rgba(0,0,0,0.2)';this.style.color='var(--text)'">
+          <button id="pdDownloadBtn" onclick="downloadSpecPDF()" class="pd-btn-download">
             <i class="fa-solid fa-file-arrow-down"></i> Download Spec Sheet
           </button>
         </div>
@@ -174,6 +179,14 @@
     </div>
     <i class="fa-solid fa-chevron-right"></i>
   </a>
+
+  <!-- ===== MORE PRODUCTS ===== -->
+  <div class="pd-related">
+    <div class="container">
+      <p class="pd-related-title"><i class="fa-solid fa-layer-group"></i> More Products</p>
+      <div class="pd-related-grid" id="pdRelatedGrid"></div>
+    </div>
+  </div>
 
   <!-- ===== FOOTER ===== -->
   <footer class="footer">
@@ -303,8 +316,9 @@
       document.title = p.name + ' | Fortune Tiles & Pavers - FTP';
 
       // Basic fields
-      document.getElementById('pdTitle').textContent        = p.name;
-      document.getElementById('pdCategory').textContent     = p.category;
+      document.getElementById('pdHeroTitle').textContent   = p.name;
+      document.getElementById('pdHeroBadge').textContent   = p.category;
+      document.getElementById('pdHeroTagline').textContent = p.shortDesc || '';
       document.getElementById('breadcrumbName').textContent = p.name;
       document.getElementById('pdDescription').textContent  = p.description;
 
@@ -393,8 +407,26 @@
       document.getElementById('pdWhatsapp').href =
         `https://wa.me/918238964164?text=Hello%2C%20I%20am%20interested%20in%20${encodeURIComponent(p.name)}.%20Please%20share%20details.`;
 
-      // Prev / Next navigation
+      // Related products (same category first, then others; max 3)
+      const relGrid = document.getElementById('pdRelatedGrid');
       const productKeys = Object.keys(PRODUCTS);
+      const sameCat = productKeys.filter(k => k !== id && PRODUCTS[k].category === p.category);
+      const others  = productKeys.filter(k => k !== id && PRODUCTS[k].category !== p.category);
+      const relKeys = [...sameCat, ...others].slice(0, 3);
+      relGrid.innerHTML = relKeys.map(k => {
+        const rp = PRODUCTS[k];
+        const imgHtml = rp.image
+          ? `<img src="${rp.image}" alt="${rp.name}" loading="lazy">`
+          : `<div class="pd-rel-icon" style="background:${rp.iconBg||'#edf2fb'}"><i class="fa-solid ${rp.icon||'fa-cube'}" style="font-size:2rem;color:#1e3a8a"></i></div>`;
+        return `<a href="product.html?id=${k}" class="pd-rel-card">
+          <div class="pd-rel-img">${imgHtml}</div>
+          <span class="pd-rel-cat">${rp.category}</span>
+          <p class="pd-rel-name">${rp.name}</p>
+          <span class="pd-rel-link">View Details <i class="fa-solid fa-arrow-right"></i></span>
+        </a>`;
+      }).join('');
+
+      // Prev / Next navigation
       const idx = productKeys.indexOf(id);
       if (idx > 0) {
         const prevId = productKeys[idx - 1];
