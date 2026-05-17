@@ -63,84 +63,89 @@
     </div>
   </div>
 
-  <!-- ===== PRODUCT PAGE ===== -->
-  <div class="pd-page">
-    <div class="pd-split">
-
-      <!-- LEFT: Dark image panel -->
-      <div class="pd-image-col">
-        <div class="pd-image-inner">
-          <!-- Status badge -->
-          <div class="pd-status-badge" id="pdStatusBadge" style="display:none">
-            <span class="pd-status-dot"></span>
-            In Production
+  <!-- ===== PRODUCT HERO ===== -->
+  <section class="pd-hero">
+    <!-- LEFT: Info -->
+    <div class="pd-hero-info">
+      <div class="pd-hero-info-inner">
+        <span class="pd-cat-badge" id="pdCategory"></span>
+        <h1 class="pd-name" id="pdTitle">Loading...</h1>
+        <p class="pd-desc" id="pdDescription"></p>
+        <!-- Colour Swatches -->
+        <div class="pd-swatches-wrap" id="pdSwatchesWrap" style="display:none">
+          <div class="pd-swatches-header">
+            <span class="pd-swatches-label">Available Colours</span>
+            <span class="pd-selected-color" id="pdSelectedColor"></span>
           </div>
-          <!-- Product image -->
-          <div class="pd-stage" id="pdStage">
-            <div id="pdImageWrap"></div>
-          </div>
-          <!-- Colour Swatches -->
-          <div class="pd-swatches-wrap" id="pdSwatchesWrap" style="display:none">
-            <div class="pd-swatches-header">
-              <span class="pd-swatches-label">Available Colours</span>
-              <span class="pd-selected-color" id="pdSelectedColor"></span>
-            </div>
-            <div class="pd-swatches" id="pdSwatches"></div>
-          </div>
-          <!-- Back link -->
+          <div class="pd-swatches" id="pdSwatches"></div>
+        </div>
+        <!-- Primary CTAs -->
+        <div class="pd-cta">
+          <a href="#" id="pdWhatsapp" target="_blank" class="pd-btn-whatsapp">
+            <i class="fa-brands fa-whatsapp"></i> Enquire on WhatsApp
+          </a>
+          <a href="index.html#contact" class="pd-btn-quote">
+            <i class="fa-solid fa-phone"></i> Get a Quote
+          </a>
+        </div>
+        <!-- Secondary actions -->
+        <div class="pd-cta-row2">
+          <button id="pdDownloadBtn" onclick="downloadSpecPDF()" class="pd-btn-download">
+            <i class="fa-solid fa-file-arrow-down"></i> Download Spec Sheet
+          </button>
           <a href="index.html#products" class="pd-back">
             <i class="fa-solid fa-arrow-left"></i> All Products
           </a>
         </div>
       </div>
-
-      <!-- RIGHT: White info panel -->
-      <div class="pd-info-col">
-        <div class="pd-info-inner">
-
-          <!-- Category + Title -->
-          <div class="pd-title-block">
-            <span class="pd-cat-badge" id="pdCategory"></span>
-            <h1 class="pd-name" id="pdTitle">Loading...</h1>
-            <p class="pd-desc" id="pdDescription"></p>
-          </div>
-
-          <!-- Highlights -->
-          <div class="pd-highlights" id="pdHighlights"></div>
-
-          <!-- Specs -->
-          <div class="pd-section-block">
-            <p class="pd-section-label"><i class="fa-solid fa-table-list"></i> Specifications</p>
-            <div class="pd-specs" id="pdSpecs"></div>
-          </div>
-
-          <!-- Features -->
-          <div class="pd-section-block">
-            <p class="pd-section-label"><i class="fa-solid fa-circle-check"></i> Key Features</p>
-            <ul class="pd-feats" id="pdFeats"></ul>
-          </div>
-
-          <!-- Where It's Used -->
-          <div id="pdWhere" style="display:none" class="pd-section-block">
-            <p class="pd-section-label"><i class="fa-solid fa-location-dot"></i> Where It's Used</p>
-            <div class="pd-where-grid" id="pdWhereGrid"></div>
-          </div>
-
-          <!-- CTAs -->
-          <div class="pd-cta">
-            <a href="#" id="pdWhatsapp" target="_blank" class="pd-btn-whatsapp">
-              <i class="fa-brands fa-whatsapp"></i> Enquire on WhatsApp
-            </a>
-            <a href="index.html#contact" class="pd-btn-quote">
-              <i class="fa-solid fa-phone"></i> Get a Quote
-            </a>
-            <button id="pdDownloadBtn" onclick="downloadSpecPDF()" class="pd-btn-download">
-              <i class="fa-solid fa-file-arrow-down"></i> Spec Sheet
-            </button>
-          </div>
-
-        </div>
+    </div>
+    <!-- RIGHT: Product image on gradient -->
+    <div class="pd-hero-visual">
+      <div class="pd-status-badge" id="pdStatusBadge" style="display:none">
+        <span class="pd-status-dot"></span> In Production
       </div>
+      <div class="pd-stage" id="pdStage">
+        <div id="pdImageWrap"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== METRICS BAND ===== -->
+  <div class="pd-metrics-band" id="pdHighlights"></div>
+
+  <!-- ===== SPECS + FEATURES ===== -->
+  <section class="pd-content">
+    <div class="container pd-content-grid">
+      <div class="pd-section-card">
+        <h3 class="pd-section-title">
+          <span class="pd-stitle-icon"><i class="fa-solid fa-table-list"></i></span>
+          Specifications
+        </h3>
+        <div class="pd-specs" id="pdSpecs"></div>
+      </div>
+      <div class="pd-section-card">
+        <h3 class="pd-section-title">
+          <span class="pd-stitle-icon"><i class="fa-solid fa-circle-check"></i></span>
+          Key Features
+        </h3>
+        <ul class="pd-feats" id="pdFeats"></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHERE USED ===== -->
+  <div id="pdWhere" class="pd-where-section" style="display:none">
+    <div class="container">
+      <h3 class="pd-where-heading">Where It's Used</h3>
+      <div class="pd-where-grid" id="pdWhereGrid"></div>
+    </div>
+  </div>
+
+  <!-- ===== MORE PRODUCTS ===== -->
+  <div class="pd-related">
+    <div class="container">
+      <p class="pd-related-label">You Might Also Like</p>
+      <div class="pd-related-grid" id="pdRelatedGrid"></div>
     </div>
   </div>
 
@@ -159,14 +164,6 @@
     </div>
     <i class="fa-solid fa-chevron-right"></i>
   </a>
-
-  <!-- ===== MORE PRODUCTS ===== -->
-  <div class="pd-related">
-    <div class="container">
-      <p class="pd-related-title"><i class="fa-solid fa-layer-group"></i> More Products</p>
-      <div class="pd-related-grid" id="pdRelatedGrid"></div>
-    </div>
-  </div>
 
   <!-- ===== FOOTER ===== -->
   <footer class="footer">
@@ -339,17 +336,16 @@
         colorLabel.textContent = p.colors[0];
       }
 
-      // Highlights stats row
+      // Metrics band
       const hlEl = document.getElementById('pdHighlights');
       if (p.highlights && p.highlights.length) {
+        hlEl.style.display = 'flex';
         hlEl.innerHTML = p.highlights.map(h =>
           `<div class="pd-highlight">
             <div class="pd-highlight-label">${h.label}</div>
             <div class="pd-highlight-value">${h.value}<span class="pd-highlight-unit">${h.unit}</span></div>
           </div>`
         ).join('');
-      } else {
-        hlEl.style.display = 'none';
       }
 
       // Specs
