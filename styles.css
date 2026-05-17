@@ -1630,8 +1630,8 @@ img { max-width: 100%; display: block; }
 .pd-swatch {
   width: 40px; height: 40px; border-radius: 8px;
   cursor: pointer; border: none;
-  outline: 2.5px solid transparent; outline-offset: 3px;
-  transition: outline-color 0.15s, transform 0.15s;
+  outline: none;
+  transition: transform 0.15s;
   background: var(--sw-color, #ccc);
   position: relative; overflow: hidden; flex-shrink: 0; padding: 0;
 }
@@ -1639,7 +1639,7 @@ img { max-width: 100%; display: block; }
   content: ''; position: absolute; inset: 0;
   background: linear-gradient(135deg, rgba(255,255,255,0.22) 0%, transparent 48%, rgba(0,0,0,0.14) 100%);
 }
-.pd-swatch.active { outline-color: #1e3a8a; }
+.pd-swatch.active { box-shadow: none; }
 .pd-swatch:hover:not(.active) { transform: scale(1.1); }
 .pd-cta { display: flex; gap: 12px; flex-wrap: wrap; }
 .pd-cta-row2 { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
