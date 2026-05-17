@@ -109,9 +109,6 @@
     </div>
   </section>
 
-  <!-- ===== METRICS BAND ===== -->
-  <div class="pd-metrics-band" id="pdHighlights"></div>
-
   <!-- ===== SPECS + FEATURES ===== -->
   <section class="pd-content">
     <div class="container pd-content-grid">
@@ -327,17 +324,6 @@
         });
       }
 
-      // Metrics band
-      const hlEl = document.getElementById('pdHighlights');
-      if (p.highlights && p.highlights.length) {
-        hlEl.style.display = 'flex';
-        hlEl.innerHTML = p.highlights.map(h =>
-          `<div class="pd-highlight">
-            <div class="pd-highlight-label">${h.label}</div>
-            <div class="pd-highlight-value">${h.value}<span class="pd-highlight-unit">${h.unit}</span></div>
-          </div>`
-        ).join('');
-      }
 
       // Specs
       document.getElementById('pdSpecs').innerHTML = p.specs.map(([k, v]) =>
