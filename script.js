@@ -113,6 +113,30 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
   const product = this.querySelector('[name="product"]').value.trim();
   const message = this.querySelector('[name="message"]').value.trim();
 
+  // Phone validation — must contain at least 10 digits
+  const phoneInput = this.querySelector('[name="phone"]');
+  const digits = phone.replace(/[\s\-\+\(\)]/g, '');
+  let phoneErr = phoneInput.parentElement.querySelector('.phone-error');
+
+  if (!/^\d{10,15}$/.test(digits)) {
+    phoneInput.style.borderColor = '#e53e3e';
+    phoneInput.style.boxShadow = '0 0 0 3px rgba(229,62,62,0.15)';
+    if (!phoneErr) {
+      phoneErr = document.createElement('p');
+      phoneErr.className = 'phone-error';
+      phoneErr.style.cssText = 'color:#e53e3e;font-size:0.78rem;margin-top:6px;';
+      phoneInput.parentElement.appendChild(phoneErr);
+    }
+    phoneErr.textContent = 'Please enter a valid phone number (10 digits minimum).';
+    phoneInput.focus();
+    return;
+  }
+
+  // Clear any previous error
+  phoneInput.style.borderColor = '';
+  phoneInput.style.boxShadow = '';
+  if (phoneErr) phoneErr.remove();
+
   let text = `Hello, I am interested in Fortune Tiles & Pavers products.\n\n`;
   text += `*Name:* ${name}\n`;
   text += `*Phone:* ${phone}\n`;
