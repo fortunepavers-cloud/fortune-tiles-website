@@ -55,4 +55,4 @@ The form in `#contact` is **display-only** — it intercepts submit, shows a suc
 - Company: Fortune Tiles & Pavers, Dashrath, Vadodara, Gujarat
 - Email: fortunepavers@gmail.com | Web: www.fortunepavers.com
 - Phone: 0265-2241224, +91 82389 64164, +91 98250 77602
-- Representatives: Deep Patel (8238964164), Kishor Patel (9909217315)
+- Representatives: Deep Patel (8238964164)
