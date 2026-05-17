@@ -313,6 +313,11 @@
           const btn = document.createElement('button');
           btn.className = 'pd-swatch' + (i === 0 ? ' active' : '');
           btn.style.setProperty('--sw-color', COLOR_HEX[color] || '#ccc');
+          btn.addEventListener('mouseenter', () => { colorLabel.textContent = color; });
+          btn.addEventListener('mouseleave', () => {
+            const active = swatchRow.querySelector('.pd-swatch.active');
+            colorLabel.textContent = active ? active.title : p.colors[0];
+          });
           btn.title = color;
           btn.addEventListener('click', () => {
             swatchRow.querySelectorAll('.pd-swatch').forEach(s => s.classList.remove('active'));
