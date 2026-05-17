@@ -141,14 +141,6 @@
     </div>
   </div>
 
-  <!-- ===== MORE PRODUCTS ===== -->
-  <div class="pd-related">
-    <div class="container">
-      <p class="pd-related-label">You Might Also Like</p>
-      <div class="pd-related-grid" id="pdRelatedGrid"></div>
-    </div>
-  </div>
-
   <!-- Prev / Next side navigation -->
   <a href="#" id="pdPrev" class="pd-side-btn pd-side-btn--prev" style="display:none">
     <i class="fa-solid fa-chevron-left"></i>
@@ -375,26 +367,8 @@
       document.getElementById('pdWhatsapp').href =
         `https://wa.me/918238964164?text=Hello%2C%20I%20am%20interested%20in%20${encodeURIComponent(p.name)}.%20Please%20share%20details.`;
 
-      // Related products (same category first, then others; max 3)
-      const relGrid = document.getElementById('pdRelatedGrid');
-      const productKeys = Object.keys(PRODUCTS);
-      const sameCat = productKeys.filter(k => k !== id && PRODUCTS[k].category === p.category);
-      const others  = productKeys.filter(k => k !== id && PRODUCTS[k].category !== p.category);
-      const relKeys = [...sameCat, ...others].slice(0, 3);
-      relGrid.innerHTML = relKeys.map(k => {
-        const rp = PRODUCTS[k];
-        const imgHtml = rp.image
-          ? `<img src="${rp.image}" alt="${rp.name}" loading="lazy">`
-          : `<div class="pd-rel-icon" style="background:${rp.iconBg||'#edf2fb'}"><i class="fa-solid ${rp.icon||'fa-cube'}" style="font-size:2rem;color:#1e3a8a"></i></div>`;
-        return `<a href="product.html?id=${k}" class="pd-rel-card">
-          <div class="pd-rel-img">${imgHtml}</div>
-          <span class="pd-rel-cat">${rp.category}</span>
-          <p class="pd-rel-name">${rp.name}</p>
-          <span class="pd-rel-link">View Details <i class="fa-solid fa-arrow-right"></i></span>
-        </a>`;
-      }).join('');
-
       // Prev / Next navigation
+      const productKeys = Object.keys(PRODUCTS);
       const idx = productKeys.indexOf(id);
       if (idx > 0) {
         const prevId = productKeys[idx - 1];
