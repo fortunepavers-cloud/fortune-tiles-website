@@ -2307,6 +2307,8 @@ img { max-width: 100%; display: block; }
 
   .navbar .nav-links.open { display: flex; }
   .navbar .nav-links li a { font-size: 1.2rem; padding: 12px 24px; }
+  .navbar .nav-links.open li a { color: var(--text); }
+  .navbar .nav-links.open li a.nav-cta { color: var(--white); }
 
   .hamburger { display: flex; z-index: 1000; }
   .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
