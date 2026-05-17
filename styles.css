@@ -1779,8 +1779,9 @@ img { max-width: 100%; display: block; }
 .pd-side-btn { position: fixed; top: 50%; transform: translateY(-50%); z-index: 200; display: flex; align-items: center; gap: 10px; padding: 14px 16px; background: #fff; border: 1px solid #e5eaf3; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); color: #0f172a; text-decoration: none; transition: border-color 0.2s, box-shadow 0.2s; max-width: 190px; }
 .pd-side-btn--prev { left: 16px; }
 .pd-side-btn--next { right: 16px; }
-.pd-side-btn:hover { border-color: #1e3a8a; box-shadow: 0 4px 24px rgba(30,58,138,0.15); }
-.pd-side-btn i { font-size: 0.9rem; color: #94a3b8; flex-shrink: 0; }
+.pd-side-btn:hover { border-color: var(--accent); box-shadow: 0 4px 24px rgba(230,126,34,0.2); }
+.pd-side-btn i { font-size: 0.9rem; color: #94a3b8; flex-shrink: 0; transition: color 0.2s; }
+.pd-side-btn:hover i { color: var(--accent); }
 .pd-side-dir { display: block; font-size: 0.6rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #94a3b8; margin-bottom: 2px; }
 .pd-side-name { display: none; }
 .pd-side-label--right { text-align: right; }
