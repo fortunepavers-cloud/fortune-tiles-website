@@ -143,16 +143,8 @@
   <!-- Prev / Next side navigation -->
   <a href="#" id="pdPrev" class="pd-side-btn pd-side-btn--prev" style="display:none">
     <i class="fa-solid fa-chevron-left"></i>
-    <div class="pd-side-label">
-      <span class="pd-side-dir">Previous</span>
-      <span class="pd-side-name" id="pdPrevName"></span>
-    </div>
   </a>
   <a href="#" id="pdNext" class="pd-side-btn pd-side-btn--next" style="display:none">
-    <div class="pd-side-label pd-side-label--right">
-      <span class="pd-side-dir">Next</span>
-      <span class="pd-side-name" id="pdNextName"></span>
-    </div>
     <i class="fa-solid fa-chevron-right"></i>
   </a>
 
@@ -381,14 +373,12 @@
         const prevId = productKeys[idx - 1];
         const prevEl = document.getElementById('pdPrev');
         prevEl.href = `product.html?id=${prevId}`;
-        document.getElementById('pdPrevName').textContent = PRODUCTS[prevId].name;
         prevEl.style.display = 'flex';
       }
       if (idx < productKeys.length - 1) {
         const nextId = productKeys[idx + 1];
         const nextEl = document.getElementById('pdNext');
         nextEl.href = `product.html?id=${nextId}`;
-        document.getElementById('pdNextName').textContent = PRODUCTS[nextId].name;
         nextEl.style.display = 'flex';
       }
     }
