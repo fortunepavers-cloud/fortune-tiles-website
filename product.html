@@ -148,14 +148,6 @@
     <i class="fa-solid fa-chevron-right"></i>
   </a>
 
-  <!-- ===== ALL PRODUCTS ===== -->
-  <section class="pd-all-products">
-    <div class="container">
-      <h3 class="pd-all-title">All Products</h3>
-      <div class="pd-all-grid" id="pdAllGrid"></div>
-    </div>
-  </section>
-
   <!-- ===== FOOTER ===== -->
   <footer class="footer">
     <div class="footer-top">
@@ -390,24 +382,6 @@
         nextEl.style.display = 'flex';
       }
     }
-
-    // ===== ALL PRODUCTS GRID =====
-    (function () {
-      const grid = document.getElementById('pdAllGrid');
-      Object.entries(PRODUCTS).forEach(([key, prod]) => {
-        const card = document.createElement('a');
-        card.href = `product.html?id=${key}`;
-        card.className = 'pd-all-card' + (key === id ? ' pd-all-card--active' : '');
-        const imgHtml = prod.image
-          ? `<img src="${prod.image}" alt="${prod.name}" loading="lazy" class="pd-all-img">`
-          : `<div class="pd-all-icon" style="background:${prod.iconBg||'#edf2fb'}"><i class="fa-solid ${prod.icon||'fa-cube'}" style="color:#1e3a8a;font-size:1.8rem"></i></div>`;
-        card.innerHTML = `
-          <div class="pd-all-thumb">${imgHtml}</div>
-          <span class="pd-all-cat">${prod.category}</span>
-          <p class="pd-all-name">${prod.name}</p>`;
-        grid.appendChild(card);
-      });
-    })();
 
     // ===== PDF DOWNLOAD =====
     function downloadSpecPDF() {
