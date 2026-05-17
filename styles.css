@@ -1669,7 +1669,7 @@ img { max-width: 100%; display: block; }
 .pd-back:hover { color: #1e3a8a; }
 .pd-hero-visual {
   background: linear-gradient(145deg, #e8f0fc 0%, #dce9fb 40%, #cdd8f7 100%);
-  display: flex; align-items: center; justify-content: center;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
   padding: 72px 60px; position: relative;
 }
 .pd-status-badge {
