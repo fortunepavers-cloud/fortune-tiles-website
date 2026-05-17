@@ -103,7 +103,6 @@
       <div class="pd-swatches-wrap" id="pdSwatchesWrap" style="display:none">
         <div class="pd-swatches-header">
           <span class="pd-swatches-label">Available Colours</span>
-          <span class="pd-selected-color" id="pdSelectedColor"></span>
         </div>
         <div class="pd-swatches" id="pdSwatches"></div>
       </div>
@@ -310,27 +309,30 @@
       if (p.colors && p.colors.length) {
         swatchesWrap.style.display = 'flex';
         p.colors.forEach((color, i) => {
+          const wrap = document.createElement('div');
+          wrap.className = 'pd-swatch-item';
+
           const btn = document.createElement('button');
           btn.className = 'pd-swatch' + (i === 0 ? ' active' : '');
           btn.style.setProperty('--sw-color', COLOR_HEX[color] || '#ccc');
-          btn.addEventListener('mouseenter', () => { colorLabel.textContent = color; });
-          btn.addEventListener('mouseleave', () => {
-            const active = swatchRow.querySelector('.pd-swatch.active');
-            colorLabel.textContent = active ? active.title : p.colors[0];
-          });
           btn.title = color;
           btn.addEventListener('click', () => {
             swatchRow.querySelectorAll('.pd-swatch').forEach(s => s.classList.remove('active'));
             btn.classList.add('active');
-            colorLabel.textContent = color;
             if (p.colorImages && p.colorImages[color]) {
               const img = document.getElementById('pdMainImg');
               if (img) img.src = p.colorImages[color];
             }
           });
-          swatchRow.appendChild(btn);
+
+          const lbl = document.createElement('span');
+          lbl.className = 'pd-swatch-name';
+          lbl.textContent = color;
+
+          wrap.appendChild(btn);
+          wrap.appendChild(lbl);
+          swatchRow.appendChild(wrap);
         });
-        colorLabel.textContent = p.colors[0];
       }
 
       // Metrics band
