@@ -50,11 +50,9 @@
     </div>
   </nav>
 
-  <!-- ===== PRODUCT HERO ===== -->
-  <div class="pd-hero">
-    <div class="pd-hero-orb pd-hero-orb--1"></div>
-    <div class="pd-hero-orb pd-hero-orb--2"></div>
-    <div class="container pd-hero-inner">
+  <!-- ===== BREADCRUMB ===== -->
+  <div class="pd-bar">
+    <div class="container">
       <nav class="pd-breadcrumb">
         <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
         <i class="fa-solid fa-chevron-right"></i>
@@ -62,104 +60,86 @@
         <i class="fa-solid fa-chevron-right"></i>
         <span id="breadcrumbName">Product</span>
       </nav>
-      <span class="pd-hero-badge" id="pdHeroBadge"></span>
-      <h1 class="pd-hero-title" id="pdHeroTitle">Loading...</h1>
-      <p class="pd-hero-tagline" id="pdHeroTagline"></p>
-      <div class="pd-hero-trust">
-        <span><i class="fa-solid fa-industry"></i> Apollo Zenith German Machinery</span>
-        <span><i class="fa-solid fa-shield-halved"></i> High Compressive Strength</span>
-        <span><i class="fa-solid fa-medal"></i> 12+ Years of Excellence</span>
-      </div>
-    </div>
-    <div class="pd-hero-wave">
-      <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0,40 C360,0 1080,60 1440,20 L1440,60 L0,60 Z" fill="#edf2fb"/>
-      </svg>
     </div>
   </div>
 
   <!-- ===== PRODUCT PAGE ===== -->
   <div class="pd-page">
-    <div class="container pd-grid">
+    <div class="pd-split">
 
-      <!-- Left: Image Stage -->
+      <!-- LEFT: Dark image panel -->
       <div class="pd-image-col">
-        <div class="pd-stage" id="pdStage">
+        <div class="pd-image-inner">
           <!-- Status badge -->
           <div class="pd-status-badge" id="pdStatusBadge" style="display:none">
             <span class="pd-status-dot"></span>
             In Production
           </div>
           <!-- Product image -->
-          <div id="pdImageWrap" style="position:relative;z-index:1;width:100%;height:100%;display:flex;align-items:center;justify-content:center;"></div>
-          <!-- Bottom label -->
-          <div class="pd-stage-footer">
-            <span class="pd-stage-label" id="pdStageLabel">—</span>
+          <div class="pd-stage" id="pdStage">
+            <div id="pdImageWrap"></div>
           </div>
+          <!-- Colour Swatches -->
+          <div class="pd-swatches-wrap" id="pdSwatchesWrap" style="display:none">
+            <div class="pd-swatches-header">
+              <span class="pd-swatches-label">Available Colours</span>
+              <span class="pd-selected-color" id="pdSelectedColor"></span>
+            </div>
+            <div class="pd-swatches" id="pdSwatches"></div>
+          </div>
+          <!-- Back link -->
+          <a href="index.html#products" class="pd-back">
+            <i class="fa-solid fa-arrow-left"></i> All Products
+          </a>
         </div>
-
-        <a href="index.html#products" class="pd-back">
-          <i class="fa-solid fa-arrow-left"></i> Back to Products
-        </a>
       </div>
 
-      <!-- Right: Details -->
+      <!-- RIGHT: White info panel -->
       <div class="pd-info-col">
+        <div class="pd-info-inner">
 
-        <!-- Description -->
-        <p class="pd-desc" id="pdDescription"></p>
-
-        <!-- Colour Swatches -->
-        <div class="pd-swatches-wrap" id="pdSwatchesWrap" style="display:none">
-          <div class="pd-swatches-header">
-            <span class="pd-swatches-label">Top Layer Finish</span>
-            <span class="pd-selected-color" id="pdSelectedColor"></span>
+          <!-- Category + Title -->
+          <div class="pd-title-block">
+            <span class="pd-cat-badge" id="pdCategory"></span>
+            <h1 class="pd-name" id="pdTitle">Loading...</h1>
+            <p class="pd-desc" id="pdDescription"></p>
           </div>
-          <div class="pd-swatches" id="pdSwatches"></div>
-        </div>
 
-        <!-- Highlights stats row -->
-        <div class="pd-highlights" id="pdHighlights"></div>
+          <!-- Highlights -->
+          <div class="pd-highlights" id="pdHighlights"></div>
 
-        <hr class="pd-divider">
-
-        <!-- Specs -->
-        <div>
-          <p class="pd-section-label"><i class="fa-solid fa-table-list" style="margin-right:6px;opacity:0.6"></i>Specifications</p>
-          <div class="pd-specs" id="pdSpecs"></div>
-        </div>
-
-        <hr class="pd-divider">
-
-        <!-- Features -->
-        <div>
-          <p class="pd-section-label"><i class="fa-solid fa-star" style="margin-right:6px;opacity:0.6"></i>Key Features</p>
-          <ul class="pd-feats" id="pdFeats"></ul>
-        </div>
-
-        <!-- Where It's Used -->
-        <div id="pdWhere" style="display:none">
-          <div class="pd-where-header">
-            <span class="pd-where-title">Where It's Used</span>
+          <!-- Specs -->
+          <div class="pd-section-block">
+            <p class="pd-section-label"><i class="fa-solid fa-table-list"></i> Specifications</p>
+            <div class="pd-specs" id="pdSpecs"></div>
           </div>
-          <div class="pd-where-grid" id="pdWhereGrid"></div>
+
+          <!-- Features -->
+          <div class="pd-section-block">
+            <p class="pd-section-label"><i class="fa-solid fa-circle-check"></i> Key Features</p>
+            <ul class="pd-feats" id="pdFeats"></ul>
+          </div>
+
+          <!-- Where It's Used -->
+          <div id="pdWhere" style="display:none" class="pd-section-block">
+            <p class="pd-section-label"><i class="fa-solid fa-location-dot"></i> Where It's Used</p>
+            <div class="pd-where-grid" id="pdWhereGrid"></div>
+          </div>
+
+          <!-- CTAs -->
+          <div class="pd-cta">
+            <a href="#" id="pdWhatsapp" target="_blank" class="pd-btn-whatsapp">
+              <i class="fa-brands fa-whatsapp"></i> Enquire on WhatsApp
+            </a>
+            <a href="index.html#contact" class="pd-btn-quote">
+              <i class="fa-solid fa-phone"></i> Get a Quote
+            </a>
+            <button id="pdDownloadBtn" onclick="downloadSpecPDF()" class="pd-btn-download">
+              <i class="fa-solid fa-file-arrow-down"></i> Spec Sheet
+            </button>
+          </div>
+
         </div>
-
-        <hr class="pd-divider">
-
-        <!-- CTAs -->
-        <div class="pd-cta">
-          <a href="#" id="pdWhatsapp" target="_blank" class="pd-btn-whatsapp">
-            <i class="fa-brands fa-whatsapp"></i> Enquire on WhatsApp
-          </a>
-          <a href="index.html#contact" class="pd-btn-quote">
-            <i class="fa-solid fa-phone"></i> Get a Quote
-          </a>
-          <button id="pdDownloadBtn" onclick="downloadSpecPDF()" class="pd-btn-download">
-            <i class="fa-solid fa-file-arrow-down"></i> Download Spec Sheet
-          </button>
-        </div>
-
       </div>
     </div>
   </div>
@@ -316,9 +296,8 @@
       document.title = p.name + ' | Fortune Tiles & Pavers - FTP';
 
       // Basic fields
-      document.getElementById('pdHeroTitle').textContent   = p.name;
-      document.getElementById('pdHeroBadge').textContent   = p.category;
-      document.getElementById('pdHeroTagline').textContent = p.shortDesc || '';
+      document.getElementById('pdTitle').textContent        = p.name;
+      document.getElementById('pdCategory').textContent     = p.category;
       document.getElementById('breadcrumbName').textContent = p.name;
       document.getElementById('pdDescription').textContent  = p.description;
 
@@ -327,19 +306,12 @@
         document.getElementById('pdStatusBadge').style.display = 'flex';
       }
 
-      // Stage footer label
-      const stageLabel = p.category || '';
-      document.getElementById('pdStageLabel').textContent = stageLabel;
-
       // Image or icon
       const wrap = document.getElementById('pdImageWrap');
       if (p.image) {
-        wrap.innerHTML = `<img src="${p.image}" alt="${p.name}" id="pdMainImg"
-          style="width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 14px 36px rgba(0,0,0,0.13));transition:transform 0.45s cubic-bezier(0.25,0.46,0.45,0.94);"
-          onmouseover="this.style.transform='scale(1.04)'"
-          onmouseout="this.style.transform='scale(1)'">`;
+        wrap.innerHTML = `<img src="${p.image}" alt="${p.name}" id="pdMainImg" class="pd-main-img">`;
       } else {
-        wrap.innerHTML = `<div class="pd-icon-wrap" style="background:${p.iconBg}"><i class="fa-solid ${p.icon}" style="font-size:3.5rem"></i></div>`;
+        wrap.innerHTML = `<div class="pd-icon-wrap" style="background:${p.iconBg}"><i class="fa-solid ${p.icon}" style="font-size:4rem;color:#fff;opacity:0.8"></i></div>`;
       }
 
       // Colour swatches
