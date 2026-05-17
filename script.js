@@ -103,6 +103,11 @@ tabBtns.forEach(btn => {
   });
 });
 
+// ===== PHONE FIELD — BLOCK ALPHABETS =====
+document.querySelector('[name="phone"]').addEventListener('input', function () {
+  this.value = this.value.replace(/[a-zA-Z]/g, '');
+});
+
 // ===== CONTACT FORM — WHATSAPP =====
 document.getElementById('contactForm').addEventListener('submit', function (e) {
   e.preventDefault();
