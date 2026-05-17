@@ -103,9 +103,40 @@ tabBtns.forEach(btn => {
   });
 });
 
-// ===== PHONE FIELD — BLOCK ALPHABETS =====
-document.querySelector('[name="phone"]').addEventListener('input', function () {
-  this.value = this.value.replace(/[a-zA-Z]/g, '');
+// ===== PHONE FIELD — DIGITS ONLY, MAX 10 =====
+const phoneField = document.querySelector('[name="phone"]');
+
+function showPhoneError(msg) {
+  phoneField.style.borderColor = '#e53e3e';
+  phoneField.style.boxShadow = '0 0 0 3px rgba(229,62,62,0.15)';
+  let err = phoneField.parentElement.querySelector('.phone-error');
+  if (!err) {
+    err = document.createElement('p');
+    err.className = 'phone-error';
+    err.style.cssText = 'color:#e53e3e;font-size:0.78rem;margin-top:6px;';
+    phoneField.parentElement.appendChild(err);
+  }
+  err.textContent = msg;
+}
+
+function clearPhoneError() {
+  phoneField.style.borderColor = '';
+  phoneField.style.boxShadow = '';
+  const err = phoneField.parentElement.querySelector('.phone-error');
+  if (err) err.remove();
+}
+
+phoneField.addEventListener('input', function () {
+  // Strip everything except digits, limit to 10
+  this.value = this.value.replace(/\D/g, '').slice(0, 10);
+
+  if (this.value.length === 0) {
+    clearPhoneError();
+  } else if (this.value.length < 10) {
+    showPhoneError(`Enter ${10 - this.value.length} more digit${10 - this.value.length > 1 ? 's' : ''}.`);
+  } else {
+    clearPhoneError();
+  }
 });
 
 // ===== CONTACT FORM — WHATSAPP =====
@@ -118,29 +149,13 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
   const product = this.querySelector('[name="product"]').value.trim();
   const message = this.querySelector('[name="message"]').value.trim();
 
-  // Phone validation — must contain at least 10 digits
-  const phoneInput = this.querySelector('[name="phone"]');
-  const digits = phone.replace(/[\s\-\+\(\)]/g, '');
-  let phoneErr = phoneInput.parentElement.querySelector('.phone-error');
-
-  if (!/^\d{10,15}$/.test(digits)) {
-    phoneInput.style.borderColor = '#e53e3e';
-    phoneInput.style.boxShadow = '0 0 0 3px rgba(229,62,62,0.15)';
-    if (!phoneErr) {
-      phoneErr = document.createElement('p');
-      phoneErr.className = 'phone-error';
-      phoneErr.style.cssText = 'color:#e53e3e;font-size:0.78rem;margin-top:6px;';
-      phoneInput.parentElement.appendChild(phoneErr);
-    }
-    phoneErr.textContent = 'Please enter a valid phone number (10 digits minimum).';
-    phoneInput.focus();
+  // Phone validation — exactly 10 digits required
+  if (phone.length < 10) {
+    showPhoneError(phone.length === 0 ? 'Phone number is required.' : `Enter ${10 - phone.length} more digit${10 - phone.length > 1 ? 's' : ''}.`);
+    phoneField.focus();
     return;
   }
-
-  // Clear any previous error
-  phoneInput.style.borderColor = '';
-  phoneInput.style.boxShadow = '';
-  if (phoneErr) phoneErr.remove();
+  clearPhoneError();
 
   let text = `Hello, I am interested in Fortune Tiles & Pavers products.\n\n`;
   text += `*Name:* ${name}\n`;
