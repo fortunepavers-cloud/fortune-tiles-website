@@ -1090,6 +1090,35 @@ img { max-width: 100%; display: block; }
 .hwm-card-body { padding: 28px 28px 32px; display: flex; flex-direction: column; gap: 22px; flex: 1; }
 .hwm-overview { font-size: 0.9rem; color: #475569; line-height: 1.78; margin: 0; }
 .hwm-overview strong { color: #1e293b; font-weight: 600; }
+.hwm-machine-photo {
+  position: relative;
+  margin: 20px 0 4px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.12);
+}
+.hwm-machine-photo img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+.hwm-machine-photo:hover img { transform: scale(1.03); }
+.hwm-photo-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(10,20,40,0.82));
+  color: rgba(255,255,255,0.92);
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 20px 14px 10px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
 
 /* Feature pills 2×2 grid */
 .hwm-feats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
