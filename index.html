@@ -686,112 +686,127 @@
   </section>
 
   <!-- ===== CONTACT ===== -->
-  <section class="contact section" id="contact">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Get In Touch</span>
-        <h2 class="section-title">Contact Us</h2>
-        <div class="section-divider"></div>
-        <p class="section-desc">Reach out for inquiries, quotations or to know more about our products.</p>
+  <section class="contact" id="contact">
+
+    <!-- Hero banner -->
+    <div class="contact-hero">
+      <div class="container">
+        <span class="contact-hero-tag"><span class="contact-hero-dot"></span> Contact Us</span>
+        <h2 class="contact-hero-title">Let's Start A <span>Conversation</span></h2>
+        <p class="contact-hero-sub">Have a project in mind? We'd love to hear from you. Get in touch and let's build something great together.</p>
       </div>
-      <div class="contact-grid">
-        <div class="contact-info">
-          <h3>Fortune Tiles & Pavers</h3>
-          <div class="contact-item">
-            <i class="fa-solid fa-location-dot"></i>
-            <div>
-              <strong>Factory Address</strong>
-              <p>Om Maa Party Plot, Nr. G.S.F.C. Township,<br />Dashrath - 391 740, VADODARA (Guj.) INDIA</p>
-              <a href="https://www.google.com/maps/search/Fortune+Tiles+and+Pavers,+Dashrath,+Vadodara,+Gujarat/@22.38732722434233,73.1454579110188,17z" target="_blank" class="map-link">
-                <i class="fa-solid fa-map-location-dot"></i> View on Google Maps
-              </a>
-            </div>
+      <!-- 4 info cards overlapping -->
+      <div class="container">
+        <div class="contact-cards">
+          <div class="contact-card">
+            <div class="contact-card-icon"><i class="fa-solid fa-envelope"></i></div>
+            <h4>Email Us</h4>
+            <p>fortunepavers@gmail.com</p>
           </div>
-          <div class="contact-item">
-            <i class="fa-solid fa-phone"></i>
-            <div>
-              <strong>Phone</strong>
-              <p>+91 84535 45454</p>
-            </div>
+          <div class="contact-card">
+            <div class="contact-card-icon"><i class="fa-solid fa-phone"></i></div>
+            <h4>Call Us</h4>
+            <p>+91 84535 45454</p>
+            <p>+91 82389 64164</p>
           </div>
-          <div class="contact-item">
-            <i class="fa-solid fa-envelope"></i>
-            <div>
-              <strong>Email</strong>
-              <p>fortunepavers@gmail.com</p>
-            </div>
+          <div class="contact-card">
+            <div class="contact-card-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <h4>Visit Us</h4>
+            <p>Dashrath, Vadodara,<br>Gujarat, India</p>
           </div>
-          <div class="contact-item">
-            <i class="fa-solid fa-globe"></i>
-            <div>
-              <strong>Website</strong>
-              <p>www.fortunepavers.com</p>
-            </div>
+          <div class="contact-card">
+            <div class="contact-card-icon"><i class="fa-solid fa-clock"></i></div>
+            <h4>Working Hours</h4>
+            <p>Mon – Sat: 9AM – 6PM IST</p>
           </div>
-          <div class="contact-persons">
-            <h4>Our Representatives</h4>
-            <div class="person-card">
-              <div class="person-avatar"><i class="fa-solid fa-user"></i></div>
-              <div>
-                <strong>Deep Patel</strong>
-                <p><i class="fa-solid fa-phone"></i> +91 82389 64164</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Form + Side panel -->
+    <div class="contact-body">
+      <div class="container contact-body-grid">
+
+        <!-- Left: Form -->
+        <div class="contact-form-wrap">
+          <h3>Send Us a Message</h3>
+          <p class="contact-form-sub">Fill out the form below and we'll get back to you within 24 hours.</p>
+          <form id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Your Name <span style="color:#e53e3e">*</span></label>
+                <input type="text" name="from_name" placeholder="Enter Your Name" required />
+              </div>
+              <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" name="from_email" placeholder="Enter Your Email" />
               </div>
             </div>
-            <div class="person-card">
-              <div class="person-avatar"><i class="fa-solid fa-user"></i></div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Phone Number <span style="color:#e53e3e">*</span></label>
+                <input type="tel" name="phone" placeholder="Enter Phone Number" required />
+              </div>
+              <div class="form-group">
+                <label>Product of Interest</label>
+                <select name="product">
+                  <option value="">Select a product...</option>
+                  <option>Vibro Brick Paver (60MM / 80MM)</option>
+                  <option>Vibro Unipaver</option>
+                  <option>Vibro Square Paver 150×150 (60MM)</option>
+                  <option>Vibro Square Paver 200×200 (60MM / 80MM)</option>
+                  <option>Rubbermould Square</option>
+                  <option>Rubbermould Unipaver</option>
+                  <option>Chequered Tiles</option>
+                  <option>Hollow Block</option>
+                  <option>Solid Block</option>
+                  <option>Kerbstone</option>
+                  <option>Grass Pavers</option>
+                  <option>Fly Ash Bricks</option>
+                  <option>Other / Multiple Products</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Your Message <span style="color:#e53e3e">*</span></label>
+              <textarea rows="5" name="message" placeholder="Tell us about your project requirements, quantity needed, delivery location..." required></textarea>
+            </div>
+            <button type="submit" class="contact-submit-btn">
+              Send Message <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+
+        <!-- Right: Side panel -->
+        <div class="contact-side">
+          <h3>Make Your Space <span>Beautiful</span></h3>
+          <p>Our team is available Monday to Saturday, 9am to 6pm IST. We provide expert guidance to help you choose the right paving solution for your project.</p>
+
+          <div class="contact-side-card">
+            <h4>Connect With Us</h4>
+            <div class="social-icons">
+              <a href="https://www.instagram.com/fortunepavers/" class="social-icon" aria-label="Instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#" class="social-icon" aria-label="Facebook" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="https://www.linkedin.com/in/deep-patel-0946281b1/" class="social-icon" aria-label="LinkedIn" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+          </div>
+
+          <div class="contact-guarantee">
+            <h4>Quick Response Guarantee</h4>
+            <p>We promise to respond to all inquiries within 24 hours. Your project is important to us.</p>
+            <div class="contact-guarantee-item">
+              <div class="contact-guarantee-icon"><i class="fa-solid fa-clock"></i></div>
               <div>
-                <strong>Zeel Patel</strong>
-                <p><i class="fa-solid fa-phone"></i> +91 81829 89898</p>
+                <strong>24 Hour Response</strong>
+                <span>Guaranteed</span>
               </div>
             </div>
           </div>
         </div>
 
-        <form class="contact-form" id="contactForm">
-          <h3>Send an Inquiry</h3>
-          <div class="form-row">
-            <div class="form-group">
-              <label>Your Name <span style="color:#e53e3e">*</span></label>
-              <input type="text" name="from_name" placeholder="Full Name" required />
-            </div>
-            <div class="form-group">
-              <label>Phone Number <span style="color:#e53e3e">*</span></label>
-              <input type="tel" name="phone" placeholder="Mobile / Landline" required />
-            </div>
-          </div>
-          <div class="form-group">
-            <label>Email Address</label>
-            <input type="email" name="from_email" placeholder="your@email.com" />
-          </div>
-          <div class="form-group">
-            <label>Product of Interest</label>
-            <select name="product">
-              <option value="">Select a product...</option>
-              <option>Vibro Brick Paver (60MM / 80MM)</option>
-              <option>Vibro Unipaver</option>
-              <option>Vibro Square Paver 150×150 (60MM)</option>
-              <option>Vibro Square Paver 200×200 (60MM / 80MM)</option>
-              <option>Rubbermould Square</option>
-              <option>Rubbermould Unipaver</option>
-              <option>Chequered Tiles</option>
-              <option>Hollow Block</option>
-              <option>Solid Block</option>
-              <option>Kerbstone</option>
-              <option>Grass Pavers</option>
-              <option>Fly Ash Bricks</option>
-              <option>Other / Multiple Products</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Your Message <span style="color:#e53e3e">*</span></label>
-            <textarea rows="5" name="message" placeholder="Tell us about your project requirements, quantity needed, delivery location..." required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary btn-full">
-            <i class="fa-solid fa-paper-plane"></i> Send Inquiry
-          </button>
-        </form>
       </div>
     </div>
+
   </section>
 
   <!-- ===== FOOTER ===== -->
