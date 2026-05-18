@@ -1363,9 +1363,9 @@ img { max-width: 100%; display: block; }
 /* ===== CONTACT ===== */
 .contact { background: #fff; }
 
-/* Hero banner — dark navy strip at top only */
+/* Hero banner — footer dark background */
 .contact-hero {
-  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 60%, #2952b8 100%);
+  background: #080d1e;
   padding: 72px 0 100px;
   text-align: center;
   position: relative;
