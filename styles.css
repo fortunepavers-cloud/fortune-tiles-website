@@ -1991,8 +1991,11 @@ img { max-width: 100%; display: block; }
   .contact-form { padding: 24px; }
   .footer-grid { grid-template-columns: 1fr; gap: 32px; }
   .contact-body-grid { grid-template-columns: 1fr; }
-  .contact-form-wrap { padding: 28px; }
+  .contact-form-header { padding: 22px 24px; }
+  .contact-form-wrap form { padding: 24px; }
+  .contact-side-inner { padding: 28px 20px; }
   .contact-hero-title { font-size: 2rem; }
+  .hero-btns .btn { width: 100%; justify-content: center; }
 
   .comparison-table thead th,
   .comparison-table tbody td { padding: 12px; font-size: 0.82rem; }
@@ -2004,4 +2007,12 @@ img { max-width: 100%; display: block; }
   .hero-title { font-size: 2rem; }
   .section-title { font-size: 1.8rem; }
   .contact-cards { grid-template-columns: 1fr; }
+  .contact-form-header { padding: 18px 16px; }
+  .contact-form-wrap form { padding: 20px 16px; }
+  .contact-side-inner { padding: 20px 16px; gap: 20px; }
+  .contact-hero { padding-top: 120px; padding-bottom: 60px; }
+  .pd-where-grid { grid-template-columns: 1fr !important; }
+  .pd-where-item { border-right: none; border-bottom: 1px solid #e5eaf3; }
+  .pd-where-item:last-child { border-bottom: none; }
+  .pd-side-btn { display: none; }
 }
