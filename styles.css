@@ -1552,6 +1552,18 @@ img { max-width: 100%; display: block; }
   display: flex; align-items: center; gap: 16px;
   padding-top: 4px;
 }
+.contact-map-wrap { background: #f0f5ff; padding: 0 0 72px; }
+.contact-map-header {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 2px; color: var(--primary); margin-bottom: 16px;
+}
+.contact-map {
+  border-radius: 16px; overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-lg);
+}
+
 .contact-social-label {
   font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
   letter-spacing: 2px; color: #4d9de0; white-space: nowrap;
