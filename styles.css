@@ -1366,7 +1366,7 @@ img { max-width: 100%; display: block; }
 /* Hero banner — same as home hero */
 .contact-hero {
   background: linear-gradient(135deg, #0a1628 0%, #0f1f3d 40%, #1a2d5a 100%);
-  padding: 72px 0 100px;
+  padding: 152px 0 100px;
   text-align: center;
   position: relative;
   overflow: hidden;
