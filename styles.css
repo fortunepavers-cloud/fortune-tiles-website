@@ -1552,17 +1552,12 @@ img { max-width: 100%; display: block; }
   display: flex; align-items: center; gap: 16px;
   padding-top: 4px;
 }
-.contact-map-wrap { background: #f0f5ff; padding: 0 0 72px; }
-.contact-map-header {
-  display: flex; align-items: center; gap: 10px;
-  font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
-  letter-spacing: 2px; color: var(--primary); margin-bottom: 16px;
+.contact-map-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  margin-top: 8px; font-size: 0.82rem; font-weight: 600;
+  color: var(--primary); transition: color 0.2s;
 }
-.contact-map {
-  border-radius: 16px; overflow: hidden;
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow-lg);
-}
+.contact-map-link:hover { color: var(--accent); }
 
 .contact-social-label {
   font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
