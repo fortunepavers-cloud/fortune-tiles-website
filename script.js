@@ -107,6 +107,7 @@ tabBtns.forEach(btn => {
 const phoneField = document.querySelector('[name="phone"]');
 
 function showPhoneError(msg) {
+  if (!phoneField) return;
   phoneField.style.borderColor = '#e53e3e';
   phoneField.style.boxShadow = '0 0 0 3px rgba(229,62,62,0.15)';
   let err = phoneField.parentElement.querySelector('.phone-error');
@@ -120,13 +121,14 @@ function showPhoneError(msg) {
 }
 
 function clearPhoneError() {
+  if (!phoneField) return;
   phoneField.style.borderColor = '';
   phoneField.style.boxShadow = '';
   const err = phoneField.parentElement.querySelector('.phone-error');
   if (err) err.remove();
 }
 
-phoneField.addEventListener('input', function () {
+if (phoneField) phoneField.addEventListener('input', function () {
   // Strip everything except digits, limit to 10
   this.value = this.value.replace(/\D/g, '').slice(0, 10);
 
@@ -140,7 +142,8 @@ phoneField.addEventListener('input', function () {
 });
 
 // ===== CONTACT FORM — WHATSAPP =====
-document.getElementById('contactForm').addEventListener('submit', function (e) {
+const _contactForm = document.getElementById('contactForm');
+if (_contactForm) _contactForm.addEventListener('submit', function (e) {
   e.preventDefault();
 
   const name    = this.querySelector('[name="from_name"]').value.trim();
