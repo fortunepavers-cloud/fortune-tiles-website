@@ -1590,7 +1590,7 @@ img { max-width: 100%; display: block; }
 
 /* HERO */
 .pd-hero { display: grid; grid-template-columns: 1fr 1fr; min-height: 88vh; background: #fff; }
-.pd-hero-info { display: flex; align-items: center; border-right: 1px solid #eef2fb; padding: 72px 64px; }
+.pd-hero-info { display: flex; align-items: center; border-left: 1px solid #eef2fb; padding: 72px 64px; }
 .pd-hero-info-inner { display: flex; flex-direction: column; gap: 24px; max-width: 520px; }
 .pd-cat-badge {
   display: inline-flex; align-items: center;
@@ -1756,7 +1756,7 @@ img { max-width: 100%; display: block; }
 }
 @media (max-width: 900px) {
   .pd-hero { grid-template-columns: 1fr; min-height: unset; }
-  .pd-hero-info { border-right: none; border-bottom: 1px solid #eef2fb; padding: 52px 32px; }
+  .pd-hero-info { border-left: none; border-top: 1px solid #eef2fb; padding: 52px 32px; }
   .pd-hero-info-inner { max-width: 100%; }
   .pd-hero-visual { min-height: 340px; padding: 52px 32px; }
   .pd-stage { max-width: 300px; }
