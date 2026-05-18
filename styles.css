@@ -1528,7 +1528,7 @@ img { max-width: 100%; display: block; }
 }
 .contact-rep-details { flex: 1; min-width: 0; }
 .contact-rep-name { display: block; font-size: 0.9rem; font-weight: 700; color: var(--text); }
-.contact-rep-role { display: block; font-size: 0.72rem; color: var(--text-muted); margin-top: 2px; }
+.contact-rep-role { display: block; font-size: 0.72rem; color: var(--text-muted); margin-top: 2px; white-space: nowrap; }
 .contact-rep-actions { display: flex; gap: 6px; flex-shrink: 0; }
 .contact-rep-action {
   width: 34px; height: 34px; border-radius: 8px;
