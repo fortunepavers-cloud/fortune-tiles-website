@@ -1426,33 +1426,33 @@ img { max-width: 100%; display: block; }
 
 /* Form wrap */
 .contact-form-wrap {
-  background: #0d1526; border-radius: 20px; padding: 44px;
+  background: #fff; border-radius: 20px; padding: 44px;
   border: 1px solid rgba(255,255,255,0.06);
   box-shadow: 0 4px 24px rgba(0,0,0,0.3);
 }
 .contact-form-wrap h3 {
   font-family: 'Playfair Display', serif;
-  font-size: 1.6rem; font-weight: 700; color: #fff; margin-bottom: 6px;
+  font-size: 1.6rem; font-weight: 700; color: #0f172a; margin-bottom: 6px;
 }
-.contact-form-sub { color: #8899b4; font-size: 0.9rem; margin-bottom: 28px; }
+.contact-form-sub { color: #64748b; font-size: 0.9rem; margin-bottom: 28px; }
 
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .form-group { margin-bottom: 20px; }
-.form-group label { display: block; font-size: 0.85rem; font-weight: 600; color: #c8d6e8; margin-bottom: 8px; }
+.form-group label { display: block; font-size: 0.85rem; font-weight: 600; color: #334155; margin-bottom: 8px; }
 .form-group input,
 .form-group select,
 .form-group textarea {
-  width: 100%; background: #080d1e;
-  border: 1.5px solid rgba(255,255,255,0.08); border-radius: 10px;
-  padding: 13px 16px; color: #fff; font-size: 0.9rem;
+  width: 100%; background: #f8faff;
+  border: 1.5px solid #e2e8f4; border-radius: 10px;
+  padding: 13px 16px; color: #0f172a; font-size: 0.9rem;
   font-family: 'Inter', sans-serif; transition: border-color 0.2s, box-shadow 0.2s; outline: none;
 }
-.form-group input::placeholder, .form-group textarea::placeholder { color: #556070; }
+.form-group input::placeholder, .form-group textarea::placeholder { color: #94a3b8; }
 .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
   border-color: #4d9de0;
   box-shadow: 0 0 0 3px rgba(77,157,224,0.12);
 }
-.form-group select option { background: #0d1526; color: #fff; }
+.form-group select option { background: #fff; color: #0f172a; }
 .form-group textarea { resize: vertical; min-height: 130px; }
 .contact-submit-btn {
   width: 100%; padding: 15px; border-radius: 50px; border: none;
