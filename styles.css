@@ -1661,7 +1661,7 @@ img { max-width: 100%; display: block; }
   padding: 72px 60px; position: relative;
 }
 .pd-status-badge {
-  position: absolute; top: 14px; right: 14px; z-index: 2;
+  position: absolute; top: 14px; left: 14px; z-index: 2;
   display: inline-flex; align-items: center; gap: 7px;
   background: rgba(255,255,255,0.92);
   backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
