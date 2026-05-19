@@ -1799,13 +1799,16 @@ img { max-width: 100%; display: block; }
 
 .footer-links ul li,
 .footer-products ul li {
-  margin-bottom: 8px;
+  margin-bottom: 0;
 }
 
 .footer-links ul li a {
   color: #8899b4;
   font-size: 0.88rem;
   font-weight: 500;
+  line-height: 1;
+  padding: 6px 0;
+  display: block;
   transition: color 0.2s;
 }
 .footer-links ul li a:hover { color: #fff; }
@@ -1814,6 +1817,8 @@ img { max-width: 100%; display: block; }
   color: #8899b4;
   font-size: 0.88rem;
   font-weight: 500;
+  line-height: 1;
+  padding: 6px 0;
 }
 
 /* Contact column */
