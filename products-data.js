@@ -38,6 +38,7 @@ const PRODUCTS = {
     category: 'Vibro Compaction',
     modelId: 'FTV-002',
     image: 'images/Vibro Unipaver.png',
+    removeBg: true,
     colors: ['Grey', 'Red', 'Yellow', 'Black', 'Brown', 'Charcoal'],
     highlights: [
       { label: 'Thickness', value: '80', unit: 'mm' },
@@ -71,6 +72,7 @@ const PRODUCTS = {
     category: 'Vibro Compaction',
     modelId: 'FTV-003',
     image: 'images/Vibro Square 150 x 150 x 60MM.png',
+    removeBg: true,
     colors: ['Grey', 'Red', 'Yellow', 'Black', 'Brown', 'Charcoal'],
     highlights: [
       { label: 'Thickness', value: '60',  unit: 'mm' },
@@ -104,6 +106,7 @@ const PRODUCTS = {
     category: 'Vibro Compaction',
     modelId: 'FTV-004',
     image: 'images/Vibro Square 200 x 200 x 60MM.png',
+    removeBg: true,
     colors: ['Grey', 'Red', 'Yellow', 'Black', 'Brown', 'Charcoal'],
     highlights: [
       { label: 'Thickness', value: '60 / 80', unit: 'mm' },
@@ -137,6 +140,7 @@ const PRODUCTS = {
     category: 'Rubbermould',
     modelId: 'RMV-001',
     image: 'images/Rubbermould Square.png',
+    removeBg: true,
     colors: ['Grey', 'Red', 'Yellow', 'Black', 'Brown', 'Charcoal'],
     highlights: [
       { label: 'Thickness', value: '35', unit: 'mm' },
@@ -171,6 +175,7 @@ const PRODUCTS = {
     category: 'Rubbermould',
     modelId: 'RMV-002',
     image: 'images/Rubbermould Square 200x200.png',
+    removeBg: true,
     colors: ['Grey', 'Red', 'Yellow', 'Black', 'Brown', 'Charcoal'],
     highlights: [
       { label: 'Thickness', value: '60', unit: 'mm' },
@@ -205,6 +210,7 @@ const PRODUCTS = {
     category: 'Rubbermould',
     modelId: 'RMV-003',
     image: 'images/Rubbermould Unipaver.png',
+    removeBg: true,
     colors: ['Grey', 'Red', 'Yellow', 'Black', 'Brown', 'Charcoal'],
     highlights: [
       { label: 'Thickness', value: '80', unit: 'mm' },
@@ -273,6 +279,7 @@ const PRODUCTS = {
     category: 'Blocks',
     modelId: 'BLK-001',
     image: 'images/Hollow Blocks.png',
+    removeBg: true,
     highlights: [
       { label: 'Length',    value: '400', unit: 'mm' },
       { label: 'Height',    value: '200', unit: 'mm' },
@@ -305,6 +312,7 @@ const PRODUCTS = {
     category: 'Blocks',
     modelId: 'BLK-002',
     image: 'images/Solid Block.png',
+    removeBg: true,
     highlights: [
       { label: 'Length', value: '400', unit: 'mm' },
       { label: 'Height', value: '200', unit: 'mm' },
@@ -336,6 +344,7 @@ const PRODUCTS = {
     category: 'Kerbs',
     modelId: 'KRB-001',
     image: 'images/Curb Stone.png',
+    removeBg: true,
     highlights: [
       { label: 'Sizes',   value: '3',       unit: 'options' },
       { label: 'Height',  value: '80–100',  unit: 'mm' },
@@ -370,6 +379,7 @@ const PRODUCTS = {
     category: 'Specialty',
     modelId: 'GRN-001',
     image: 'images/Grass Pavers.png',
+    removeBg: true,
     highlights: [
       { label: 'Thickness',  value: '60', unit: 'mm' },
       { label: 'Open Area',  value: '30', unit: '%' },
@@ -402,6 +412,7 @@ const PRODUCTS = {
     category: 'Eco',
     modelId: 'ECO-001',
     image: 'images/Flyash Bricks.png',
+    removeBg: true,
     highlights: [
       { label: 'Length',    value: '230', unit: 'mm' },
       { label: 'Height',    value: '70',  unit: 'mm' },
