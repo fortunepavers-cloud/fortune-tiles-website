@@ -136,8 +136,7 @@ const PRODUCTS = {
     name: 'Rubbermould Square 150×150',
     category: 'Rubbermould',
     modelId: 'RMV-001',
-    image: 'images/Rubbermould Square 150 x 150 x 35MM.jpg',
-    removeBg: true,
+    image: 'images/Rubbermould Square.png',
     colors: ['Grey', 'Red', 'Yellow', 'Black', 'Brown', 'Charcoal'],
     highlights: [
       { label: 'Thickness', value: '35', unit: 'mm' },
