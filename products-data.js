@@ -1,3 +1,25 @@
+const _VIBRO_WHATIS = 'Vibro Compaction pavers are made using a dry-cast process where a low-slump concrete mix is placed into precision steel moulds and densified by high-frequency mechanical vibration. Our Apollo Zenith German-designed machinery applies simultaneous vibration and compression, eliminating air voids and producing pavers with superior density and a compressive strength of ≥ 35 N/mm². The result is a dimensionally accurate, long-lasting paver engineered for driveways, walkways, industrial zones and any high-load application.';
+
+const _RUBBER_WHATIS = 'Rubbermould Casting is a wet-cast process where a plastic concrete mix is poured into flexible polyurethane rubber moulds. The moulds capture fine surface detail and produce the smooth, refined finish that distinguishes rubbermould products from vibro-compacted pavers. The flexible mould peels away cleanly, leaving crisp edges and a smooth face — giving these pavers a decorative character ideal for gardens, courtyards and pedestrian environments.';
+
+const _VIBRO_PROCESS = [
+  { icon: 'fa-scale-balanced', title: 'Material Batching',  desc: 'OPC 53 cement, crushed stone aggregate, sand and colour pigment are precisely weighed to a controlled mix design for batch-to-batch consistency.' },
+  { icon: 'fa-arrows-rotate',  title: 'Pan Mixing',         desc: 'Ingredients are dry-mixed in a planetary pan mixer until a uniform, homogeneous blend is achieved with even pigment distribution.' },
+  { icon: 'fa-cubes-stacked',  title: 'Mould Loading',      desc: 'The concrete mix is fed into precision steel moulds mounted on the Apollo Zenith vibro compaction machine.' },
+  { icon: 'fa-wave-square',    title: 'Vibro Compaction',   desc: 'High-frequency mechanical vibration compacts the mix under hydraulic pressure, eliminating air voids and maximising density throughout the paver.' },
+  { icon: 'fa-box-open',       title: 'Demoulding',         desc: 'Fresh pavers are automatically released from the mould, stacked on pallets and transferred to the curing yard.' },
+  { icon: 'fa-droplet',        title: 'Water Curing',       desc: 'Pavers are water-cured continuously for a minimum of 28 days to achieve full compressive strength of ≥ 35 N/mm².' },
+];
+
+const _RUBBER_PROCESS = [
+  { icon: 'fa-scale-balanced', title: 'Material Batching',        desc: 'Cement, fine river sand, colour pigment and water are carefully measured and proportioned for consistency across every batch.' },
+  { icon: 'fa-arrows-rotate',  title: 'Wet Mixing',               desc: 'All ingredients are wet-mixed in a drum mixer until a smooth, plastic and workable consistency is achieved.' },
+  { icon: 'fa-fill-drip',      title: 'Mould Filling',            desc: 'The mix is poured into flexible polyurethane rubber moulds, ensuring all corners and surface details are completely filled.' },
+  { icon: 'fa-wave-square',    title: 'Vibration Table Settling', desc: 'Filled moulds are placed on a vibration table to consolidate the mix, remove air pockets and produce a smooth, void-free surface.' },
+  { icon: 'fa-clock',          title: 'Initial Setting',          desc: 'Moulds rest undisturbed for 24 hours, allowing the concrete to reach initial set and develop green strength before demoulding.' },
+  { icon: 'fa-layer-group',    title: 'Demoulding & Curing',      desc: 'The flexible rubber mould is peeled away, revealing the smooth finish. Pavers are then water-cured for 28 days to achieve full strength.' },
+];
+
 const PRODUCTS = {
   'vibro-brick-paver': {
     name: 'Vibro Brick Paver',
@@ -5,6 +27,8 @@ const PRODUCTS = {
     category: 'Vibro Compaction',
     modelId: 'FTV-001',
     image: 'images/Vibro Brick Paver.png',
+    whatIs: _VIBRO_WHATIS,
+    process: _VIBRO_PROCESS,
     colors: ['Grey', 'Red', 'Yellow', 'Black', 'Brown', 'Charcoal'],
     highlights: [
       { label: 'Thickness', value: '60 / 80', unit: 'mm' },
@@ -38,6 +62,8 @@ const PRODUCTS = {
     category: 'Vibro Compaction',
     modelId: 'FTV-002',
     image: 'images/Vibro Unipaver.png',
+    whatIs: _VIBRO_WHATIS,
+    process: _VIBRO_PROCESS,
     colors: ['Grey', 'Red', 'Yellow', 'Black', 'Brown', 'Charcoal'],
     highlights: [
       { label: 'Thickness', value: '80', unit: 'mm' },
@@ -71,6 +97,8 @@ const PRODUCTS = {
     category: 'Vibro Compaction',
     modelId: 'FTV-003',
     image: 'images/Vibro Square 150 x 150 x 60MM.png',
+    whatIs: _VIBRO_WHATIS,
+    process: _VIBRO_PROCESS,
     colors: ['Grey', 'Red', 'Yellow', 'Black', 'Brown', 'Charcoal'],
     highlights: [
       { label: 'Thickness', value: '60',  unit: 'mm' },
@@ -104,6 +132,8 @@ const PRODUCTS = {
     category: 'Vibro Compaction',
     modelId: 'FTV-004',
     image: 'images/Vibro Square 200 x 200 x 60MM.png',
+    whatIs: _VIBRO_WHATIS,
+    process: _VIBRO_PROCESS,
     colors: ['Grey', 'Red', 'Yellow', 'Black', 'Brown', 'Charcoal'],
     highlights: [
       { label: 'Thickness', value: '60 / 80', unit: 'mm' },
@@ -138,6 +168,8 @@ const PRODUCTS = {
     category: 'Rubbermould',
     modelId: 'RMV-001',
     image: 'images/Rubbermould Square.png',
+    whatIs: _RUBBER_WHATIS,
+    process: _RUBBER_PROCESS,
     colors: ['Grey', 'Red', 'Yellow', 'Black', 'Brown', 'Charcoal'],
     highlights: [
       { label: 'Thickness', value: '35', unit: 'mm' },
@@ -173,6 +205,8 @@ const PRODUCTS = {
     category: 'Rubbermould',
     modelId: 'RMV-002',
     image: 'images/Rubbermould Square 200x200.png',
+    whatIs: _RUBBER_WHATIS,
+    process: _RUBBER_PROCESS,
     colors: ['Grey', 'Red', 'Yellow', 'Black', 'Brown', 'Charcoal'],
     highlights: [
       { label: 'Thickness', value: '60', unit: 'mm' },
@@ -208,6 +242,8 @@ const PRODUCTS = {
     category: 'Rubbermould',
     modelId: 'RMV-003',
     image: 'images/Rubbermould Unipaver.png',
+    whatIs: _RUBBER_WHATIS,
+    process: _RUBBER_PROCESS,
     colors: ['Grey', 'Red', 'Yellow', 'Black', 'Brown', 'Charcoal'],
     highlights: [
       { label: 'Thickness', value: '80', unit: 'mm' },
