@@ -2006,6 +2006,9 @@ img { max-width: 100%; display: block; }
     color: var(--text-muted);
     margin-bottom: 10px;
   }
+
+  /* Swatch labels always visible on touch */
+  .pd-swatch-name { opacity: 1; }
 }
 
 @media (max-width: 480px) {
@@ -2018,6 +2021,18 @@ img { max-width: 100%; display: block; }
   .hero-title { font-size: 2rem; }
   .section-title { font-size: 1.8rem; }
   .tab-btn { padding: 8px 14px; font-size: 0.82rem; }
+
+  /* Tabs scroll horizontally instead of wrapping to 3+ rows */
+  .product-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    justify-content: flex-start;
+    padding-bottom: 6px;
+    margin-bottom: 28px;
+  }
+  .product-tabs::-webkit-scrollbar { display: none; }
   .contact-cards { grid-template-columns: 1fr; }
   .contact-body { padding: 40px 0 48px; }
   .contact-form-header { padding: 18px 16px; }
