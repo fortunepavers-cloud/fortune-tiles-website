@@ -276,7 +276,7 @@ window.addEventListener('scroll', () => {
     const id = section.getAttribute('id');
     const link = document.querySelector(`.nav-links a[href="#${id}"]`);
     if (link) {
-      link.style.color = (scrollY >= top && scrollY < top + height) ? '#ffffff' : '';
+      link.style.color = (scrollY >= top && scrollY < top + height) ? '#e67e22' : '';
     }
   });
 });
