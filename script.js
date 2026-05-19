@@ -36,6 +36,15 @@ function removeWhiteBg(img) {
     }
   }
 
+  // In text area (right 72%): remove trapped white pixels inside enclosed letters (O, A, D, P, R)
+  for (let y = 0; y < h; y++) {
+    for (let x = Math.floor(w * 0.28); x < w; x++) {
+      const i = (y * w + x) * 4;
+      if (d[i+3] === 0) continue;
+      if (d[i] > 200 && d[i+1] > 200 && d[i+2] > 200) d[i+3] = 0;
+    }
+  }
+
   // In text area (right 72% of image): convert dark pixels to white
   for (let y = 0; y < h; y++) {
     for (let x = Math.floor(w * 0.28); x < w; x++) {
