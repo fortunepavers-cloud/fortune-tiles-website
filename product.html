@@ -106,13 +106,33 @@
     </div>
   </section>
 
-  <!-- ===== DETAIL TABS ===== -->
-  <section class="pd-detail-tabs">
-    <div class="container">
-      <div class="pd-tab-bar" id="pdTabBar"></div>
-      <div class="pd-tab-panels" id="pdTabPanels"></div>
+  <!-- ===== SPECS + FEATURES ===== -->
+  <section class="pd-content">
+    <div class="container pd-content-grid">
+      <div class="pd-section-card">
+        <h3 class="pd-section-title">
+          <span class="pd-stitle-icon"><i class="fa-solid fa-table-list"></i></span>
+          Specifications
+        </h3>
+        <div class="pd-specs" id="pdSpecs"></div>
+      </div>
+      <div class="pd-section-card">
+        <h3 class="pd-section-title">
+          <span class="pd-stitle-icon"><i class="fa-solid fa-circle-check"></i></span>
+          Key Features
+        </h3>
+        <ul class="pd-feats" id="pdFeats"></ul>
+      </div>
     </div>
   </section>
+
+  <!-- ===== WHERE USED ===== -->
+  <div id="pdWhere" class="pd-where-section" style="display:none">
+    <div class="container">
+      <h3 class="pd-where-heading">Where It's Used</h3>
+      <div class="pd-where-grid" id="pdWhereGrid"></div>
+    </div>
+  </div>
 
   <!-- Prev / Next side navigation -->
   <a href="#" id="pdPrev" class="pd-side-btn pd-side-btn--prev" style="display:none">
@@ -327,80 +347,28 @@
       }
 
 
-      // ── Tab builder helpers ──────────────────────────────────
-      function buildOverviewPanel(prod) {
-        let html = '';
-        if (prod.whatIs) {
-          html += `<div class="pd-tab-intro"><p>${prod.whatIs}</p></div>`;
-        }
-        if (prod.features && prod.features.length) {
-          html += `<h4 class="pd-tab-sub">Key Features</h4>`;
-          html += `<ul class="pd-feats">${prod.features.map(f => `<li>${f}</li>`).join('')}</ul>`;
-        }
-        return html;
+      // Specs
+      document.getElementById('pdSpecs').innerHTML = p.specs.map(([k, v]) =>
+        `<div class="pd-spec-row"><span class="pd-spec-key">${k}</span><span class="pd-spec-val">${v}</span></div>`
+      ).join('');
+
+      // Features
+      document.getElementById('pdFeats').innerHTML = p.features.map(f => `<li>${f}</li>`).join('');
+
+      // Where It's Used
+      if (p.applications && p.applications.length) {
+        document.getElementById('pdWhere').style.display = 'block';
+        const grid = document.getElementById('pdWhereGrid');
+        grid.style.gridTemplateColumns = `repeat(${p.applications.length}, 1fr)`;
+        grid.innerHTML = p.applications.map((a, i) =>
+          `<div class="pd-where-item">
+            <div class="pd-where-icon"><i class="fa-solid ${a.icon}"></i></div>
+            <div class="pd-where-num">0${i + 1}</div>
+            <div class="pd-where-label">${a.label}</div>
+            <div class="pd-where-desc">${a.desc}</div>
+          </div>`
+        ).join('');
       }
-
-      function buildProcessPanel(prod) {
-        if (!prod.process || !prod.process.length) return '';
-        return `<div class="pd-process-grid">${prod.process.map((s, i) => `
-          <div class="pd-process-step">
-            <div class="pd-process-num">0${i + 1}</div>
-            <div class="pd-process-icon"><i class="fa-solid ${s.icon}"></i></div>
-            <div class="pd-process-title">${s.title}</div>
-            <div class="pd-process-desc">${s.desc}</div>
-          </div>`).join('')}</div>`;
-      }
-
-      function buildSpecsPanel(prod) {
-        let html = `<div class="pd-specs">${prod.specs.map(([k, v]) =>
-          `<div class="pd-spec-row"><span class="pd-spec-key">${k}</span><span class="pd-spec-val">${v}</span></div>`
-        ).join('')}</div>`;
-        if (prod.applications && prod.applications.length) {
-          const cols = prod.applications.length;
-          html += `<h4 class="pd-tab-sub" style="margin-top:32px">Where It's Used</h4>`;
-          html += `<div class="pd-where-grid" style="grid-template-columns:repeat(${cols},1fr)">${
-            prod.applications.map((a, i) => `
-              <div class="pd-where-item">
-                <div class="pd-where-icon"><i class="fa-solid ${a.icon}"></i></div>
-                <div class="pd-where-num">0${i + 1}</div>
-                <div class="pd-where-label">${a.label}</div>
-                <div class="pd-where-desc">${a.desc}</div>
-              </div>`).join('')
-          }</div>`;
-        }
-        return html;
-      }
-
-      // Build tab list
-      const tabDefs = [
-        { id: 'overview', label: p.whatIs ? 'What Is It' : 'Overview', content: buildOverviewPanel(p) },
-      ];
-      if (p.process && p.process.length) {
-        tabDefs.push({ id: 'process', label: 'How It\'s Made', content: buildProcessPanel(p) });
-      }
-      tabDefs.push({ id: 'specs', label: 'Specifications', content: buildSpecsPanel(p) });
-
-      const tabBar    = document.getElementById('pdTabBar');
-      const tabPanels = document.getElementById('pdTabPanels');
-
-      tabDefs.forEach((tab, i) => {
-        const btn = document.createElement('button');
-        btn.className = 'pd-tab-btn' + (i === 0 ? ' active' : '');
-        btn.textContent = tab.label;
-        btn.addEventListener('click', () => {
-          tabBar.querySelectorAll('.pd-tab-btn').forEach(b => b.classList.remove('active'));
-          tabPanels.querySelectorAll('.pd-tab-panel').forEach(pn => pn.classList.remove('active'));
-          btn.classList.add('active');
-          document.getElementById('pd-panel-' + tab.id).classList.add('active');
-        });
-        tabBar.appendChild(btn);
-
-        const panel = document.createElement('div');
-        panel.id = 'pd-panel-' + tab.id;
-        panel.className = 'pd-tab-panel' + (i === 0 ? ' active' : '');
-        panel.innerHTML = tab.content;
-        tabPanels.appendChild(panel);
-      });
 
       // WhatsApp CTA
       document.getElementById('pdWhatsapp').href =
