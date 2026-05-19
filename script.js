@@ -45,14 +45,14 @@ function removeWhiteBg(img) {
     }
   }
 
-  // In text area (right 72% of image): convert dark pixels to white
+  // In text area (right 72% of image): convert dark + grey anti-aliased pixels to white
   for (let y = 0; y < h; y++) {
     for (let x = Math.floor(w * 0.28); x < w; x++) {
       const i = (y * w + x) * 4;
       if (d[i+3] === 0) continue;
       const max = Math.max(d[i], d[i+1], d[i+2]);
       const sat = max === 0 ? 0 : (max - Math.min(d[i], d[i+1], d[i+2])) / max;
-      if (max < 160 && sat < 0.2) d[i] = d[i+1] = d[i+2] = 255;
+      if (max < 220 && sat < 0.3) d[i] = d[i+1] = d[i+2] = 255;
     }
   }
 
