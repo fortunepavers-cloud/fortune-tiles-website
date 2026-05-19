@@ -1949,7 +1949,7 @@ img { max-width: 100%; display: block; }
     left: 0;
     width: 100%;
     height: 100vh;
-    background: #fff;
+    background: linear-gradient(135deg, #0a1628 0%, #0f1f3d 50%, #1a2d5a 100%);
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
     flex-direction: column;
@@ -1962,7 +1962,9 @@ img { max-width: 100%; display: block; }
   .navbar .nav-links.open { display: flex; }
   .navbar .nav-links li a { font-size: 1.2rem; padding: 12px 24px; }
   .navbar .nav-links.open li a,
-  .navbar.scrolled .nav-links.open li a { color: var(--text); }
+  .navbar.scrolled .nav-links.open li a { color: rgba(255,255,255,0.88); }
+  .navbar .nav-links.open li a:hover,
+  .navbar.scrolled .nav-links.open li a:hover { color: var(--accent); }
   .navbar .nav-links.open li a.nav-cta,
   .navbar.scrolled .nav-links.open li a.nav-cta { color: var(--white); }
 
