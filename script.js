@@ -54,6 +54,48 @@ document.querySelectorAll('.logo-full-img').forEach(img => {
   img.complete ? removeWhiteBg(img) : img.addEventListener('load', () => removeWhiteBg(img));
 });
 
+// ===== PRODUCT IMAGE BG REMOVAL (flood-fill only, no text-area processing) =====
+function removeImgBg(img) {
+  const canvas = document.createElement('canvas');
+  canvas.width = img.naturalWidth;
+  canvas.height = img.naturalHeight;
+  const ctx = canvas.getContext('2d');
+  ctx.drawImage(img, 0, 0);
+  const id = ctx.getImageData(0, 0, canvas.width, canvas.height);
+  const d = id.data;
+  const w = canvas.width, h = canvas.height;
+  const visited = new Uint8Array(w * h);
+  const stack = [];
+  for (let x = 0; x < w; x++) {
+    for (const y of [0, h - 1]) {
+      const p = y * w + x;
+      if (!visited[p] && d[p*4] > 220 && d[p*4+1] > 220 && d[p*4+2] > 220) { visited[p] = 1; stack.push(p); }
+    }
+  }
+  for (let y = 0; y < h; y++) {
+    for (const x of [0, w - 1]) {
+      const p = y * w + x;
+      if (!visited[p] && d[p*4] > 220 && d[p*4+1] > 220 && d[p*4+2] > 220) { visited[p] = 1; stack.push(p); }
+    }
+  }
+  while (stack.length) {
+    const p = stack.pop();
+    d[p*4+3] = 0;
+    const x = p % w, y = Math.floor(p / w);
+    for (const [nx, ny] of [[x-1,y],[x+1,y],[x,y-1],[x,y+1]]) {
+      if (nx >= 0 && nx < w && ny >= 0 && ny < h) {
+        const np = ny * w + nx;
+        if (!visited[np] && d[np*4] > 220 && d[np*4+1] > 220 && d[np*4+2] > 220) { visited[np] = 1; stack.push(np); }
+      }
+    }
+  }
+  ctx.putImageData(id, 0, 0);
+  img.src = canvas.toDataURL();
+}
+document.querySelectorAll('[data-rmbg]').forEach(img => {
+  img.complete ? removeImgBg(img) : img.addEventListener('load', () => removeImgBg(img));
+});
+
 // ===== NAVBAR SCROLL =====
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {

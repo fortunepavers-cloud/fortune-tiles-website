@@ -4,6 +4,7 @@ const PRODUCTS = {
     category: 'Vibro Compaction',
     modelId: 'FTV-001',
     image: 'images/Vibro Paver Bricks 200 x 100 x 60MM.jpg',
+    removeBg: true,
     colors: ['Grey', 'Red', 'Yellow', 'Black', 'Brown', 'Charcoal'],
     highlights: [
       { label: 'Thickness', value: '60 / 80', unit: 'mm' },
@@ -136,6 +137,7 @@ const PRODUCTS = {
     category: 'Rubbermould',
     modelId: 'RMV-001',
     image: 'images/Rubbermould Square 150 x 150 x 35MM.jpg',
+    removeBg: true,
     colors: ['Grey', 'Red', 'Yellow', 'Black', 'Brown', 'Charcoal'],
     highlights: [
       { label: 'Thickness', value: '35', unit: 'mm' },
