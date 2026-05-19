@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Company Brochure — Fortune Tiles & Pavers</title>
+  <meta name="description" content="Download the Fortune Tiles & Pavers product catalogue brochure. Full product range, manufacturing process, company overview and contact details." />
+  <link rel="icon" type="image/png" href="images/Tab%20Logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ELHCE39FCW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ELHCE39FCW');
+  </script>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Oswald:wght@400;600;700&family=Raleway:wght@300;400;800;900&family=Cinzel:wght@700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="images/Fortune Tiles And Pavers Logo.png" alt="Fortune Tiles and Pavers" class="logo-full-img" />
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#products">Products</a></li>
+        <li><a href="index.html#why-us">Why Us</a></li>
+        <li><a href="index.html#applications">Applications</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== BROCHURE LANDING ===== -->
+  <section class="brochure-landing">
+
+    <!-- Hero -->
+    <div class="brochure-hero">
+      <div class="brochure-hero-bg"></div>
+      <div class="container brochure-hero-inner">
+        <div class="brochure-hero-text">
+          <span class="brochure-badge"><i class="fa-solid fa-file-pdf"></i> Product Catalogue 2026</span>
+          <h1>Fortune Tiles &amp; Pavers<br /><span>Company Brochure</span></h1>
+          <p>A comprehensive PDF covering our complete product range, manufacturing process, company background and contact details — ready to share with clients, architects and project teams.</p>
+          <button id="brochureBtn" class="brochure-dl-btn" onclick="generateBrochure()">
+            <i class="fa-solid fa-download"></i>
+            Download Brochure PDF
+          </button>
+          <p class="brochure-hint"><i class="fa-solid fa-circle-info"></i> Free download &nbsp;·&nbsp; Multi-page PDF &nbsp;·&nbsp; All products included</p>
+        </div>
+        <div class="brochure-hero-preview">
+          <div class="brochure-preview-card">
+            <div class="bprev-header">
+              <span class="bprev-dot"></span><span class="bprev-dot"></span><span class="bprev-dot"></span>
+            </div>
+            <div class="bprev-cover">
+              <div class="bprev-stripe"></div>
+              <p class="bprev-cat">PRODUCT CATALOGUE · 2026</p>
+              <p class="bprev-name">FORTUNE TILES<br />&amp; PAVERS</p>
+              <p class="bprev-tag">"Experience a touch of royalty..."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- What's Inside -->
+    <div class="brochure-contents">
+      <div class="container">
+        <div class="brochure-contents-header">
+          <span class="section-tag"><span class="section-tag-dot"></span> What's Inside</span>
+          <h2>Everything You Need <span>In One Document</span></h2>
+        </div>
+        <div class="brochure-pages-grid">
+          <div class="brochure-page-card">
+            <div class="bpc-num">01</div>
+            <div class="bpc-icon"><i class="fa-solid fa-building-columns"></i></div>
+            <h4>Company Overview</h4>
+            <p>About Fortune Tiles &amp; Pavers, our Dashrath factory, Apollo Zenith machinery and quality standards.</p>
+          </div>
+          <div class="brochure-page-card">
+            <div class="bpc-num">02</div>
+            <div class="bpc-icon"><i class="fa-solid fa-layer-group"></i></div>
+            <h4>All 13 Products</h4>
+            <p>Complete product range with photos — Vibro Pavers, Rubbermould, Tiles, Blocks, Kerbstones and more.</p>
+          </div>
+          <div class="brochure-page-card">
+            <div class="bpc-num">03</div>
+            <div class="bpc-icon"><i class="fa-solid fa-trophy"></i></div>
+            <h4>Why Choose Us</h4>
+            <p>≥35 N/mm² compressive strength, 28-day curing, 6 colour options and direct factory pricing.</p>
+          </div>
+          <div class="brochure-page-card">
+            <div class="bpc-num">04</div>
+            <div class="bpc-icon"><i class="fa-solid fa-address-card"></i></div>
+            <h4>Contact &amp; Reps</h4>
+            <p>Factory address, phone, email, website and direct contact details for our sales representatives.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <img src="images/Fortune Tiles And Pavers Logo.png" alt="Fortune Tiles and Pavers" class="logo-full-img" />
+          </a>
+          <p class="footer-tagline">"Experience a touch of royalty..."</p>
+          <p>Vadodara's trusted manufacturer of premium paving solutions for residential, commercial and industrial projects.</p>
+          <div class="social-icons">
+            <a href="https://www.instagram.com/fortunepavers/" class="social-icon" aria-label="Instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-icon" aria-label="Facebook" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.linkedin.com/in/deep-patel-0946281b1/" class="social-icon" aria-label="LinkedIn" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="index.html#products">Products</a></li>
+            <li><a href="index.html#why-us">Why Fortune</a></li>
+            <li><a href="index.html#applications">Applications</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-products">
+          <h4>Our Products</h4>
+          <ul>
+            <li>Paver Blocks</li>
+            <li>Chequered Tiles</li>
+            <li>Vibro Pavers</li>
+            <li>Hollow &amp; Solid Blocks</li>
+            <li>Fly Ash Bricks</li>
+            <li>Kerbstone</li>
+            <li>Grass Pavers</li>
+          </ul>
+        </div>
+        <div class="footer-contact-col">
+          <h4>Contact Us</h4>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div>
+              <strong>Factory Address</strong>
+              <p>Om Maa Party Plot,<br>Nr. G.S.F.C. Township,<br>Dashrath, Vadodara,<br>Gujarat – 391740</p>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon"><i class="fa-solid fa-envelope"></i></div>
+            <div>
+              <strong>Email Us</strong>
+              <p>fortunepavers@gmail.com</p>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon"><i class="fa-solid fa-phone"></i></div>
+            <div>
+              <strong>Call Us</strong>
+              <p>+91 84535 45454</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p><i class="fa-solid fa-shield-halved"></i> &copy; 2026 Fortune Tiles &amp; Pavers. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+
+  <a href="https://wa.me/918238964164?text=Hello%2C%20I%20am%20interested%20in%20Fortune%20Tiles%20%26%20Pavers%20products." target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span class="whatsapp-tooltip">Chat with us!</span>
+  </a>
+
+  <script src="products-data.js"></script>
+  <script>
+    // ── Navbar + back-to-top ─────────────────────────────────────
+    window.addEventListener('scroll', () => {
+      document.getElementById('backToTop').classList.toggle('visible', window.scrollY > 400);
+    });
+    document.getElementById('backToTop').addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    const hamburger = document.getElementById('hamburger');
+    const navLinks  = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      navLinks.classList.toggle('open');
+    });
+
+    // ── Image loader ─────────────────────────────────────────────
+    function loadImgData(src) {
+      return new Promise(resolve => {
+        if (!src) return resolve(null);
+        const img = new Image();
+        img.onload = () => {
+          try {
+            const cv = document.createElement('canvas');
+            cv.width  = img.naturalWidth;
+            cv.height = img.naturalHeight;
+            const ctx = cv.getContext('2d');
+            ctx.fillStyle = '#ffffff';
+            ctx.fillRect(0, 0, cv.width, cv.height);
+            ctx.drawImage(img, 0, 0);
+            resolve(cv.toDataURL('image/jpeg', 0.82));
+          } catch(e) { resolve(null); }
+        };
+        img.onerror = () => resolve(null);
+        img.src = src;
+      });
+    }
+
+    // ── Brochure generator ───────────────────────────────────────
+    async function generateBrochure() {
+      const btn = document.getElementById('brochureBtn');
+      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Generating PDF...';
+      btn.disabled = true;
+
+      // Pre-load all product images
+      const prodEntries = Object.entries(PRODUCTS);
+      const imgCache = {};
+      await Promise.all(prodEntries.map(async ([pid, p]) => {
+        if (p.image) imgCache[pid] = await loadImgData(p.image);
+      }));
+
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
+      const W = 210, H = 297;
+      const ml = 15, mr = 15;
+      const cW = W - ml - mr;
+
+      // Design tokens
+      const NAVY  = [8,   15,  50];
+      const PRI   = [26,  111, 196];
+      const ACC   = [230, 126, 34];
+      const DARK  = [15,  23,  42];
+      const MUTED = [100, 116, 139];
+      const LIGHT = [241, 245, 251];
+      const WHITE = [255, 255, 255];
+      const PALE  = [220, 230, 248];
+
+      // ── Helpers ────────────────────────────────────────────────
+      function pageHeader(title) {
+        doc.setFillColor(...PRI);
+        doc.rect(0, 0, W, 7, 'F');
+        doc.setFillColor(...NAVY);
+        doc.rect(0, 7, W, 26, 'F');
+        doc.setFont('helvetica', 'bold');
+        doc.setFontSize(15);
+        doc.setTextColor(...WHITE);
+        doc.text(title, ml, 27);
+        doc.setFont('helvetica', 'normal');
+        doc.setFontSize(7);
+        doc.setTextColor(...PALE);
+        doc.text('FORTUNE TILES & PAVERS', W - mr, 27, { align: 'right' });
+      }
+
+      function pageFooter(n) {
+        doc.setFillColor(...LIGHT);
+        doc.rect(0, H - 10, W, 10, 'F');
+        doc.setDrawColor(...PALE);
+        doc.setLineWidth(0.2);
+        doc.line(0, H - 10, W, H - 10);
+        doc.setFont('helvetica', 'normal');
+        doc.setFontSize(6.5);
+        doc.setTextColor(...MUTED);
+        doc.text('www.fortunepavers.com  ·  fortunepavers@gmail.com  ·  +91 84535 45454', ml, H - 4);
+        doc.text(String(n), W - mr, H - 4, { align: 'right' });
+      }
+
+      // ═══════════════════════════════════════════════════════════
+      // PAGE 1 — COVER
+      // ═══════════════════════════════════════════════════════════
+      doc.setFillColor(...NAVY);
+      doc.rect(0, 0, W, H, 'F');
+
+      // Top accent stripe
+      doc.setFillColor(...ACC);
+      doc.rect(0, 0, W, 7, 'F');
+
+      // Decorative circles
+      doc.setGState(new doc.GState({ opacity: 0.05 }));
+      doc.setFillColor(...WHITE);
+      doc.circle(190, 70, 75, 'F');
+      doc.circle(20,  230, 55, 'F');
+      doc.setGState(new doc.GState({ opacity: 1 }));
+
+      // Catalogue label
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(7.5);
+      doc.setTextColor(...PALE);
+      doc.text('PRODUCT CATALOGUE  ·  2026', W / 2, 82, { align: 'center' });
+
+      // Divider above name
+      doc.setDrawColor(...ACC);
+      doc.setLineWidth(1.2);
+      doc.line(W / 2 - 22, 88, W / 2 + 22, 88);
+
+      // Company name
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(28);
+      doc.setTextColor(...WHITE);
+      doc.text('FORTUNE TILES', W / 2, 104, { align: 'center' });
+      doc.text('& PAVERS', W / 2, 118, { align: 'center' });
+
+      // Divider below name
+      doc.setDrawColor(...ACC);
+      doc.setLineWidth(1.2);
+      doc.line(W / 2 - 22, 124, W / 2 + 22, 124);
+
+      // Tagline
+      doc.setFont('helvetica', 'italic');
+      doc.setFontSize(10);
+      doc.setTextColor(...ACC);
+      doc.text('"Experience a touch of royalty..."', W / 2, 134, { align: 'center' });
+
+      // Location
+      doc.setFont('helvetica', 'normal');
+      doc.setFontSize(8);
+      doc.setTextColor(...PALE);
+      doc.text('Dashrath, Vadodara, Gujarat', W / 2, 145, { align: 'center' });
+
+      // Subtle bottom band
+      doc.setGState(new doc.GState({ opacity: 0.08 }));
+      doc.setFillColor(...WHITE);
+      doc.rect(0, H - 52, W, 52, 'F');
+      doc.setGState(new doc.GState({ opacity: 1 }));
+
+      doc.setFont('helvetica', 'normal');
+      doc.setFontSize(7.5);
+      doc.setTextColor(...PALE);
+      doc.text('Om Maa Party Plot, Nr. G.S.F.C. Township, Dashrath, Vadodara, Gujarat – 391740', W / 2, H - 31, { align: 'center' });
+      doc.text('www.fortunepavers.com  ·  fortunepavers@gmail.com  ·  +91 84535 45454', W / 2, H - 22, { align: 'center' });
+      doc.text('+91 82389 64164  ·  +91 81829 89898', W / 2, H - 14, { align: 'center' });
+
+      // ═══════════════════════════════════════════════════════════
+      // PAGE 2 — ABOUT + WHY CHOOSE US
+      // ═══════════════════════════════════════════════════════════
+      doc.addPage();
+      pageHeader('About Us');
+      let y = 44;
+
+      // About text
+      doc.setFont('helvetica', 'normal');
+      doc.setFontSize(9);
+      doc.setTextColor(...DARK);
+      const aboutText = 'Fortune Tiles & Pavers is Vadodara\'s trusted manufacturer of premium cement paving products, serving residential, commercial and industrial projects across Gujarat. Operating from our factory in Dashrath, we offer a complete range of paving solutions — from smooth rubbermould decorative pavers to heavy-duty vibro compaction blocks engineered for high-load applications.\n\nOur manufacturing utilises Apollo Zenith German-designed vibro compaction machinery, producing pavers with compressive strength of ≥ 35 N/mm² that meet and exceed IS:15658 standards. Every product undergoes a mandatory 28-day water curing period before dispatch, ensuring full strength, dimensional accuracy and long service life.\n\nWith 13+ product variants available in 6 colour options — Grey, Red, Yellow, Black, Brown and Charcoal — we provide everything needed for walkways, driveways, courtyards, plazas, boundary walls and eco-friendly green spaces.';
+      const aboutLines = doc.splitTextToSize(aboutText, cW);
+      doc.text(aboutLines, ml, y);
+      y += aboutLines.length * 5 + 12;
+
+      // Stat boxes
+      const stats = [
+        { v: '13+', l: 'Product Variants' },
+        { v: '6',   l: 'Colour Options'   },
+        { v: '≥35', l: 'N/mm² Strength'   },
+        { v: '28',  l: 'Day Curing'        },
+      ];
+      const bw = (cW - 9) / 4;
+      stats.forEach((s, i) => {
+        const bx = ml + i * (bw + 3);
+        doc.setFillColor(...LIGHT);
+        doc.setDrawColor(...PALE);
+        doc.setLineWidth(0.3);
+        doc.roundedRect(bx, y, bw, 24, 3, 3, 'FD');
+        doc.setFont('helvetica', 'bold');
+        doc.setFontSize(16);
+        doc.setTextColor(...PRI);
+        doc.text(s.v, bx + bw / 2, y + 12, { align: 'center' });
+        doc.setFont('helvetica', 'normal');
+        doc.setFontSize(6.5);
+        doc.setTextColor(...MUTED);
+        doc.text(s.l, bx + bw / 2, y + 19, { align: 'center' });
+      });
+      y += 34;
+
+      // Why Choose Us heading
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(12);
+      doc.setTextColor(...NAVY);
+      doc.text('Why Choose Fortune Tiles & Pavers?', ml, y);
+      y += 9;
+
+      const reasons = [
+        ['Apollo Zenith German-designed machinery',    'State-of-the-art vibro compaction for superior density and consistency.'],
+        ['Compressive strength ≥ 35 N/mm²',           'Meets and exceeds IS:15658 standards for interlocking concrete pavers.'],
+        ['Mandatory 28-day water curing',              'Every product is fully cured before dispatch — guaranteed quality.'],
+        ['6 colour options',                           'Grey, Red, Yellow, Black, Brown and Charcoal for any project aesthetic.'],
+        ['Direct factory pricing',                     'No middlemen — buy direct from our Dashrath manufacturing facility.'],
+        ['Complete product range',                     'Pavers, tiles, blocks, kerbstones, grass pavers and eco fly ash bricks.'],
+      ];
+
+      reasons.forEach(([title, desc], i) => {
+        if (i % 2 === 0) {
+          doc.setFillColor(...LIGHT);
+          doc.rect(ml, y - 3, cW, 15, 'F');
+        }
+        doc.setFillColor(...ACC);
+        doc.circle(ml + 3.5, y + 3.5, 1.5, 'F');
+        doc.setFont('helvetica', 'bold');
+        doc.setFontSize(8.5);
+        doc.setTextColor(...DARK);
+        doc.text(title, ml + 9, y + 3.5);
+        doc.setFont('helvetica', 'normal');
+        doc.setFontSize(7.5);
+        doc.setTextColor(...MUTED);
+        doc.text(desc, ml + 9, y + 10);
+        y += 16;
+      });
+
+      pageFooter(2);
+
+      // ═══════════════════════════════════════════════════════════
+      // PAGES 3+ — PRODUCTS
+      // ═══════════════════════════════════════════════════════════
+      doc.addPage();
+      pageHeader('Our Products');
+      y = 44;
+      let pageN = 3;
+
+      const COLS = 3;
+      const cardW = (cW - (COLS - 1) * 5) / COLS;
+      const imgAreaH = 36;
+      const cardH = imgAreaH + 26;
+      const rowGap = 6;
+
+      prodEntries.forEach(([pid, prod], idx) => {
+        const col = idx % COLS;
+        const rowInPage = Math.floor((idx % (COLS * 3)) / COLS);
+
+        // New page every 9 products
+        if (idx > 0 && idx % (COLS * 3) === 0) {
+          pageFooter(pageN);
+          doc.addPage();
+          pageN++;
+          pageHeader('Our Products (cont.)');
+          y = 44;
+        }
+
+        const px = ml + col * (cardW + 5);
+        const py = y + rowInPage * (cardH + rowGap);
+
+        // Card
+        doc.setFillColor(...WHITE);
+        doc.setDrawColor(...PALE);
+        doc.setLineWidth(0.3);
+        doc.roundedRect(px, py, cardW, cardH, 3, 3, 'FD');
+
+        // Image area
+        if (prod.image && imgCache[pid]) {
+          try {
+            doc.addImage(imgCache[pid], 'JPEG', px + 1, py + 1, cardW - 2, imgAreaH, '', 'FAST');
+          } catch(e) {
+            doc.setFillColor(...LIGHT);
+            doc.rect(px + 1, py + 1, cardW - 2, imgAreaH, 'F');
+          }
+        } else {
+          doc.setFillColor(...LIGHT);
+          doc.rect(px + 1, py + 1, cardW - 2, imgAreaH, 'F');
+        }
+
+        // Category
+        doc.setFont('helvetica', 'bold');
+        doc.setFontSize(5.5);
+        doc.setTextColor(...ACC);
+        doc.text(prod.category.toUpperCase(), px + 3, py + imgAreaH + 8);
+
+        // Product name
+        doc.setFont('helvetica', 'bold');
+        doc.setFontSize(7.5);
+        doc.setTextColor(...DARK);
+        const nLines = doc.splitTextToSize(prod.name, cardW - 6);
+        doc.text(nLines, px + 3, py + imgAreaH + 14);
+
+        // Key spec
+        if (prod.highlights && prod.highlights[0]) {
+          const h = prod.highlights[0];
+          doc.setFont('helvetica', 'normal');
+          doc.setFontSize(6.5);
+          doc.setTextColor(...MUTED);
+          const specY = py + imgAreaH + 14 + nLines.length * 3.8 + 3;
+          doc.text(`${h.label}: ${h.value} ${h.unit}`, px + 3, specY);
+        }
+      });
+
+      pageFooter(pageN);
+
+      // ═══════════════════════════════════════════════════════════
+      // LAST PAGE — CONTACT
+      // ═══════════════════════════════════════════════════════════
+      doc.addPage();
+      pageN++;
+      pageHeader('Contact Us');
+      y = 44;
+
+      // Intro
+      doc.setFont('helvetica', 'normal');
+      doc.setFontSize(9);
+      doc.setTextColor(...DARK);
+      doc.text('Get in touch with our team for product enquiries, bulk orders, delivery quotes or to schedule a factory visit.', ml, y, { maxWidth: cW });
+      y += 14;
+
+      // Contact info grid (2 cols)
+      const ciW = (cW - 6) / 2;
+      const contactItems = [
+        { label: 'Factory Address', value: 'Om Maa Party Plot, Nr. G.S.F.C. Township,\nDashrath, Vadodara, Gujarat - 391740' },
+        { label: 'Phone',           value: '+91 84535 45454\n+91 82389 64164' },
+        { label: 'Email',           value: 'fortunepavers@gmail.com' },
+        { label: 'Website',         value: 'www.fortunepavers.com' },
+        { label: 'Working Hours',   value: 'Monday - Saturday: 8:30 AM - 6:00 PM\nSunday: 8:30 AM - 12:30 PM' },
+      ];
+
+      contactItems.forEach((item, i) => {
+        const col = i % 2;
+        const row = Math.floor(i / 2);
+        const cx = ml + col * (ciW + 6);
+        const cy = y + row * 38;
+
+        doc.setFillColor(...LIGHT);
+        doc.setDrawColor(...PALE);
+        doc.setLineWidth(0.3);
+        doc.roundedRect(cx, cy, ciW, 32, 3, 3, 'FD');
+
+        // Left accent
+        doc.setFillColor(...PRI);
+        doc.roundedRect(cx, cy, 3, 32, 1, 1, 'F');
+
+        doc.setFont('helvetica', 'bold');
+        doc.setFontSize(7);
+        doc.setTextColor(...MUTED);
+        doc.text(item.label.toUpperCase(), cx + 8, cy + 9);
+
+        doc.setFont('helvetica', 'normal');
+        doc.setFontSize(8.5);
+        doc.setTextColor(...DARK);
+        const vLines = doc.splitTextToSize(item.value, ciW - 12);
+        doc.text(vLines, cx + 8, cy + 17);
+      });
+
+      y += Math.ceil(contactItems.length / 2) * 38 + 10;
+
+      // Representatives heading
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(11);
+      doc.setTextColor(...NAVY);
+      doc.text('Our Representatives', ml, y);
+      y += 9;
+
+      const reps = [
+        { name: 'Deep Patel',  phone: '+91 82389 64164', init: 'DP' },
+        { name: 'Zeel Patel',  phone: '+91 81829 89898', init: 'ZP' },
+      ];
+      const repW = (cW - 6) / 2;
+      reps.forEach((rep, i) => {
+        const rx = ml + i * (repW + 6);
+        doc.setFillColor(...WHITE);
+        doc.setDrawColor(...PALE);
+        doc.setLineWidth(0.3);
+        doc.roundedRect(rx, y, repW, 26, 3, 3, 'FD');
+
+        doc.setFillColor(...PRI);
+        doc.circle(rx + 15, y + 13, 9, 'F');
+        doc.setFont('helvetica', 'bold');
+        doc.setFontSize(7.5);
+        doc.setTextColor(...WHITE);
+        doc.text(rep.init, rx + 15, y + 15, { align: 'center' });
+
+        doc.setFont('helvetica', 'bold');
+        doc.setFontSize(9);
+        doc.setTextColor(...DARK);
+        doc.text(rep.name, rx + 30, y + 11);
+
+        doc.setFont('helvetica', 'normal');
+        doc.setFontSize(8);
+        doc.setTextColor(...MUTED);
+        doc.text(rep.phone, rx + 30, y + 19);
+      });
+
+      y += 36;
+
+      // CTA banner
+      doc.setFillColor(...PRI);
+      doc.setDrawColor(...PRI);
+      doc.roundedRect(ml, y, cW, 28, 4, 4, 'F');
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(12);
+      doc.setTextColor(...WHITE);
+      doc.text('Ready to start your project?', W / 2, y + 11, { align: 'center' });
+      doc.setFont('helvetica', 'normal');
+      doc.setFontSize(8.5);
+      doc.setTextColor(200, 220, 255);
+      doc.text('Visit our factory or get in touch at www.fortunepavers.com', W / 2, y + 20, { align: 'center' });
+
+      pageFooter(pageN);
+
+      // ── Save ──────────────────────────────────────────────────
+      doc.save('Fortune-Tiles-Pavers-Brochure-2026.pdf');
+
+      btn.innerHTML = '<i class="fa-solid fa-check"></i> Downloaded!';
+      setTimeout(() => {
+        btn.innerHTML = '<i class="fa-solid fa-download"></i> Download Brochure PDF';
+        btn.disabled = false;
+      }, 3000);
+    }
+  </script>
+</body>
+</html>
