@@ -1,10 +1,9 @@
 const PRODUCTS = {
   'vibro-brick-paver': {
     name: 'Vibro Brick Paver',
-    inProduction: true,
     category: 'Vibro Compaction',
     modelId: 'FTV-001',
-    image: 'images/Vibro Brick Paver.png',
+    image: 'images/Vibro Paver Bricks 200 x 100 x 60MM.jpg',
     colors: ['Grey', 'Red', 'Yellow', 'Black', 'Brown', 'Charcoal'],
     highlights: [
       { label: 'Thickness', value: '60 / 80', unit: 'mm' },
@@ -134,10 +133,9 @@ const PRODUCTS = {
   },
   'rubbermould-square': {
     name: 'Rubbermould Square 150×150',
-    inProduction: true,
     category: 'Rubbermould',
     modelId: 'RMV-001',
-    image: 'images/Rubbermould Square.png',
+    image: 'images/Rubbermould Square 150 x 150 x 35MM.jpg',
     colors: ['Grey', 'Red', 'Yellow', 'Black', 'Brown', 'Charcoal'],
     highlights: [
       { label: 'Thickness', value: '35', unit: 'mm' },
@@ -169,7 +167,6 @@ const PRODUCTS = {
   },
   'rubbermould-square-200': {
     name: 'Rubbermould Square 200×200',
-    inProduction: true,
     category: 'Rubbermould',
     modelId: 'RMV-002',
     image: 'images/Rubbermould Square 200x200.png',
@@ -204,7 +201,6 @@ const PRODUCTS = {
   },
   'rubbermould-unipaver': {
     name: 'Rubbermould Unipaver',
-    inProduction: true,
     category: 'Rubbermould',
     modelId: 'RMV-003',
     image: 'images/Rubbermould Unipaver.png',

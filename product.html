@@ -68,9 +68,6 @@
     <!-- LEFT: Product image on gradient -->
     <div class="pd-hero-visual">
       <div class="pd-stage" id="pdStage">
-        <div class="pd-status-badge" id="pdStatusBadge" style="display:none">
-          <span class="pd-status-dot"></span> In Production
-        </div>
         <div id="pdImageWrap"></div>
       </div>
       <!-- Colour Swatches (below image) -->
@@ -299,11 +296,6 @@
       document.getElementById('pdCategory').textContent     = p.category;
       document.getElementById('breadcrumbName').textContent = p.name;
       document.getElementById('pdDescription').textContent  = p.description;
-
-      // In Production badge
-      if (p.inProduction) {
-        document.getElementById('pdStatusBadge').style.display = 'flex';
-      }
 
       // Image or icon
       const wrap = document.getElementById('pdImageWrap');

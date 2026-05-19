@@ -1287,6 +1287,10 @@ img { max-width: 100%; display: block; }
   margin-right: 6px;
 }
 
+.table-scroll-hint {
+  display: none;
+}
+
 /* ===== APPLICATIONS ===== */
 .applications {
   background: linear-gradient(135deg, #edf2fb 0%, #f0f5ff 50%, #e8eefa 100%);
@@ -2010,6 +2014,16 @@ img { max-width: 100%; display: block; }
 
   .comparison-table thead th,
   .comparison-table tbody td { padding: 12px; font-size: 0.82rem; }
+
+  .table-scroll-hint {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+  }
 }
 
 @media (max-width: 480px) {
