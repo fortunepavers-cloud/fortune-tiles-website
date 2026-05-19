@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Company Brochure 2026 — Fortune Tiles & Pavers</title>
+  <link rel="icon" type="image/png" href="images/Tab%20Logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    /* ── Reset ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ── Design tokens ── */
+    :root {
+      --navy:  #0b1540;
+      --pri:   #1a6fc4;
+      --acc:   #e67e22;
+      --dark:  #0f172a;
+      --muted: #64748b;
+      --light: #f1f5fb;
+      --pale:  #e5eaf3;
+    }
+
+    /* ── Print setup ── */
+    @page { size: A4 portrait; margin: 0; }
+
+    /* ── Screen: dark bg, pages as cards ── */
+    @media screen {
+      body { background: #5a6480; font-family: 'Inter', sans-serif; }
+      .b-wrap { padding: 72px 20px 40px; }
+      .b-page { margin: 0 auto 28px; box-shadow: 0 10px 50px rgba(0,0,0,0.4); }
+    }
+
+    /* ── Print: clean pages ── */
+    @media print {
+      body { background: white; }
+      .no-print { display: none !important; }
+      .b-wrap { padding: 0; }
+      .b-page { margin: 0; break-after: page; }
+    }
+
+    /* ── Toolbar (screen only) ── */
+    .b-toolbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      background: #0b1540;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 28px; height: 58px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.35);
+    }
+    .b-toolbar-back {
+      color: rgba(255,255,255,0.65); text-decoration: none;
+      font-size: 0.83rem; font-family: 'Inter', sans-serif;
+      display: flex; align-items: center; gap: 8px;
+      transition: color 0.2s;
+    }
+    .b-toolbar-back:hover { color: #fff; }
+    .b-toolbar-label {
+      font-size: 0.82rem; color: rgba(255,255,255,0.5);
+      font-family: 'Inter', sans-serif;
+    }
+    .b-toolbar-btn {
+      display: flex; align-items: center; gap: 9px;
+      background: var(--acc); color: #fff; border: none;
+      padding: 9px 22px; border-radius: 8px;
+      font-size: 0.85rem; font-weight: 700;
+      cursor: pointer; font-family: 'Inter', sans-serif;
+      transition: background 0.2s;
+    }
+    .b-toolbar-btn:hover { background: #cf6d17; }
+
+    /* ── Page base ── */
+    .b-page {
+      width: 210mm; height: 297mm;
+      background: white; overflow: hidden;
+      position: relative;
+      display: flex; flex-direction: column;
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* ── Interior page header ── */
+    .b-accent { height: 6px; background: var(--pri); flex-shrink: 0; }
+    .b-header {
+      background: var(--navy);
+      padding: 5.5mm 14mm 6mm;
+      display: flex; justify-content: space-between; align-items: flex-end;
+      flex-shrink: 0;
+    }
+    .b-header-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 15pt; font-weight: 600; color: #fff; letter-spacing: 0.3px;
+    }
+    .b-header-brand {
+      font-size: 6.5pt; color: rgba(190,210,245,0.6);
+      font-weight: 600; letter-spacing: 1.5px;
+    }
+    .b-body { flex: 1; min-height: 0; padding: 7mm 14mm; overflow: hidden; }
+    .b-footer {
+      height: 9mm; background: var(--light);
+      border-top: 1px solid var(--pale);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 14mm; flex-shrink: 0;
+    }
+    .b-footer span { font-size: 6pt; color: var(--muted); }
+
+    /* ════════════════════════════════════════════════
+       PAGE 1 — COVER
+    ════════════════════════════════════════════════ */
+    .b-cover {
+      background: linear-gradient(148deg, #060c28 0%, #0d1d5a 45%, #1a5aaa 100%);
+    }
+    .b-cover-stripe { height: 8mm; background: var(--acc); flex-shrink: 0; }
+    .b-cover-deco1 {
+      position: absolute; top: -25mm; right: -25mm;
+      width: 110mm; height: 110mm; border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,0.07) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .b-cover-deco2 {
+      position: absolute; bottom: 35mm; left: -15mm;
+      width: 75mm; height: 75mm; border-radius: 50%;
+      background: radial-gradient(circle, rgba(230,126,34,0.09) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .b-cover-deco3 {
+      position: absolute; bottom: -20mm; right: 20mm;
+      width: 55mm; height: 55mm; border-radius: 50%;
+      background: radial-gradient(circle, rgba(26,111,196,0.2) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .b-cover-main {
+      flex: 1; position: relative; z-index: 1;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center; padding: 0 20mm;
+    }
+    .b-cover-label {
+      font-size: 7pt; font-weight: 700; letter-spacing: 3.5px;
+      color: rgba(190,210,248,0.6); margin-bottom: 9mm;
+    }
+    .b-cover-rule { width: 40mm; height: 2px; background: var(--acc); margin: 0 auto 7mm; }
+    .b-cover h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 36pt; font-weight: 700; color: #fff; line-height: 1.15;
+    }
+    .b-cover-rule2 { width: 40mm; height: 2px; background: var(--acc); margin: 7mm auto 0; }
+    .b-cover-tagline {
+      font-family: 'Playfair Display', serif;
+      font-style: italic; font-size: 12pt; color: var(--acc); margin-top: 7mm;
+    }
+    .b-cover-location { font-size: 8.5pt; color: rgba(190,210,248,0.55); margin-top: 4mm; }
+    .b-cover-foot {
+      background: rgba(255,255,255,0.07);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding: 5mm 14mm; text-align: center; flex-shrink: 0;
+    }
+    .b-cover-foot p { font-size: 7.5pt; color: rgba(190,210,248,0.6); line-height: 1.9; }
+
+    /* ════════════════════════════════════════════════
+       PAGE 2 — ABOUT
+    ════════════════════════════════════════════════ */
+    .b-about-text { font-size: 8.5pt; line-height: 1.72; color: var(--dark); margin-bottom: 5mm; }
+
+    .b-stats {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 3mm; margin-bottom: 6mm;
+    }
+    .b-stat-box {
+      background: var(--light); border: 1px solid var(--pale);
+      border-radius: 4mm; padding: 4mm 2mm; text-align: center;
+    }
+    .b-stat-val {
+      font-family: 'Oswald', sans-serif; font-size: 18pt;
+      font-weight: 700; color: var(--pri); display: block; line-height: 1; margin-bottom: 2mm;
+    }
+    .b-stat-lbl { font-size: 6.5pt; color: var(--muted); font-weight: 500; }
+
+    .b-why-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 13pt; font-weight: 700; color: var(--navy); margin-bottom: 3.5mm;
+    }
+    .b-reason {
+      display: flex; align-items: flex-start; gap: 3mm;
+      padding: 2.5mm 3mm;
+    }
+    .b-reason:nth-child(even) { background: var(--light); border-radius: 2mm; }
+    .b-reason-dot {
+      width: 5mm; height: 5mm; background: var(--acc);
+      border-radius: 50%; flex-shrink: 0; margin-top: 0.3mm;
+    }
+    .b-reason-title { font-size: 8.5pt; font-weight: 700; color: var(--dark); }
+    .b-reason-desc { font-size: 7.5pt; color: var(--muted); line-height: 1.5; margin-top: 0.5mm; }
+
+    /* ════════════════════════════════════════════════
+       PAGE 3 — PRODUCTS
+    ════════════════════════════════════════════════ */
+    .b-products-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 4mm;
+    }
+    .b-prod-card {
+      border: 1px solid var(--pale); border-radius: 3mm;
+      overflow: hidden; background: #fff;
+    }
+    .b-prod-img {
+      height: 26mm; background: var(--light);
+      display: flex; align-items: center; justify-content: center; overflow: hidden;
+    }
+    .b-prod-img img { width: 100%; height: 100%; object-fit: contain; padding: 2mm; }
+    .b-prod-icon-wrap {
+      width: 100%; height: 100%; display: flex;
+      align-items: center; justify-content: center;
+      font-size: 1.6rem; color: rgba(255,255,255,0.8);
+    }
+    .b-prod-body { padding: 2mm 3mm 3mm; }
+    .b-prod-cat {
+      font-size: 5.5pt; font-weight: 700; color: var(--acc);
+      letter-spacing: 0.5px; text-transform: uppercase; display: block; margin-bottom: 1mm;
+    }
+    .b-prod-name { font-size: 8pt; font-weight: 700; color: var(--dark); line-height: 1.3; margin-bottom: 1mm; }
+    .b-prod-spec { font-size: 6.5pt; color: var(--muted); }
+
+    /* ════════════════════════════════════════════════
+       PAGE 4 — CONTACT
+    ════════════════════════════════════════════════ */
+    .b-contact-intro { font-size: 9pt; color: var(--dark); line-height: 1.65; margin-bottom: 5mm; }
+    .b-contact-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 3mm; margin-bottom: 6mm;
+    }
+    .b-contact-item {
+      background: var(--light); border: 1px solid var(--pale);
+      border-radius: 3mm; padding: 3.5mm 4mm;
+      display: flex; align-items: flex-start; gap: 3.5mm;
+    }
+    .b-ci-icon {
+      width: 9mm; height: 9mm; background: var(--pri);
+      border-radius: 50%; display: flex; align-items: center;
+      justify-content: center; color: #fff; font-size: 7.5pt; flex-shrink: 0;
+    }
+    .b-ci-label {
+      font-size: 6pt; font-weight: 700; color: var(--muted);
+      text-transform: uppercase; letter-spacing: 0.8px; display: block; margin-bottom: 1.5mm;
+    }
+    .b-ci-val { font-size: 8pt; color: var(--dark); font-weight: 500; line-height: 1.65; }
+
+    .b-reps-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 12pt; font-weight: 700; color: var(--navy); margin-bottom: 3.5mm;
+    }
+    .b-reps-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3mm; margin-bottom: 6mm; }
+    .b-rep-card {
+      border: 1px solid var(--pale); border-radius: 3mm;
+      padding: 4mm; display: flex; align-items: center; gap: 4mm; background: #fff;
+    }
+    .b-rep-avatar {
+      width: 12mm; height: 12mm;
+      background: linear-gradient(135deg, var(--pri), #1e3a8a);
+      border-radius: 50%; display: flex; align-items: center;
+      justify-content: center; color: #fff;
+      font-size: 9pt; font-weight: 700;
+      font-family: 'Oswald', sans-serif; flex-shrink: 0;
+    }
+    .b-rep-name { font-size: 9.5pt; font-weight: 700; color: var(--dark); }
+    .b-rep-phone { font-size: 8pt; color: var(--muted); margin-top: 1mm; }
+
+    .b-cta {
+      background: linear-gradient(135deg, var(--pri) 0%, #1e3a8a 100%);
+      border-radius: 4mm; padding: 6mm 10mm; text-align: center;
+    }
+    .b-cta h3 {
+      font-family: 'Playfair Display', serif; font-size: 13pt;
+      color: #fff; margin-bottom: 2mm;
+    }
+    .b-cta p { font-size: 8pt; color: rgba(200,220,255,0.82); line-height: 1.6; }
+  </style>
+</head>
+<body>
+
+  <!-- ── Toolbar (no-print) ── -->
+  <div class="b-toolbar no-print">
+    <a href="brochure.html" class="b-toolbar-back"><i class="fa-solid fa-arrow-left"></i> Back</a>
+    <span class="b-toolbar-label">Fortune Tiles &amp; Pavers — Company Brochure 2026</span>
+    <button class="b-toolbar-btn" onclick="window.print()">
+      <i class="fa-solid fa-print"></i> Print / Save as PDF
+    </button>
+  </div>
+
+  <div class="b-wrap">
+
+    <!-- ══════════════════════════════════════════
+         PAGE 1 — COVER
+    ══════════════════════════════════════════ -->
+    <div class="b-page b-cover">
+      <div class="b-cover-stripe"></div>
+      <div class="b-cover-deco1"></div>
+      <div class="b-cover-deco2"></div>
+      <div class="b-cover-deco3"></div>
+      <div class="b-cover-main">
+        <p class="b-cover-label">PRODUCT CATALOGUE &nbsp;·&nbsp; 2026</p>
+        <div class="b-cover-rule"></div>
+        <h1>FORTUNE TILES<br />&amp; PAVERS</h1>
+        <div class="b-cover-rule2"></div>
+        <p class="b-cover-tagline">"Experience a touch of royalty..."</p>
+        <p class="b-cover-location">Dashrath, Vadodara, Gujarat</p>
+      </div>
+      <div class="b-cover-foot">
+        <p>Om Maa Party Plot, Nr. G.S.F.C. Township, Dashrath, Vadodara, Gujarat – 391740</p>
+        <p>www.fortunepavers.com &nbsp;·&nbsp; fortunepavers@gmail.com &nbsp;·&nbsp; +91 84535 45454</p>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         PAGE 2 — ABOUT + WHY CHOOSE US
+    ══════════════════════════════════════════ -->
+    <div class="b-page">
+      <div class="b-accent"></div>
+      <div class="b-header">
+        <span class="b-header-title">About Us</span>
+        <span class="b-header-brand">FORTUNE TILES &amp; PAVERS</span>
+      </div>
+      <div class="b-body">
+
+        <p class="b-about-text">Fortune Tiles &amp; Pavers is Vadodara's trusted manufacturer of premium cement paving products, serving residential, commercial and industrial projects across Gujarat. Operating from our factory in Dashrath, we offer a complete range of paving solutions — from smooth rubbermould decorative pavers to heavy-duty vibro compaction blocks engineered for high-load applications.</p>
+        <p class="b-about-text">Our manufacturing utilises Apollo Zenith German-designed vibro compaction machinery, producing pavers with compressive strength of ≥ 35 N/mm² that meet and exceed IS:15658 standards. Every product undergoes a mandatory 28-day water curing period before dispatch, ensuring full strength, dimensional accuracy and long service life.</p>
+        <p class="b-about-text">With 13+ product variants available in 6 colour options — Grey, Red, Yellow, Black, Brown and Charcoal — we provide everything needed for walkways, driveways, courtyards, plazas, boundary walls and eco-friendly green spaces.</p>
+
+        <div class="b-stats">
+          <div class="b-stat-box"><span class="b-stat-val">13+</span><span class="b-stat-lbl">Product Variants</span></div>
+          <div class="b-stat-box"><span class="b-stat-val">6</span><span class="b-stat-lbl">Colour Options</span></div>
+          <div class="b-stat-box"><span class="b-stat-val">≥35</span><span class="b-stat-lbl">N/mm² Strength</span></div>
+          <div class="b-stat-box"><span class="b-stat-val">28</span><span class="b-stat-lbl">Day Curing</span></div>
+        </div>
+
+        <h3 class="b-why-title">Why Choose Fortune Tiles &amp; Pavers?</h3>
+
+        <div class="b-reason">
+          <div class="b-reason-dot"></div>
+          <div><div class="b-reason-title">Apollo Zenith German-designed machinery</div><div class="b-reason-desc">State-of-the-art vibro compaction technology for superior density and batch-to-batch consistency.</div></div>
+        </div>
+        <div class="b-reason">
+          <div class="b-reason-dot"></div>
+          <div><div class="b-reason-title">Compressive strength ≥ 35 N/mm²</div><div class="b-reason-desc">Meets and exceeds IS:15658 standards for interlocking concrete block pavers.</div></div>
+        </div>
+        <div class="b-reason">
+          <div class="b-reason-dot"></div>
+          <div><div class="b-reason-title">Mandatory 28-day water curing</div><div class="b-reason-desc">Every product is fully cured before dispatch — strength and durability guaranteed.</div></div>
+        </div>
+        <div class="b-reason">
+          <div class="b-reason-dot"></div>
+          <div><div class="b-reason-title">6 colour options</div><div class="b-reason-desc">Grey, Red, Yellow, Black, Brown and Charcoal to suit any architectural aesthetic.</div></div>
+        </div>
+        <div class="b-reason">
+          <div class="b-reason-dot"></div>
+          <div><div class="b-reason-title">Direct factory pricing</div><div class="b-reason-desc">No distributors — buy direct from our Dashrath manufacturing facility and save.</div></div>
+        </div>
+        <div class="b-reason">
+          <div class="b-reason-dot"></div>
+          <div><div class="b-reason-title">Complete product range</div><div class="b-reason-desc">Pavers, tiles, blocks, kerbstones, grass pavers and fly ash bricks under one roof.</div></div>
+        </div>
+
+      </div>
+      <div class="b-footer">
+        <span>www.fortunepavers.com &nbsp;·&nbsp; fortunepavers@gmail.com &nbsp;·&nbsp; +91 84535 45454</span>
+        <span>02</span>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         PAGE 3 — PRODUCTS
+    ══════════════════════════════════════════ -->
+    <div class="b-page">
+      <div class="b-accent"></div>
+      <div class="b-header">
+        <span class="b-header-title">Our Products</span>
+        <span class="b-header-brand">FORTUNE TILES &amp; PAVERS</span>
+      </div>
+      <div class="b-body">
+        <div class="b-products-grid" id="productsGrid"></div>
+      </div>
+      <div class="b-footer">
+        <span>www.fortunepavers.com &nbsp;·&nbsp; fortunepavers@gmail.com &nbsp;·&nbsp; +91 84535 45454</span>
+        <span>03</span>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         PAGE 4 — CONTACT
+    ══════════════════════════════════════════ -->
+    <div class="b-page">
+      <div class="b-accent"></div>
+      <div class="b-header">
+        <span class="b-header-title">Contact Us</span>
+        <span class="b-header-brand">FORTUNE TILES &amp; PAVERS</span>
+      </div>
+      <div class="b-body">
+
+        <p class="b-contact-intro">Get in touch with our team for product enquiries, bulk orders, delivery quotes or to schedule a factory visit. We're available Monday through Saturday and happy to assist.</p>
+
+        <div class="b-contact-grid">
+          <div class="b-contact-item">
+            <div class="b-ci-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div>
+              <span class="b-ci-label">Factory Address</span>
+              <span class="b-ci-val">Om Maa Party Plot, Nr. G.S.F.C. Township,<br>Dashrath, Vadodara, Gujarat – 391740</span>
+            </div>
+          </div>
+          <div class="b-contact-item">
+            <div class="b-ci-icon"><i class="fa-solid fa-phone"></i></div>
+            <div>
+              <span class="b-ci-label">Phone</span>
+              <span class="b-ci-val">+91 84535 45454<br>+91 82389 64164</span>
+            </div>
+          </div>
+          <div class="b-contact-item">
+            <div class="b-ci-icon"><i class="fa-solid fa-envelope"></i></div>
+            <div>
+              <span class="b-ci-label">Email</span>
+              <span class="b-ci-val">fortunepavers@gmail.com</span>
+            </div>
+          </div>
+          <div class="b-contact-item">
+            <div class="b-ci-icon"><i class="fa-solid fa-globe"></i></div>
+            <div>
+              <span class="b-ci-label">Website</span>
+              <span class="b-ci-val">www.fortunepavers.com</span>
+            </div>
+          </div>
+          <div class="b-contact-item">
+            <div class="b-ci-icon"><i class="fa-solid fa-clock"></i></div>
+            <div>
+              <span class="b-ci-label">Working Hours</span>
+              <span class="b-ci-val">Monday – Saturday: 8:30 AM – 6:00 PM<br>Sunday: 8:30 AM – 12:30 PM</span>
+            </div>
+          </div>
+          <div class="b-contact-item">
+            <div class="b-ci-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+            <div>
+              <span class="b-ci-label">Find Us on Maps</span>
+              <span class="b-ci-val">Search "Fortune Tiles &amp; Pavers"<br>on Google Maps, Dashrath, Vadodara</span>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="b-reps-title">Our Sales Representatives</h3>
+        <div class="b-reps-grid">
+          <div class="b-rep-card">
+            <div class="b-rep-avatar">DP</div>
+            <div>
+              <div class="b-rep-name">Deep Patel</div>
+              <div class="b-rep-phone">+91 82389 64164</div>
+            </div>
+          </div>
+          <div class="b-rep-card">
+            <div class="b-rep-avatar">ZP</div>
+            <div>
+              <div class="b-rep-name">Zeel Patel</div>
+              <div class="b-rep-phone">+91 81829 89898</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="b-cta">
+          <h3>Ready to start your project?</h3>
+          <p>Visit our factory in Dashrath or reach us online at www.fortunepavers.com<br>We offer site consultation, product sampling and bulk pricing for large orders.</p>
+        </div>
+
+      </div>
+      <div class="b-footer">
+        <span>www.fortunepavers.com &nbsp;·&nbsp; fortunepavers@gmail.com &nbsp;·&nbsp; +91 84535 45454</span>
+        <span>04</span>
+      </div>
+    </div>
+
+  </div><!-- .b-wrap -->
+
+  <script src="products-data.js"></script>
+  <script>
+    document.getElementById('productsGrid').innerHTML = Object.entries(PRODUCTS).map(([id, p]) => `
+      <div class="b-prod-card">
+        <div class="b-prod-img">
+          ${p.image
+            ? `<img src="${p.image}" alt="${p.name}" loading="eager">`
+            : `<div class="b-prod-icon-wrap" style="background:${p.iconBg||'#e5eaf3'}"><i class="fa-solid ${p.icon||'fa-cube'}"></i></div>`}
+        </div>
+        <div class="b-prod-body">
+          <span class="b-prod-cat">${p.category}</span>
+          <div class="b-prod-name">${p.name}</div>
+          ${p.highlights && p.highlights[0] ? `<div class="b-prod-spec">${p.highlights[0].label}: ${p.highlights[0].value} ${p.highlights[0].unit}</div>` : ''}
+        </div>
+      </div>
+    `).join('');
+  </script>
+</body>
+</html>
