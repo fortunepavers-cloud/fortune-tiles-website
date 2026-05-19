@@ -1770,6 +1770,7 @@ img { max-width: 100%; display: block; }
   display: grid;
   grid-template-columns: 1.6fr 1fr 1fr 1.4fr;
   gap: 48px;
+  align-items: start;
 }
 
 .footer-brand .nav-logo { margin-bottom: 16px; }
@@ -1938,7 +1939,8 @@ img { max-width: 100%; display: block; }
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
-  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .footer-grid { grid-template-columns: repeat(3, 1fr); gap: 36px; }
+  .footer-brand { grid-column: 1 / -1; }
   .about-grid { grid-template-columns: 1fr; gap: 40px; }
   .contact-grid { grid-template-columns: 1fr; }
   .hero-content { gap: 40px; }
@@ -1989,7 +1991,9 @@ img { max-width: 100%; display: block; }
   .about-cards { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
   .contact-form { padding: 24px; }
-  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
+  .footer-brand { grid-column: 1 / -1; }
+  .footer-contact-col { grid-column: 1 / -1; }
   .footer-top { padding: 52px 0 40px; }
   .contact-body-grid { grid-template-columns: 1fr; }
   .contact-form-header { padding: 22px 24px; }
@@ -2005,6 +2009,8 @@ img { max-width: 100%; display: block; }
 
 @media (max-width: 480px) {
   .section { padding: 50px 0; }
+  .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+  .footer-brand, .footer-contact-col { grid-column: auto; }
   .section-header { margin-bottom: 28px; }
   .products-grid { grid-template-columns: 1fr; }
   .applications-grid { grid-template-columns: 1fr 1fr; }
