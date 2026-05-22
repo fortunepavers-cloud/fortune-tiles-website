@@ -803,8 +803,9 @@
         doc.text(lbl, bx + iSz / 2, by + 0.5, { align: 'center' });
       };
 
-      // Contact rows — 4 items, 4 mm apart, centred in 20.5 mm dark area
-      const cr1 = ftrTop + 4.5;
+      // Contact rows — 4 items, 4 mm apart, vertically centred in 20.5 mm dark area
+      // dark area: ftrTop+1.5 → ftrTop+22  |  content span ≈ 16 mm  |  pad ≈ 2.25 mm each side
+      const cr1 = ftrTop + 6.5;
       const cr2 = cr1 + 4;
       const cr3 = cr1 + 8;
       const cr4 = cr1 + 12;
