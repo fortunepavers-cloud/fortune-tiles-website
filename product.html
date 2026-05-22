@@ -754,22 +754,20 @@
       doc.setTextColor(136, 153, 180);
       doc.text("Vadodara's Trusted Paving Manufacturer", ml, r2);
 
-      // ── Centre — factory address (centered in column) ────
-      const ccX = pageW / 2;
-      const cLblW = iSz + 2.5 + 24; // icon + gap + ~"FACTORY ADDRESS"
-      const cGrpX = ccX - cLblW / 2;
+      // ── Centre — factory address (left-aligned inside column) ─
+      const cColX = pageW * 0.36 + 6; // start just inside left divider
       if (iconPin) {
-        doc.addImage(iconPin, 'PNG', cGrpX, r1 - iSz / 2 - 0.5, iSz, iSz, '', 'FAST');
+        doc.addImage(iconPin, 'PNG', cColX, r1 - iSz / 2 - 0.5, iSz, iSz, '', 'FAST');
       }
       doc.setTextColor(77, 157, 224);
       doc.setFont('helvetica', 'bold');
       doc.setFontSize(6.5);
-      doc.text('FACTORY ADDRESS', cGrpX + iSz + 2.5, r1, { align: 'left' });
+      doc.text('FACTORY ADDRESS', cColX + iSz + 2, r1);
       doc.setFont('helvetica', 'normal');
       doc.setFontSize(6);
       doc.setTextColor(136, 153, 180);
-      doc.text('Om Maa Party Plot, GSFC Township', ccX, r2, { align: 'center' });
-      doc.text('Dashrath, Vadodara – 391 740', ccX, r3, { align: 'center' });
+      doc.text('Om Maa Party Plot, GSFC Township', cColX, r1 + 4.5);
+      doc.text('Dashrath, Vadodara – 391 740', cColX, r1 + 8);
 
       // ── Thin vertical dividers ────────────────────────────
       doc.setDrawColor(255, 255, 255);
