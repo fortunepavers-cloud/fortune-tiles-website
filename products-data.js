@@ -5,7 +5,7 @@ const PRODUCTS = {
     modelId: 'FTV-001',
     image: 'images/Vibro Paver Bricks 200 x 100 x 60MM.jpg',
     removeBg: true,
-    colors: ['Grey', 'Red', 'Yellow', 'Black', 'Brown', 'Charcoal'],
+    colors: ['Grey', 'Red', 'Yellow', 'Orange', 'Black', 'Brown', 'Charcoal'],
     highlights: [
       { label: 'Thickness', value: '60 / 80', unit: 'mm' },
       { label: 'Colours',   value: '6',        unit: 'options' },
@@ -39,7 +39,7 @@ const PRODUCTS = {
     modelId: 'FTV-002',
     image: 'images/Vibro Unipaver.png',
     removeBg: true,
-    colors: ['Grey', 'Red', 'Yellow', 'Black', 'Brown', 'Charcoal'],
+    colors: ['Grey', 'Red', 'Yellow', 'Orange', 'Black', 'Brown', 'Charcoal'],
     highlights: [
       { label: 'Thickness', value: '80', unit: 'mm' },
       { label: 'Colours',   value: '6',        unit: 'options' },
@@ -73,7 +73,7 @@ const PRODUCTS = {
     modelId: 'FTV-003',
     image: 'images/Vibro Square 150 x 150 x 60MM.png',
     removeBg: true,
-    colors: ['Grey', 'Red', 'Yellow', 'Black', 'Brown', 'Charcoal'],
+    colors: ['Grey', 'Red', 'Yellow', 'Orange', 'Black', 'Brown', 'Charcoal'],
     highlights: [
       { label: 'Thickness', value: '60',  unit: 'mm' },
       { label: 'Colours',   value: '6',   unit: 'options' },
@@ -107,7 +107,7 @@ const PRODUCTS = {
     modelId: 'FTV-004',
     image: 'images/Vibro Square 200 x 200 x 60MM.png',
     removeBg: true,
-    colors: ['Grey', 'Red', 'Yellow', 'Black', 'Brown', 'Charcoal'],
+    colors: ['Grey', 'Red', 'Yellow', 'Orange', 'Black', 'Brown', 'Charcoal'],
     highlights: [
       { label: 'Thickness', value: '60 / 80', unit: 'mm' },
       { label: 'Colours',   value: '6',        unit: 'options' },
@@ -141,7 +141,7 @@ const PRODUCTS = {
     modelId: 'RMV-001',
     image: 'images/Rubbermould Square.png',
     removeBg: true,
-    colors: ['Grey', 'Red', 'Yellow', 'Black', 'Brown', 'Charcoal'],
+    colors: ['Grey', 'Red', 'Yellow', 'Orange', 'Black', 'Brown', 'Charcoal'],
     highlights: [
       { label: 'Thickness', value: '35', unit: 'mm' },
       { label: 'Colours',   value: '6',        unit: 'options' },
@@ -176,7 +176,7 @@ const PRODUCTS = {
     modelId: 'RMV-002',
     image: 'images/Rubbermould Square 200x200.png',
     removeBg: true,
-    colors: ['Grey', 'Red', 'Yellow', 'Black', 'Brown', 'Charcoal'],
+    colors: ['Grey', 'Red', 'Yellow', 'Orange', 'Black', 'Brown', 'Charcoal'],
     highlights: [
       { label: 'Thickness', value: '60', unit: 'mm' },
       { label: 'Colours',   value: '6',        unit: 'options' },
@@ -211,7 +211,7 @@ const PRODUCTS = {
     modelId: 'RMV-003',
     image: 'images/Rubbermould Unipaver.png',
     removeBg: true,
-    colors: ['Grey', 'Red', 'Yellow', 'Black', 'Brown', 'Charcoal'],
+    colors: ['Grey', 'Red', 'Yellow', 'Orange', 'Black', 'Brown', 'Charcoal'],
     highlights: [
       { label: 'Thickness', value: '80', unit: 'mm' },
       { label: 'Colours',   value: '6',  unit: 'options' },
@@ -246,7 +246,7 @@ const PRODUCTS = {
     image: null,
     icon: 'fa-grip',
     iconBg: 'linear-gradient(135deg,#f1c40f,#d4ac0d)',
-    colors: ['Grey', 'Red', 'Yellow', 'Black', 'Brown', 'Charcoal'],
+    colors: ['Grey', 'Red', 'Yellow', 'Orange', 'Black', 'Brown', 'Charcoal'],
     highlights: [
       { label: 'Thickness', value: '25', unit: 'mm' },
       { label: 'Colours',   value: '6',        unit: 'options' },
