@@ -769,10 +769,24 @@
       const d3 = pageW * 0.78;  // after contact
 
       // ── Col 1 — brand ─────────────────────────────────────
+      // Orange accent bar
+      doc.setFillColor(...C_ACC);
+      doc.rect(ml, ftrTop + 3.5, 22, 1, 'F');
+
+      // Company name
       doc.setTextColor(255, 255, 255);
       doc.setFont('helvetica', 'bold');
-      doc.setFontSize(8);
+      doc.setFontSize(9);
       doc.text('Fortune Tiles & Pavers', ml, r1);
+
+      // Thin blue separator
+      doc.setDrawColor(77, 157, 224);
+      doc.setGState(new doc.GState({ opacity: 0.35 }));
+      doc.setLineWidth(0.25);
+      doc.line(ml, r1 + 2.5, d1 - 5, r1 + 2.5);
+      doc.setGState(new doc.GState({ opacity: 1 }));
+
+      // Tagline
       doc.setFont('helvetica', 'normal');
       doc.setFontSize(5.5);
       doc.setTextColor(136, 153, 180);
