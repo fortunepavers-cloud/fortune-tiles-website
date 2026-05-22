@@ -763,18 +763,23 @@
       const r2 = fMid + 1.5; // middle row
       const r3 = fMid + 7;   // bottom row
 
-      // ── Left — brand ──────────────────────────────────────
+      // Column dividers — equal 4-column layout
+      const d1 = pageW * 0.30;  // after brand
+      const d2 = pageW * 0.56;  // after address
+      const d3 = pageW * 0.78;  // after contact
+
+      // ── Col 1 — brand ─────────────────────────────────────
       doc.setTextColor(255, 255, 255);
       doc.setFont('helvetica', 'bold');
       doc.setFontSize(8);
       doc.text('Fortune Tiles & Pavers', ml, r1);
       doc.setFont('helvetica', 'normal');
-      doc.setFontSize(6);
+      doc.setFontSize(5.5);
       doc.setTextColor(136, 153, 180);
       doc.text("Vadodara's Trusted Paving Manufacturer", ml, r2);
 
-      // ── Centre — factory address (left-aligned inside column) ─
-      const cColX = pageW * 0.36 + 6; // start just inside left divider
+      // ── Col 2 — factory address ───────────────────────────
+      const cColX = d1 + 5;
       if (iconPin) {
         doc.addImage(iconPin, 'PNG', cColX, r1 - iSz / 2 - 0.5, iSz, iSz, '', 'FAST');
       }
@@ -792,13 +797,13 @@
       doc.setDrawColor(255, 255, 255);
       doc.setGState(new doc.GState({ opacity: 0.2 }));
       doc.setLineWidth(0.3);
-      doc.line(pageW * 0.36, ftrTop + 5, pageW * 0.36, ftrTop + 19);
-      doc.line(pageW * 0.64, ftrTop + 5, pageW * 0.64, ftrTop + 19);
-      doc.line(pageW * 0.82, ftrTop + 5, pageW * 0.82, ftrTop + 19);
+      doc.line(d1, ftrTop + 5, d1, ftrTop + 19);
+      doc.line(d2, ftrTop + 5, d2, ftrTop + 19);
+      doc.line(d3, ftrTop + 5, d3, ftrTop + 19);
       doc.setGState(new doc.GState({ opacity: 1 }));
 
-      // ── Right — contact with FA icons ────────────────────
-      const rSecX = pageW * 0.64 + 5;
+      // ── Col 3 — contact with FA icons ─────────────────────
+      const rSecX = d2 + 5;
       const tx = rSecX + iSz + 2.5;
       const fallbackBadge = (bx, by, lbl) => {
         doc.setFillColor(...C_ACC);
@@ -812,27 +817,27 @@
       else fallbackBadge(rSecX, r1, 'P');
       doc.setTextColor(255, 255, 255);
       doc.setFont('helvetica', 'bold');
-      doc.setFontSize(6.5);
+      doc.setFontSize(7);
       doc.text('+91 82389 64164', tx, r1);
 
       if (iconEmail) doc.addImage(iconEmail, 'PNG', rSecX, r2 - iSz / 2 - 0.5, iSz, iSz, '', 'FAST');
       else fallbackBadge(rSecX, r2, '@');
       doc.setFont('helvetica', 'normal');
-      doc.setFontSize(5.5);
+      doc.setFontSize(6);
       doc.setTextColor(136, 153, 180);
       doc.text('fortunepavers@gmail.com', tx, r2);
 
       if (iconWeb) doc.addImage(iconWeb, 'PNG', rSecX, r3 - iSz / 2 - 0.5, iSz, iSz, '', 'FAST');
       else fallbackBadge(rSecX, r3, 'W');
       doc.setFont('helvetica', 'normal');
-      doc.setFontSize(5.5);
+      doc.setFontSize(6);
       doc.setTextColor(136, 153, 180);
       doc.text('www.fortunepavers.com', tx, r3);
 
-      // ── QR code column ────────────────────────────────────
+      // ── Col 4 — QR code (centered in column) ─────────────
       if (qrImgData) {
-        const qrSz = 14;
-        const qrX = pageW * 0.82 + 3;
+        const qrSz = 15;
+        const qrX = d3 + (pageW - ml - d3 - qrSz) / 2;
         const qrY = ftrTop + 1.5 + (20.5 - qrSz - 3) / 2;
         doc.addImage(qrImgData, 'PNG', qrX, qrY, qrSz, qrSz, '', 'FAST');
         doc.setFont('helvetica', 'normal');
