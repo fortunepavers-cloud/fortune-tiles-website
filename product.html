@@ -29,6 +29,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;800&family=Oswald:wght@400;600;700&family=Raleway:wght@300;400;800;900&family=Cinzel:wght@700;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </head>
 <body>
 
@@ -731,6 +732,17 @@
         iconPin   = makeFaIcon(''); // fa-location-dot
       } catch (e) {}
 
+      // ── Pre-render QR code for footer ───────────────────────
+      let qrImgData = null;
+      try {
+        const qrDiv = document.createElement('div');
+        document.body.appendChild(qrDiv);
+        new QRCode(qrDiv, { text: 'https://www.fortunepavers.com', width: 128, height: 128, colorDark: '#000000', colorLight: '#ffffff', correctLevel: QRCode.CorrectLevel.M });
+        const qrCanvas = qrDiv.querySelector('canvas');
+        if (qrCanvas) qrImgData = qrCanvas.toDataURL('image/png');
+        document.body.removeChild(qrDiv);
+      } catch (e) {}
+
       // ── Footer (drawn on every page) ────────────────────────
       const iSz = 4; // icon size in mm
       const totalPages = doc.internal.getNumberOfPages();
@@ -782,6 +794,7 @@
       doc.setLineWidth(0.3);
       doc.line(pageW * 0.36, ftrTop + 5, pageW * 0.36, ftrTop + 19);
       doc.line(pageW * 0.64, ftrTop + 5, pageW * 0.64, ftrTop + 19);
+      doc.line(pageW * 0.82, ftrTop + 5, pageW * 0.82, ftrTop + 19);
       doc.setGState(new doc.GState({ opacity: 1 }));
 
       // ── Right — contact with FA icons ────────────────────
@@ -799,22 +812,34 @@
       else fallbackBadge(rSecX, r1, 'P');
       doc.setTextColor(255, 255, 255);
       doc.setFont('helvetica', 'bold');
-      doc.setFontSize(7.5);
+      doc.setFontSize(6.5);
       doc.text('+91 82389 64164', tx, r1);
 
       if (iconEmail) doc.addImage(iconEmail, 'PNG', rSecX, r2 - iSz / 2 - 0.5, iSz, iSz, '', 'FAST');
       else fallbackBadge(rSecX, r2, '@');
       doc.setFont('helvetica', 'normal');
-      doc.setFontSize(6.5);
+      doc.setFontSize(5.5);
       doc.setTextColor(136, 153, 180);
       doc.text('fortunepavers@gmail.com', tx, r2);
 
       if (iconWeb) doc.addImage(iconWeb, 'PNG', rSecX, r3 - iSz / 2 - 0.5, iSz, iSz, '', 'FAST');
       else fallbackBadge(rSecX, r3, 'W');
       doc.setFont('helvetica', 'normal');
-      doc.setFontSize(6.5);
+      doc.setFontSize(5.5);
       doc.setTextColor(136, 153, 180);
       doc.text('www.fortunepavers.com', tx, r3);
+
+      // ── QR code column ────────────────────────────────────
+      if (qrImgData) {
+        const qrSz = 14;
+        const qrX = pageW * 0.82 + 3;
+        const qrY = ftrTop + 1.5 + (20.5 - qrSz - 3) / 2;
+        doc.addImage(qrImgData, 'PNG', qrX, qrY, qrSz, qrSz, '', 'FAST');
+        doc.setFont('helvetica', 'normal');
+        doc.setFontSize(4.5);
+        doc.setTextColor(136, 153, 180);
+        doc.text('Scan to Visit', qrX + qrSz / 2, qrY + qrSz + 2, { align: 'center' });
+      }
       } // end per-page footer loop
 
       doc.save(p.name.replace(/[^a-z0-9]/gi, '-').replace(/-+/g, '-') + '-spec-sheet.pdf');
