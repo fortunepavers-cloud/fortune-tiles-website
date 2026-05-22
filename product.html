@@ -803,29 +803,40 @@
         doc.text(lbl, bx + iSz / 2, by + 0.5, { align: 'center' });
       };
 
+      // Contact rows — 4 items, 4 mm apart, centred in 20.5 mm dark area
+      const cr1 = ftrTop + 4.5;
+      const cr2 = cr1 + 4;
+      const cr3 = cr1 + 8;
+      const cr4 = cr1 + 12;
+
       // Measure widest text to size the block
-      doc.setFont('helvetica', 'bold');   doc.setFontSize(7);
-      const phoneW = doc.getTextWidth('+91 82389 64164');
+      doc.setFont('helvetica', 'bold');   doc.setFontSize(6.5);
+      const p1W = doc.getTextWidth('+91 82389 64164');
+      const p2W = doc.getTextWidth('+91 81829 89898');
       doc.setFont('helvetica', 'normal'); doc.setFontSize(6);
       const emailW = doc.getTextWidth('fortunepavers@gmail.com');
       const webW   = doc.getTextWidth('www.fortunepavers.com');
-      const blockW = iSz + 2.5 + Math.max(phoneW, emailW, webW);
+      const blockW = iSz + 2.5 + Math.max(p1W, p2W, emailW, webW);
       const c2IconX = col2Cx - blockW / 2;
       const c2TextX = c2IconX + iSz + 2.5;
 
-      if (iconPhone) doc.addImage(iconPhone, 'PNG', c2IconX, r1 - iSz / 2 - 0.5, iSz, iSz, '', 'FAST');
-      else fallbackBadge(c2IconX, r1, 'P');
-      doc.setTextColor(255, 255, 255); doc.setFont('helvetica', 'bold'); doc.setFontSize(7);
-      doc.text('+91 82389 64164', c2TextX, r1);
+      if (iconPhone) doc.addImage(iconPhone, 'PNG', c2IconX, cr1 - iSz / 2 - 0.5, iSz, iSz, '', 'FAST');
+      else fallbackBadge(c2IconX, cr1, 'P');
+      doc.setTextColor(255, 255, 255); doc.setFont('helvetica', 'bold'); doc.setFontSize(6.5);
+      doc.text('+91 82389 64164', c2TextX, cr1);
 
-      if (iconEmail) doc.addImage(iconEmail, 'PNG', c2IconX, r2 - iSz / 2 - 0.5, iSz, iSz, '', 'FAST');
-      else fallbackBadge(c2IconX, r2, '@');
+      if (iconPhone) doc.addImage(iconPhone, 'PNG', c2IconX, cr2 - iSz / 2 - 0.5, iSz, iSz, '', 'FAST');
+      else fallbackBadge(c2IconX, cr2, 'P');
+      doc.text('+91 81829 89898', c2TextX, cr2);
+
+      if (iconEmail) doc.addImage(iconEmail, 'PNG', c2IconX, cr3 - iSz / 2 - 0.5, iSz, iSz, '', 'FAST');
+      else fallbackBadge(c2IconX, cr3, '@');
       doc.setTextColor(136, 153, 180); doc.setFont('helvetica', 'normal'); doc.setFontSize(6);
-      doc.text('fortunepavers@gmail.com', c2TextX, r2);
+      doc.text('fortunepavers@gmail.com', c2TextX, cr3);
 
-      if (iconWeb) doc.addImage(iconWeb, 'PNG', c2IconX, r3 - iSz / 2 - 0.5, iSz, iSz, '', 'FAST');
-      else fallbackBadge(c2IconX, r3, 'W');
-      doc.text('www.fortunepavers.com', c2TextX, r3);
+      if (iconWeb) doc.addImage(iconWeb, 'PNG', c2IconX, cr4 - iSz / 2 - 0.5, iSz, iSz, '', 'FAST');
+      else fallbackBadge(c2IconX, cr4, 'W');
+      doc.text('www.fortunepavers.com', c2TextX, cr4);
 
       // ── Col 3 — QR code (centered in column) ─────────────
       if (qrImgData) {
