@@ -716,12 +716,16 @@
       doc.setTextColor(180, 205, 255);
       doc.text("Vadodara's trusted paving manufacturer", ml, fMid + 4);
 
-      // Centre — address (two lines)
+      // Centre — factory label + address
+      doc.setTextColor(255, 255, 255);
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(6.5);
+      doc.text('FACTORY', pageW / 2, fMid - 5, { align: 'center' });
       doc.setTextColor(200, 218, 255);
       doc.setFont('helvetica', 'normal');
       doc.setFontSize(7);
-      doc.text('Om Maa Party Plot, Nr. G.S.F.C. Township', pageW / 2, fMid - 2.5, { align: 'center' });
-      doc.text('Dashrath – 391 740, Vadodara, Gujarat', pageW / 2, fMid + 4, { align: 'center' });
+      doc.text('Om Maa Party Plot, Nr. G.S.F.C. Township', pageW / 2, fMid + 0.5, { align: 'center' });
+      doc.text('Dashrath – 391 740, Vadodara, Gujarat', pageW / 2, fMid + 6.5, { align: 'center' });
 
       // Thin vertical dividers
       doc.setDrawColor(255, 255, 255);
