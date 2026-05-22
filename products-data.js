@@ -1,4 +1,4 @@
-﻿const PRODUCTS = {
+const PRODUCTS = {
   'vibro-brick-paver': {
     name: 'Vibro Brick Paver',
     category: 'Vibro Compaction',
@@ -12,7 +12,7 @@
     shortDesc: 'Traditional brick-shaped vibro compaction paver with superior strength, perfect for walkways and industrial zones.',
     description: 'The Vibro Brick Paver is a classic brick-shaped paver manufactured using state-of-the-art Apollo Zenith German-designed machinery. Produced through vibro compaction, these pavers deliver superior strength and durability â€” suitable for residential walkways, commercial driveways and heavy-duty industrial zones.',
     specs: [
-      ['Size',        '200 Ã— 100 mm'],
+      ['Size',        '200 × 100 mm'],
       ['Thickness',   '60MM / 80MM'],
       ['Finish',      'Smooth / Textured'],
       ['Application', 'Walkways, Driveways, Industrial Zones'],
@@ -64,7 +64,7 @@
     ],
   },
   'vibro-square-150': {
-    name: 'Vibro Square Paver 150Ã—150',
+    name: 'Vibro Square Paver 150×150',
     category: 'Vibro Compaction',
     modelId: 'FTV-003',
     image: 'images/Vibro Square 150 x 150 x 60MM.png',
@@ -73,10 +73,10 @@
     highlights: [
       { label: 'Thickness', value: '60',  unit: 'mm' },
     ],
-    shortDesc: 'Compact 150Ã—150mm square vibro compaction paver, great for walkways, courtyards and decorative areas.',
-    description: 'The Vibro Square 150Ã—150 paver offers a clean, modern square format ideal for walkways, courtyards and decorative flooring. Its compact size makes it perfect for detailed patterns and smaller spaces while retaining the full strength of vibro compaction technology.',
+    shortDesc: 'Compact 150×150mm square vibro compaction paver, great for walkways, courtyards and decorative areas.',
+    description: 'The Vibro Square 150×150 paver offers a clean, modern square format ideal for walkways, courtyards and decorative flooring. Its compact size makes it perfect for detailed patterns and smaller spaces while retaining the full strength of vibro compaction technology.',
     specs: [
-      ['Size',        '150 Ã— 150 mm'],
+      ['Size',        '150 × 150 mm'],
       ['Thickness',   '60MM'],
       ['Finish',      'Smooth'],
       ['Application', 'Walkways, Courtyards, Decorative Areas'],
@@ -96,7 +96,7 @@
     ],
   },
   'vibro-square-200': {
-    name: 'Vibro Square Paver 200Ã—200',
+    name: 'Vibro Square Paver 200×200',
     category: 'Vibro Compaction',
     modelId: 'FTV-004',
     image: 'images/Vibro Square 200 x 200 x 60MM.png',
@@ -105,10 +105,10 @@
     highlights: [
       { label: 'Thickness', value: '60 / 80', unit: 'mm' },
     ],
-    shortDesc: 'Large-format 200Ã—200mm square vibro compaction paver for driveways, plazas and heavy-duty public spaces.',
-    description: 'The Vibro Square 200Ã—200 paver is a large-format paver engineered for high-traffic areas including driveways, public plazas and industrial spaces. Its greater surface area provides a bold visual impact while delivering outstanding structural performance.',
+    shortDesc: 'Large-format 200×200mm square vibro compaction paver for driveways, plazas and heavy-duty public spaces.',
+    description: 'The Vibro Square 200×200 paver is a large-format paver engineered for high-traffic areas including driveways, public plazas and industrial spaces. Its greater surface area provides a bold visual impact while delivering outstanding structural performance.',
     specs: [
-      ['Size',        '200 Ã— 200 mm'],
+      ['Size',        '200 × 200 mm'],
       ['Thickness',   '60MM / 80MM'],
       ['Finish',      'Smooth / Textured'],
       ['Application', 'Driveways, Plazas, Public Spaces'],
@@ -128,7 +128,7 @@
     ],
   },
   'rubbermould-square': {
-    name: 'Rubbermould Square 150Ã—150',
+    name: 'Rubbermould Square 150×150',
     category: 'Rubbermould',
     modelId: 'RMV-001',
     image: 'images/Rubbermould Square.png',
@@ -137,10 +137,10 @@
     highlights: [
       { label: 'Thickness', value: '35', unit: 'mm' },
     ],
-    shortDesc: 'Compact 150Ã—150mm rubbermould square paver with a smooth finish â€” ideal for garden paths, courtyards and decorative flooring.',
-    description: 'The Rubbermould Square 150Ã—150 paver is cast using rubber moulds to produce a smooth, refined finish. Its compact size makes it ideal for detailed pattern laying in gardens, courtyards and residential pathways.',
+    shortDesc: 'Compact 150×150mm rubbermould square paver with a smooth finish â€” ideal for garden paths, courtyards and decorative flooring.',
+    description: 'The Rubbermould Square 150×150 paver is cast using rubber moulds to produce a smooth, refined finish. Its compact size makes it ideal for detailed pattern laying in gardens, courtyards and residential pathways.',
     specs: [
-      ['Size',        '150 Ã— 150 mm'],
+      ['Size',        '150 × 150 mm'],
       ['Thickness',   '35MM'],
       ['Type',        'Rubbermould Cast'],
       ['Finish',      'Smooth'],
@@ -161,7 +161,7 @@
     ],
   },
   'rubbermould-square-200': {
-    name: 'Rubbermould Square 200Ã—200',
+    name: 'Rubbermould Square 200×200',
     category: 'Rubbermould',
     modelId: 'RMV-002',
     image: 'images/Rubbermould Square 200x200.png',
@@ -170,10 +170,10 @@
     highlights: [
       { label: 'Thickness', value: '60', unit: 'mm' },
     ],
-    shortDesc: 'Large-format 200Ã—200mm rubbermould square paver with a smooth finish â€” ideal for driveways, plazas and open areas.',
-    description: 'The Rubbermould Square 200Ã—200 paver offers a larger format with the same smooth rubber mould finish. Its greater surface area delivers a bold visual impact, making it ideal for driveways, open plazas and commercial decorative flooring.',
+    shortDesc: 'Large-format 200×200mm rubbermould square paver with a smooth finish â€” ideal for driveways, plazas and open areas.',
+    description: 'The Rubbermould Square 200×200 paver offers a larger format with the same smooth rubber mould finish. Its greater surface area delivers a bold visual impact, making it ideal for driveways, open plazas and commercial decorative flooring.',
     specs: [
-      ['Size',        '200 Ã— 200 mm'],
+      ['Size',        '200 × 200 mm'],
       ['Thickness',   '60MM'],
       ['Type',        'Rubbermould Cast'],
       ['Finish',      'Smooth'],
@@ -239,7 +239,7 @@
     shortDesc: 'Classic anti-skid chequered pattern tiles for footpaths, commercial floors and public spaces.',
     description: 'Fortune Chequered Tiles feature a classic anti-skid chequered pattern ideal for footpaths, commercial floors and public areas. Available in a wide range of sizes and vibrant colours, these tiles are designed to enhance safety without compromising on aesthetics.',
     specs: [
-      ['Size',        '300Ã—300 mm / 400Ã—400 mm'],
+      ['Size',        '300×300 mm / 400×400 mm'],
       ['Thickness',   '25MM'],
       ['Pattern',     'Chequered Anti-Skid'],
       ['Application', 'Footpaths, Commercial Floors, Public Areas'],
@@ -272,7 +272,7 @@
     shortDesc: 'Lightweight hollow cement blocks for boundary walls, compound structures and partitions.',
     description: 'Fortune Hollow Blocks are lightweight yet strong cement blocks widely used for boundary walls, compound fencing and non-load-bearing partition walls. Their hollow core reduces weight and improves thermal insulation while maintaining structural integrity.',
     specs: [
-      ['Size',        '400Ã—200Ã—200 mm'],
+      ['Size',        '400×200×200 mm'],
       ['Type',        'Hollow Core'],
       ['Finish',      'Smooth'],
       ['Application', 'Boundary Walls, Partitions, Compound'],
@@ -305,7 +305,7 @@
     shortDesc: 'Dense solid cement blocks for load-bearing walls and industrial-grade construction.',
     description: 'Fortune Solid Blocks are dense, high-strength cement blocks designed for load-bearing walls and heavy-duty construction. Their solid construction provides superior compressive strength suitable for industrial, commercial and residential structural applications.',
     specs: [
-      ['Size',        '400Ã—200Ã—200 mm'],
+      ['Size',        '400×200×200 mm'],
       ['Type',        'Solid Core'],
       ['Finish',      'Smooth'],
       ['Application', 'Load-bearing Walls, Industrial Construction'],
@@ -337,9 +337,9 @@
     shortDesc: 'Precast concrete kerb for road edges, garden borders and driveway demarcation.',
     description: 'Fortune Kerbstones are precast concrete kerbs used to define road edges, garden borders and driveway boundaries. They provide a clean, durable edge that withstands vehicular loads while enhancing the visual finish of any paving project.',
     specs: [
-      ['Size (1)',     '200Ã—300Ã—80 mm'],
-      ['Size (2)',     '300Ã—200Ã—80 mm'],
-      ['Size (3)',     '300Ã—300Ã—100 mm'],
+      ['Size (1)',     '200×300×80 mm'],
+      ['Size (2)',     '300×200×80 mm'],
+      ['Size (3)',     '300×300×100 mm'],
       ['Type',        'Precast Concrete'],
       ['Finish',      'Smooth'],
       ['Application', 'Roads, Driveways, Garden Borders'],
@@ -371,7 +371,7 @@
     shortDesc: 'Open-cell grass pavers allowing vegetation to grow through â€” eco-friendly solution for green parking.',
     description: 'Fortune Grass Pavers are open-cell cement pavers that allow grass and vegetation to grow through the openings. They provide a permeable, eco-friendly surface ideal for green parking areas, garden paths and landscaping projects that require both load-bearing capacity and natural aesthetics.',
     specs: [
-      ['Size',         '400Ã—400Ã—60 mm'],
+      ['Size',         '400×400×60 mm'],
       ['Type',         'Open-Cell'],
       ['Finish',       'Textured'],
       ['Permeability', 'High (open-cell design)'],
@@ -405,7 +405,7 @@
     shortDesc: 'High-strength eco-friendly bricks made from fly ash with low water absorption and thermal insulation.',
     description: 'Fortune Fly Ash Bricks are manufactured using industrial fly ash, making them an eco-friendly alternative to traditional clay bricks. They offer superior strength, lower water absorption and better thermal insulation â€” contributing to greener, more energy-efficient construction.',
     specs: [
-      ['Size',               '230Ã—110Ã—70 mm'],
+      ['Size',               '230×110×70 mm'],
       ['Type',               'Fly Ash Composite'],
       ['Thermal Insulation', 'Superior to clay bricks'],
       ['Application',        'Walls, Partitions, General Construction'],
