@@ -644,8 +644,8 @@
 
       // ── Where It's Used ─────────────────────────────────────
       if (p.applications && p.applications.length) {
-        y += 6;
-        if (y + 36 > pageH - 24) { doc.addPage(); drawWatermark(); y = 20; }
+        y += 4;
+        if (y + 32 > pageH - 22) { doc.addPage(); drawWatermark(); y = 20; }
 
         doc.setFont('helvetica', 'bold');
         doc.setFontSize(10);
@@ -695,7 +695,10 @@
         y += cellH + 4;
       }
 
-      // ── Footer ──────────────────────────────────────────────
+      // ── Footer (drawn on every page) ────────────────────────
+      const totalPages = doc.internal.getNumberOfPages();
+      for (let pg = 1; pg <= totalPages; pg++) {
+        doc.setPage(pg);
       const ftrTop = pageH - 22;
       // Orange accent strip
       doc.setFillColor(...C_ACC);
@@ -740,6 +743,7 @@
       doc.setFontSize(6.5);
       doc.setTextColor(180, 205, 255);
       doc.text('fortunepavers@gmail.com', pageW - mr, fMid + 4, { align: 'right' });
+      } // end per-page footer loop
 
       doc.save(p.name.replace(/[^a-z0-9]/gi, '-').replace(/-+/g, '-') + '-spec-sheet.pdf');
     }
