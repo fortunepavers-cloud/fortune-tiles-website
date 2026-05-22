@@ -450,9 +450,12 @@
       const C_MUTED = [100, 116, 139];
       const C_LIGHT = [237, 242, 251];
 
+      // Sanitize text — replace Unicode chars unsupported by jsPDF's Helvetica
+      const san = s => s.replace(/≥/g,'>=').replace(/≤/g,'<=').replace(/[²³]/g, c => c==='²'?'2':'3');
+
       // ── Watermark helper (called on every page) ──────────
       const drawWatermark = () => {
-        doc.setGState(new doc.GState({ opacity: 0.07 }));
+        doc.setGState(new doc.GState({ opacity: 0.04 }));
         doc.setFont('helvetica', 'bold');
         doc.setFontSize(36);
         doc.setTextColor(...C_PRI);
@@ -531,10 +534,10 @@
       doc.setTextColor(195, 215, 255);
       doc.text('www.fortunepavers.com  ·  fortunepavers@gmail.com', pageW - mr, 26, { align: 'right' });
 
-      y = hdrH + 3 + 9;
+      y = hdrH + 3 + 6;
 
       // ── Two-column: image (left) | category + name + desc (right) ──
-      const imgW = 70, imgH = 70;
+      const imgW = 65, imgH = 62;
       const infoX = ml + imgW + 10;
       const infoW = cW - imgW - 10;
 
@@ -563,7 +566,7 @@
       doc.text(descLines, infoX, iy);
       iy += descLines.length * 5 + 4;
 
-      y = Math.max(y + imgH, iy) + 8;
+      y = Math.max(y + imgH, iy) + 5;
 
       // ── Colour swatches ─────────────────────────────────────
       if (p.colors && p.colors.length) {
@@ -592,7 +595,7 @@
       doc.setDrawColor(...C_PRI);
       doc.setLineWidth(0.4);
       doc.line(ml, y, pageW - mr, y);
-      y += 10;
+      y += 8;
 
       // ── Specifications ──────────────────────────────────────
       doc.setFont('helvetica', 'bold');
@@ -614,13 +617,13 @@
         doc.setTextColor(...C_DARK);
         const vLines = doc.splitTextToSize(v, cW - 62);
         doc.text(vLines, ml + 60, y);
-        y += Math.max(8, vLines.length * 5.5 + 2);
+        y += Math.max(7, vLines.length * 5 + 1.5);
       });
 
-      y += 6;
+      y += 5;
 
       // ── Key Features ────────────────────────────────────────
-      if (y + 40 > pageH - 30) { doc.addPage(); drawWatermark(); y = 20; }
+      if (y + 40 > pageH - 24) { doc.addPage(); drawWatermark(); y = 20; }
 
       doc.setFont('helvetica', 'bold');
       doc.setFontSize(10);
@@ -634,15 +637,15 @@
         doc.setFont('helvetica', 'normal');
         doc.setFontSize(9);
         doc.setTextColor(...C_DARK);
-        const fLines = doc.splitTextToSize(f, cW - 8);
+        const fLines = doc.splitTextToSize(san(f), cW - 8);
         doc.text(fLines, ml + 6, y);
-        y += fLines.length * 5.5 + 2;
+        y += fLines.length * 5 + 1.5;
       });
 
       // ── Where It's Used ─────────────────────────────────────
       if (p.applications && p.applications.length) {
         y += 6;
-        if (y + 36 > pageH - 30) { doc.addPage(); drawWatermark(); y = 20; }
+        if (y + 36 > pageH - 24) { doc.addPage(); drawWatermark(); y = 20; }
 
         doc.setFont('helvetica', 'bold');
         doc.setFontSize(10);
