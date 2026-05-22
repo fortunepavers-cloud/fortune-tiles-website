@@ -493,42 +493,45 @@
       }
 
       // ── Header bar ──────────────────────────────────────────
-      const hdrH = 40;
+      const hdrH = 36;
       doc.setFillColor(...C_PRI);
       doc.rect(0, 0, pageW, hdrH, 'F');
-      // Orange accent strip at bottom of header
+      // Orange accent strip
       doc.setFillColor(...C_ACC);
       doc.rect(0, hdrH, pageW, 3, 'F');
 
-      // Logo (left, vertically centered)
+      // Logo — scaled to 18 mm tall, vertically centred
+      const logoH = 18;
+      const logoW = logoData ? logoH * (logoNatW / logoNatH) : 0;
+      const logoY = (hdrH - logoH) / 2;
       if (logoData) {
-        const logoH = 26;
-        const logoW = logoH * (logoNatW / logoNatH);
-        doc.addImage(logoData, 'PNG', ml, (hdrH - logoH) / 2, logoW, logoH, '', 'FAST');
+        doc.addImage(logoData, 'PNG', ml, logoY, logoW, logoH, '', 'FAST');
       } else {
         doc.setTextColor(255, 255, 255);
         doc.setFont('helvetica', 'bold');
-        doc.setFontSize(14);
+        doc.setFontSize(13);
         doc.text('FORTUNE TILES & PAVERS', ml, hdrH / 2 + 2);
       }
 
-      // Right: label + contact info
-      doc.setTextColor(255, 255, 255);
-      doc.setFont('helvetica', 'bold');
-      doc.setFontSize(10);
-      doc.text('PRODUCT SPECIFICATION SHEET', pageW - mr, 15, { align: 'right' });
-      // Thin divider
+      // Vertical divider between logo and right section
+      const divX = ml + logoW + 12;
       doc.setDrawColor(255, 255, 255);
       doc.setGState(new doc.GState({ opacity: 0.25 }));
-      doc.setLineWidth(0.3);
-      doc.line(pageW / 2, 21, pageW - mr, 21);
+      doc.setLineWidth(0.4);
+      doc.line(divX, 7, divX, hdrH - 7);
       doc.setGState(new doc.GState({ opacity: 1 }));
+
+      // Right section — title + contact
+      doc.setTextColor(255, 255, 255);
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(10.5);
+      doc.text('PRODUCT SPECIFICATION SHEET', pageW - mr, 15, { align: 'right' });
       doc.setFont('helvetica', 'normal');
       doc.setFontSize(7.5);
-      doc.setTextColor(220, 230, 255);
-      doc.text('www.fortunepavers.com  ·  fortunepavers@gmail.com', pageW - mr, 29, { align: 'right' });
+      doc.setTextColor(195, 215, 255);
+      doc.text('www.fortunepavers.com  ·  fortunepavers@gmail.com', pageW - mr, 26, { align: 'right' });
 
-      y = hdrH + 3 + 8;
+      y = hdrH + 3 + 9;
 
       // ── Two-column: image (left) | category + name + desc (right) ──
       const imgW = 70, imgH = 70;
