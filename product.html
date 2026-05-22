@@ -744,32 +744,32 @@
       const r2 = fMid + 1.5; // middle row
       const r3 = fMid + 7;   // bottom row
 
-      // ── Left — brand ──────────────────────────────────────
-      doc.setTextColor(255, 255, 255);
-      doc.setFont('helvetica', 'bold');
-      doc.setFontSize(8);
-      doc.text('Fortune Tiles & Pavers', ml, r1);
-      doc.setFont('helvetica', 'normal');
-      doc.setFontSize(6);
-      doc.setTextColor(136, 153, 180);
-      doc.text("Vadodara's Trusted Paving Manufacturer", ml, r2);
-
-      // ── Centre — factory address (centered in column) ────
-      const ccX = pageW / 2;
-      const cLblW = iSz + 2.5 + 24; // icon + gap + ~"FACTORY ADDRESS"
-      const cGrpX = ccX - cLblW / 2;
+      // ── Left — factory address ────────────────────────────
       if (iconPin) {
-        doc.addImage(iconPin, 'PNG', cGrpX, r1 - iSz / 2 - 0.5, iSz, iSz, '', 'FAST');
+        doc.addImage(iconPin, 'PNG', ml, r1 - iSz / 2 - 0.5, iSz, iSz, '', 'FAST');
       }
       doc.setTextColor(77, 157, 224);
       doc.setFont('helvetica', 'bold');
       doc.setFontSize(6.5);
-      doc.text('FACTORY ADDRESS', cGrpX + iSz + 2.5, r1, { align: 'left' });
+      doc.text('FACTORY ADDRESS', ml + iSz + 2, r1);
       doc.setFont('helvetica', 'normal');
       doc.setFontSize(6);
       doc.setTextColor(136, 153, 180);
-      doc.text('Om Maa Party Plot, GSFC Township', ccX, r2, { align: 'center' });
-      doc.text('Dashrath, Vadodara – 391 740', ccX, r3, { align: 'center' });
+      const addrY1 = r1 + 4.5;
+      const addrY2 = addrY1 + 3.5;
+      doc.text('Om Maa Party Plot, GSFC Township', ml, addrY1);
+      doc.text('Dashrath, Vadodara – 391 740', ml, addrY2);
+
+      // ── Centre — brand ────────────────────────────────────
+      const ccX = pageW / 2;
+      doc.setTextColor(255, 255, 255);
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(8);
+      doc.text('Fortune Tiles & Pavers', ccX, r1, { align: 'center' });
+      doc.setFont('helvetica', 'normal');
+      doc.setFontSize(6);
+      doc.setTextColor(136, 153, 180);
+      doc.text("Vadodara's Trusted Paving Manufacturer", ccX, r2, { align: 'center' });
 
       // ── Thin vertical dividers ────────────────────────────
       doc.setDrawColor(255, 255, 255);
