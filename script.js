@@ -265,15 +265,17 @@ function gotoSlide(idx) {
   sDots[activeSlide].classList.add('active');
 }
 
-let sliderTimer = setInterval(() => gotoSlide(activeSlide + 1), 2000);
+if (slides.length) {
+  let sliderTimer = setInterval(() => gotoSlide(activeSlide + 1), 2000);
 
-sDots.forEach((dot, i) => {
-  dot.addEventListener('click', () => {
-    clearInterval(sliderTimer);
-    gotoSlide(i);
-    sliderTimer = setInterval(() => gotoSlide(activeSlide + 1), 2000);
+  sDots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      clearInterval(sliderTimer);
+      gotoSlide(i);
+      sliderTimer = setInterval(() => gotoSlide(activeSlide + 1), 2000);
+    });
   });
-});
+}
 
 // ===== ACTIVE NAV LINK ON SCROLL =====
 const sections = document.querySelectorAll('section[id]');
