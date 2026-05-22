@@ -33,7 +33,7 @@ body {
 
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
-img { max-width: 100%; display: block; }
+img { max-width: 100%; display: block; -webkit-user-drag: none; user-drag: none; -webkit-user-select: none; user-select: none; }
 
 .container {
   width: 100%;

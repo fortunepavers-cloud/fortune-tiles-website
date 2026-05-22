@@ -1,6 +1,12 @@
 // ===== DISABLE RIGHT CLICK =====
 document.addEventListener('contextmenu', e => e.preventDefault());
 
+// ===== PREVENT IMAGE DRAG / COPY / SAVE =====
+document.addEventListener('dragstart', e => { if (e.target.tagName === 'IMG') e.preventDefault(); });
+document.addEventListener('keydown', e => {
+  if ((e.ctrlKey || e.metaKey) && ['s', 'S', 'u', 'U'].includes(e.key)) e.preventDefault();
+});
+
 // ===== LOGO PROCESSING =====
 function removeWhiteBg(img) {
   const canvas = document.createElement('canvas');
