@@ -1,3 +1,6 @@
+// ===== DISABLE RIGHT CLICK =====
+document.addEventListener('contextmenu', e => e.preventDefault());
+
 // ===== LOGO PROCESSING =====
 function removeWhiteBg(img) {
   const canvas = document.createElement('canvas');
