@@ -767,21 +767,23 @@
       const d1 = pageW / 3;        // after address
       const d2 = (2 * pageW) / 3;  // after contact
 
-      // ── Col 1 — factory address ───────────────────────────
-      const cColX = ml;
-      const addrTx = cColX + iSz + 2;
-      if (iconPin) {
-        doc.addImage(iconPin, 'PNG', cColX, r1 - iSz / 2 - 0.5, iSz, iSz, '', 'FAST');
-      }
-      doc.setTextColor(77, 157, 224);
+      // ── Col 1 — factory address (centered) ───────────────
+      const col1Cx = d1 / 2; // horizontal centre of col 1
       doc.setFont('helvetica', 'bold');
       doc.setFontSize(6.5);
-      doc.text('FACTORY ADDRESS', addrTx, r1);
+      const addrLabelW = doc.getTextWidth('FACTORY ADDRESS');
+      const addrGroupW = iSz + 2 + addrLabelW;
+      const addrIconX = col1Cx - addrGroupW / 2;
+      if (iconPin) {
+        doc.addImage(iconPin, 'PNG', addrIconX, r1 - iSz / 2 - 0.5, iSz, iSz, '', 'FAST');
+      }
+      doc.setTextColor(77, 157, 224);
+      doc.text('FACTORY ADDRESS', addrIconX + iSz + 2, r1);
       doc.setFont('helvetica', 'normal');
       doc.setFontSize(5.5);
       doc.setTextColor(136, 153, 180);
-      doc.text('Om Maa Party Plot, Nr. G.S.F.C. Township,', addrTx, r1 + 3.5);
-      doc.text('Dashrath, Vadodara, Gujarat – 391740', addrTx, r1 + 7);
+      doc.text('Om Maa Party Plot, Nr. G.S.F.C. Township,', col1Cx, r1 + 3.5, { align: 'center' });
+      doc.text('Dashrath, Vadodara, Gujarat – 391740', col1Cx, r1 + 7, { align: 'center' });
 
       // ── Thin vertical dividers ────────────────────────────
       doc.setDrawColor(255, 255, 255);
