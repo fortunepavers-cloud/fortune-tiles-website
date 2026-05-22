@@ -735,11 +735,12 @@
       doc.setTextColor(255, 255, 255);
       doc.setFont('helvetica', 'bold');
       doc.setFontSize(8);
-      doc.text('+91 84535 45454', pageW - mr, fMid - 2.5, { align: 'right' });
+      doc.text('+91 82389 64164', pageW - mr, fMid - 4, { align: 'right' });
       doc.setFont('helvetica', 'normal');
       doc.setFontSize(6.5);
       doc.setTextColor(180, 205, 255);
-      doc.text('fortunepavers@gmail.com', pageW - mr, fMid + 4, { align: 'right' });
+      doc.text('fortunepavers@gmail.com', pageW - mr, fMid + 1.5, { align: 'right' });
+      doc.text('www.fortunepavers.com', pageW - mr, fMid + 7, { align: 'right' });
       } // end per-page footer loop
 
       doc.save(p.name.replace(/[^a-z0-9]/gi, '-').replace(/-+/g, '-') + '-spec-sheet.pdf');
