@@ -497,11 +497,11 @@
 
       // ── Header bar ──────────────────────────────────────────
       const hdrH = 36;
-      doc.setFillColor(...C_PRI);
+      doc.setFillColor(8, 13, 30);
       doc.rect(0, 0, pageW, hdrH, 'F');
-      // Orange accent strip
-      doc.setFillColor(...C_ACC);
-      doc.rect(0, hdrH, pageW, 3, 'F');
+      // Subtle blue accent strip
+      doc.setFillColor(77, 157, 224);
+      doc.rect(0, hdrH, pageW, 2, 'F');
 
       // Logo — scaled to 18 mm tall, vertically centred
       const logoH = 18;
@@ -699,7 +699,7 @@
         cv.width = s; cv.height = s;
         const c = cv.getContext('2d');
         const rad = 12;
-        c.fillStyle = '#e67e22';
+        c.fillStyle = '#0f1e40';
         c.beginPath();
         c.moveTo(rad, 0); c.lineTo(s - rad, 0);
         c.quadraticCurveTo(s, 0, s, rad);
@@ -710,7 +710,7 @@
         c.lineTo(0, rad);
         c.quadraticCurveTo(0, 0, rad, 0);
         c.closePath(); c.fill();
-        c.fillStyle = '#ffffff';
+        c.fillStyle = '#4d9de0';
         c.font = `900 ${Math.floor(s * 0.48)}px "Font Awesome 6 Free"`;
         c.textAlign = 'center'; c.textBaseline = 'middle';
         c.fillText(char, s / 2, s / 2);
@@ -730,12 +730,12 @@
       for (let pg = 1; pg <= totalPages; pg++) {
         doc.setPage(pg);
       const ftrTop = pageH - 22;
-      // Orange accent strip
-      doc.setFillColor(...C_ACC);
-      doc.rect(0, ftrTop, pageW, 2.5, 'F');
-      // Dark blue background
-      doc.setFillColor(...C_PRI);
-      doc.rect(0, ftrTop + 2.5, pageW, 19.5, 'F');
+      // Subtle blue top strip
+      doc.setFillColor(77, 157, 224);
+      doc.rect(0, ftrTop, pageW, 1.5, 'F');
+      // Dark navy background
+      doc.setFillColor(8, 13, 30);
+      doc.rect(0, ftrTop + 1.5, pageW, 20.5, 'F');
 
       const fMid = ftrTop + 2.5 + 9.75; // vertical centre of blue area
 
@@ -745,16 +745,16 @@
       const r3 = fMid + 7;   // bottom row
 
       // ── Left — brand ──────────────────────────────────────
-      doc.setTextColor(...C_ACC);
+      doc.setTextColor(255, 255, 255);
       doc.setFont('helvetica', 'bold');
       doc.setFontSize(8);
       doc.text('Fortune Tiles & Pavers', ml, r1);
       doc.setFont('helvetica', 'normal');
       doc.setFontSize(6);
-      doc.setTextColor(200, 218, 255);
+      doc.setTextColor(136, 153, 180);
       doc.text("Vadodara's Trusted Paving Manufacturer", ml, r2);
       doc.setFontSize(5.5);
-      doc.setTextColor(160, 185, 230);
+      doc.setTextColor(100, 120, 155);
       doc.text('Dashrath, Vadodara, Gujarat', ml, r3);
 
       // ── Centre — factory address (centered in column) ────
@@ -764,13 +764,13 @@
       if (iconPin) {
         doc.addImage(iconPin, 'PNG', cGrpX, r1 - iSz / 2 - 0.5, iSz, iSz, '', 'FAST');
       }
-      doc.setTextColor(...C_ACC);
+      doc.setTextColor(77, 157, 224);
       doc.setFont('helvetica', 'bold');
       doc.setFontSize(6.5);
       doc.text('FACTORY ADDRESS', cGrpX + iSz + 2.5, r1, { align: 'left' });
       doc.setFont('helvetica', 'normal');
       doc.setFontSize(6);
-      doc.setTextColor(200, 218, 255);
+      doc.setTextColor(136, 153, 180);
       doc.text('Om Maa Party Plot, GSFC Township', ccX, r2, { align: 'center' });
       doc.text('Dashrath, Vadodara – 391 740', ccX, r3, { align: 'center' });
 
@@ -795,7 +795,7 @@
 
       if (iconPhone) doc.addImage(iconPhone, 'PNG', rSecX, r1 - iSz / 2 - 0.5, iSz, iSz, '', 'FAST');
       else fallbackBadge(rSecX, r1, 'P');
-      doc.setTextColor(...C_ACC);
+      doc.setTextColor(255, 255, 255);
       doc.setFont('helvetica', 'bold');
       doc.setFontSize(7.5);
       doc.text('+91 82389 64164', tx, r1);
@@ -804,14 +804,14 @@
       else fallbackBadge(rSecX, r2, '@');
       doc.setFont('helvetica', 'normal');
       doc.setFontSize(6.5);
-      doc.setTextColor(200, 218, 255);
+      doc.setTextColor(136, 153, 180);
       doc.text('fortunepavers@gmail.com', tx, r2);
 
       if (iconWeb) doc.addImage(iconWeb, 'PNG', rSecX, r3 - iSz / 2 - 0.5, iSz, iSz, '', 'FAST');
       else fallbackBadge(rSecX, r3, 'W');
       doc.setFont('helvetica', 'normal');
       doc.setFontSize(6.5);
-      doc.setTextColor(200, 218, 255);
+      doc.setTextColor(136, 153, 180);
       doc.text('www.fortunepavers.com', tx, r3);
       } // end per-page footer loop
 
