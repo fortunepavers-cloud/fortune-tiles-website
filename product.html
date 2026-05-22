@@ -852,7 +852,7 @@
       }
       } // end per-page footer loop
 
-      doc.save(p.name.replace(/[^a-z0-9]/gi, '-').replace(/-+/g, '-') + '-spec-sheet.pdf');
+      doc.save('Fortune-Pavers-' + p.name.replace(/[^a-z0-9]/gi, '-').replace(/-+/g, '-') + '-spec-sheet.pdf');
     }
 
     // Scroll + nav utilities
