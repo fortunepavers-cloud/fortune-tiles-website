@@ -461,6 +461,21 @@
       };
       drawWatermark();
 
+      // ── Capture logo ─────────────────────────────────────
+      let logoData = null, logoNatW = 1, logoNatH = 1;
+      const logoImg = document.querySelector('.logo-full-img');
+      if (logoImg && logoImg.complete && logoImg.naturalWidth) {
+        try {
+          const lv = document.createElement('canvas');
+          lv.width  = logoImg.naturalWidth;
+          lv.height = logoImg.naturalHeight;
+          lv.getContext('2d').drawImage(logoImg, 0, 0);
+          logoData  = lv.toDataURL('image/png');
+          logoNatW  = logoImg.naturalWidth;
+          logoNatH  = logoImg.naturalHeight;
+        } catch (e) {}
+      }
+
       // ── Capture product image ────────────────────────────
       let imgData = null;
       const mainImg = document.getElementById('pdMainImg');
@@ -479,17 +494,23 @@
 
       // ── Header bar ──────────────────────────────────────────
       doc.setFillColor(...C_PRI);
-      doc.rect(0, 0, pageW, 30, 'F');
+      doc.rect(0, 0, pageW, 32, 'F');
       doc.setTextColor(255, 255, 255);
-      doc.setFont('helvetica', 'bold');
-      doc.setFontSize(13);
-      doc.text('FORTUNE TILES & PAVERS', ml, 14);
+      if (logoData) {
+        const logoH = 20;
+        const logoW = logoH * (logoNatW / logoNatH);
+        doc.addImage(logoData, 'PNG', ml, 6, logoW, logoH, '', 'FAST');
+      } else {
+        doc.setFont('helvetica', 'bold');
+        doc.setFontSize(13);
+        doc.text('FORTUNE TILES & PAVERS', ml, 15);
+      }
       doc.setFont('helvetica', 'normal');
       doc.setFontSize(8);
-      doc.text('www.fortunepavers.com  ·  fortunepavers@gmail.com', pageW - mr, 14, { align: 'right' });
-      doc.text('PRODUCT SPECIFICATION SHEET', ml, 24);
+      doc.text('www.fortunepavers.com  ·  fortunepavers@gmail.com', pageW - mr, 15, { align: 'right' });
+      doc.text('PRODUCT SPECIFICATION SHEET', pageW - mr, 24, { align: 'right' });
 
-      y = 38;
+      y = 40;
 
       // ── Two-column: image (left) | category + name + desc (right) ──
       const imgW = 70, imgH = 70;
