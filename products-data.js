@@ -10,7 +10,7 @@ const PRODUCTS = {
       { label: 'Thickness', value: '60 / 80', unit: 'mm' },
     ],
     shortDesc: 'Traditional brick-shaped vibro compaction paver with superior strength, perfect for walkways and industrial zones.',
-    description: 'The Vibro Brick Paver is a classic brick-shaped paver manufactured using state-of-the-art Apollo Zenith German-designed machinery. Produced through vibro compaction, these pavers deliver superior strength and durability â€” suitable for residential walkways, commercial driveways and heavy-duty industrial zones.',
+    description: 'The Vibro Brick Paver is a classic brick-shaped paver manufactured using state-of-the-art Apollo Zenith German-designed machinery. Produced through vibro compaction, these pavers deliver superior strength and durability — suitable for residential walkways, commercial driveways and heavy-duty industrial zones.',
     specs: [
       ['Size',        '200 × 100 mm'],
       ['Thickness',   '60MM / 80MM'],
@@ -19,11 +19,11 @@ const PRODUCTS = {
     ],
     features: [
       'Manufactured using Apollo Zenith German-designed machinery',
-      'High compressive strength (â‰¥ 35 N/mmÂ²)',
+      'High compressive strength (≥ 35 N/mm²)',
       'Weather, frost and UV resistant',
       'Available in multiple colours',
       'Interlocking design for long-term stability',
-      'Low maintenance â€” individual pavers replaceable',
+      'Low maintenance — individual pavers replaceable',
     ],
     applications: [
       { icon: 'fa-car',           label: 'Driveways',        desc: 'Residential and commercial vehicle entries.' },
@@ -137,7 +137,7 @@ const PRODUCTS = {
     highlights: [
       { label: 'Thickness', value: '35', unit: 'mm' },
     ],
-    shortDesc: 'Compact 150×150mm rubbermould square paver with a smooth finish â€” ideal for garden paths, courtyards and decorative flooring.',
+    shortDesc: 'Compact 150×150mm rubbermould square paver with a smooth finish — ideal for garden paths, courtyards and decorative flooring.',
     description: 'The Rubbermould Square 150×150 paver is cast using rubber moulds to produce a smooth, refined finish. Its compact size makes it ideal for detailed pattern laying in gardens, courtyards and residential pathways.',
     specs: [
       ['Size',        '150 × 150 mm'],
@@ -170,7 +170,7 @@ const PRODUCTS = {
     highlights: [
       { label: 'Thickness', value: '60', unit: 'mm' },
     ],
-    shortDesc: 'Large-format 200×200mm rubbermould square paver with a smooth finish â€” ideal for driveways, plazas and open areas.',
+    shortDesc: 'Large-format 200×200mm rubbermould square paver with a smooth finish — ideal for driveways, plazas and open areas.',
     description: 'The Rubbermould Square 200×200 paver offers a larger format with the same smooth rubber mould finish. Its greater surface area delivers a bold visual impact, making it ideal for driveways, open plazas and commercial decorative flooring.',
     specs: [
       ['Size',        '200 × 200 mm'],
@@ -203,7 +203,7 @@ const PRODUCTS = {
     highlights: [
       { label: 'Thickness', value: '80', unit: 'mm' },
     ],
-    shortDesc: 'Interlocking unipaver in rubbermould finish â€” combines interlocking strength with a refined aesthetic.',
+    shortDesc: 'Interlocking unipaver in rubbermould finish — combines interlocking strength with a refined aesthetic.',
     description: 'The Rubbermould Unipaver combines the classic interlocking unipaver shape with the smooth, attractive finish of rubber mould casting. It offers both structural performance and visual elegance for walkways, garden landscapes and decorative pavements.',
     specs: [
       ['Type',        'Interlocking Rubbermould'],
@@ -311,7 +311,7 @@ const PRODUCTS = {
       ['Application', 'Load-bearing Walls, Industrial Construction'],
     ],
     features: [
-      'High compressive strength (â‰¥ 7.5 N/mmÂ²)',
+      'High compressive strength (≥ 7.5 N/mm²)',
       'Dense solid construction for structural use',
       'Suitable for load-bearing applications',
       'Dimensionally accurate',
@@ -331,8 +331,8 @@ const PRODUCTS = {
     removeBg: true,
     highlights: [
       { label: 'Sizes',   value: '3',       unit: 'options' },
-      { label: 'Height',  value: '80â€“100',  unit: 'mm' },
-      { label: 'Width',   value: '200â€“300', unit: 'mm' },
+      { label: 'Height',  value: '80"“100',  unit: 'mm' },
+      { label: 'Width',   value: '200"“300', unit: 'mm' },
     ],
     shortDesc: 'Precast concrete kerb for road edges, garden borders and driveway demarcation.',
     description: 'Fortune Kerbstones are precast concrete kerbs used to define road edges, garden borders and driveway boundaries. They provide a clean, durable edge that withstands vehicular loads while enhancing the visual finish of any paving project.',
@@ -368,7 +368,7 @@ const PRODUCTS = {
       { label: 'Thickness',  value: '60', unit: 'mm' },
       { label: 'Open Area',  value: '30', unit: '%' },
     ],
-    shortDesc: 'Open-cell grass pavers allowing vegetation to grow through â€” eco-friendly solution for green parking.',
+    shortDesc: 'Open-cell grass pavers allowing vegetation to grow through — eco-friendly solution for green parking.',
     description: 'Fortune Grass Pavers are open-cell cement pavers that allow grass and vegetation to grow through the openings. They provide a permeable, eco-friendly surface ideal for green parking areas, garden paths and landscaping projects that require both load-bearing capacity and natural aesthetics.',
     specs: [
       ['Size',         '400×400×60 mm'],
@@ -403,7 +403,7 @@ const PRODUCTS = {
       { label: 'Width',     value: '110', unit: 'mm' },
     ],
     shortDesc: 'High-strength eco-friendly bricks made from fly ash with low water absorption and thermal insulation.',
-    description: 'Fortune Fly Ash Bricks are manufactured using industrial fly ash, making them an eco-friendly alternative to traditional clay bricks. They offer superior strength, lower water absorption and better thermal insulation â€” contributing to greener, more energy-efficient construction.',
+    description: 'Fortune Fly Ash Bricks are manufactured using industrial fly ash, making them an eco-friendly alternative to traditional clay bricks. They offer superior strength, lower water absorption and better thermal insulation — contributing to greener, more energy-efficient construction.',
     specs: [
       ['Size',               '230×110×70 mm'],
       ['Type',               'Fly Ash Composite'],

@@ -206,7 +206,7 @@ if (_contactForm) _contactForm.addEventListener('submit', function (e) {
   // Phone validation — exactly 10 digits required
   if (phone.length < 10) {
     showPhoneError(phone.length === 0 ? 'Phone number is required.' : `Enter ${10 - phone.length} more digit${10 - phone.length > 1 ? 's' : ''}.`);
-    phoneField.focus();
+    if (phoneField) phoneField.focus();
     return;
   }
   clearPhoneError();

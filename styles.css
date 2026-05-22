@@ -2021,7 +2021,7 @@ img { max-width: 100%; display: block; }
   .footer-brand, .footer-contact-col { grid-column: auto; }
   .section-header { margin-bottom: 28px; }
   .products-grid { grid-template-columns: 1fr; }
-  .applications-grid { grid-template-columns: 1fr 1fr; }
+  .applications-grid { grid-template-columns: 1fr; }
   .hero-title { font-size: 2rem; }
   .section-title { font-size: 1.8rem; }
   .tab-btn { padding: 8px 14px; font-size: 0.82rem; }
