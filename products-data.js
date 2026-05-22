@@ -13,7 +13,7 @@ const PRODUCTS = {
     description: 'The Vibro Brick Paver is a classic brick-shaped paver manufactured using state-of-the-art Apollo Zenith German-designed machinery. Produced through vibro compaction, these pavers deliver superior strength and durability — suitable for residential walkways, commercial driveways and heavy-duty industrial zones.',
     specs: [
       ['Size',        '200 × 100 mm'],
-      ['Thickness',   '60MM / 80MM'],
+      ['Thickness',   '60 / 80 mm'],
       ['Finish',      'Smooth / Textured'],
       ['Application', 'Walkways, Driveways, Industrial Zones'],
     ],
@@ -45,7 +45,7 @@ const PRODUCTS = {
     description: 'The Vibro Unipaver is a versatile interlocking paver designed for both pedestrian and vehicular use. Its unique shape provides excellent interlock between pavers, offering a stable and attractive surface for a wide range of applications.',
     specs: [
       ['Type',        'Interlocking Unipaver'],
-      ['Thickness',   '80MM'],
+      ['Thickness',   '80 mm'],
       ['Finish',      'Smooth'],
       ['Application', 'Pedestrian Paths, Parking, Plazas'],
     ],
@@ -77,7 +77,7 @@ const PRODUCTS = {
     description: 'The Vibro Square 150×150 paver offers a clean, modern square format ideal for walkways, courtyards and decorative flooring. Its compact size makes it perfect for detailed patterns and smaller spaces while retaining the full strength of vibro compaction technology.',
     specs: [
       ['Size',        '150 × 150 mm'],
-      ['Thickness',   '60MM'],
+      ['Thickness',   '60 mm'],
       ['Finish',      'Smooth'],
       ['Application', 'Walkways, Courtyards, Decorative Areas'],
     ],
@@ -109,13 +109,13 @@ const PRODUCTS = {
     description: 'The Vibro Square 200×200 paver is a large-format paver engineered for high-traffic areas including driveways, public plazas and industrial spaces. Its greater surface area provides a bold visual impact while delivering outstanding structural performance.',
     specs: [
       ['Size',        '200 × 200 mm'],
-      ['Thickness',   '60MM / 80MM'],
+      ['Thickness',   '60 / 80 mm'],
       ['Finish',      'Smooth / Textured'],
       ['Application', 'Driveways, Plazas, Public Spaces'],
     ],
     features: [
       'Large format for bold visual impact',
-      'Suitable for heavy vehicular loads (80MM)',
+      'Suitable for heavy vehicular loads (80 mm)',
       'High compressive strength',
       'Available in multiple colours',
       'Ideal for driveways and public spaces',
@@ -141,7 +141,7 @@ const PRODUCTS = {
     description: 'The Rubbermould Square 150×150 paver is cast using rubber moulds to produce a smooth, refined finish. Its compact size makes it ideal for detailed pattern laying in gardens, courtyards and residential pathways.',
     specs: [
       ['Size',        '150 × 150 mm'],
-      ['Thickness',   '35MM'],
+      ['Thickness',   '35 mm'],
       ['Type',        'Rubbermould Cast'],
       ['Finish',      'Smooth'],
       ['Application', 'Gardens, Courtyards, Pedestrian Areas'],
@@ -174,7 +174,7 @@ const PRODUCTS = {
     description: 'The Rubbermould Square 200×200 paver offers a larger format with the same smooth rubber mould finish. Its greater surface area delivers a bold visual impact, making it ideal for driveways, open plazas and commercial decorative flooring.',
     specs: [
       ['Size',        '200 × 200 mm'],
-      ['Thickness',   '60MM'],
+      ['Thickness',   '60 mm'],
       ['Type',        'Rubbermould Cast'],
       ['Finish',      'Smooth'],
       ['Application', 'Driveways, Plazas, Commercial Areas'],
@@ -207,7 +207,7 @@ const PRODUCTS = {
     description: 'The Rubbermould Unipaver combines the classic interlocking unipaver shape with the smooth, attractive finish of rubber mould casting. It offers both structural performance and visual elegance for walkways, garden landscapes and decorative pavements.',
     specs: [
       ['Type',        'Interlocking Rubbermould'],
-      ['Thickness',   '80MM'],
+      ['Thickness',   '80 mm'],
       ['Finish',      'Smooth'],
       ['Application', 'Walkways, Landscapes, Decorative'],
     ],
@@ -240,7 +240,7 @@ const PRODUCTS = {
     description: 'Fortune Chequered Tiles feature a classic anti-skid chequered pattern ideal for footpaths, commercial floors and public areas. Available in a wide range of sizes and vibrant colours, these tiles are designed to enhance safety without compromising on aesthetics.',
     specs: [
       ['Size',        '300×300 mm / 400×400 mm'],
-      ['Thickness',   '25MM'],
+      ['Thickness',   '25 mm'],
       ['Pattern',     'Chequered Anti-Skid'],
       ['Application', 'Footpaths, Commercial Floors, Public Areas'],
     ],
@@ -331,8 +331,8 @@ const PRODUCTS = {
     removeBg: true,
     highlights: [
       { label: 'Sizes',   value: '3',       unit: 'options' },
-      { label: 'Height',  value: '80"“100',  unit: 'mm' },
-      { label: 'Width',   value: '200"“300', unit: 'mm' },
+      { label: 'Height',  value: '80 / 100',  unit: 'mm' },
+      { label: 'Width',   value: '200 / 300', unit: 'mm' },
     ],
     shortDesc: 'Precast concrete kerb for road edges, garden borders and driveway demarcation.',
     description: 'Fortune Kerbstones are precast concrete kerbs used to define road edges, garden borders and driveway boundaries. They provide a clean, durable edge that withstands vehicular loads while enhancing the visual finish of any paving project.',
