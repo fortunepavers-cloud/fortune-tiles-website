@@ -692,7 +692,40 @@
         y += cellH + 4;
       }
 
+      // ── Pre-render Font Awesome icons for footer ────────────
+      const makeFaIcon = (char) => {
+        const s = 64;
+        const cv = document.createElement('canvas');
+        cv.width = s; cv.height = s;
+        const c = cv.getContext('2d');
+        const rad = 12;
+        c.fillStyle = '#e67e22';
+        c.beginPath();
+        c.moveTo(rad, 0); c.lineTo(s - rad, 0);
+        c.quadraticCurveTo(s, 0, s, rad);
+        c.lineTo(s, s - rad);
+        c.quadraticCurveTo(s, s, s - rad, s);
+        c.lineTo(rad, s);
+        c.quadraticCurveTo(0, s, 0, s - rad);
+        c.lineTo(0, rad);
+        c.quadraticCurveTo(0, 0, rad, 0);
+        c.closePath(); c.fill();
+        c.fillStyle = '#ffffff';
+        c.font = `900 ${Math.floor(s * 0.48)}px "Font Awesome 6 Free"`;
+        c.textAlign = 'center'; c.textBaseline = 'middle';
+        c.fillText(char, s / 2, s / 2);
+        return cv.toDataURL('image/png');
+      };
+      let iconPhone = null, iconEmail = null, iconWeb = null, iconPin = null;
+      try {
+        iconPhone = makeFaIcon(''); // fa-phone
+        iconEmail = makeFaIcon(''); // fa-envelope
+        iconWeb   = makeFaIcon(''); // fa-globe
+        iconPin   = makeFaIcon(''); // fa-location-dot
+      } catch (e) {}
+
       // ── Footer (drawn on every page) ────────────────────────
+      const iSz = 4; // icon size in mm
       const totalPages = doc.internal.getNumberOfPages();
       for (let pg = 1; pg <= totalPages; pg++) {
         doc.setPage(pg);
@@ -722,15 +755,20 @@
       doc.text("Vadodara's trusted paving manufacturer", ml, r2);
 
       // ── Centre — factory address ──────────────────────────
+      const cPinX = pageW / 2 - 28; // left-align the centre block
+      const cTx = cPinX + iSz + 2;
+      if (iconPin) {
+        doc.addImage(iconPin, 'PNG', cPinX, r1 - iSz + 0.5, iSz, iSz, '', 'FAST');
+      }
       doc.setTextColor(255, 255, 255);
       doc.setFont('helvetica', 'bold');
       doc.setFontSize(7);
-      doc.text('FACTORY', pageW / 2, r1, { align: 'center' });
+      doc.text('Factory Address', cTx, r1, { align: 'left' });
       doc.setFont('helvetica', 'normal');
       doc.setFontSize(6.5);
       doc.setTextColor(200, 218, 255);
-      doc.text('Om Maa Party Plot, Nr. G.S.F.C. Township', pageW / 2, r2, { align: 'center' });
-      doc.text('Dashrath – 391 740, Vadodara, Gujarat',   pageW / 2, r3, { align: 'center' });
+      doc.text('Om Maa Party Plot, Nr. G.S.F.C. Township', cTx, r2, { align: 'left' });
+      doc.text('Dashrath – 391 740, Vadodara, Gujarat',   cTx, r3, { align: 'left' });
 
       // ── Thin vertical dividers ────────────────────────────
       doc.setDrawColor(255, 255, 255);
@@ -740,32 +778,33 @@
       doc.line(pageW * 0.64, ftrTop + 5, pageW * 0.64, ftrTop + 19);
       doc.setGState(new doc.GState({ opacity: 1 }));
 
-      // ── Right — contact with icon badges ─────────────────
+      // ── Right — contact with FA icons ────────────────────
       const rSecX = pageW * 0.64 + 5;
-      const iSz   = 4;
-      const badge = (bx, by, lbl) => {
+      const tx = rSecX + iSz + 2.5;
+      const fallbackBadge = (bx, by, lbl) => {
         doc.setFillColor(...C_ACC);
         doc.roundedRect(bx, by - 3, iSz, iSz, 0.8, 0.8, 'F');
-        doc.setFont('helvetica', 'bold');
-        doc.setFontSize(5);
+        doc.setFont('helvetica', 'bold'); doc.setFontSize(5);
         doc.setTextColor(255, 255, 255);
         doc.text(lbl, bx + iSz / 2, by + 0.5, { align: 'center' });
       };
-      const tx = rSecX + iSz + 2.5;
 
-      badge(rSecX, r1, 'P');
+      if (iconPhone) doc.addImage(iconPhone, 'PNG', rSecX, r1 - iSz + 0.5, iSz, iSz, '', 'FAST');
+      else fallbackBadge(rSecX, r1, 'P');
       doc.setTextColor(255, 255, 255);
       doc.setFont('helvetica', 'bold');
       doc.setFontSize(8);
       doc.text('+91 82389 64164', tx, r1 + 0.5);
 
-      badge(rSecX, r2, '@');
+      if (iconEmail) doc.addImage(iconEmail, 'PNG', rSecX, r2 - iSz + 0.5, iSz, iSz, '', 'FAST');
+      else fallbackBadge(rSecX, r2, '@');
       doc.setFont('helvetica', 'normal');
       doc.setFontSize(6.5);
       doc.setTextColor(180, 205, 255);
       doc.text('fortunepavers@gmail.com', tx, r2 + 0.5);
 
-      badge(rSecX, r3, 'W');
+      if (iconWeb) doc.addImage(iconWeb, 'PNG', rSecX, r3 - iSz + 0.5, iSz, iSz, '', 'FAST');
+      else fallbackBadge(rSecX, r3, 'W');
       doc.setFont('helvetica', 'normal');
       doc.setFontSize(6.5);
       doc.setTextColor(180, 205, 255);
