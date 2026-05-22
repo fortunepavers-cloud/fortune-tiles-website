@@ -573,26 +573,6 @@
       doc.text(descLines, infoX, iy);
       iy += descLines.length * 5 + 6;
 
-      // ── Highlight stat badges (fill whitespace below description) ──
-      if (p.highlights && p.highlights.length && iy < actualImgEndY) {
-        const bCount = p.highlights.length;
-        const bw = Math.min(28, (infoW - (bCount - 1) * 4) / bCount);
-        p.highlights.forEach((h, i) => {
-          const bx = infoX + i * (bw + 4);
-          doc.setFillColor(...C_LIGHT);
-          doc.roundedRect(bx, iy, bw, 14, 1.5, 1.5, 'F');
-          doc.setFont('helvetica', 'bold');
-          doc.setFontSize(10);
-          doc.setTextColor(...C_PRI);
-          doc.text(`${h.value} ${h.unit}`, bx + bw / 2, iy + 8, { align: 'center' });
-          doc.setFont('helvetica', 'normal');
-          doc.setFontSize(5.5);
-          doc.setTextColor(...C_MUTED);
-          doc.text(h.label.toUpperCase(), bx + bw / 2, iy + 12.5, { align: 'center' });
-        });
-        iy += 18;
-      }
-
       y = Math.max(actualImgEndY, iy) + 5;
 
       // ── Colour swatches ─────────────────────────────────────
