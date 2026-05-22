@@ -693,19 +693,50 @@
       }
 
       // ── Footer ──────────────────────────────────────────────
-      const fy = pageH - 16;
-      doc.setFillColor(...C_LIGHT);
-      doc.rect(0, fy - 5, pageW, 21, 'F');
-      doc.setDrawColor(...C_PRI);
-      doc.setLineWidth(0.3);
-      doc.line(0, fy - 5, pageW, fy - 5);
+      const ftrTop = pageH - 22;
+      // Orange accent strip
+      doc.setFillColor(...C_ACC);
+      doc.rect(0, ftrTop, pageW, 2.5, 'F');
+      // Dark blue background
+      doc.setFillColor(...C_PRI);
+      doc.rect(0, ftrTop + 2.5, pageW, 19.5, 'F');
+
+      const fMid = ftrTop + 2.5 + 9.75; // vertical centre of blue area
+
+      // Left — company name + tagline
+      doc.setTextColor(255, 255, 255);
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(8.5);
+      doc.text('Fortune Tiles & Pavers', ml, fMid - 2.5);
       doc.setFont('helvetica', 'normal');
-      doc.setFontSize(7.5);
-      doc.setTextColor(...C_MUTED);
-      doc.text(
-        'Fortune Tiles & Pavers  ·  Om Maa Party Plot, Nr. G.S.F.C. Township, Dashrath – 391 740, Vadodara  ·  +91 84535 45454',
-        pageW / 2, fy + 2, { align: 'center' }
-      );
+      doc.setFontSize(6.5);
+      doc.setTextColor(180, 205, 255);
+      doc.text("Vadodara's trusted paving manufacturer", ml, fMid + 4);
+
+      // Centre — address (two lines)
+      doc.setTextColor(200, 218, 255);
+      doc.setFont('helvetica', 'normal');
+      doc.setFontSize(7);
+      doc.text('Om Maa Party Plot, Nr. G.S.F.C. Township', pageW / 2, fMid - 2.5, { align: 'center' });
+      doc.text('Dashrath – 391 740, Vadodara, Gujarat', pageW / 2, fMid + 4, { align: 'center' });
+
+      // Thin vertical dividers
+      doc.setDrawColor(255, 255, 255);
+      doc.setGState(new doc.GState({ opacity: 0.18 }));
+      doc.setLineWidth(0.3);
+      doc.line(pageW * 0.36, ftrTop + 5, pageW * 0.36, ftrTop + 19);
+      doc.line(pageW * 0.64, ftrTop + 5, pageW * 0.64, ftrTop + 19);
+      doc.setGState(new doc.GState({ opacity: 1 }));
+
+      // Right — phone + email
+      doc.setTextColor(255, 255, 255);
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(8);
+      doc.text('+91 84535 45454', pageW - mr, fMid - 2.5, { align: 'right' });
+      doc.setFont('helvetica', 'normal');
+      doc.setFontSize(6.5);
+      doc.setTextColor(180, 205, 255);
+      doc.text('fortunepavers@gmail.com', pageW - mr, fMid + 4, { align: 'right' });
 
       doc.save(p.name.replace(/[^a-z0-9]/gi, '-').replace(/-+/g, '-') + '-spec-sheet.pdf');
     }
