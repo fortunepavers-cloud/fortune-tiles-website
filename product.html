@@ -744,23 +744,23 @@
       };
       const tx = rSecX + iSz + 2.5;
 
-      badge(rSecX, fMid - 4.5, 'P');
+      badge(rSecX, fMid - 4, 'P');
       doc.setTextColor(255, 255, 255);
       doc.setFont('helvetica', 'bold');
       doc.setFontSize(8);
-      doc.text('+91 82389 64164', tx, fMid - 3.5);
+      doc.text('+91 82389 64164', tx, fMid - 3);
 
-      badge(rSecX, fMid + 0.5, '@');
+      badge(rSecX, fMid + 1, '@');
       doc.setTextColor(180, 205, 255);
       doc.setFont('helvetica', 'normal');
       doc.setFontSize(6.5);
-      doc.text('fortunepavers@gmail.com', tx, fMid + 1.5);
+      doc.text('fortunepavers@gmail.com', tx, fMid + 2);
 
-      badge(rSecX, fMid + 5.5, 'W');
+      badge(rSecX, fMid + 6, 'W');
       doc.setTextColor(180, 205, 255);
       doc.setFont('helvetica', 'normal');
       doc.setFontSize(6.5);
-      doc.text('www.fortunepavers.com', tx, fMid + 6.5);
+      doc.text('www.fortunepavers.com', tx, fMid + 7);
       } // end per-page footer loop
 
       doc.save(p.name.replace(/[^a-z0-9]/gi, '-').replace(/-+/g, '-') + '-spec-sheet.pdf');
