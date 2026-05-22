@@ -837,13 +837,13 @@
       // ── Col 4 — QR code (centered in column) ─────────────
       if (qrImgData) {
         const qrSz = 15;
-        const qrX = d3 + (pageW - ml - d3 - qrSz) / 2;
-        const qrY = ftrTop + 1.5 + (20.5 - qrSz - 3) / 2;
+        const qrX = d3 + (pageW - d3 - qrSz) / 2;
+        const qrY = ftrTop + 1.5 + (20.5 - qrSz) / 2;
         doc.addImage(qrImgData, 'PNG', qrX, qrY, qrSz, qrSz, '', 'FAST');
         doc.setFont('helvetica', 'normal');
         doc.setFontSize(4.5);
         doc.setTextColor(136, 153, 180);
-        doc.text('Scan to Visit', qrX + qrSz / 2, qrY + qrSz + 2, { align: 'center' });
+        doc.text('Scan to Visit', qrX + qrSz / 2, qrY + qrSz + 1.8, { align: 'center' });
       }
       } // end per-page footer loop
 
