@@ -574,7 +574,7 @@
       iy += descLines.length * 5 + 6;
 
       // ── Highlight stat badges (fill whitespace below description) ──
-      if (p.highlights && p.highlights.length && iy + 14 <= actualImgEndY) {
+      if (p.highlights && p.highlights.length && iy < actualImgEndY) {
         const bCount = p.highlights.length;
         const bw = Math.min(28, (infoW - (bCount - 1) * 4) / bCount);
         p.highlights.forEach((h, i) => {
@@ -790,7 +790,7 @@
       const d2 = (2 * pageW) / 3;  // after contact
 
       // ── Col 1 — factory address (centered) ───────────────
-      const col1Cx = d1 / 2; // horizontal centre of col 1
+      const col1Cx = (ml + d1) / 2; // horizontal centre of col 1
       doc.setFont('helvetica', 'bold');
       doc.setFontSize(6.5);
       const addrLabelW = doc.getTextWidth('FACTORY ADDRESS');
