@@ -745,30 +745,34 @@
       const r3 = fMid + 7;   // bottom row
 
       // ── Left — brand ──────────────────────────────────────
-      doc.setTextColor(255, 255, 255);
+      doc.setTextColor(...C_ACC);
       doc.setFont('helvetica', 'bold');
-      doc.setFontSize(8.5);
+      doc.setFontSize(8);
       doc.text('Fortune Tiles & Pavers', ml, r1);
       doc.setFont('helvetica', 'normal');
-      doc.setFontSize(6.5);
-      doc.setTextColor(180, 205, 255);
-      doc.text("Vadodara's trusted paving manufacturer", ml, r2);
-
-      // ── Centre — factory address ──────────────────────────
-      const cPinX = pageW / 2 - 28; // left-align the centre block
-      const cTx = cPinX + iSz + 2;
-      if (iconPin) {
-        doc.addImage(iconPin, 'PNG', cPinX, r1 - iSz + 0.5, iSz, iSz, '', 'FAST');
-      }
-      doc.setTextColor(255, 255, 255);
-      doc.setFont('helvetica', 'bold');
-      doc.setFontSize(7);
-      doc.text('Factory Address', cTx, r1, { align: 'left' });
-      doc.setFont('helvetica', 'normal');
-      doc.setFontSize(6.5);
+      doc.setFontSize(6);
       doc.setTextColor(200, 218, 255);
-      doc.text('Om Maa Party Plot, Nr. G.S.F.C. Township', cTx, r2, { align: 'left' });
-      doc.text('Dashrath – 391 740, Vadodara, Gujarat',   cTx, r3, { align: 'left' });
+      doc.text("Vadodara's Trusted Paving Manufacturer", ml, r2);
+      doc.setFontSize(5.5);
+      doc.setTextColor(160, 185, 230);
+      doc.text('Dashrath, Vadodara, Gujarat', ml, r3);
+
+      // ── Centre — factory address (centered in column) ────
+      const ccX = pageW / 2;
+      const cLblW = iSz + 2.5 + 24; // icon + gap + ~"FACTORY ADDRESS"
+      const cGrpX = ccX - cLblW / 2;
+      if (iconPin) {
+        doc.addImage(iconPin, 'PNG', cGrpX, r1 - iSz / 2 - 0.5, iSz, iSz, '', 'FAST');
+      }
+      doc.setTextColor(...C_ACC);
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(6.5);
+      doc.text('FACTORY ADDRESS', cGrpX + iSz + 2.5, r1, { align: 'left' });
+      doc.setFont('helvetica', 'normal');
+      doc.setFontSize(6);
+      doc.setTextColor(200, 218, 255);
+      doc.text('Om Maa Party Plot, GSFC Township', ccX, r2, { align: 'center' });
+      doc.text('Dashrath, Vadodara – 391 740', ccX, r3, { align: 'center' });
 
       // ── Thin vertical dividers ────────────────────────────
       doc.setDrawColor(255, 255, 255);
@@ -783,32 +787,32 @@
       const tx = rSecX + iSz + 2.5;
       const fallbackBadge = (bx, by, lbl) => {
         doc.setFillColor(...C_ACC);
-        doc.roundedRect(bx, by - 3, iSz, iSz, 0.8, 0.8, 'F');
+        doc.roundedRect(bx, by - iSz / 2 - 0.5, iSz, iSz, 0.8, 0.8, 'F');
         doc.setFont('helvetica', 'bold'); doc.setFontSize(5);
         doc.setTextColor(255, 255, 255);
         doc.text(lbl, bx + iSz / 2, by + 0.5, { align: 'center' });
       };
 
-      if (iconPhone) doc.addImage(iconPhone, 'PNG', rSecX, r1 - iSz + 0.5, iSz, iSz, '', 'FAST');
+      if (iconPhone) doc.addImage(iconPhone, 'PNG', rSecX, r1 - iSz / 2 - 0.5, iSz, iSz, '', 'FAST');
       else fallbackBadge(rSecX, r1, 'P');
-      doc.setTextColor(255, 255, 255);
+      doc.setTextColor(...C_ACC);
       doc.setFont('helvetica', 'bold');
-      doc.setFontSize(8);
-      doc.text('+91 82389 64164', tx, r1 + 0.5);
+      doc.setFontSize(7.5);
+      doc.text('+91 82389 64164', tx, r1);
 
-      if (iconEmail) doc.addImage(iconEmail, 'PNG', rSecX, r2 - iSz + 0.5, iSz, iSz, '', 'FAST');
+      if (iconEmail) doc.addImage(iconEmail, 'PNG', rSecX, r2 - iSz / 2 - 0.5, iSz, iSz, '', 'FAST');
       else fallbackBadge(rSecX, r2, '@');
       doc.setFont('helvetica', 'normal');
       doc.setFontSize(6.5);
-      doc.setTextColor(180, 205, 255);
-      doc.text('fortunepavers@gmail.com', tx, r2 + 0.5);
+      doc.setTextColor(200, 218, 255);
+      doc.text('fortunepavers@gmail.com', tx, r2);
 
-      if (iconWeb) doc.addImage(iconWeb, 'PNG', rSecX, r3 - iSz + 0.5, iSz, iSz, '', 'FAST');
+      if (iconWeb) doc.addImage(iconWeb, 'PNG', rSecX, r3 - iSz / 2 - 0.5, iSz, iSz, '', 'FAST');
       else fallbackBadge(rSecX, r3, 'W');
       doc.setFont('helvetica', 'normal');
       doc.setFontSize(6.5);
-      doc.setTextColor(180, 205, 255);
-      doc.text('www.fortunepavers.com', tx, r3 + 0.5);
+      doc.setTextColor(200, 218, 255);
+      doc.text('www.fortunepavers.com', tx, r3);
       } // end per-page footer loop
 
       doc.save(p.name.replace(/[^a-z0-9]/gi, '-').replace(/-+/g, '-') + '-spec-sheet.pdf');
