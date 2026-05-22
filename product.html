@@ -763,30 +763,12 @@
       const r2 = fMid + 1.5; // middle row
       const r3 = fMid + 7;   // bottom row
 
-      // Column dividers — equal 4-column layout
-      const d1 = pageW * 0.30;  // after brand
-      const d2 = pageW * 0.56;  // after address
-      const d3 = pageW * 0.78;  // after contact
+      // Column dividers — equal 3-column layout
+      const d1 = pageW / 3;        // after address
+      const d2 = (2 * pageW) / 3;  // after contact
 
-      // ── Col 1 — brand ─────────────────────────────────────
-      // Vertical orange accent strip
-      doc.setFillColor(...C_ACC);
-      doc.rect(ml, ftrTop + 5.5, 1.5, 11, 'F');
-
-      // Company name
-      doc.setTextColor(255, 255, 255);
-      doc.setFont('helvetica', 'bold');
-      doc.setFontSize(8.5);
-      doc.text('Fortune Tiles & Pavers', ml + 4.5, r1);
-
-      // Tagline
-      doc.setFont('helvetica', 'normal');
-      doc.setFontSize(5.5);
-      doc.setTextColor(136, 153, 180);
-      doc.text("Vadodara's Trusted Paving Manufacturer", ml + 4.5, r2);
-
-      // ── Col 2 — factory address ───────────────────────────
-      const cColX = d1 + 5;
+      // ── Col 1 — factory address ───────────────────────────
+      const cColX = ml;
       const addrTx = cColX + iSz + 2;
       if (iconPin) {
         doc.addImage(iconPin, 'PNG', cColX, r1 - iSz / 2 - 0.5, iSz, iSz, '', 'FAST');
@@ -807,11 +789,10 @@
       doc.setLineWidth(0.3);
       doc.line(d1, ftrTop + 5, d1, ftrTop + 19);
       doc.line(d2, ftrTop + 5, d2, ftrTop + 19);
-      doc.line(d3, ftrTop + 5, d3, ftrTop + 19);
       doc.setGState(new doc.GState({ opacity: 1 }));
 
-      // ── Col 3 — contact with FA icons ─────────────────────
-      const rSecX = d2 + 5;
+      // ── Col 2 — contact with FA icons ─────────────────────
+      const rSecX = d1 + 5;
       const tx = rSecX + iSz + 2.5;
       const fallbackBadge = (bx, by, lbl) => {
         doc.setFillColor(...C_ACC);
@@ -842,10 +823,10 @@
       doc.setTextColor(136, 153, 180);
       doc.text('www.fortunepavers.com', tx, r3);
 
-      // ── Col 4 — QR code (centered in column) ─────────────
+      // ── Col 3 — QR code (centered in column) ─────────────
       if (qrImgData) {
         const qrSz = 13;
-        const qrX = d3 + (pageW - d3 - qrSz) / 2;
+        const qrX = d2 + (pageW - d2 - qrSz) / 2;
         const qrY = ftrTop + 1.5 + (20.5 - qrSz) / 2;
         doc.addImage(qrImgData, 'PNG', qrX, qrY, qrSz, qrSz, '', 'FAST');
         doc.setFont('helvetica', 'normal');
