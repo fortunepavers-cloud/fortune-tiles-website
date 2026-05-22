@@ -469,7 +469,10 @@
           const cv = document.createElement('canvas');
           cv.width  = mainImg.naturalWidth;
           cv.height = mainImg.naturalHeight;
-          cv.getContext('2d').drawImage(mainImg, 0, 0);
+          const cvCtx = cv.getContext('2d');
+          cvCtx.fillStyle = '#ffffff';
+          cvCtx.fillRect(0, 0, cv.width, cv.height);
+          cvCtx.drawImage(mainImg, 0, 0);
           imgData = cv.toDataURL('image/jpeg', 0.85);
         } catch (e) {}
       }
