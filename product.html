@@ -518,15 +518,15 @@
         doc.text('FORTUNE TILES & PAVERS', ml, hdrH / 2 + 2);
       }
 
-      // Vertical divider between logo and right section
-      const divX = ml + logoW + 12;
+      // Vertical divider — placed at page centre
+      const divX = pageW / 2;
       doc.setDrawColor(255, 255, 255);
       doc.setGState(new doc.GState({ opacity: 0.25 }));
       doc.setLineWidth(0.4);
       doc.line(divX, 7, divX, hdrH - 7);
       doc.setGState(new doc.GState({ opacity: 1 }));
 
-      // Right section — title centred vertically in the right half
+      // Right section — title centred in the right half
       const rightCentreX = (divX + pageW) / 2;
       doc.setTextColor(255, 255, 255);
       doc.setFont('helvetica', 'bold');
