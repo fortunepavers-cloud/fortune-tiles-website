@@ -279,7 +279,7 @@
       img.src = canvas.toDataURL();
     }
     document.querySelectorAll('.logo-full-img').forEach(img => {
-      img.complete ? removeWhiteBg(img) : img.addEventListener('load', () => removeWhiteBg(img));
+      img.complete ? removeWhiteBg(img) : img.addEventListener('load', () => removeWhiteBg(img), { once: true });
     });
 
     function removeImgBg(img) {
@@ -350,7 +350,7 @@
         wrap.innerHTML = `<img src="${p.image}" alt="${p.name}" id="pdMainImg" class="pd-main-img">`;
         if (p.removeBg) {
           const mainImg = document.getElementById('pdMainImg');
-          mainImg.complete ? removeImgBg(mainImg) : mainImg.addEventListener('load', () => removeImgBg(mainImg));
+          mainImg.complete ? removeImgBg(mainImg) : mainImg.addEventListener('load', () => removeImgBg(mainImg), { once: true });
         }
       } else {
         wrap.innerHTML = `<div class="pd-icon-wrap" style="background:${p.iconBg}"><i class="fa-solid ${p.icon}" style="font-size:4rem;color:#fff;opacity:0.8"></i></div>`;

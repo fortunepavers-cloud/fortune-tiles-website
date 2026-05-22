@@ -60,7 +60,7 @@ function removeWhiteBg(img) {
   img.src = canvas.toDataURL();
 }
 document.querySelectorAll('.logo-full-img').forEach(img => {
-  img.complete ? removeWhiteBg(img) : img.addEventListener('load', () => removeWhiteBg(img));
+  img.complete ? removeWhiteBg(img) : img.addEventListener('load', () => removeWhiteBg(img), { once: true });
 });
 
 // ===== PRODUCT IMAGE BG REMOVAL (flood-fill only, no text-area processing) =====
@@ -102,7 +102,7 @@ function removeImgBg(img) {
   img.src = canvas.toDataURL();
 }
 document.querySelectorAll('[data-rmbg]').forEach(img => {
-  img.complete ? removeImgBg(img) : img.addEventListener('load', () => removeImgBg(img));
+  img.complete ? removeImgBg(img) : img.addEventListener('load', () => removeImgBg(img), { once: true });
 });
 
 // ===== NAVBAR SCROLL =====
