@@ -552,30 +552,6 @@
       doc.line(ml, y, pageW - mr, y);
       y += 10;
 
-      // ── Highlights ──────────────────────────────────────────
-      if (p.highlights && p.highlights.length) {
-        const cellW = cW / p.highlights.length;
-        p.highlights.forEach((h, i) => {
-          const x = ml + i * cellW;
-          doc.setFont('helvetica', 'bold');
-          doc.setFontSize(7);
-          doc.setTextColor(...C_MUTED);
-          doc.text(h.label.toUpperCase(), x, y);
-          doc.setFontSize(17);
-          doc.setTextColor(...C_DARK);
-          doc.text(String(h.value), x, y + 9);
-          doc.setFont('helvetica', 'normal');
-          doc.setFontSize(8);
-          doc.setTextColor(...C_MUTED);
-          doc.text(h.unit, x + doc.getTextWidth(String(h.value)) + 1.5, y + 9);
-        });
-        y += 22;
-        doc.setDrawColor(210, 215, 225);
-        doc.setLineWidth(0.25);
-        doc.line(ml, y, pageW - mr, y);
-        y += 10;
-      }
-
       // ── Specifications ──────────────────────────────────────
       doc.setFont('helvetica', 'bold');
       doc.setFontSize(10);
