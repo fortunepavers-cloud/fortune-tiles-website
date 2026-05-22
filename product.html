@@ -540,8 +540,13 @@
       const infoX = ml + imgW + 10;
       const infoW = cW - imgW - 10;
 
-      if (imgData) {
-        doc.addImage(imgData, 'JPEG', ml, y, imgW, imgH, '', 'FAST');
+      if (imgData && mainImg.naturalWidth && mainImg.naturalHeight) {
+        const ratio = mainImg.naturalWidth / mainImg.naturalHeight;
+        let dw = imgW, dh = imgH;
+        if (dw / dh > ratio) { dw = dh * ratio; } else { dh = dw / ratio; }
+        const dx = ml + (imgW - dw) / 2;
+        const dy = y + (imgH - dh) / 2;
+        doc.addImage(imgData, 'JPEG', dx, dy, dw, dh, '', 'FAST');
       }
 
       let iy = y + 2;
