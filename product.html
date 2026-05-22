@@ -793,8 +793,8 @@
       doc.line(d2, ftrTop + 5, d2, ftrTop + 19);
       doc.setGState(new doc.GState({ opacity: 1 }));
 
-      // ── Col 2 — contact with FA icons (centered) ─────────
-      const col2Cx = pageW / 2; // horizontal centre of col 2
+      // ── Col 2 — contact with FA icons (block-centered) ────
+      const col2Cx = pageW / 2;
       const fallbackBadge = (bx, by, lbl) => {
         doc.setFillColor(...C_ACC);
         doc.roundedRect(bx, by - iSz / 2 - 0.5, iSz, iSz, 0.8, 0.8, 'F');
@@ -802,22 +802,30 @@
         doc.setTextColor(255, 255, 255);
         doc.text(lbl, bx + iSz / 2, by + 0.5, { align: 'center' });
       };
-      const centeredRow = (icon, fallbackLbl, row, bold, fontSize, color, label) => {
-        doc.setFont('helvetica', bold ? 'bold' : 'normal');
-        doc.setFontSize(fontSize);
-        const tw = doc.getTextWidth(label);
-        const gw = iSz + 2.5 + tw;
-        const ix = col2Cx - gw / 2;
-        const lx = ix + iSz + 2.5;
-        if (icon) doc.addImage(icon, 'PNG', ix, row - iSz / 2 - 0.5, iSz, iSz, '', 'FAST');
-        else fallbackBadge(ix, row, fallbackLbl);
-        doc.setTextColor(...color);
-        doc.text(label, lx, row);
-      };
 
-      centeredRow(iconPhone, 'P', r1, true,  7,   [255, 255, 255], '+91 82389 64164');
-      centeredRow(iconEmail, '@', r2, false, 6,   [136, 153, 180], 'fortunepavers@gmail.com');
-      centeredRow(iconWeb,   'W', r3, false, 6,   [136, 153, 180], 'www.fortunepavers.com');
+      // Measure widest text to size the block
+      doc.setFont('helvetica', 'bold');   doc.setFontSize(7);
+      const phoneW = doc.getTextWidth('+91 82389 64164');
+      doc.setFont('helvetica', 'normal'); doc.setFontSize(6);
+      const emailW = doc.getTextWidth('fortunepavers@gmail.com');
+      const webW   = doc.getTextWidth('www.fortunepavers.com');
+      const blockW = iSz + 2.5 + Math.max(phoneW, emailW, webW);
+      const c2IconX = col2Cx - blockW / 2;
+      const c2TextX = c2IconX + iSz + 2.5;
+
+      if (iconPhone) doc.addImage(iconPhone, 'PNG', c2IconX, r1 - iSz / 2 - 0.5, iSz, iSz, '', 'FAST');
+      else fallbackBadge(c2IconX, r1, 'P');
+      doc.setTextColor(255, 255, 255); doc.setFont('helvetica', 'bold'); doc.setFontSize(7);
+      doc.text('+91 82389 64164', c2TextX, r1);
+
+      if (iconEmail) doc.addImage(iconEmail, 'PNG', c2IconX, r2 - iSz / 2 - 0.5, iSz, iSz, '', 'FAST');
+      else fallbackBadge(c2IconX, r2, '@');
+      doc.setTextColor(136, 153, 180); doc.setFont('helvetica', 'normal'); doc.setFontSize(6);
+      doc.text('fortunepavers@gmail.com', c2TextX, r2);
+
+      if (iconWeb) doc.addImage(iconWeb, 'PNG', c2IconX, r3 - iSz / 2 - 0.5, iSz, iSz, '', 'FAST');
+      else fallbackBadge(c2IconX, r3, 'W');
+      doc.text('www.fortunepavers.com', c2TextX, r3);
 
       // ── Col 3 — QR code (centered in column) ─────────────
       if (qrImgData) {
